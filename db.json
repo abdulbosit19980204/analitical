@@ -1,0 +1,40 @@
+{
+  "Credit": "False",
+  "CodePrice": "00000000003",
+  "DateOrder": "datetime.datetime(2024, 9, 2, 10, 35, 37)",
+  "CodeSklad": "00000000201",
+  "CommentSupervisor": "None",
+  "CommentForwarder": "None",
+  "CommentAgent": "None",
+  "ProductRows": [
+    {
+      "Rows": [
+        {
+          "CodeProduct": "00-00000647",
+          "NameProduct": "Детские подгузники Evy Baby Junior Jumbo 46*4 EXP21 №5",
+          "Amount": 1,
+          "Price": 124950.0,
+          "Total": 124950.0,
+          "DiscountRate": 0.0,
+          "Weight": 1.655,
+          "Capacity": 0.0123
+        }
+      ]
+    }
+  ],
+  "CompetitorRows": [
+    "None"
+  ],
+  "ShippingDate": "datetime.datetime(2024, 9, 3, 0, 0)",
+  "CreditDetailsList": {
+    "Rows": [
+      {
+        "DateOfPayment": "20240903000000",
+        "Total": 124950.0
+      }
+    ]
+  },
+  "OrderType": 3,
+  "CodeOrg": "00000000001",
+  "Sklad": "EVYAP (ТАШКЕНТ)"
+}

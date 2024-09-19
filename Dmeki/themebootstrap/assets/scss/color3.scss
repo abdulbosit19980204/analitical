@@ -1,0 +1,60 @@
+@import 'custom/variables';
+$theme-primary:#01A3FF;
+
+// Components
+@import 'custom/components/typography';
+@import 'custom/components/common';
+@import 'custom/components/genaral';
+@import 'custom/components/button';
+@import 'custom/components/form';
+@import 'custom/components/badge';
+@import 'custom/components/switch';
+@import 'custom/components/alerts';
+@import 'custom/components/pagination';
+@import 'custom/components/card';
+@import 'custom/components/tab';
+@import 'custom/components/table';
+@import 'custom/components/header';
+@import 'custom/components/footer';
+@import 'custom/components/dropdown';
+@import 'custom/components/modal';
+@import 'custom/components/sidebar';
+@import 'custom/components/progress';
+@import 'custom/components/dropzon';
+@import 'custom/components/customizer';
+
+// Ecommerce 
+@import 'custom/pages/product';
+@import 'custom/pages/cart';
+@import 'custom/pages/checkout';
+
+// Application
+@import 'custom/pages/calendar-app';
+@import 'custom/pages/chat-app';
+@import 'custom/pages/user-app';
+@import 'custom/pages/email-app';
+
+// Pages
+@import 'custom/pages/authentication';
+@import 'custom/pages/blog';
+@import 'custom/pages/todo';
+@import 'custom/pages/error';
+@import 'custom/pages/contacts';
+@import 'custom/pages/faq';
+@import 'custom/pages/pricing';
+@import 'custom/pages/gallery';
+@import 'custom/pages/invoice';
+@import 'custom/pages/timeline';
+@import 'custom/pages/coming-soon';
+
+
+// dashboard
+@import 'custom/dashboard/dashboard';
+@import 'custom/dashboard/ecommerce-dash';
+@import 'custom/responsive';
+
+
+// layout
+@import 'custom/layout/darklayout';
+@import 'custom/layout/rtllayout';
+@import 'custom/pages/landing';

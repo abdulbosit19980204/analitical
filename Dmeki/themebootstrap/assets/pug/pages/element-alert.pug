@@ -1,0 +1,247 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Alert")
+  body
+
+    +header
+
+
+    .themebody-wrap
+      // breadcrumb start
+      +codexbreadcrumb('alert','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row
+              .col-xl-6 
+                  .card.alerts
+                      .card-header 
+                          h4 Default Alerts
+                      .card-body.pt-20                        
+                          p.card-title-desc Alerts are available for any length of text, as well as an optional dismiss button. For proper styling, use one of the four required contextual classes (e.g., .alert-success). For inline dismissal, use the alerts jQuery plugin.
+                          .alert.alert-primary(role='alert')
+                            | A simple primary alert&mdash;check it out!
+                          .alert.alert-secondary(role='alert')
+                            | A simple secondary alert&mdash;check it out!
+                          .alert.alert-success(role='alert')
+                            | A simple success alert&mdash;check it out!
+                          .alert.alert-danger(role='alert')
+                            | A simple danger alert&mdash;check it out!
+                          .alert.alert-warning(role='alert')
+                            | A simple warning alert&mdash;check it out!
+                          .alert.alert-info(role='alert')
+                            | A simple info alert&mdash;check it out!
+                          .alert.alert-light(role='alert')
+                            | A simple light alert&mdash;check it out!
+                          .alert.alert-dark(role='alert')
+                            | A simple dark alert&mdash;check it out!
+              .col-xl-6 
+                  .card.alerts
+                      .card-header 
+                          h4 Link color
+                      .card-body.pt-20                        
+                          p.card-title-desc
+                              | Use the .alert-link utility class to quickly provide matching colored links within any alert.
+                              br
+                              | &nbsp;
+                          .alert.alert-primary(role='alert')
+                            | A simple primary alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-secondary(role='alert')
+                            | A simple secondary alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-success(role='alert')
+                            | A simple success alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-danger(role='alert')
+                            | A simple danger alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-warning(role='alert')
+                            | A simple warning alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-info(role='alert')
+                            | A simple info alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-light(role='alert')
+                            | A simple light alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+                          .alert.alert-dark(role='alert')
+                            | A simple dark alert with 
+                            a.alert-link(href='#') an example link
+                            | . Give it a click if you like.
+              .col-xl-6 
+                  .card.alerts
+                      .card-header 
+                          h4 Dismissing
+                      .card-body.pt-20                        
+                          p.card-title-desc Add a dismiss button and the .alert-dismissible class, which adds extra padding to the right of the alert and positions the .btn-close button.
+                          .alert.alert-primary.alert-dismissible.fade.show(role='alert')
+                            | dismissing primary alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-secondary.alert-dismissible.fade.show(role='alert')
+                            | dismissing secondary alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-success.alert-dismissible.fade.show(role='alert')
+                            | dismissing success alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+                            | dismissing danger alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-warning.alert-dismissible.fade.show(role='alert')
+                            | dismissing warning alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-info.alert-dismissible.fade.show(role='alert')
+                            | dismissing info alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-light.alert-dismissible.fade.show(role='alert')
+                            | dismissing light alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                          .alert.alert-dark.alert-dismissible.fade.show(role='alert')
+                            | dismissing dark alert&mdash;check it out!
+                            button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+              .col-xl-6 
+                  .card.alerts
+                      .card-header 
+                          h4 With Icon
+                      .card-body.pt-20                        
+                          p.card-title-desc Depending on your icons and content, you may want to add more utilities or custom styles.alert and positions the .btn-close button.                      
+                          .alert.alert-primary.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple primary alert with icon check it out!
+                          .alert.alert-secondary.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple secondary alert with icon check it out!
+                          .alert.alert-success.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple success alert with icon check it out!
+                          .alert.alert-danger.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple danger alert with icon check it out!
+                          .alert.alert-warning.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple warning alert with icon check it out!
+                          .alert.alert-info.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple info alert with icon check it out!
+                          .alert.alert-light.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple light alert with icon check it out!
+                          .alert.alert-dark.d-flex.align-items-center(role='alert')
+                            i.fa.fa-search.mr-10
+                            | A simple dark alert with icon check it out!
+              .col-xl-6 
+                .card.alerts
+                  .card-header 
+                      h4 outline Alerts
+                  .card-body.pt-20                                            
+                      .alert.alert-primary-outline(role='alert')
+                        | outline primary alert&mdash;check it out!
+                      .alert.alert-secondary-outline(role='alert')
+                        | outline secondary alert&mdash;check it out!
+                      .alert.alert-success-outline(role='alert')
+                        | outline success alert&mdash;check it out!
+                      .alert.alert-danger-outline(role='alert')
+                        | outline danger alert&mdash;check it out!
+                      .alert.alert-warning-outline(role='alert')
+                        | outline warning alert&mdash;check it out!
+                      .alert.alert-info-outline(role='alert')
+                        | outline info alert&mdash;check it out!
+                      .alert.alert-light-outline(role='alert')
+                        | outline light alert&mdash;check it out!
+                      .alert.alert-dark-outline(role='alert')
+                        | outline dark alert&mdash;check it out!
+              .col-xl-6 
+                .card.alerts
+                  .card-header 
+                      h4 outline with Dismissing Alerts
+                  .card-body.pt-20                                            
+                      .alert.alert-primary-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing primary alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-secondary-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing secondary alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-success-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing success alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-danger-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing danger alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-warning-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing warning alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-info-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing info alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-light-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing light alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+                      .alert.alert-dark-outline.alert-dismissible.fade.show(role='alert')
+                        | outline with disnissing dark alert&mdash;check it out!
+                        button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')
+              .col-xl-6 
+                .card.alerts
+                    .card-header 
+                        h4 outline With Icon
+                    .card-body.pt-20                        
+                        p.card-title-desc Depending on your icons and content, you may want to add more utilities or custom styles.alert and positions the .btn-close button.                      
+                        .alert.alert-primary-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon primary alert with icon check it out!
+                        .alert.alert-secondary-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon secondary alert with icon check it out!
+                        .alert.alert-success-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon success alert with icon check it out!
+                        .alert.alert-danger-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon danger alert with icon check it out!
+                        .alert.alert-warning-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon warning alert with icon check it out!
+                        .alert.alert-info-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon info alert with icon check it out!
+                        .alert.alert-light-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon light alert with icon check it out!
+                        .alert.alert-dark-outline.d-flex.align-items-center(role='alert')
+                          i.fa.fa-search.mr-10
+                          | outline with icon dark alert with icon check it out!
+              .col-xl-6 
+                  .card.alerts
+                      .card-header 
+                          h4 Additional content
+                      .card-body.pt-20                        
+                          p.card-title-desc Alerts can also contain additional HTML elements like headings, paragraphs and dividers.
+                          .alert.alert-success(role='alert')
+                              h4.alert-heading.mb-10 Well done!
+                              p.card-title-desc.m-0 
+                                  | Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+                              hr.mt-10.mb-10
+                              p.card-title-desc.mb-0
+                                  | Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+              
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

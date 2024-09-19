@@ -1,0 +1,142 @@
+-var chatMsg = false;
+doctype html
+html(lang="en")  
+  include ../components/mixinfiles
+  +headerfile('Invoice')
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Invoice','Ecommerce')    
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.codex-chat
+        .custom-container
+          .row
+            .col-12
+              .card
+                .card-body.cdx-invoice
+                  #cdx-invoice
+                    .head-invoice                   
+                      .codex-brand
+                        a.codexbrand-logo(href='Javascript:void(0);')
+                          img.img-fluid(src="../assets/images/logo/logo.png" alt="invoice-logo")                 
+                        a.codexdark-logo(href='Javascript:void(0);')
+                          img.img-fluid(src="../assets/images/logo/dark-logo.png" alt="invoice-logo")                 
+                      ul.contact-list
+                        li                     
+                          .icon-wrap
+                            i.fa.fa-phone
+                          | +12345647859
+                        li                     
+                          .icon-wrap
+                            i.fa.fa-envelope
+                          | dmeki@example.com
+                        li                     
+                          .icon-wrap
+                            i.fa.fa-map-marker
+                          | dmeki Store
+                    .invoice-user
+                      .left-user
+                        h5 inovice to:
+                        ul.detail-list
+                          li
+                            .icon-wrap
+                                i.fa.fa-user
+                            | Mark Wongar
+                          li
+                            .icon-wrap
+                                i.fa.fa-phone
+                            | +123585844859                    
+                          li
+                            .icon-wrap
+                                i.fa.fa-map-marker
+                            | 368 mega get , dmeki store
+                      .right-user
+                        ul.detail-list
+                          li
+                            | invoice date: 
+                            span  21/3/2022
+                          li
+                            | invoice no: 
+                            span 21/3/2022
+                          li
+                            | account no: 
+                            span 5848598585 
+                    .body-invoice
+                      .table-responsive
+                        table.table.ml-1
+                          thead
+                            tr
+                              th No
+                              th Description
+                              th Price
+                              th Quantity
+                              th Amout 
+                          tbody
+                            tr
+                              td 01
+                              td dark green jacket
+                              td $90
+                              td 2
+                              td $180
+                            tr
+                              td 02
+                              td  red jacket
+                              td $80
+                              td 4
+                              td $320
+                            tr
+                              td 03
+                              td Short kurti
+                              td $50
+                              td 3
+                              td $150
+                            tr
+                              td 04
+                              td printed yellow dress
+                              td $150
+                              td 2
+                              td $300
+                            tr
+                              td 05
+                              td white T-shirt
+                              td $120
+                              td 1
+                              td $120
+                            tr
+                              td 06
+                              td black  Sweater
+                              td $85
+                              td 4
+                              td $340
+                    .footer-invoice                 
+                        table.table
+                          tr
+                            td sub total
+                            td $1410
+                          tr
+                            td tax
+                            td $250
+                          tr
+                            td total
+                            td $1670                 
+                  .invoice-action
+                    a.btn.btn-primary(href="javascript:void(0);") print invoice
+                    a.btn.btn-secondary.ml-15(href="javascript:void(0);") download invoice
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

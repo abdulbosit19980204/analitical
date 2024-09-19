@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Verify Email")      
+  body    
+
+    // Verify Email Start
+    .auth-main     
+      .codex-authbox
+        .auth-header
+          .auth-icon               
+            i.fa.fa-envelope
+          h3 Verify Your Email Address
+          p you've entered 
+            b dmeki@Example.Com 
+            | as the email address for yiur account. please verify this email address by clicking button below.
+        .form-group.mb-0
+          button.btn.btn-primary(type='submit') Verify Email
+    // Verify Email End
+    
+    +footerfile

@@ -1,0 +1,118 @@
+-var ckeditor = true;
+-var dataTable = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Cart")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('cart','ecommerce')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body.myCustomScrollbar(data-mcs-theme="minimal-dark").cdxshopping-cart.cdxshopping-cart
+          .grid.grid-cols-12
+            .col-span-12
+              .card
+                .card-body
+                  .table-responsive
+                    table#basicdata-tbl.table.productlist-tbl.display.dataTable.cell-border(style='width:100%')
+                      thead
+                        tr
+                          th Product
+                          th Product Name                      
+                          th Size                         
+                          th Order Id
+                          th Amout
+                          th Action
+                      tbody
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/1.jpg" alt="")
+                          td  
+                            a.text_default(href="product-detail.html") cheks ewsShirt
+                          td M
+                          td #584848
+                          td $505
+                          td
+                            .cart-action                           
+                              a.delete.text-success(href="javascript:void(0)") 
+                                i(data-feather="edit")
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/2.jpg" alt="")
+                          td 
+                            a.text_default(href="product-detail.html") pink T-shirt
+                          td L
+                          td #958540
+                          td $488
+                          td
+                            .cart-action                           
+                              a.delete.text-success(href="javascript:void(0)") 
+                                i(data-feather="edit")
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/3.jpg" alt="")
+                          td 
+                            a.text_default(href="product-detail.html") sky blue shirt
+                          td Xl
+                          td #558590    
+                          td $600                       
+                          td
+                            .cart-action                           
+                              a.delete.text-success(href="javascript:void(0)") 
+                                i(data-feather="edit")
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/4.jpg" alt="")
+                          td 
+                            a.text_default(href="product-detail.html") white T-shirt
+                          td XXl
+                          td #502030                           
+                          td $200
+                          td
+                            .cart-action                           
+                              a.delete.text-success(href="javascript:void(0)") 
+                                i(data-feather="edit")
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/5.jpg" alt="")
+                          td 
+                            a.text_default(href="product-detail.html") blue jacket
+                          td SM
+                          td #908050    
+                          td $200                       
+                          td
+                            .cart-action                           
+                              a.delete.text-success(href="javascript:void(0)") 
+                                i(data-feather="edit")
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")   
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+
+    
+    +footerfile

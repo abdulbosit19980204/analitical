@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Verify Pin")      
+  body     
+
+    // Verify pin start
+    .auth-main
+      .codex-authbox
+        .auth-header
+          .auth-icon               
+            i.fa.fa-envelope-open
+          h3 verify your email
+          p Plase Enter The Verification Code We Sent 
+            br
+            |  To dmeki@example.Com
+        form(onsubmit='onSubmit(event)' action="#")
+          .form-group
+            .small-group.auth-pin
+              input.form-control.code-input(type="text" required="")
+              input.form-control.code-input(type="text" required="")
+              input.form-control.code-input(type="text" required="")
+              input.form-control.code-input(type="text" required="")
+              input.form-control.code-input(type="text" required="")
+              input.form-control.code-input(type="text" required="")
+          .form-group                   
+            button.btn.btn-primary.mt-0(type='submit') Confirm
+        .auth-footer.text-center
+          p
+            | Dont Receive The Email ? 
+            a.text-primary(href='#')  Resend Email
+    // Verify pin End
+        
+
+    +footerfile
+    
+    script.
+      const inputElements = [...document.querySelectorAll('input.code-input')]
+          inputElements.forEach((ele,index)=>{
+            ele.addEventListener('keydown',(e)=>{              
+              if(e.keyCode === 8 && e.target.value==='') inputElements[Math.max(0,index-1)].focus()
+            })
+            ele.addEventListener('input',(e)=>{             
+              const [first,...rest] = e.target.value
+              e.target.value = first ?? ''
+              const lastInputBox = index===inputElements.length-1
+              const insertedContent = first!==undefined
+              if(insertedContent && !lastInputBox) {               
+                inputElements[index+1].focus()
+                inputElements[index+1].value = rest.join('')
+                inputElements[index+1].dispatchEvent(new Event('input'))
+              }
+            })
+          })

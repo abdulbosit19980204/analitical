@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="">
+      <meta name="keywords" content="admin template, html 5 admin template , dmeki admin , dashboard template, tailwind admin template, responsive admin template">
+      <title>
+         Dmeki | Theme Class
+      </title>
+      <!-- shortcut icon-->
+      <link rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
+      <!-- Fonts css-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+      <!-- Font awesome -->
+      <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet">
+      <link href="../assets/css/vendor/themify-icons.css" rel="stylesheet">
+      <link href="../assets/css/vendor/flag-icon/flag-icon.css" rel="stylesheet">
+      <link href="../assets/css/vendor/icoicon/icoicon.css" rel="stylesheet">
+      <!-- animat css-->
+      <link href="../assets/css/vendor/animate.css" rel="stylesheet">
+      <!-- lightbox-->
+      <link href="../assets/css/vendor/light-box/fancybox.css" rel="stylesheet">
+      <!-- Scrollbar-->
+      <link href="../assets/css/vendor/simplebar.css" rel="stylesheet">
+      <!-- Custom css-->
+      <link href="../assets/css/style.css" id="customstyle" rel="stylesheet">
+    </head>
+  <body>
+      <!-- Loader Start-->
+        <div class="codex-loader">     
+          <div class="linespinner"></div>
+        </div>
+      <!-- Loader End-->
+      <!-- Header Start-->
+      <header class="codex-header"> 
+        <div class="grid grid-cols-12">
+          <div class="col-span-12">
+            <div class="header-contian flex justify-between items-center">
+              <div class="header-left flex items-center">
+                <div class="sidebar-action"><i data-feather="menu"></i></div>
+                <div class="search-bar">
+                  <div class="form-group mb-0">
+                    <div class="input-group">
+                      <input class="form-control" type="text" value="" placeholder="Search Here....."><span class="input-group-text"><i class="fa fa-search"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-right flex items-center">
+                <ul class="nav-iconlist">  
+                  <li><a class="action-toggle action-dark" href="javascript:void(0)"><i class="fa fa-moon-o icon-dark"></i><i class="fa fa-sun-o icon-light" style="display:none;"></i></a></li>
+                  <li>                              <a class="action-toggle" href="javascript:void(0)"><i data-feather="bell"></i>
+                      <div class="noti-count">04</div></a>
+                    <div class="hover-dropdown navnotification-drop">
+                      <div class="drop-header">
+                        <h5>notification<span>05</span></h5>
+                      </div>
+                      <ul data-simplebar>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-primary"><i class="fa fa-check-square-o"></i></div>
+                              <div class="media-body">                          
+                                <h6>order Cheked</h6><span class="text-light">1 hour ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-secondary"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                              <div class="media-body">
+                                <h6>payment received</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                              <div class="media-body">
+                                <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                              <div class="media-body">
+                                <h6>payment received</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                              <div class="media-body">
+                                <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago                  </span>
+                              </div>
+                            </div></a></li>
+                      </ul>
+                      <div class="drop-footer"><a href="#">See All Notification</a></div>
+                    </div>
+                  </li>
+                  <li>              <a class="action-toggle" href="javascript:void(0)"><i data-feather="shopping-cart"></i>
+                      <div class="noti-count">07</div></a>
+                    <div class="hover-dropdown navshop-drop">
+                      <div class="drop-header">
+                        <h5>Shopping<span>7</span></h5>
+                      </div>
+                      <ul data-simplebar>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>teddy bear</h6><span class="text-light">$250</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>iphone</h6><span class="text-light">$140</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Apple Airpod</h6><span class="text-light">$310</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Motors</h6><span class="text-light">$510</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>iphone</h6><span class="text-light">$140</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                      </ul>
+                      <div class="drop-footer"><a href="checkout.html">Checkout All</a></div>
+                    </div>
+                  </li>
+                  <li><a class="action-toggle btn-windowfull" href="javascript:void(0)"><i data-feather="maximize">             </i></a></li>
+                  <li class="nav-profile">              <a href="javascript:void(0)">
+                      <div class="media">
+                        <div class="user-icon"><img class="img-fluid rounded-50" src="../assets/images/avtar/3.jpg" alt="logo"></div>
+                        <div class="media-body">
+                          <h6>Thomas Vactom</h6><span class="text-light">Web designer</span>
+                        </div>
+                      </div></a>
+                    <div class="hover-dropdown navprofile-drop">                
+                      <ul>
+                        <li><a href="profile.html"><i class="ti-user"></i>profile</a></li>
+                        <li><a href="email-inbox.html"><i class="ti-email"></i>inbox</a></li>
+                        <li><a href="user-edit.html"> <i class="ti-settings"></i>setting     </a></li>
+                        <li>                                <a href="login.html"> <i class="fa fa-sign-out"></i>log out</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="customizer-layer"></div>
+      <div class="customizer-action"><i data-feather="settings"></i></div>
+      <div class="theme-cutomizer"> 
+        <div class="customizer-header">
+          <h4>Theme Setting<i data-feather="x"></i></h4>
+        </div>
+        <div class="customizer-body">
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Theme Color</h6>
+            <ul class="customizeoption-list themecolor-list">
+              <li class="color1"></li>
+              <li class="color2"></li>
+              <li class="color3"></li>
+              <li class="color4"></li>
+              <li class="color5"></li>
+              <li class="color6"></li>
+            </ul>
+          </div>
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Sidebar Mode</h6>
+            <ul class="customizeoption-list sidebaroption-list">
+              <li class="sidebarlight-action">light</li>
+              <li class="sidebardark-action">dark</li>
+              <li class="sidebargradient-action">gradient</li>
+            </ul>
+          </div>
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Layout Direction</h6>
+            <ul class="customizeoption-list">
+              <li class="ltr-action">ltr</li>
+              <li class="rtl-action">rtl</li>
+            </ul>
+          </div>
+          <div class="cutomize-group mb-0">
+            <h6 class="customizer-title">Layout mode</h6>
+            <ul class="customizeoption-list">
+              <li class="light-action">light</li>
+              <li class="dark-action">dark  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar start-->
+      <aside class="codex-sidebar">
+        <div class="logo-gridwrap"><a class="codexbrand-logo" href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt="theeme-logo"></a><a class="codex-darklogo" href="index.html"><img class="img-fluid" src="../assets/images/logo/dark-logo.png" alt="theeme-logo"></a>
+          <div class="sidebar-action"><i data-feather="menu"></i></div>
+        </div>
+        <div class="icon-logo"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/icon-logo.png" alt="theeme-logo"></a></div>
+        <div class="codex-menuwrapper">  
+          <ul class="codex-menu custom-scroll" data-simplebar>
+            <li class="cdxmenu-title">
+              <h5>Dashboards</h5>
+            </li>
+            <li class="menu-item"><a href="index.html">
+                <div class="icon-item"> <i data-feather="home"></i></div><span>default</span></a></li>
+            <li class="menu-item"><a href="ecommerce.html">
+                <div class="icon-item"> <i data-feather="airplay"></i></div><span>ecommerce     </span></a></li>
+            <li class="cdxmenu-title">
+              <h5>application</h5>
+            </li>
+            <li class="menu-item"><a href="calendar.html">
+                <div class="icon-item"> <i data-feather="calendar"> </i></div><span>calendar</span></a></li>
+            <li class="menu-item"><a href="chat.html">
+                <div class="icon-item"><i data-feather="message-square"></i></div><span>chat</span></a></li>
+            <li class="menu-item"><a href="todo.html"> 
+                <div class="icon-item"><i data-feather="clock"></i></div><span>todo</span></a></li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="mail"></i></div><span>email</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="email-inbox.html">email inbox</a></li>
+                <li><a href="email-read.html">email read </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"> <i data-feather="user"></i></div><span>Users  </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">
+                <li><a href="profile.html">profile</a></li>
+                <li><a href="user-list.html">user list</a></li>
+                <li><a href="user-edit.html">user edit</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="shopping-bag"> </i></div><span>ecommerce </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">
+                <li><a href="product.html">product</a></li>
+                <li><a href="product-detail.html">product detail</a></li>
+                <li><a href="add-product.html">add product</a></li>
+                <li><a href="product-list.html">product list</a></li>
+                <li><a href="order-history.html">order history</a></li>
+                <li><a href="cart.html">cart</a></li>
+                <li><a href="wishlist.html">wishlist</a></li>
+                <li><a href="checkout.html">checkout</a></li>
+                <li><a href="pricing.html">pricing</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="invoice.html">
+                <div class="icon-item"><i data-feather="file-minus"> </i></div><span>invoice</span></a></li>
+            <li class="cdxmenu-title">
+              <h5>pages          </h5>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="command"></i></div><span>blog</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="blog.html">blog list</a></li>
+                <li><a href="blog-detail.html">blog-detail</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="key"></i></div><span>Authentication</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="login.html">login         </a></li>
+                <li><a href="register.html">register</a></li>
+                <li><a href="forgot-password.html">forgot password</a></li>
+                <li><a href="new-password.html">reset password</a></li>
+                <li><a href="verify-email.html">verify email</a></li>
+                <li><a href="verify-pin.html">verify pin      </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="error-page.html">
+                <div class="icon-item"><i data-feather="alert-triangle"></i></div><span>error 404          </span></a></li>
+            <li class="menu-item"><a href="coming-soon.html"> 
+                <div class="icon-item"><i data-feather="watch"></i></div><span>coming soon         </span></a></li>
+            <li class="menu-item"><a href="element-apexchart.html"> 
+                <div class="icon-item"><i data-feather="pie-chart"></i></div><span>apex chart     </span></a></li>
+            <li class="menu-item"><a href="contacts.html"> 
+                <div class="icon-item"><i data-feather="phone-call"></i></div><span>contacts     </span></a></li>
+            <li class="menu-item"><a href="gallery.html"> 
+                <div class="icon-item"><i data-feather="image"></i></div><span>gallery</span></a></li>
+            <li class="cdxmenu-title">
+              <h5>Components      </h5>
+            </li>
+            <li class="menu-item"><a href="form.html">
+                <div class="icon-item"> <i data-feather="book"></i></div><span>form         </span></a></li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"> <i data-feather="database"></i></div><span>Table  </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">        
+                <li><a href="data-table.html">Datatable</a></li>
+                <li><a href="data-table-advance.html">Datatable Advance </a></li>
+                <li><a href="data-table-ajax.html">Datatable Ajax</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="layout"></i></div><span>Elements</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="element-typography.html">typography</a></li>
+                <li><a href="element-color.html">color</a></li>
+                <li><a href="element-themeclass.html">helper class</a></li>
+                <li><a href="element-alert.html">Alert </a></li>
+                <li><a href="element-avtar.html">Avtar</a></li>
+                <li><a href="element-button.html">Button </a></li>
+                <li><a href="element-grid.html">grid</a></li>
+                <li><a href="element-dropdown.html">Dropdown                  </a></li>
+                <li><a href="element-accordion.html">Accordion</a></li>
+                <li><a href="element-badge.html">badge</a></li>
+                <li><a href="element-modal.html">modal</a></li>
+                <li><a href="element-tab.html">tabs         </a></li>
+                <li><a href="element-card.html">card         </a></li>
+                <li><a href="element-rangeslider.html">range slider</a></li>
+                <li><a href="element-scrollbar.html">scrollbar</a></li>
+                <li><a href="element-progressbar.html">progress bar</a></li>
+                <li><a href="element-pagination.html">pagination</a></li>
+                <li><a href="element-lightbox.html">light box</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="slack"></i></div><span>Icons</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="element-fontaw-icon.html">Font Awesome </a></li>
+                <li><a href="element-themify-icon.html">Themify  </a></li>
+                <li><a href="element-feather-icon.html">Feather  </a></li>
+                <li><a href="element-pe7-icon.html">Pe7</a></li>
+                <li><a href="element-icoicon.html">icoicon</a></li>
+                <li><a href="element-flag-icon.html">flag     </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="faq.html"> 
+                <div class="icon-item"><i data-feather="help-circle"></i></div><span>faq     </span></a></li>
+          </ul>
+        </div>
+      </aside>
+      <!-- sidebar end-->
+      <!-- Header End-->
+    <div class="themebody-wrap">
+      <!-- breadcrumb start-->
+        <div class="codex-breadcrumb">
+          <div class="custom-container">
+            <div class="breadcrumb-contain">
+              <div class="left-breadcrumb">
+                <ul class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="index.html"> 
+                      <h1>Dashboard</h1></a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">element</a></li>
+                  <li class="breadcrumb-item active"><a href="javascript:void(0);">themeclass</a></li>
+                </ul>
+              </div>
+              <div class="right-breadcrumb">
+                <ul>
+                  <li>
+                    <div class="bread-wrap"><i class="fa fa-clock-o"></i></div><span class="liveTime"></span>
+                  </li>
+                  <li>
+                    <div class="bread-wrap"><i class="fa fa-calendar"></i></div><span class="getDate"> </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- breadcrumb end-->
+      <!-- theme body start-->
+      <div class="theme-body">      
+        <div class="grid grid-cols-12 cdx-gap">
+          <div class="col-span-12 sm:col-span-6">
+            <div class="card">
+              <div class="card-header">
+                <h4>background color</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.bg-primary</li>
+                  <li>.bg-secondary</li>
+                  <li>.bg-success</li>
+                  <li>.bg-info</li>
+                  <li>.bg-warning</li>
+                  <li>.bg-info</li>
+                  <li>.bg-danger</li>
+                  <li>.bg-light</li>
+                  <li>.bg-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>text color</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.text-primary</li>
+                  <li>.text-secondary</li>
+                  <li>.text-success</li>
+                  <li>.text-info</li>
+                  <li>.text-warning</li>
+                  <li>.text-info</li>
+                  <li>.text-danger</li>
+                  <li>.text-light</li>
+                  <li>.text-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>button</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.btn.btn-primary</li>
+                  <li>.btn.btn-secondary</li>
+                  <li>.btn.btn-success</li>
+                  <li>.btn.btn-info</li>
+                  <li>.btn.btn-warning</li>
+                  <li>.btn.btn-info</li>
+                  <li>.btn.btn-danger</li>
+                  <li>.btn.btn-light</li>
+                  <li>.btn.btn-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>button outline</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.btn.btn-outline-primary</li>
+                  <li>.btn.btn-outline-secondary</li>
+                  <li>.btn.btn-outline-success</li>
+                  <li>.btn.btn-outline-info</li>
+                  <li>.btn.btn-outline-warning</li>
+                  <li>.btn.btn-outline-info</li>
+                  <li>.btn.btn-outline-danger</li>
+                  <li>.btn.btn-outline-light</li>
+                  <li>.btn.btn-outline-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>alert</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.alert.alert-primary</li>
+                  <li>.alert.alert-secondary</li>
+                  <li>.alert.alert-success</li>
+                  <li>.alert.alert-info</li>
+                  <li>.alert.alert-warning</li>
+                  <li>.alert.alert-info</li>
+                  <li>.alert.alert-danger</li>
+                  <li>.alert.alert-light</li>
+                  <li>.alert.alert-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>alert outline</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.alert.alert-outline-primary</li>
+                  <li>.alert.alert-outline-secondary</li>
+                  <li>.alert.alert-outline-success</li>
+                  <li>.alert.alert-outline-info</li>
+                  <li>.alert.alert-outline-warning</li>
+                  <li>.alert.alert-outline-info</li>
+                  <li>.alert.alert-outline-danger</li>
+                  <li>.alert.alert-outline-light</li>
+                  <li>.alert.alert-outline-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>badge</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.badge.badge-primary</li>
+                  <li>.badge.badge-secondary</li>
+                  <li>.badge.badge-success</li>
+                  <li>.badge.badge-info</li>
+                  <li>.badge.badge-warning</li>
+                  <li>.badge.badge-info</li>
+                  <li>.badge.badge-danger</li>
+                  <li>.badge.badge-light</li>
+                  <li>.badge.badge-dark</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>badge rounded</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.badge.badge-primary.rounded-pill</li>
+                  <li>.badge.badge-secondary.rounded-pill</li>
+                  <li>.badge.badge-success.rounded-pill</li>
+                  <li>.badge.badge-info.rounded-pill</li>
+                  <li>.badge.badge-warning.rounded-pill</li>
+                  <li>.badge.badge-info.rounded-pill</li>
+                  <li>.badge.badge-danger.rounded-pill</li>
+                  <li>.badge.badge-light.rounded-pill</li>
+                  <li>.badge.badge-dark.rounded-pill</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin left</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.ml-5</li>
+                  <li>.ml-10</li>
+                  <li>.ml-15</li>
+                  <li>.ml-20</li>
+                  <li>.ml-25</li>
+                  <li>.ml-30</li>
+                  <li>.ml-35</li>
+                  <li>.ml-40</li>
+                  <li>.ml-45</li>
+                  <li>.ml-50</li>
+                  <li>.ml-55</li>
+                  <li>.ml-60</li>
+                  <li>.ml-65</li>
+                  <li>.ml-70</li>
+                  <li>.ml-75</li>
+                  <li>.ml-80</li>
+                  <li>.ml-85</li>
+                  <li>.ml-90</li>
+                  <li>.ml-95</li>
+                  <li>.ml-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin right</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.mr-5</li>
+                  <li>.mr-10</li>
+                  <li>.mr-15</li>
+                  <li>.mr-20</li>
+                  <li>.mr-25</li>
+                  <li>.mr-30</li>
+                  <li>.mr-35</li>
+                  <li>.mr-40</li>
+                  <li>.mr-45</li>
+                  <li>.mr-50</li>
+                  <li>.mr-55</li>
+                  <li>.mr-60</li>
+                  <li>.mr-65</li>
+                  <li>.mr-70</li>
+                  <li>.mr-75</li>
+                  <li>.mr-80</li>
+                  <li>.mr-85</li>
+                  <li>.mr-90</li>
+                  <li>.mr-95</li>
+                  <li>.mr-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin top</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.mt-5</li>
+                  <li>.mt-10</li>
+                  <li>.mt-15</li>
+                  <li>.mt-20</li>
+                  <li>.mt-25</li>
+                  <li>.mt-30</li>
+                  <li>.mt-35</li>
+                  <li>.mt-40</li>
+                  <li>.mt-45</li>
+                  <li>.mt-50</li>
+                  <li>.mt-55</li>
+                  <li>.mt-60</li>
+                  <li>.mt-65</li>
+                  <li>.mt-70</li>
+                  <li>.mt-75</li>
+                  <li>.mt-80</li>
+                  <li>.mt-85</li>
+                  <li>.mt-90</li>
+                  <li>.mt-95</li>
+                  <li>.mt-100  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin bottom</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.mb-5</li>
+                  <li>.mb-10</li>
+                  <li>.mb-15</li>
+                  <li>.mb-20</li>
+                  <li>.mb-25</li>
+                  <li>.mb-30</li>
+                  <li>.mb-35</li>
+                  <li>.mb-40</li>
+                  <li>.mb-45</li>
+                  <li>.mb-50</li>
+                  <li>.mb-55</li>
+                  <li>.mb-60</li>
+                  <li>.mb-65</li>
+                  <li>.mb-70</li>
+                  <li>.mb-75</li>
+                  <li>.mb-80</li>
+                  <li>.mb-85</li>
+                  <li>.mb-90</li>
+                  <li>.mb-95</li>
+                  <li>.mb-100  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin verticale</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.my-5</li>
+                  <li>.my-10</li>
+                  <li>.my-15</li>
+                  <li>.my-20</li>
+                  <li>.my-25</li>
+                  <li>.my-30</li>
+                  <li>.my-35</li>
+                  <li>.my-40</li>
+                  <li>.my-45</li>
+                  <li>.my-50</li>
+                  <li>.my-55</li>
+                  <li>.my-60</li>
+                  <li>.my-65</li>
+                  <li>.my-70</li>
+                  <li>.my-75</li>
+                  <li>.my-80</li>
+                  <li>.my-85</li>
+                  <li>.my-90</li>
+                  <li>.my-95</li>
+                  <li>.my-100 </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>margrin horizontal</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.mx-5</li>
+                  <li>.mx-10</li>
+                  <li>.mx-15</li>
+                  <li>.mx-20</li>
+                  <li>.mx-25</li>
+                  <li>.mx-30</li>
+                  <li>.mx-35</li>
+                  <li>.mx-40</li>
+                  <li>.mx-45</li>
+                  <li>.mx-50</li>
+                  <li>.mx-55</li>
+                  <li>.mx-60</li>
+                  <li>.mx-65</li>
+                  <li>.mx-70</li>
+                  <li>.mx-75</li>
+                  <li>.mx-80</li>
+                  <li>.mx-85</li>
+                  <li>.mx-90</li>
+                  <li>.mx-95</li>
+                  <li>.mx-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding left</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.pl-5</li>
+                  <li>.pl-10</li>
+                  <li>.pl-15</li>
+                  <li>.pl-20</li>
+                  <li>.pl-25</li>
+                  <li>.pl-30</li>
+                  <li>.pl-35</li>
+                  <li>.pl-40</li>
+                  <li>.pl-45</li>
+                  <li>.pl-50</li>
+                  <li>.pl-55</li>
+                  <li>.pl-60</li>
+                  <li>.pl-65</li>
+                  <li>.pl-70</li>
+                  <li>.pl-75</li>
+                  <li>.pl-80</li>
+                  <li>.pl-85</li>
+                  <li>.pl-90</li>
+                  <li>.pl-95</li>
+                  <li>.pl-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding right</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.pr-5</li>
+                  <li>.pr-10</li>
+                  <li>.pr-15</li>
+                  <li>.pr-20</li>
+                  <li>.pr-25</li>
+                  <li>.pr-30</li>
+                  <li>.pr-35</li>
+                  <li>.pr-40</li>
+                  <li>.pr-45</li>
+                  <li>.pr-50</li>
+                  <li>.pr-55</li>
+                  <li>.pr-60</li>
+                  <li>.pr-65</li>
+                  <li>.pr-70</li>
+                  <li>.pr-75</li>
+                  <li>.pr-80</li>
+                  <li>.pr-85</li>
+                  <li>.pr-90</li>
+                  <li>.pr-95</li>
+                  <li>.pr-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding top</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.pt-5</li>
+                  <li>.pt-10</li>
+                  <li>.pt-15</li>
+                  <li>.pt-20</li>
+                  <li>.pt-25</li>
+                  <li>.pt-30</li>
+                  <li>.pt-35</li>
+                  <li>.pt-40</li>
+                  <li>.pt-45</li>
+                  <li>.pt-50</li>
+                  <li>.pt-55</li>
+                  <li>.pt-60</li>
+                  <li>.pt-65</li>
+                  <li>.pt-70</li>
+                  <li>.pt-75</li>
+                  <li>.pt-80</li>
+                  <li>.pt-85</li>
+                  <li>.pt-90</li>
+                  <li>.pt-95</li>
+                  <li>.pt-100  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding bottom</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.pb-5</li>
+                  <li>.pb-10</li>
+                  <li>.pb-15</li>
+                  <li>.pb-20</li>
+                  <li>.pb-25</li>
+                  <li>.pb-30</li>
+                  <li>.pb-35</li>
+                  <li>.pb-40</li>
+                  <li>.pb-45</li>
+                  <li>.pb-50</li>
+                  <li>.pb-55</li>
+                  <li>.pb-60</li>
+                  <li>.pb-65</li>
+                  <li>.pb-70</li>
+                  <li>.pb-75</li>
+                  <li>.pb-80</li>
+                  <li>.pb-85</li>
+                  <li>.pb-90</li>
+                  <li>.pb-95</li>
+                  <li>.pb-100  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding verticale</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.py-5</li>
+                  <li>.py-10</li>
+                  <li>.py-15</li>
+                  <li>.py-20</li>
+                  <li>.py-25</li>
+                  <li>.py-30</li>
+                  <li>.py-35</li>
+                  <li>.py-40</li>
+                  <li>.py-45</li>
+                  <li>.py-50</li>
+                  <li>.py-55</li>
+                  <li>.py-60</li>
+                  <li>.py-65</li>
+                  <li>.py-70</li>
+                  <li>.py-75</li>
+                  <li>.py-80</li>
+                  <li>.py-85</li>
+                  <li>.py-90</li>
+                  <li>.py-95</li>
+                  <li>.py-100 </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 sm:col-span-6"> 
+            <div class="card">
+              <div class="card-header"> 
+                <h4>padding horizontal</h4>
+              </div>
+              <div class="card-body">
+                <ul class="cdxclass-exa">
+                  <li>.px-5</li>
+                  <li>.px-10</li>
+                  <li>.px-15</li>
+                  <li>.px-20</li>
+                  <li>.px-25</li>
+                  <li>.px-30</li>
+                  <li>.px-35</li>
+                  <li>.px-40</li>
+                  <li>.px-45</li>
+                  <li>.px-50</li>
+                  <li>.px-55</li>
+                  <li>.px-60</li>
+                  <li>.px-65</li>
+                  <li>.px-70</li>
+                  <li>.px-75</li>
+                  <li>.px-80</li>
+                  <li>.px-85</li>
+                  <li>.px-90</li>
+                  <li>.px-95</li>
+                  <li>.px-100</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- theme body end-->
+    </div>
+    <!-- footer start -->
+      <footer class="codex-footer">
+        <p>Copyright 2022-23 © dmeki All rights reserved.</p>
+      </footer>
+    <!-- footer end-->
+      <!-- main jquery-->
+      <script src="../assets/js/jquery-3.6.0.js"></script>
+      <!-- Feather iocns js-->
+      <script src="../assets/js/icons/feather-icon/feather.js"></script>
+      <!-- customizer-->
+      <script src="../assets/js/customizer.js"></script>
+      <!-- Scrollbar-->
+      <script src="../assets/js/vendors/simplebar.js"></script>
+      <!-- light box-->
+      <script src="../assets/js/vendors/light-box/fancybox.umd.js"></script>
+      <!-- Custom script-->
+      <script src="../assets/js/custom-script.js"></script>
+  </body>
+</html>

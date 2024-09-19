@@ -1,0 +1,87 @@
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("input element")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('Input Element','form')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-md-6
+              .card
+                .card-header
+                  h4 Basic Input
+                .card-body
+                  form(action='#')
+                    .form-group
+                      label.form-label Simple Input
+                      input.form-control(type='text' placeholder="")
+                    .form-group
+                      label.form-label Placeholder
+                      input.form-control(type='text' placeholder="Your Placeholder Title")
+                    .form-group
+                      label.form-label password
+                      input.form-control(type='password' placeholder="Password input")
+                    .form-group
+                      label.form-label number
+                      input.form-control(type='number' placeholder="number")
+                    .form-group
+                      label.form-label telephone
+                      input.form-control(type='tel' value="+91 99555 99555" placeholder="+91 99555 99555")
+                    .form-group
+                      label.form-label url
+                      input.form-control(type='url' value="https://example.com/" placeholder="https://example.com/")
+                    .form-group
+                      label.form-label Date and time
+                      input.form-control(type='datetime-local' value="2023-03-13 18:45:00")
+            .col-md-6  
+              .card           
+                .card-header
+                  h4 Basic Input
+                .card-body
+                  form(action='#')
+                    .form-group
+                      label.form-label Date
+                      input.form-control(type='date' value="2023-03-13")
+                    .form-group
+                      label.form-label time
+                      input.form-control(type='time' value="18:45:00")
+                    .form-group
+                      label.form-label week
+                      input.form-control(type='week' value="2023-W08")
+                    .form-group
+                      label.form-label Month
+                      input.form-control(type='month' value="2023-05")
+                    .form-group
+                      label.form-label color
+                      input.form-control-color(type='color' value="#0b5ed7")
+                    .form-group
+                      label.form-label Maximum Length
+                      input.form-control(type='text' maxlength="8")
+                    .form-group
+                      label.form-label Textarea
+                      textarea.form-control(rows="4" cols="5" placeholder="Default textarea")                    
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile   

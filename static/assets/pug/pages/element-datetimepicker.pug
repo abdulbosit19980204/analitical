@@ -1,0 +1,48 @@
+-var datetimepicker = true ;
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("datepicker")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('datepicker','form')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 default
+                .card-body
+                  .input-group
+                    input.form-control(type="text" id="datetimepicker" placeholder="default datetimepicker")
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Only TimePicker
+                .card-body
+                  .input-group
+                    input.form-control(type="text" id="timePicker" placeholder="timePicker")         
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

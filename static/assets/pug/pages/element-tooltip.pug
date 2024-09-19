@@ -1,0 +1,90 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Tooltip")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('tooltip','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip primary
+                .card-body
+                  a.btn.btn-primary( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip primary
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip secondary
+                .card-body
+                  a.btn.btn-secondary( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip secondary
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip success
+                .card-body
+                  a.btn.btn-success( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip success           
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip info
+                .card-body
+                  a.btn.btn-info( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip info
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip warning
+                .card-body
+                  a.btn.btn-warning( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip warning
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip danger
+                .card-body
+                  a.btn.btn-danger( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip danger          
+          .row         
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip top
+                .card-body
+                  a.btn.btn-primary( data-bs-toggle='tooltip' data-bs-placement='top' title='Tooltip on top') Tooltip top
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip left
+                .card-body
+                  a.btn.btn-secondary( data-bs-toggle='tooltip' data-bs-placement='left' title='Tooltip on top') Tooltip left
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip right
+                .card-body
+                  a.btn.btn-success( data-bs-toggle='tooltip' data-bs-placement='right' title='Tooltip on top') Tooltip right           
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 tooltip bottom
+                .card-body
+                  a.btn.btn-info( data-bs-toggle='tooltip' data-bs-placement='bottom' title='Tooltip on top') Tooltip bottom
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

@@ -1,0 +1,243 @@
+/*******************
+  14 DROPDOWN START
+********************/
+
+button{
+  &.icon-Btn{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      width:35px;
+      height:35px;
+      border-radius: 50% !important;
+      i{
+          font-size: 16px;
+      }
+  }
+}
+
+/* theme drop down */
+.action-menu{
+  position: relative;
+  .action-toggle{
+      display: inline-block;
+      background:transparent;
+      box-shadow:none;
+      border:none;
+      i{
+          font-size:22px;
+          color: $font-light;
+      }
+      &:hover{
+        color: $theme-primary;
+      }
+  }
+  .action-dropdown{
+      position: absolute;
+      inset-inline-end:0;       
+      background-color: $white;           
+      box-shadow: 0 0 20px 0px rgba($black,0.10);     
+      border-radius: 5px;             
+      z-index: 1;        
+      min-width: 120px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(5px);
+      transition: all 0.5s ease;
+      &.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      li{
+          width: 100%;
+          display: block;         
+          text-transform: capitalize;      
+          padding: 12px 20px;          
+          a,button,.btn{
+              color: $font-light;             
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              padding: 0;
+              i{
+                  font-size: 16px;
+                  margin-inline-end: 10px;
+              }
+              svg{
+                  width: auto;
+                  height: 18px;
+                  margin-inline-end: 10px;
+              }
+              &:focus,
+              &:active{
+                  box-shadow:none;
+                  outline:none;
+              }
+          }          
+          &:nth-child(n+2){             
+              border-top: 1px solid $theme-border;
+          }
+      }
+      &.open{
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+      }
+  }
+}
+
+.highlight{
+background-color:#f5f2f0;
+border-radius: 3px;
+padding: 0px 3px;
+color: $theme-primary;
+}
+.highlight a{
+color: $theme-primary;
+text-decoration: underline;
+}
+.dropdown{
+position: relative;
+.dropdown-menu{
+  position: absolute;
+  min-width: 10rem;
+  top: 100%;
+  left: 0;
+  border: 1px solid $theme-border;
+  background-color: $white;
+  opacity: 0;
+  visibility: hidden;   
+  transition: all 0.2s ease;
+  z-index: 6;
+  li{
+    text-transform: capitalize;
+    a{
+      padding: 10px 15px;
+      color: $font-light;
+      display: block;
+      line-height: 1;
+    }
+    +li{
+      border-top: 1px solid $theme-border;
+    }
+  }   
+}
+&.show{
+  .dropdown-menu{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+&.on-hover{
+  &:hover{
+    .dropdown-menu{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+&.top{
+  .dropdown-menu{
+    top: unset;
+    bottom: 100%;
+  }
+}
+&.left{
+  .dropdown-menu{
+    right: 100%;
+    left: unset;
+    top: 0;
+  }
+}
+&.right{
+  .dropdown-menu{
+    left:100%;
+    top:0;
+  }
+} 
+&.dropdown-primary{
+  .dropdown-menu{     
+    background-color: $theme-primary;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+&.dropdown-secondary{
+  .dropdown-menu{     
+    background-color: $theme-secondary;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+&.dropdown-success{
+  .dropdown-menu{     
+    background-color: $theme-success;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+&.dropdown-info{
+  .dropdown-menu{     
+    background-color: $theme-info;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+&.dropdown-warning{
+  .dropdown-menu{     
+    background-color: $theme-warning;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+&.dropdown-danger{
+  .dropdown-menu{     
+    background-color: $theme-danger;
+    border: none;
+    li{
+      +li{
+        border-color: rgba($white,0.2);
+      }
+      a{
+        color: $white;
+      }
+    }
+  }
+}
+}

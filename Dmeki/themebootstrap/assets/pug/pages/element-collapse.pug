@@ -1,0 +1,115 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Collapse")
+  body
+
+    +header
+
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('collapse','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-xl-6            
+              .card.buttons
+                .card-header
+                  h4 Collapse
+                .card-body
+                  p.card-title-desc You can use a link and button with the href attribute (and a role="button"). In both cases, the  
+                    code
+                      | data-bs-toggle="collapse"
+                    |  is required. 
+                    br
+                    br
+                  div
+                    a.btn.btn-primary(data-bs-toggle='collapse' href='#collapse1' role='button' aria-expanded='false' aria-controls='collapse1')
+                      | With Anchor
+                    button.btn.btn-primary.ml-15(type='button' data-bs-toggle='collapse' data-bs-target='#collapse1' aria-expanded='false' aria-controls='collapse1')
+                      | With Button
+                  #collapse1.collapse.mt-25
+                    .card.card-body.mb-0
+                      | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            .col-xl-6            
+              .card.buttons
+                .card-header
+                  h4 Collapse with Multiple targets 
+                .card-body
+                  p.card-title-desc 
+                    |  A  
+                    code
+                      | button
+                    | &nbsp;or&nbsp;
+                    code
+                      | a
+                    |  &nbsp;can show and hide multiple elements by referencing them with a selector in its href or data-bs-target attribute. Multiple&nbsp;
+                    code
+                      | button
+                    | &nbsp;or &nbsp;
+                    code
+                      | a
+                    | &nbsp;can show and hide an element if they each reference it with their href or data-bs-target attribute
+                  p 
+                    a.btn.btn-primary(data-bs-toggle='collapse' href='#mutiCollapse-1' role='button' aria-expanded='false' aria-controls='mutiCollapse-1') Toggle first element
+                    button.btn.btn-primary(type='button' data-bs-toggle='collapse' data-bs-target='#multiCollapse-2' aria-expanded='false' aria-controls='multiCollapse-2') Toggle second element
+                    button.btn.btn-primary(type='button' data-bs-toggle='collapse' data-bs-target='.multi-collapse' aria-expanded='false' aria-controls='mutiCollapse-1 multiCollapse-2') Toggle both elements
+                  .row
+                    .col
+                      #mutiCollapse-1.collapse.multi-collapse.mt-25
+                        .card.card-body.mb-0
+                          | Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default.
+                    .col
+                      #multiCollapse-2.collapse.multi-collapse.mt-25
+                        .card.card-body.mb-0
+                          | Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default.
+            .col-xl-6            
+              .card.buttons
+                .card-header
+                  h4 Collapse with Icon
+                .card-body
+                  p.card-title-desc Here is the example of collapse in which the icon is wrapped within the button collapse toggle.                  
+                  p 
+                    a.btn.btn-primary(data-bs-toggle='collapse' href='#iconCollapse-1' role='button' aria-expanded='false' aria-controls='iconCollapse-1') 
+                      i.fa.fa-address-book
+                    button.btn.btn-primary(type='button' data-bs-toggle='collapse' data-bs-target='#iconCollapse-2' aria-expanded='false' aria-controls='iconCollapse-2')
+                      i.fa.fa-bars                    
+                  .row
+                    .col-12
+                      #iconCollapse-1.collapse.mt-25
+                        .card.card-body.mb-0
+                          | Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default.
+                    .col-12
+                      #iconCollapse-2.collapse.mt-25
+                        .card.card-body.mb-0
+                          | Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default.
+            .col-xl-6            
+              .card.buttons
+                .card-header
+                  h4 Collapse with Multiple targets Horizontal
+                .card-body
+                  p
+                    button.btn.btn-primary(type='button' data-bs-toggle='collapse' data-bs-target='#collapseWidthExample' aria-expanded='false' aria-controls='collapseWidthExample')
+                      | Toggle width collapse
+                  div
+                    #collapseWidthExample.collapse.collapse-horizontal
+                      .card.card-body.mb-0(style='width: 300px;')
+                        | This is some placeholder content for a horizontal collapse. It&apos;s hidden by default and shown when triggered.
+
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

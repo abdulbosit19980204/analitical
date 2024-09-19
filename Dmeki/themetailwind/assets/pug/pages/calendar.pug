@@ -1,0 +1,53 @@
+-var calendar = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Calendar")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('calendar','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.codex-calendar       
+          .grid.grid-cols-12
+            .col-span-12
+              .card
+                .card-body
+                  .grid.grid-cols-12.cdx-gap
+                    .col-span-12(class="2xl:col-span-3")
+                      ul#codex-events-list.events-list
+                        li.fc-event.bg-primary
+                          i.fa.fa-birthday-cake
+                          | Birthday Party
+                        li.fc-event.bg-secondary
+                          i.fa.fa-handshake-o
+                          | Metting
+                        li.fc-event.bg-success
+                          i.fa.fa-graduation-cap
+                          | Holidays
+                        li.fc-event.bg-warning
+                          i.fa.fa-bus
+                          | Travel
+                        li.fc-event.bg-info
+                          i.fa.fa-building-o
+                          | Company
+                        li.hidden
+                          p
+                            input#drop-remove(type='checkbox')
+                            label(for='drop-remove') remove after drop
+                    .col-span-12(class="2xl:col-span-9")
+                      #codex-calendar
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+
+    +footerfile

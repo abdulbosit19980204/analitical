@@ -1,0 +1,213 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+
+  +headerfile("Blog detail")
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('blog detail','pages')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row
+            .col-md-12
+              .card.blogdetail-wrrapper
+                .imgwrapper
+                  img.img-fluid(src="../assets/images/pages/blog/detail-main.jpg" alt="")
+                  ul.blog-iconlist
+                    li
+                      a(href="javscript:void(0)")
+                        i(data-feather="heart")
+                    li
+                      a(href="javscript:void(0)")
+                        i(data-feather="thumbs-up")
+                    li
+                      a(href="javscript:void(0)")
+                        i(data-feather="share-2")
+                .detailwrapper
+                  h4 mark wangar adipisicing elit, sed do eiusmodtempor
+                  ul.blogsoc-list
+                    li
+                      a(href="javascript:void(0)")
+                        i(data-feather="user")
+                        | admin
+                    li
+                      a(href="javascript:void(0)")
+                        i(data-feather="message-circle")
+                        | 290 comment
+                    li
+                      a(href="javascript:void(0)")
+                        i(data-feather="calendar")
+                        | 27-03-2022
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat. 
+            .col-md-12
+              .card
+                .card-header
+                  h4
+                    i.fa.fa-commenting.mr-10
+                    | comments
+                .card-body
+                  ul.blgcomment-list
+                    li
+                      .comment-item
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                          .media-body
+                            a(href="profile.html")
+                              h5 
+                                | leena vactom
+                                span.comment-time                    
+                                  i.fa.fa-calendar
+                                  | 24-march-2022
+                            ul.blogsoc-list                            
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | 200 likes
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="message-circle")
+                                  | 290 comment
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            a.btn.btn-outline-primary(href="javascript:void(0)") 
+                              i.fa.fa-reply
+                              | reply
+                    li.reply-comment
+                      .comment-item
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                          .media-body
+                            a(href="profile.html")
+                              h5 
+                                | mark wongar     
+                                span.comment-time                    
+                                  i.fa.fa-calendar
+                                  | 24-march-2022
+                            ul.blogsoc-list                            
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | 200 likes
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="message-circle")
+                                  | 290 comment
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            a.btn.btn-outline-primary(href="javascript:void(0)") 
+                              i.fa.fa-reply
+                              | reply
+                    li
+                      .comment-item
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/3.jpg" alt="")
+                          .media-body
+                            a(href="profile.html")
+                              h5 
+                                | eena walden     
+                                span.comment-time                    
+                                  i.fa.fa-calendar
+                                  | 24-march-2022
+                            ul.blogsoc-list                            
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | 200 likes
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="message-circle")
+                                  | 290 comment
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            a.btn.btn-outline-primary(href="javascript:void(0)") 
+                              i.fa.fa-reply
+                              | reply
+                    li
+                      .comment-item
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/4.jpg" alt="")
+                          .media-body
+                            a(href="profile.html")
+                              h5 
+                                | Thomas wongar     
+                                span.comment-time                    
+                                  i.fa.fa-calendar
+                                  | 24-march-2022
+                            ul.blogsoc-list                            
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | 200 likes
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="message-circle")
+                                  | 290 comment
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            a.btn.btn-outline-primary(href="javascript:void(0)") 
+                              i.fa.fa-reply
+                              | reply
+                    li.reply-comment
+                      .comment-item
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/5.jpg" alt="")
+                          .media-body
+                            a(href="profile.html")
+                              h5 
+                                | mark wongar     
+                                span.comment-time                    
+                                  i.fa.fa-calendar
+                                  | 24-march-2022
+                            ul.blogsoc-list                            
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | 200 likes
+                              li
+                                a(href="javascript:void(0)")
+                                  i(data-feather="message-circle")
+                                  | 290 comment
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            a.btn.btn-outline-primary(href="javascript:void(0)") 
+                              i.fa.fa-reply
+                              | reply
+            .col-md-12
+              .card.addblg-comment
+                .card-header
+                  h4 
+                    i.fa.fa-plus-square.mr-10
+                    |Add comment
+                .card-body
+                  form
+                    .form-group
+                      .small-group
+                        div
+                          .input-group
+                            .input-group-text
+                              i.fa.fa-user
+                            input.form-control(type="text" placeholder="Full Name")      
+                        div
+                          .input-group
+                            .input-group-text
+                              i.fa.fa-envelope
+                            input.form-control(type="Email" placeholder="Email")
+                    .form-group
+                      textarea.form-control(rows="5" placeholder="write acomment")
+                    .form-group.mb-0
+                      a.btn.btn-primary Add Comment
+    
+    // footer start
+    +footer
+    // footer end 
+
+    // back to top start //
+    +taptop
+    // back to top end //
+  
+    +footerfile        

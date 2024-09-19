@@ -1,0 +1,330 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Button")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('button','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container.element-buttons
+          .row 
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Default Button
+                .card-body                 
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code .btn btn-*
+                    |&nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-primary Primary
+                  button.btn.btn-secondary Secondary
+                  button.btn.btn-success Success
+                  button.btn.btn-info Info
+                  button.btn.btn-warning Warning
+                  button.btn.btn-danger Danger
+                  button.btn.btn-light Light
+                  button.btn.btn-dark Dark          
+
+            .col-xxl-6
+              .card
+                .card-header 
+                  h4 Default Small Button
+                .card-body   
+                  p.card-title-desc.mb-8 Add 
+                    code .btn.btn-sm.btn-outline-*
+                    |&nbsp; for additional sizes.            
+                  button.btn.btn-sm.btn-primary Primary
+                  button.btn.btn-sm.btn-secondary Secondary
+                  button.btn.btn-sm.btn-success Success
+                  button.btn.btn-sm.btn-info Info
+                  button.btn.btn-sm.btn-warning Warning
+                  button.btn.btn-sm.btn-danger Danger
+                  button.btn.btn-sm.btn-light Light
+                  button.btn.btn-sm.btn-dark Dark
+           
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Outline Button
+                .card-body    
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code .btn.btn-outline-*
+                    |&nbsp;classes quickly create a styled button.                         
+                  button.btn.btn-outline-primary(type='button') Primary
+                  button.btn.btn-outline-secondary(type='button') Secondary
+                  button.btn.btn-outline-success(type='button') Success
+                  button.btn.btn-outline-danger(type='button') Danger
+                  button.btn.btn-outline-warning(type='button') Warning
+                  button.btn.btn-outline-info(type='button') Info
+                  button.btn.btn-outline-light(type='button') Light
+                  button.btn.btn-outline-dark(type='button') Dark   
+            
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Outline Small Button
+                .card-body
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code .btn.btn-sm.btn-outline-*
+                    |&nbsp;classes quickly create a styled button.                         
+                  button.btn.btn-sm.btn-outline-primary(type='button') Primary
+                  button.btn.btn-sm.btn-outline-secondary(type='button') Secondary
+                  button.btn.btn-sm.btn-outline-success(type='button') Success
+                  button.btn.btn-sm.btn-outline-danger(type='button') Danger
+                  button.btn.btn-sm.btn-outline-warning(type='button') Warning
+                  button.btn.btn-sm.btn-outline-info(type='button') Info
+                  button.btn.btn-sm.btn-outline-light(type='button') Light
+                  button.btn.btn-sm.btn-outline-dark(type='button') Dark    
+           
+            .col-xxl-6
+              .card
+                .card-header 
+                  h4 Buttons Group
+                .card-body.overflow-hidden
+                  p.card-title-desc.mb-8 Add button parent div 
+                    code .btn-group
+                    |&nbsp;classes quickly create a styled button.
+                  .btn-group 
+                    button.btn.btn-primary Primary
+                    button.btn.btn-outline-secondary Secondary
+                    button.btn.btn-success Success
+                    button.btn.btn-outline-info Info
+                    button.btn.btn-warning(type='button') Warning
+                    button.btn.btn-outline-info(type='button') Info
+                    button.btn.btn-light(type='button') Light
+                    button.btn.btn-outline-dark(type='button') Dark
+
+            .col-xxl-6
+              .card
+                .card-header 
+                  h4 Default Large Button
+                .card-body 
+                  p.card-title-desc.mb-8 Add 
+                    code .btn.btn-lg.btn-outline-*
+                    |&nbsp; for additional sizes.
+                  button.btn.btn-lg.btn-primary Primary
+                  button.btn.btn-lg.btn-outline-secondary Secondary
+                  button.btn.btn-lg.btn-success Success                
+                  button.btn.btn-lg.btn-outline-info(type='button') Info
+                  button.btn.btn-lg.btn-light(type='button') Light
+                  button.btn.btn-lg.btn-outline-dark(type='button') Dark      
+
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Rounded Button
+                .card-body                 
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code .btn.btn-rounded.btn-outline-*
+                    |&nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-primary.btn-rounded Primary
+                  button.btn.btn-secondary.btn-rounded Secondary
+                  button.btn.btn-success.btn-rounded Success
+                  button.btn.btn-info.btn-rounded Info
+                  button.btn.btn-warning.btn-rounded Warning
+                  button.btn.btn-danger.btn-rounded Danger
+                  button.btn.btn-light.btn-rounded Light
+                  button.btn.btn-dark.btn-rounded Dark 
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Button with Icon
+                .card-body                 
+                  p.card-title-desc.mb-8 Add icon in button                                             
+                  button.btn.btn-primary 
+                    i.fa.fa-smile-o.mr-8
+                    | Primary
+                  button.btn.btn-success  
+                    i.fa.fa-check-circle-o.mr-8
+                    | Success
+                  button.btn.btn-warning 
+                    i.fa.fa-exclamation-triangle.mr-8
+                    | Warning
+                  button.btn.btn-danger  
+                    span.spinner-border.spinner-border-sm.mr-8
+                    | Danger
+                  button.btn.btn-light                    
+                    span.spinner-border.spinner-border-sm.mr-8
+                    |  Loading...
+                  button.btn.btn-dark  
+                    span.spinner-grow.spinner-grow-sm.mr-8
+                    |  Loading... 
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Checkbox button group
+                .card-body                 
+                  p.card-title-desc.mb-8 Add button parent div 
+                    code .btn-group
+                    |&nbsp;classes quickly create a styled button.                                                             
+                  .btn-group(role='group' aria-label='Basic checkbox toggle button group')
+                    input#btncheck1.btn-check(type='checkbox' )
+                    label.btn.btn-outline-primary(for='btncheck1') Checkbox 1
+                    input#btncheck2.btn-check(type='checkbox'  checked="")
+                    label.btn.btn-outline-primary(for='btncheck2') Checkbox 2
+                    input#btncheck3.btn-check(type='checkbox' )
+                    label.btn.btn-outline-primary(for='btncheck3') Checkbox 3
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Radio button group
+                .card-body                 
+                  p.card-title-desc.mb-8 Add button parent div 
+                    code .btn-group
+                    |&nbsp;classes quickly create a styled button.                                                             
+                  .btn-group(role='group' aria-label='Basic radio toggle button group')
+                    input#btnradio1.btn-check(type='radio' name='btnradio' )
+                    label.btn.btn-outline-primary(for='btnradio1') Radio 1
+                    input#btnradio2.btn-check(type='radio' name='btnradio'  checked='')
+                    label.btn.btn-outline-primary(for='btnradio2') Radio 2
+                    input#btnradio3.btn-check(type='radio' name='btnradio' )
+                    label.btn.btn-outline-primary(for='btnradio3') Radio 3
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Sizing button group
+                .card-body                 
+                  p.card-title-desc.mb-8 Add button parent div 
+                    code .btn-group-lg || .btn-group-sm
+                    |&nbsp;classes quickly create a styled button.                                                             
+                  .btn-group.btn-group-lg.mr-15
+                    button.btn.btn-primary(type='button') Left
+                    button.btn.btn-success(type='button') Middle
+                    button.btn.btn-primary(type='button') Right
+                  .btn-group.btn-group-lg
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-success(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+                  br
+                  br
+                  .btn-group.mr-15
+                    button.btn.btn-primary(type='button') Left
+                    button.btn.btn-success(type='button') Middle
+                    button.btn.btn-primary(type='button') Right
+                  .btn-group
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-success(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+                  br
+                  br
+                  .btn-group.btn-group-sm.mr-15
+                    button.btn.btn-primary(type='button') Left
+                    button.btn.btn-success(type='button') Middle
+                    button.btn.btn-primary(type='button') Right
+                  .btn-group.btn-group-sm
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-success(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Vertical button group
+                .card-body                 
+                  p.card-title-desc.mb-8 Add button parent div 
+                    code .btn-group-lg || .btn-group-sm  && .btn-group-vertical
+                    |&nbsp;classes quickly create a styled button.                                                             
+                  .btn-group-vertical.btn-group-lg.mr-15
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-primary(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+                  .btn-group-vertical.mr-15
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-primary(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+                  .btn-group-vertical.btn-group-sm.mr-15
+                    button.btn.btn-outline-primary(type='button') Left
+                    button.btn.btn-outline-primary(type='button') Middle
+                    button.btn.btn-outline-primary(type='button') Right
+
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Button toolbar
+                .card-body                 
+                  p.card-title-desc.mb-8 
+                    | Combine sets of button groups into button toolbars for more complex components. Use utility classes as needed to space out groups, buttons, and more.
+                  .btn-toolbar
+                    .btn-group.mr-8(role='group' aria-label='First group')
+                      button.btn.btn-primary(type='button') 1
+                      button.btn.btn-primary(type='button') 2
+                      button.btn.btn-primary(type='button') 3
+                      button.btn.btn-primary(type='button') 4
+                    .btn-group.mr-8(role='group' aria-label='Second group')
+                      button.btn.btn-secondary(type='button') 5
+                      button.btn.btn-secondary(type='button') 6
+                      button.btn.btn-secondary(type='button') 7
+                    .btn-group.mr-8(role='group' aria-label='Third group')
+                      button.btn.btn-info(type='button') 8
+                    .btn-group(role='group' aria-label='Four group')
+                      button.btn.btn-primary(type='button') 9
+                      button.btn.btn-primary(type='button') 10
+                      button.btn.btn-primary(type='button') 11
+                      button.btn.btn-primary(type='button') 12
+                  br
+                  br
+                  .btn-toolbar
+                    .btn-group.mr-8(role='group' aria-label='First group')
+                      button.btn.btn-outline-primary(type='button') 1
+                      button.btn.btn-outline-primary(type='button') 2
+                      button.btn.btn-outline-primary(type='button') 3
+                      button.btn.btn-outline-primary(type='button') 4
+                    .btn-group.mr-8(role='group' aria-label='Second group')
+                      button.btn.btn-outline-secondary(type='button') 5
+                      button.btn.btn-outline-secondary(type='button') 6
+                      button.btn.btn-outline-secondary(type='button') 7
+                    .btn-group.mr-8(role='group' aria-label='Third group')
+                      button.btn.btn-outline-info(type='button') 8
+                    .btn-group(role='group' aria-label='Four group')
+                      button.btn.btn-outline-primary(type='button') 9
+                      button.btn.btn-outline-primary(type='button') 10
+                      button.btn.btn-outline-primary(type='button') 11
+                      button.btn.btn-outline-primary(type='button') 12
+
+
+            .col-xxl-6 
+              .card
+                .card-header 
+                  h4 Button toolbar
+                .card-body                 
+                  p.card-title-desc.mb-8  Add two button between one div and apply 
+                    code .or-icon
+                    |&nbsp;class for default button and small/large button add extra class 
+                    code .or-icon.sm && .or-icon.lg
+                    |&nbsp;quickly create a styled button.   
+                  .btn-group
+                    button.btn.btn-primary.btn-sm(type='button') Small button
+                    .or-icon.sm
+                    button.btn.btn-success.btn-sm(type='button') Small button
+                  br
+                  br   
+                  .btn-group
+                    button.btn.btn-primary(type='button') Default
+                    .or-icon
+                    button.button.btn.btn-success(type='button') Success
+                  br
+                  br               
+                  .btn-group
+                    button.btn.btn-primary.btn-lg(type='button') Large button
+                    .or-icon.lg
+                    button.btn.btn-success.btn-lg(type='button') Large button
+      // theme body end
+        
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

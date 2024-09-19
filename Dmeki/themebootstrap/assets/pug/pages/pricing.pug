@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Pricing")
+  body
+
+    +header
+
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('pricing','ecommerce')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container       
+          .row.pricing-grid
+            .col-12
+              h4.inner-title pricing   simple            
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingsimple('Standard','$10.00','10GB','10','5','10','10GB')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingsimple('business','$20.00','20GB','20','10','20','20GB')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingsimple('priemimum','$30.00','20GB','20','10','20','30GB')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingsimple('extra','$40.00','20GB','20','10','20','40GB')
+          .row.pricing-grid
+            .col-12
+              h4.inner-title pricing  primary
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('','Standard','$10.00',' fa fa-motorcycle','10GB','10','5','10','10GB','btn-primary')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('','business','$20.00','fa fa-car','20GB','20','10','20','20GB','btn-primary')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('','priemimum','$30.00','fa fa-train','20GB','20','10','20','30GB','btn-primary')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('','extra','$40.00','fa fa-rocket','20GB','20','10','20','40GB','btn-primary')
+          .row.pricing-grid
+            .col-12
+              h4.inner-title pricing  advance
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('','Standard','$10.00',' fa fa-motorcycle','10GB','10','5','10','10GB','btn-primary')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('secondary','business','$20.00','fa fa-car','20GB','20','10','20','20GB','btn-secondary')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('info','priemimum','$30.00','fa fa-train','20GB','20','10','20','30GB','btn-info')
+            .col-xxl-3.cdx-xl-50.col-sm-6
+              +pricingadvance('warning','extra','$40.00','fa fa-rocket','20GB','20','10','20','40GB','btn-warning')
+      // theme body end
+                     
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile  

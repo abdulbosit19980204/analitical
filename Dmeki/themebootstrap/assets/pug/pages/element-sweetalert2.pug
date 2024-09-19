@@ -1,0 +1,124 @@
+-var sweetalert2 = true;
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("sweetalert2")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('sweetalert2','element')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-md-4
+              .card
+                .card-header
+                  h4 A basic message
+                .card-body                 
+                  button.btn.btn-primary(id="swt1") basic message
+            .col-md-4
+              .card
+                .card-header
+                  h4 A title with a text under
+                .card-body                 
+                  button.btn.btn-primary(id="swt2") title & text
+            .col-md-4
+              .card
+                .card-header
+                  h4 error modal
+                .card-body                 
+                  button.btn.btn-primary(id="swt3") error
+            .col-md-4
+              .card
+                .card-header
+                  h4 long content inside
+                .card-body                 
+                  button.btn.btn-primary(id="swt4") long content
+            .col-md-4
+              .card
+                .card-header
+                  h4 Custom HTML description
+                .card-body                 
+                  button.btn.btn-primary(id="swt5") Custom description
+            .col-md-4
+              .card
+                .card-header
+                  h4 A dialog with three buttons
+                .card-body                 
+                  button.btn.btn-primary(id="swt6") dialog
+            .col-md-4
+              .card
+                .card-header
+                  h4 A custom positioned dialog
+                .card-body                 
+                  button.btn.btn-primary(id="swt7") custom dialog
+            .col-md-4
+              .card
+                .card-header
+                  h4 Custom animation with
+                .card-body                 
+                  button.btn.btn-primary(id="swt8") Custom animation
+            .col-md-4
+              .card
+                .card-header
+                  h4 confirm dialog
+                .card-body                 
+                  button.btn.btn-primary(id="swt9") confirm dialog
+            .col-md-4
+              .card
+                .card-header
+                  h4 something else for "Cancel".
+                .card-body                 
+                  button.btn.btn-primary(id="swt10") something else for "Cancel".
+            .col-md-4
+              .card
+                .card-header
+                  h4 message with a custom image
+                .card-body                 
+                  button.btn.btn-primary(id="swt11") message with image            
+            .col-md-4
+              .card
+                .card-header
+                  h4 custom dialog
+                .card-body                 
+                  button.btn.btn-primary(id="swt12") custom dialog
+            .col-md-4
+              .card
+                .card-header
+                  h4 auto close timer
+                .card-body                 
+                  button.btn.btn-primary(id="swt13") auto close timer
+            .col-md-4
+              .card
+                .card-header
+                  h4 RTL languages dialog
+                .card-body                 
+                  button.btn.btn-primary(id="swt14") RTL dialog 
+            .col-md-4
+              .card
+                .card-header
+                  h4 AJAX request example
+                .card-body                 
+                  button.btn.btn-primary(id="swt15") AJAX dialog
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile   

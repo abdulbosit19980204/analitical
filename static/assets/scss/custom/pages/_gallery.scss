@@ -1,0 +1,15 @@
+/*********************
+ 33 GALLERY START
+**********************/
+.gallery-row{
+  margin-block-end: -25px;
+}
+.cdxlight-box{
+  border-radius:5px;
+  overflow: hidden;    
+  cursor: pointer;
+  margin-block-end: 25px;
+  img{
+      width: 100%;
+  }   
+}

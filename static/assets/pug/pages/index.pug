@@ -1,0 +1,677 @@
+-var dashboard = true ;
+-var apexchart = true ;
+-var linechart = true ;
+-var flagicon  = true ;
+
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("Dashboard")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      .codex-breadcrumb
+        .breadcrumb-contain
+          .left-breadcrumb
+            ul.breadcrumb.mb-0
+              li.breadcrumb-item
+                a(href='index.html')
+                  h1 Dashboard
+              li.breadcrumb-item.active
+                a(href='javascript:void(0);') Default
+          .right-breadcrumb
+            ul
+              li
+                .bread-wrap
+                  i.fa.fa-clock-o
+                span.liveTime
+              li
+                .bread-wrap
+                  i.fa.fa-calendar
+                span.getDate
+      // breadcrumb end
+      
+      // theme body start
+      .theme-body(data-simplebar).common-dash
+        .custom-container
+          .row
+            .col-xl-4.cdx-xl-50
+              .card.welcome-card.overflow-hidden
+                .card-header
+                .card-body
+                  .img-wrap
+                    img.img-fluid(src="../assets/images/avtar/1.jpg" alt="image")
+                  h3 Welcome to dear user
+                  p.mb-10 Congratulations! Your account has been Setup and  you are ready to configure your dashboard now.Configuration only take a couple of seconds.
+                  p If you have any query for Configuration so contact ***** !!!
+            .col-xl-4.cdx-xl-50
+              .card.earning-chart
+                .card-header
+                  h4 Site Impression
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .site-impres
+                    h2
+                      span.counter 82545
+                    p.text-light 5.5% change from yesterday
+                  #earning-chart
+            .col-xl-4.cdx-xl-50.cdxorder-xl-1
+              .card.countri-tbl
+                .card-header
+                  h4 viewed Countries
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .table-responsive
+                    table.table.tblbody-p0
+                      tbody
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-gbr
+                              .media-body
+                                | United Kingdom
+                          td.text-success 48.00%
+                            i.fa.fa-angle-down.ml-5
+                          td  Nove/22
+                          td
+                            h6 905k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-umi
+                              .media-body
+                                | United states
+                          td.text-success 30.7%
+                            i.fa.fa-angle-up.ml-5
+                          td  Sep/15
+                          td
+                            h6 750k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-egy
+                              .media-body
+                                | Egypt
+                          td.text-danger 25.7%
+                            i.fa.fa-angle-down.ml-5
+                          td Jun/16
+                          td
+                            h6 598k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-ind
+                              .media-body
+                                | India
+                          td.text-success 35.00%
+                            i.fa.fa-angle-up.ml-5
+                          td Sep/17
+                          td 
+                            h6 320k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-mkd
+                              .media-body
+                                | Makedonia
+                          td.text-success 48.00%
+                            i.fa.fa-angle-down.ml-5
+                          td Octo/20
+                          td 
+                            h6 748k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-niu
+                              .media-body
+                                | Niue
+                          td.text-danger 28.07%
+                            i.fa.fa-angle-down.ml-5
+                          td Sep/18
+                          td 
+                            h6 580k
+                        tr
+                          td
+                            .media
+                              .flag-wrap
+                                i.flag-icon.flag-icon-dnk
+                              .media-body
+                                | Denmark
+                          td.text-danger 20.00%
+                            i.fa.fa-angle-down.ml-5
+                          td  Dece/16
+                          td
+                            h6 777k
+            .col-xl-6.cdx-xl-100
+              .row
+                .col-xxl-12
+                  .row
+                    .col-sm-6
+                      .card.project-status
+                        .card-header
+                          h4 Expenses
+                          .setting-card.action-menu
+                            a.action-toggle(href="javascript:void(0)")
+                              i.codeCopy(data-feather="more-horizontal")
+                            ul.action-dropdown
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-o
+                                  | weekly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-check-o
+                                  | monthly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar
+                                  | yearly
+                        .card-body.progressCounter
+                          .media
+                            div
+                              h2
+                                span.count 3238
+                            .media-body                              
+                              span.badge.badge-success
+                                | 25.7%
+                                i.fa.fa-angle-up
+                          .progress.progress-primary
+                            .progress-bar(role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100")              
+                    .col-sm-6
+                      .card.project-status
+                        .card-header
+                          h4 New Users
+                          .setting-card.action-menu
+                            a.action-toggle(href="javascript:void(0)")
+                              i.codeCopy(data-feather="more-horizontal")
+                            ul.action-dropdown
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-o
+                                  | weekly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-check-o
+                                  | monthly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar
+                                  | yearly                                          
+                        .card-body.progressCounter
+                          .media
+                            div
+                              h2
+                                span.count 4850
+                            .media-body                              
+                              span.badge.badge-secondary
+                                | 25.7%
+                                i.fa.fa-angle-down
+                          .progress.progress-secondary
+                            .progress-bar(role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100")      
+                    .col-sm-6
+                      .card.project-status
+                        .card-header
+                          h4 New Clients
+                          .setting-card.action-menu
+                            a.action-toggle(href="javascript:void(0)")
+                              i.codeCopy(data-feather="more-horizontal")
+                            ul.action-dropdown
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-o
+                                  | weekly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar-check-o
+                                  | monthly
+                              li
+                                a(href='javascript:void(0);')
+                                  i.fa.fa-calendar
+                                  | yearly
+                        .card-body.progressCounter
+                          .media
+                            div
+                              h2
+                                span.count 4198
+                            .media-body
+                              span.badge.badge-danger
+                                | 20.5%
+                                i.fa.fa-angle-down
+                          .progress.progress-info
+                            .progress-bar(role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100")
+                    .col-sm-6
+                      .card.project-status
+                        .card-header
+                          h4 Employees
+                          .setting-card.action-menu
+                              a.action-toggle(href="javascript:void(0)")
+                                i.codeCopy(data-feather="more-horizontal")
+                              ul.action-dropdown
+                                li
+                                  a(href='javascript:void(0);')
+                                    i.fa.fa-calendar-o
+                                    | weekly
+                                li
+                                  a(href='javascript:void(0);')
+                                    i.fa.fa-calendar-check-o
+                                    | monthly
+                                li
+                                  a(href='javascript:void(0);')
+                                    i.fa.fa-calendar
+                                    | yearly
+                        .card-body.progressCounter
+                          .media
+                            div
+                              h2
+                                span.count 1899
+                            .media-body
+                              span.badge.badge-success
+                                | 15.2%
+                                i.fa.fa-angle-up
+                          .progress.progress-warning
+                            .progress-bar(role="progressbar" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100")
+            .col-xl-6.cdx-xl-50
+              .card.project-summarytbl
+                .card-header
+                  h4 Project Detail
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .table-responsive
+                    table.table
+                      thead
+                        tr
+                          th Order
+                          th Project Name
+                          th Project Cost
+                          th Project Status
+                          th Payment
+                      tbody
+                        tr
+                          td 1
+                          td Racing Game
+                          td $45,376
+                          td Completed
+                          td
+                            span.badge.badge-primary Done
+                        tr
+                          td 2
+                          td Cytrust Dashboard
+                          td $40,258
+                          td In Progress
+                          td
+                            span.badge.badge-secondary Pending
+                        tr
+                          td 3
+                          td Travel App
+                          td $32,256
+                          td Completed
+                          td
+                            span.badge.badge-primary Done
+                        tr
+                          td 4
+                          td Reyalestet  App
+                          td $25,058
+                          td In Progress
+                          td
+                            span.badge.badge-secondary Pending
+                        tr
+                          td 5
+                          td Agriculture Website
+                          td $36,585
+                          td In Progress
+                          td 
+                            span.badge.badge-secondary Pending
+                        tr
+                          td 6
+                          td TRavel Website
+                          td $25,255
+                          td Completed
+                          td 
+                            span.badge.badge-primary Done
+            .col-xl-6.cdx-xl-50
+              .card.recent-ordertbl
+                .card-header
+                  h4 Order detail
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .table-responsive
+                    table.table
+                      thead
+                        tr
+                          th Customer
+                          th Product
+                          th Amount
+                          th Vendor
+                          th Status
+                      tbody
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/6.jpg" alt="recent-product")
+                              .media-body
+                                | Mark Wangar
+                          td
+                            a.text-light(href="product-detail.html")  Apple Airpod Pro
+                          td $847.39
+                          td Palestine
+                          td 
+                            span.badge.badge-primary Paid
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="recent-product")
+                              .media-body
+                                | Thomos Vactom
+                          td
+                            a.text-light(href="product-detail.html") Redmi Note 10s
+                          td $470.34
+                          td Serbia
+                          td 
+                            span.badge.badge-secondary Unpaid
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/3.jpg" alt="recent-product")
+                              .media-body
+                                | Johan Deo
+                          td 
+                            a.text-light(href="product-detail.html") Razer kraken headset
+                          td $394.39
+                          td Republic
+                          td 
+                            span.badge.badge-primary Paid
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/4.jpg" alt="recent-product")
+                              .media-body
+                                | Leena Odem
+                          td 
+                            a.text-light(href="product-detail.html") iphone 12 pro max
+                          td $249.29
+                          td Greece
+                          td 
+                            span.badge.badge-primary Paid
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/5.jpg" alt="recent-product")
+                              .media-body
+                                | Omini Rome
+                          td 
+                            a.text-light(href="product-detail.html") DJL Mavic Pro 2
+                          td $147.70
+                          td Central
+                          td 
+                            span.badge.badge-secondary Unpaid
+            .col-xl-6.cdx-xl-50.cdxorder-xl-1
+              .card.visitor-performance
+                .card-header
+                  h4 Visitors Performance
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  #visitor-chart
+            .col-xl-4.cdx-xl-50
+              .card.visitor-ratetbl
+                .card-header
+                  h4 Visitors Statistics
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body.p-0
+                  #visitor-rank               
+            .col-xl-4.cdx-xl-50
+              .card.support-inboxtbl
+                .card-header
+                  h4 Support Inbox
+                  .setting-card.action-menu
+                    .action-toggle
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .table-responsive
+                    table.table
+                      tbody
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/6.jpg" alt="recent-product")
+                              .media-body
+                                h6 Jordan Nt
+                                p.text-light My item doesn’t shio to correct address
+                          td
+                            span.badge.badge-primary 10 hours ago
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="recent-product")
+                              .media-body
+                                h6 Carolien Bloeme
+                                p.text-light You Shipped Color, i need it to be
+                          td 
+                            span.badge.badge-primary 8 hours ago
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/3.jpg" alt="recent-product")
+                              .media-body
+                                h6 Lisanne Viscaal
+                                p.text-light Can you please refund back my mony
+                          td 
+                            span.badge.badge-primary 6 hours ago
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/4.jpg" alt="recent-product")
+                              .media-body
+                                h6 Sun Jun
+                                p.text-light Thank you very much for quick support!
+                          td
+                            span.badge.badge-primary 4 hours ago
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/5.jpg" alt="recent-product")
+                              .media-body
+                                h6 Tolos Joune
+                                p.text-light My item doesn’t shio to correct address
+                          td
+                            span.badge.badge-primary 30 minute ago
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/4.jpg" alt="recent-product")
+                              .media-body
+                                h6 Sun Jun
+                                p.text-light Thank you very much for quick support!
+                          td
+                            span.badge.badge-primary 4 hours ago
+            .col-xl-4.cdx-xl-100.cdxorder-xl-1
+              .card.dash-chat
+                .card-header
+                  h4 live caht
+                .card-body  
+                  .dash-chatbox
+                    ul.chating-list(data-simplebar)
+                      li
+                        .user-msgbox
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="image")
+                            .media-body
+                              p Lorem ipsum dolor sit amet
+                      li
+                        .admin-msgbox
+                          .media
+                            .media-body
+                              p Adipisicing elit, sed do eiusmod.
+                            img.img-fluid(src="../assets/images/avtar/2.jpg" alt="image")
+                      li
+                        .admin-msgbox
+                          .media
+                            .media-body
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                            img.img-fluid(src="../assets/images/avtar/2.jpg" alt="image")
+                      li
+                        .user-msgbox
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="image")
+                            .media-body
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                      li
+                        .admin-msgbox
+                          .media
+                            .media-body
+                              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            img.img-fluid(src="../assets/images/avtar/2.jpg" alt="image")
+                      li
+                        .user-msgbox
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="image")
+                            .media-body
+                              p Lorem ipsum dolor sit amet
+                      li
+                        .admin-msgbox
+                          .media
+                            .media-body
+                              p Adipisicing elit, sed do eiusmod.
+                            img.img-fluid(src="../assets/images/avtar/2.jpg" alt="image")
+                    .userchat-typebox.d-flex
+                      a.btn.btn-primary.mr-10
+                        i(data-feather="smile")
+                      input.form-control(type='text' placeholder='Type a message' value='' autocomplete='off')
+                      a.btn.btn-primary.ml-10  
+                        i(data-feather="send")               
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

@@ -1,0 +1,46 @@
+/***********************
+  29 ERROR START
+************************/
+.error-main{
+	background-color: rgba($theme-primary,0.08);
+}
+.codex-error {
+	text-align: center;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+	h1 {
+		font-size: calc(90px + (140 - 90) * ((100vw - 320px) / (1920 - 320)));
+		font-weight: 700;
+		margin-block-end: 15px;
+		line-height: 1;
+		text-transform: uppercase;
+		span {
+			color: $theme-primary;
+		}
+	}
+	h2{
+		font-size: calc(32px + (45 - 32) * ((100vw - 320px) / (1920 - 320)));
+		font-weight: 700;
+		margin-block-end: 10px;
+	}
+	p{
+		font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+		width: 65%;
+    	margin: auto;
+	}
+	.btn {
+		margin-block-start: 30px;
+		padding: 15px 30px;
+		font-size: 18px;	
+		svg{
+			width: 20px;
+			height: auto;
+			margin-inline-end: 5px;
+		}
+	}
+	.error-detail{
+		margin-block-start: -27px;
+	}
+}

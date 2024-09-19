@@ -1,0 +1,239 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Grid")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('grid','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-12 
+              .card
+                .card-header 
+                  h4 grid options
+                .card-body
+                  table.table.table-bordered
+                    thead
+                      tr
+                        th(scope='col')
+                        th(scope='col')
+                          | xs
+                          br
+                          span.fw-normal &lt;576px
+                        th(scope='col')
+                          | sm
+                          br
+                          span.fw-normal &ge;576px
+                        th(scope='col')
+                          | md
+                          br
+                          span.fw-normal &ge;768px
+                        th(scope='col')
+                          | lg
+                          br
+                          span.fw-normal &ge;992px
+                        th(scope='col')
+                          | xl
+                          br
+                          span.fw-normal &ge;1200px
+                        th(scope='col')
+                          | xxl
+                          br
+                          span.fw-normal &ge;1400px
+                    tbody
+                      tr
+                        th.text-nowrap(scope='row')
+                          | Container 
+                          code.fw-normal max-width
+                        td None (auto)
+                        td 540px
+                        td 720px
+                        td 960px
+                        td 1140px
+                        td 1320px
+                      tr
+                        th.text-nowrap(scope='row') Class prefix
+                        td
+                          code .col-
+                        td
+                          code .col-sm-
+                        td
+                          code .col-md-
+                        td
+                          code .col-lg-
+                        td
+                          code .col-xl-
+                        td
+                          code .col-xxl-
+                      tr
+                        th.text-nowrap(scope='row') # of columns
+                        td(colspan='6') 12
+                      tr
+                        th.text-nowrap(scope='row') Gutter width
+                        td(colspan='6') 1.5rem (.75rem on left and right)
+                      tr
+                        th.text-nowrap(scope='row') Custom gutters
+                        td(colspan='6')
+                          a(href='/docs/5.0/layout/gutters/') Yes
+                      tr
+                        th.text-nowrap(scope='row') Nestable
+                        td(colspan='6')
+                          a(href='#nesting') Yes
+                      tr
+                        th.text-nowrap(scope='row') Column ordering
+                        td(colspan='6')
+                          a(href='/docs/5.0/layout/columns/#reordering') Yes
+            .col-12
+              .card
+                .card-header 
+                  h4 Grid Column
+                .card-body.grid-exa     
+                  .row
+                    .col-7
+                      span col 7
+                    .col-5
+                      span col 5
+                    .col-4
+                      span col 4
+                    .col-6
+                      span col 6
+                    .col-2
+                      span col 2
+                    .col-6
+                      span col 6
+                    .col-6
+                      span col 6
+                    .col-4
+                      span col 4
+                    .col-4
+                      span col 4
+                    .col-4
+                      span col 4
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+                    .col-1
+                      span col 1
+            .col-12
+              .card
+                .card-header 
+                  h4 Equal width Column
+                .card-body.grid-exa     
+                  .row
+                    .col-6
+                      span col 6
+                    .col-6
+                      span col 6
+                    .col-4
+                      span col 4
+                    .col-4
+                      span col 4
+                    .col-4
+                      span col 4
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-3
+                      span col 3
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+                    .col-2
+                      span col 2
+            .col-12
+              .card
+                .card-header 
+                  h4 Responsive  Column
+                .card-body.grid-exa     
+                  .row                   
+                    .col-md-8
+                      span col-md-8
+                    .col-md-4
+                      span col-md-4
+                    .col-md-6
+                      span col-md-6 
+                    .col-md-6
+                      span col-md-6
+                    .col-xl-4.col-lg-6
+                      span col-xl-4 col-lg-6
+                    .col-xl-4.col-lg-6
+                      span col-xl-4 col-lg-6
+                    .col-xl-4.col-lg-6
+                      span col-xl-4 col-lg-6
+                    .col-xl-3.col-lg-4.col-md-6
+                      span col-xl-3 col-lg-4 col-md-6
+                    .col-xl-3.col-lg-4.col-md-6
+                      span col-xl-3 col-lg-4 col-md-6
+                    .col-xl-3.col-lg-4.col-md-6
+                      span col-xl-3 col-lg-4 col-md-6
+                    .col-xl-3.col-lg-4.col-md-6
+                      span col-xl-3 col-lg-4 col-md-6
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

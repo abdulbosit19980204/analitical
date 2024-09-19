@@ -1,0 +1,323 @@
+/*************************
+  24 USER START
+************************/
+/* user list*/
+.user-card{
+    .user-setting{
+        width: fit-content;
+        margin-inline-start: auto;      
+        .action-dropdown{            
+            min-width: 160px;
+        } 
+    }
+    .card-body{
+        text-align: center ;
+        padding-block-start: unset !important;
+        .user-imgwrap{
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            margin-block-end: 10px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .user-detailwrap{
+            h3{
+                font-size: 20px;
+                margin-block-end: 5px;
+                text-transform: capitalize;
+            }
+            h6{               
+                color: $font-light;
+                text-transform: capitalize;
+                margin-block-end: 10px;
+            }           
+            .group-btn{
+                margin-block-start: 20px;
+                .btn{
+                    text-transform: capitalize;                   
+                    &:nth-child(n+2){
+                        margin-inline-start:10px;
+                    }
+                }
+            }
+        }       
+    }
+}
+
+
+/* user profile*/
+.cdxuser-profile{
+    margin-block-end: 20px;
+    .card-header{
+        display: flex;
+        align-items: center;
+        h4 {
+            i{
+                margin-inline-end: 10px;
+            }
+        }
+    }
+    .contact-list{
+        li{
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+            .iocn-item{
+                margin-inline-end:15px;
+                svg{
+                    width:auto;
+                    height: 20px;
+                }
+            }
+            h6{               
+                a{
+                    color: $codex-font-color;
+                }
+            }
+            &:nth-child(n+2){
+                margin-block-start:15px;
+            }           
+        }
+    }
+    .follower-list{
+        li{             
+            .media{
+                img{
+                    width: 45px;
+                    height: 45px;
+                    margin-inline-end: 15px;
+                    border-radius: 5px;
+                }
+            }           
+            .badge{
+                text-transform:capitalize;
+                svg{
+                    width:auto;
+                    height: 15px;
+                    margin-inline-end: 5px;
+                }
+            }
+            &:nth-child(n+2){
+                margin-block-start: 15px;
+            }
+        }
+    }
+    .gallerypost-list{
+        margin-inline-start: -10px;
+        margin-block-start: -10px;
+        li{
+            display: inline-block;
+            img{
+                width: 92px;
+                height: auto;
+                border-radius: 5px;
+            }
+            margin-inline-start: 10px;
+            margin-block-start: 10px;
+        }
+    }
+    .post-list{
+        >li{
+            &:nth-child(n+2){
+                margin-block-start:30px;
+            }
+        }
+        .post-header{                       
+            span{
+                font-size: 14px;
+                color: $font-light;               
+            }
+            .media{
+                align-items: center;
+                 img{
+                     width: 45px;
+                     height: 45px;
+                     margin-inline-end: 15px;
+                     border-radius: 5px;
+                 }
+            }
+            .post-setting{
+                position: relative;
+                .action-toggle{                   
+                    i{
+                        font-size: 26px;
+                    }
+                }
+                .theme-dropdown{
+                    right:0;
+                    min-width: 200px;                   
+                    li{                       
+                        svg{
+                            margin-inline-end:10px;
+                        }
+                        a{
+                            display: flex;
+                            align-items: center;
+                        }
+                    }                   
+                }
+            }
+            
+        }
+        .added-postdetail{           
+            margin-block-start: 20px;
+            padding-block-end: 20px;           
+        }
+        
+        .post-contain{
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: $white;     
+            padding: 25px;
+            box-shadow: 0 0 20px 5px rgba($black,0.05);
+            .post-imgwrap{
+                img{
+                    border-radius: 5px;
+                }
+                
+                overflow: hidden;
+            }
+            .post-detail{     
+                padding-block-start:20px;          
+                >ul{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    li{
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;                           
+                            text-transform: capitalize;
+                            svg{
+                                margin-inline-end:10px;
+                                height: 20px;
+                                width: auto;
+                            }
+                            &:focus{
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+                .postreact-status{
+                    li{
+                        a{
+                            padding: 0;
+                            letter-spacing: 0.05em;                           
+                            .like-status{                           
+                                border-radius: 5px;
+                                width: 25px;
+                                height: 25px;           
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-inline-end: 10px;
+                                i{
+                                    color:$white;
+                                    font-size: 14px;
+                                }
+                                svg{
+                                    width: auto;
+                                    height: 12px;
+                                    margin-inline-end: unset;
+                                    color: $white;
+                                }                
+                            }
+                        }
+                    }
+                }
+                .post-react{
+                    border-top: 1px solid $theme-border;
+                    padding-block-start: 20px;
+                    margin-block-start: 20px;
+                    li{
+                        display: inline-block;
+                        width: 100%;
+                        text-align: center;
+                        a{
+                            background-color: $bg-light;
+                            padding: 10px;
+                        }
+                        &:nth-child(n+2){
+                            margin-inline-start: 10px;
+                        }
+                    }
+                }
+                .addpost-comment{
+                    border-top: 1px solid $theme-border;
+                    padding-block-start: 20px;
+                    margin-block-start: 20px;                                  
+                    .input-group{                       
+                        border: 1px solid $theme-border;
+                        border-radius: 5px;               
+                        padding:5px;        
+                        overflow: hidden;
+                        &:focus{
+                            border-color: $theme-primary;
+                        }
+                        .input-group-text{
+                            background-color: transparent;
+                            border: none;
+                        }
+                        .form-control{
+                            border:none;
+                            background-color: transparent;
+                            padding:0 10px;
+                            &::placeholder{
+                                text-transform: capitalize;
+                                color: $font-light;
+                            }
+                        }
+                        .add-comment{
+                            display: flex;
+                            align-items: center;
+                            a{
+                                color: $font-light;
+                            }
+                            li{
+                                &:nth-child(n+2){
+                                    margin-inline-start:15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+            
+    }
+    .action-menu {
+        .action-dropdown{
+            min-width: 215px;
+        }
+    }
+}
+
+
+
+/* usder edit */
+.codexedit-profile{
+    .btn{
+        text-transform: capitalize;
+    }
+    .group-btn{
+        margin-inline-start: auto;
+        width: fit-content;
+        .btn{
+            text-transform: capitalize;
+            &:nth-child(n+2){
+                margin-inline-start: 15px;
+            }
+        }
+    }
+    textarea{
+        height:196px;
+    }
+}

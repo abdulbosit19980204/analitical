@@ -1,0 +1,99 @@
+-var datepicker = true ;
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("datepicker")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('datepicker','form')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 default
+                .card-body
+                  .input-group
+                    input(type="text" class="datepicker-here form-control" data-date-format="dd/mm/yyyy"  placeholder="Default Datepicker" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 multiple dates
+                .card-body
+                  input(type="text" class="form-control datepicker-here"  data-multiple-dates="3" data-multiple-dates-separator=", " placeholder="Multiple Dates Select" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Month selection
+                .card-body
+                  input(type="text" class="datepicker-here form-control"  data-min-view="months" data-view="months" data-date-format="MM yyyy" placeholder="Month selection" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Minimum and maximum dates
+                .card-body                 
+                  input(type="text" class="datepicker-here form-control" placeholder="min & max date" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Range of dates
+                .card-body    
+                  input(type="text" class="datepicker-here form-control" data-range="true" data-multiple-dates-separator=" - " placeholder="Range of dates" data-language="en")
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 top left
+                .card-body
+                  .input-group
+                    input(type="text" class="datepicker-here form-control" data-position="top left" data-date-format="dd/mm/yyyy"  placeholder="Default Datepicker" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 top right
+                .card-body
+                  .input-group
+                    input(type="text" class="datepicker-here form-control" id="minMaxExample" data-position="top right" data-date-format="dd/mm/yyyy"  placeholder="Default Datepicker" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 bottom left
+                .card-body
+                  .input-group
+                    input(type="text" class="datepicker-here form-control"  data-position="bottom left" data-date-format="dd/mm/yyyy"  placeholder="Default Datepicker" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 bottom right
+                .card-body
+                  .input-group
+                    input(type="text" class="datepicker-here form-control"  data-position="bottom right" data-date-format="dd/mm/yyyy"  placeholder="Default Datepicker" data-language='en')
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Permanently visible calendar
+                .card-body    
+                  div(class="datepicker-here" data-language='en')           
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile   

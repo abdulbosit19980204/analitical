@@ -1,0 +1,32 @@
+/*******************
+  15 MODAL START
+*********************/
+.modal-content{
+  border-color: $theme-border;
+  border-radius: 15px;
+  .close-modal{
+    padding:10px;
+    line-height: 1;
+    border-radius: 50%;
+    color: $theme-primary;
+    background-color: rgba($theme-primary,0.1);
+    transition: all 0.5s ease;
+    i{
+      font-size: 12px;
+      transition: all 0.5s ease;
+    }
+    &:hover{     
+      color: $white;
+      background-color: $theme-primary;
+    }
+  }
+}
+.modal-header{
+  padding:20px;
+}
+.modal-body{
+  padding:20px;
+}
+.modal-footer{
+  padding:20px;
+}

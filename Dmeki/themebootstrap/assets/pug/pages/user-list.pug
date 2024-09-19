@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("User list")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('user list','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("1.jpg","Alex Spencer","ux designer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("2.jpg","Thomas Vactom","Vido Editor")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("3.jpg","Johan Deo","ui desinger")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("4.jpg","Mark Wongar","web developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("5.jpg","Lina Odem","app developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("6.jpg","vamsi ogel","game developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("7.jpg","omeni rome","logo desinger")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("8.jpg","meena wongar","project manag")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("9.jpg","Alex Spencer","ux designer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("10.jpg","Thomas Vactom","Vido Editor")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("11.jpg","Johan Deo","ui desinger")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("12.jpg","Mark Wongar","web developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("13.jpg","Lina Odem","app developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("14.jpg","vamsi ogel","game developer")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("5.jpg","omeni rome","logo desinger")
+            .col-xl-3.col-lg-4.col-sm-6.cdx-xxl-33.cdx-xl-33
+              +usercard("6.jpg","meena wongar","project manag")
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

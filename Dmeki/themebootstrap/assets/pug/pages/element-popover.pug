@@ -1,0 +1,103 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Popover")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('popover','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover primary
+                .card-body
+                  a.btn.btn-primary(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover secondary
+                .card-body
+                  a.btn.btn-secondary(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover success
+                .card-body
+                  a.btn.btn-success(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover info
+                .card-body
+                  a.btn.btn-info(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover info
+                .card-body
+                  a.btn.btn-warning(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover danger
+                .card-body
+                  a.btn.btn-danger(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover light
+                .card-body
+                  a.btn.btn-light(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover dark
+                .card-body
+                  a.btn.btn-dark(tabindex='0'  data-bs-toggle='popover' data-bs-trigger='focus' title='Dismissible popover' data-bs-content="And here's some amazing content. It's very engaging. Right?") Dismissible popover
+          .row  
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover on top
+                .card-body
+                  button.btn.btn-primary(type='button' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='top' data-bs-content='Top popover') Popover on top
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover on bottom
+                .card-body
+                  button.btn.btn-secondary(type='button' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='bottom' data-bs-content='Top popover') Popover on bottom
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover on left
+                .card-body
+                  button.btn.btn-info(type='button' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='left' data-bs-content='Top popover') Popover on left
+            .col-xl-4.col-sm-6 
+              .card
+                .card-header 
+                  h4 popover on right
+                .card-body
+                  button.btn.btn-warning(type='button' data-bs-container='body' data-bs-toggle='popover' data-bs-placement='right' data-bs-content='Top popover') Popover on right
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

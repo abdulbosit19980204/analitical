@@ -1,0 +1,35 @@
+/*********************
+  09 CARD START
+**********************/
+.card{
+    background-color: $white;
+    box-shadow: none;
+    border-radius: 5px;
+    border: none ;
+    margin-block-end: 1.6em;
+    box-shadow: none;   
+    box-shadow: 0 0 20px 5px rgba($black,0.05);
+    .setting-card{
+      a{
+        color: $black;
+      }
+      .codeCopy{
+        width: 24px;
+        height: auto;
+      }
+    }
+    .card-header{
+        background-color: transparent;
+        padding: 25px;
+        padding-block-end: 0 !important;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        h4{                                            
+            text-transform: capitalize;
+        }
+    }
+    .card-body{
+        padding:25px;
+    }   
+}

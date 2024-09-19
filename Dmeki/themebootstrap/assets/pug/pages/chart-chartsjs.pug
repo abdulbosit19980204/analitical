@@ -1,0 +1,87 @@
+-var chartjs = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("chart js") 
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Apex Charts','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .container-fluid
+          .row         
+            .col-md-6
+              .card
+                .card-header
+                  h4 area chart
+                .card-body.chartjs-main
+                  canvas#barchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 bubble chart
+                .card-body.chartjs-main
+                  canvas#bubblechart
+            .col-md-6
+              .card
+                .card-header
+                  h4 Doughnut chart
+                .card-body.chartjs-main
+                  canvas#doughnutchart.doughnutchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 pie chart
+                .card-body.chartjs-main
+                  canvas#piechart.doughnutchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 line chart
+                .card-body.chartjs-main
+                  canvas#linechart
+            .col-md-6
+              .card
+                .card-header
+                  h4 Mixed Chart chart
+                .card-body.chartjs-main
+                  canvas#mixchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 polar area chart
+                .card-body.chartjs-main
+                  canvas#polarchart.doughnutchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 radar chart
+                .card-body.chartjs-main
+                  canvas#radarchart.doughnutchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 scatter chart
+                .card-body.chartjs-main
+                  canvas#scatterchart
+                    
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

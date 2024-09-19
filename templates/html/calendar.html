@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- theme body start-->
+<link href="{% static 'assets/css/vendor/calendar/calendar.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/vendor/datepicker/datepicker.css' %}" rel="stylesheet">
+<div class="theme-body codex-calendar">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-xxl-3">
+                                <ul class="events-list" id="codex-events-list">
+                                    <li class="fc-event bg-primary"><i class="fa fa-birthday-cake"></i>Birthday Party
+                                    </li>
+                                    <li class="fc-event bg-secondary"><i class="fa fa-handshake-o"></i>Metting</li>
+                                    <li class="fc-event bg-success"><i class="fa fa-graduation-cap"></i>Holidays</li>
+                                    <li class="fc-event bg-warning"><i class="fa fa-bus"></i>Travel</li>
+                                    <li class="fc-event bg-info"><i class="fa fa-building-o"></i>Company</li>
+                                    <li>
+                                        <p class="d-none">
+                                            <input id="drop-remove" type="checkbox">
+                                            <label for="drop-remove">remove after drop</label>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-xxl-9">
+                                <div id="codex-calendar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="e-modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Event</h5><span class="close-modal" data-bs-dismiss="modal">            <i
+                            class="ti-close"></i></span>
+                    </div>
+                    <div class="modal-body">
+                        <form class="needs-validation" id="form-event" name="e-form" novalidate="">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Event Name</label>
+                                        <input id="startdate" type="hidden">
+                                        <input id="allDay" type="hidden">
+                                        <input class="form-control" id="e-title" placeholder="Add Event Name"
+                                               type="text" name="title" required="" value="">
+                                        <div class="invalid-feedback">Please provide a valid event name</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-danger" id="btn-delete-event" type="button">Delete</button>
+                                    <button class="btn btn-success" id="btn-save-event" type="submit">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- calendar-->
+<script src="{% static 'assets/js/vendors/calendar/calendar.js' %}"></script>
+<script src="{% static 'assets/js/vendors/calendar/custom-calendar.js' %}"></script>
+<!-- datepicker-->
+<script src="{% static 'assets/js/vendors/datepicker/datepicker.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datepicker/datepicker.en.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datepicker/custom-datepicker.js' %}"></script>
+<!-- theme body end-->
+
+{% endblock %}

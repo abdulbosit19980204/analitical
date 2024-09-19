@@ -1,0 +1,105 @@
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("timeline")
+
+  
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+      // theme body start
+      +codexbreadcrumb('timeline','pages')
+      // theme body end
+     
+      
+      // theme body start
+      .theme-body(data-simplebar)
+        .container-fluid
+          .row          
+            .col-md-12
+              .card
+                .card-body
+                  .timeline.timeline-left
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Anna Mull
+                        .timeline-date 
+                          i.fa.fa-calendar
+                          | 10,feb,2023 
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Hal Appeno
+                        .timeline-date 
+                          i.fa.fa-calendar
+                          | 05,feb,2023
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Pat Agonia
+                        .timeline-date 
+                          i.fa.fa-calendar
+                          | 01,jan,2023
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Paul Molive
+                        .timeline-date 
+                          i.fa.fa-calendar
+                          | 05,March,2023
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Polly Tech
+                        .timeline-date 
+                          i.fa.fa-calendar
+                          | 28,April,2023
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+                    .timeline-grid
+                      .icon-wrap
+                        img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                      .timeline-content
+                        h3 Dr. Poppa Cherry
+                        .timeline-date
+                          i.fa.fa-calendar
+                          | 10,jun,2023
+                        p
+                          | Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.
+                        a.btn.btn-md.btn-primary(href="javascript:void(0);") Read More
+
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

@@ -1,0 +1,550 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- theme body start-->
+<div class="theme-body">
+    <div class="custom-container cdxuser-profile">
+        <div class="row">
+            <div class="col-xl-3 cdx-xxl-30 cdx-xl-40">
+                <div class="row">
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card user-card">
+                            <div class="card-header">
+                                <div class="user-setting">
+                                    <div class="action-menu">
+                                        <div class="action-toggle"><i data-feather="more-vertical"> </i></div>
+                                        <ul class="action-dropdown">
+                                            <li><a href="{% url 'dashboard:profile' %}"> <i data-feather="eye"></i>View
+                                                Profile</a></li>
+                                            <li><a href="{% url 'authentic:user-edit' %}"> <i data-feather="edit"></i>Edit
+                                                profile</a>
+                                            </li>
+                                            <li><a href="{% url 'authentic:password_change' %}"> <i
+                                                    data-feather="lock"></i>Edit password</a>
+                                            </li>
+                                            <li>
+                                                <button class="btn"><i data-feather="trash"></i>Delete profile</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="user-imgwrap"><img class="img-fluid rounded-50"
+                                                               src="../assets/images/avtar/4.jpg" alt="4.jpg"></div>
+                                <div class="user-detailwrap">
+                                    <h3>{{ request.user.first_name }} {{request.user.last_name }}</h3>
+                                    <h6>ux designer</h6>
+                                    <ul class="codex-soclist">
+                                        <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.behance.net/"><i class="fa fa-behance"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                    <div class="group-btn"><a class="btn btn-primary btn-md" href="javascript:void(0);">message </a><a
+                                            class="btn btn-secondary btn-md" href="javascript:void(0);">follow</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fa fa-user"></i>Contact</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="contact-list">
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="user"></i></div>
+                                        <h6> {{ request.user.first_name}} {{ request.user.last_name}}</h6>
+                                    </li>
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="bookmark"></i></div>
+                                        <h6> studied in uk univercity</h6>
+                                    </li>
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="phone-call"></i></div>
+                                        <h6><a href="tel:+9588489584">{{request.user.phone_number}}</a></h6>
+                                    </li>
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="mail"></i></div>
+                                        <h6 class="text-lowercase"><a href="mailto:test@example.com">{{request.user.email}}</a>
+                                        </h6>
+                                    </li>
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="map-pin"></i></div>
+                                        <h6> live in uk</h6>
+                                    </li>
+                                    <li>
+                                        <div class="iocn-item"><i data-feather="globe"></i></div>
+                                        <h6 class="text-lowercase"> {{request.user.tg_username}}</h6>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fa fa-users"></i>Followers</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="follower-list">
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Mark Wongar</h6>
+                                                <p class="text-light">3m follower </p>
+                                            </div>
+                                            <a class="badge badge-primary" href="javascript:void(0)"> <i
+                                                    data-feather="plus"></i>follow</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/2.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Thomas Vactom</h6>
+                                                <p class="text-light">4m follower </p>
+                                            </div>
+                                            <a class="badge badge-secondary" href="javascript:void(0)"> <i
+                                                    data-feather="plus"></i>follow</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/3.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Lina Odem</h6>
+                                                <p class="text-light">5k follower </p>
+                                            </div>
+                                            <a class="badge badge-success" href="javascript:void(0)"> <i
+                                                    data-feather="plus"></i>follow</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/4.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Johan Deo</h6>
+                                                <p class="text-light">10L follower </p>
+                                            </div>
+                                            <a class="badge badge-info" href="javascript:void(0)"> <i
+                                                    data-feather="plus"></i>follow</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fa fa-users"> </i>Followings</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="follower-list">
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Mark Wongar</h6>
+                                                <p class="text-light">3m follower </p>
+                                            </div>
+                                            <a class="badge badge-primary" href="javascript:void(0)"> <i
+                                                    data-feather="check"></i>following</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/2.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Thomas Vactom</h6>
+                                                <p class="text-light">4m follower </p>
+                                            </div>
+                                            <a class="badge badge-secondary" href="javascript:void(0)"><i
+                                                    data-feather="check"></i>following</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/3.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Lina Odem</h6>
+                                                <p class="text-light">5k follower </p>
+                                            </div>
+                                            <a class="badge badge-success" href="javascript:void(0)"><i
+                                                    data-feather="check"></i>following</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/3.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Johan Deo</h6>
+                                                <p class="text-light">10L follower </p>
+                                            </div>
+                                            <a class="badge badge-info" href="javascript:void(0)"><i
+                                                    data-feather="check"></i>following</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fa fa-picture-o"></i>Gallery</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="gallerypost-list">
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/1.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/1.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/2.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/2.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/3.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/3.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/4.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/4.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/5.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/5.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/6.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/6.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/7.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/7.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/8.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/8.jpg"
+                                                                alt="gallery"></a></li>
+                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/9.jpg"
+                                           data-caption=""><img class="img-fluid"
+                                                                src="../assets/images/pages/gallery/9.jpg"
+                                                                alt="gallery"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4><i class="fa fa-user-plus"> </i>Add friend</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul class="follower-list">
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Mark Wongar</h6>
+                                                <p class="text-light">3m follower </p>
+                                            </div>
+                                            <a class="badge badge-primary" href="javascript:void(0)">add friend</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/2.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Thomas Vactom</h6>
+                                                <p class="text-light">4m follower </p>
+                                            </div>
+                                            <a class="badge badge-secondary" href="javascript:void(0)">add friend</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/3.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Lina Odem</h6>
+                                                <p class="text-light">5k follower </p>
+                                            </div>
+                                            <a class="badge badge-success" href="javascript:void(0)">add friend </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="media align-items-center"><img class="img-fluid"
+                                                                                   src="../assets/images/avtar/3.jpg"
+                                                                                   alt="">
+                                            <div class="media-body">
+                                                <h6>Johan Deo</h6>
+                                                <p class="text-light">10L follower </p>
+                                            </div>
+                                            <a class="badge badge-info" href="javascript:void(0)">add friend</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 cdx-xxl-70 cdx-xl-60">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="post-list">
+                            <li>
+                                <div class="post-contain">
+                                    <div class="post-header">
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
+                                                                alt="">
+                                            <div class="media-body">
+                                                <h6>Graphics Community</h6><span>29 minutes ago</span>
+                                            </div>
+                                            <div class="post-setting">
+                                                <div class="action-menu">
+                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
+                                                    <ul class="action-dropdown">
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="bookmark"></i>save post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
+                                                            on notifications</a></li>
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="x-circle"></i>Hide post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
+                                                            post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
+                                                            post </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="added-postdetail">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                                occaecat cupidatat non proident.</p>
+                                        </div>
+                                    </div>
+                                    <div class="post-imgwrap"><img class="img-fluid"
+                                                                   src="../assets/images/pages/profile/post/1.jpg"
+                                                                   alt="profile-post"></div>
+                                    <div class="post-detail">
+                                        <ul class="postreact-status">
+                                            <li><a class="btn text-light" href="javascript:void(0)">
+                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
+                                                </div>
+                                                5.5 m</a></li>
+                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
+                                                                         href="javascript:void(0)">500M comments                                                          </a><a
+                                                    class="btn text-light"
+                                                    href="javascript:void(0)">120K shares</a></span></li>
+                                        </ul>
+                                        <ul class="post-react">
+                                            <li><a class="btn" href="javascript:void(0)"><i
+                                                    data-feather="thumbs-up"></i>likes</a></li>
+                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
+                                                    data-feather="message-square"></i>comment</a></li>
+                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
+                                            </li>
+                                        </ul>
+                                        <div class="addpost-comment show">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text" placeholder="Write a comment">
+                                                <div class="input-group-text">
+                                                    <ul class="add-comment">
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="smile"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="camera"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="video"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-contain">
+                                    <div class="post-header">
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
+                                                                alt="">
+                                            <div class="media-body">
+                                                <h6>Web Community</h6><span>48 minutes ago</span>
+                                            </div>
+                                            <div class="post-setting">
+                                                <div class="action-menu">
+                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
+                                                    <ul class="action-dropdown">
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="bookmark"></i>save post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
+                                                            on notifications</a></li>
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="x-circle"></i>Hide post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
+                                                            post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
+                                                            post </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="added-postdetail">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                                occaecat cupidatat non proident.</p>
+                                        </div>
+                                    </div>
+                                    <div class="post-imgwrap"><img class="img-fluid"
+                                                                   src="../assets/images/pages/profile/post/2.jpg"
+                                                                   alt="profile-post"></div>
+                                    <div class="post-detail">
+                                        <ul class="postreact-status">
+                                            <li><a class="btn text-light" href="javascript:void(0)">
+                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
+                                                </div>
+                                                5.5 m</a></li>
+                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
+                                                                         href="javascript:void(0)">500M comments                                                          </a><a
+                                                    class="btn text-light"
+                                                    href="javascript:void(0)">120K shares</a></span></li>
+                                        </ul>
+                                        <ul class="post-react">
+                                            <li><a class="btn" href="javascript:void(0)"><i
+                                                    data-feather="thumbs-up"></i>likes</a></li>
+                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
+                                                    data-feather="message-square"></i>comment</a></li>
+                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
+                                            </li>
+                                        </ul>
+                                        <div class="addpost-comment">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text" placeholder="Write a comment">
+                                                <div class="input-group-text">
+                                                    <ul class="add-comment">
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="smile"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="camera"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="video"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="post-contain">
+                                    <div class="post-header">
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
+                                                                alt="">
+                                            <div class="media-body">
+                                                <h6>Developar Community</h6><span>1 hourse ago</span>
+                                            </div>
+                                            <div class="post-setting">
+                                                <div class="action-menu">
+                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
+                                                    <ul class="action-dropdown">
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="bookmark"></i>save post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
+                                                            on notifications</a></li>
+                                                        <li><a href="javascript:void(0)"> <i
+                                                                data-feather="x-circle"></i>Hide post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
+                                                            post</a></li>
+                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
+                                                            post </a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="added-postdetail">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                                occaecat cupidatat non proident.</p>
+                                        </div>
+                                    </div>
+                                    <div class="post-imgwrap row">
+                                        <div class="col-6"><img class="img-fluid"
+                                                                src="../assets/images/pages/profile/post/3.jpg"
+                                                                alt="profile-post"></div>
+                                        <div class="col-6"><img class="img-fluid"
+                                                                src="../assets/images/pages/profile/post/4.jpg"
+                                                                alt="profile-post"></div>
+                                    </div>
+                                    <div class="post-detail">
+                                        <ul class="postreact-status">
+                                            <li><a class="btn text-light" href="javascript:void(0)">
+                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
+                                                </div>
+                                                5.5 m</a></li>
+                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
+                                                                         href="javascript:void(0)">500M comments                                                          </a><a
+                                                    class="btn text-light"
+                                                    href="javascript:void(0)">120K shares</a></span></li>
+                                        </ul>
+                                        <ul class="post-react">
+                                            <li><a class="btn" href="javascript:void(0)"><i
+                                                    data-feather="thumbs-up"></i>likes</a></li>
+                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
+                                                    data-feather="message-square"></i>comment</a></li>
+                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
+                                            </li>
+                                        </ul>
+                                        <div class="addpost-comment">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text" placeholder="Write a comment">
+                                                <div class="input-group-text">
+                                                    <ul class="add-comment">
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="smile"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="camera"></i></a></li>
+                                                        <li><a href="javascript:void(0)"><i
+                                                                data-feather="video"> </i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+{% endblock %}

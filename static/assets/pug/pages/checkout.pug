@@ -1,0 +1,212 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Checkout") 
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('checkout','ecommerce')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.checkout-page.shopping-cart-page
+        .custom-container
+          .row                
+            .col-xl-7.cdx-xxl-40.cdx-xl-100
+              .card
+                .card-header
+                  div
+                    h4 Shipping Address
+                    p
+                      a(href="login.html") Login 
+                      | or 
+                      a(href="register.html") Register 
+                      | for faster payment.               
+                .card-body               
+                  form.form-theme
+                    .form-group
+                      .small-group
+                        div
+                          label.form-label(for='fname') First name
+                          input#fname.form-control(type='text' placeholder='First name')
+                        div
+                          label.form-label(for='lname') Last name
+                          input#lname.form-control(type='text' placeholder="Last name")
+                    .form-group
+                      label.form-label Country
+                      select.form-control(name='conuntry')
+                        option(value='Afghanistan') Afghanistan
+                        option(value='Bahrain') Bahrain
+                        option(value='France') France
+                        option(value='Mauritania') Mauritania
+                    .form-group 
+                      .small-group                                        
+                        div
+                          label.form-label State
+                          select.form-control(name='state')
+                            option(value='Alabama') Alabama                         
+                            option(value='California') California
+                            option(value='Delaware')  Delaware
+                            option(value='Florida')  Florida
+                            option(value='Georgia')  Georgia
+                            option(value='Wyoming')  Wyoming
+                        div
+                          label.form-label Zip code
+                          input.form-control(type="text")
+                    .form-group
+                      label.form-label Address
+                      textarea.form-control
+                    .form-group.mb-0
+                      +checkinput('checkbox','shpping-address', 'address chek')
+                      label.fs-16.ml-5(for='shpping-address')
+                        | Save address 
+            .col-xl-5.cdx-xxl-60.cdx-xl-100
+              .card.payment-detail
+                .card-header
+                  h4 Payment detail
+                .card-body
+                  ul.nav.nav-tabs.border-0.mb-15
+                    li
+                      a.active(data-bs-toggle='tab' href='#tab-1')
+                       i.fa.fa-credit-card 
+                       | Credit / Debit Card
+                    li
+                      a(data-bs-toggle='tab' href='#tab-2')
+                        i.fa.fa-paypal
+                        | Paypal
+                    li
+                      a(data-bs-toggle='tab' href='#tab-3') 
+                        i.fa.fa-money
+                        | Cash on Delivery
+                  .tab-content
+                    #tab-1.tab-pane.fade.active.show
+                      form
+                        .form-group
+                          .small-group
+                            div
+                              label.form-label(for='cardnumber') Card number
+                              input.form-control(type="text" id="cardnumber" placeholder="1234 5678 9012 3456")                        
+                            div
+                              label.form-label(for='cardholder') Card holder
+                              input.form-control(type="text" id="cardholder" placeholder="John Doe")
+                        .form-group
+                          label.form-label Expiration Date
+                          .small-group
+                            div
+                              select.form-control(name='month')
+                                option(value='january') January
+                                option(value='february') February
+                                option(value='march') March
+                                option(value='april') April
+                                option(value='may') May
+                                option(value='june') June
+                                option(value='july') July
+                                option(value='august') August
+                                option(value='september') September
+                                option(value='october') October
+                                option(value='november') November
+                                option(value='december') December
+                            div    
+                              select.form-control(name='Year')
+                                option(value='2022') 2022
+                                option(value='2018') 2018
+                                option(value='2019') 2019
+                                option(value='2020') 2020
+                                option(value='2021') 2021
+                                option(value='2023') 2023
+                                option(value='2024') 2024
+                        .form-group                     
+                          .cdx-cvc
+                            label.form-label(for='cvc') CVC
+                            .cvc-group
+                              input.form-control#cvc(type='text' maxlength='3' size='4' placeholder='123')
+                              p Three or four digits, usually found on the back of the card
+                        .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+                    #tab-2.tab-pane.fade
+                      .form-group
+                        h6 Pay with Cash on Delivery
+                      .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+                    #tab-3.tab-pane.fade 
+                      .form-group
+                        h6 Pay with Cash on Delivery
+                      .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+            .col-xl-7
+              .card
+                .card-header
+                  div
+                    h4 Billing Address
+                    .form-group.mb-0.mt-5
+                      +checkinput('checkbox','billing-address', 'address chek')
+                      label.fs-16.ml-5(for='billing-address')
+                        | Same as shpping address 
+                .card-body
+                  .form
+                    .form-group
+                      label.form-label Country
+                      select.form-control(name='conuntry')
+                        option(value='Afghanistan') Afghanistan
+                        option(value='Bahrain') Bahrain
+                        option(value='France') France
+                        option(value='Mauritania') Mauritania
+                    .form-group 
+                      .small-group                                        
+                        div
+                          label.form-label State
+                          select.form-control(name='state')
+                            option(value='Alabama') Alabama                         
+                            option(value='California') California
+                            option(value='Delaware')  Delaware
+                            option(value='Florida')  Florida
+                            option(value='Georgia')  Georgia
+                            option(value='Wyoming')  Wyoming
+                        div
+                          label.form-label Zip code
+                          input.form-control(type="text")
+                    .form-group.mb-0
+                      label.form-label Address
+                      textarea.form-control
+            .col-xl-5
+              .card
+                .card-header
+                  h4 Total Detail
+                .card-body
+                  .table-responsive
+                    table.table.chekout-tbl
+                      tbody 
+                        tr 
+                          th Discounts
+                          td £ 16.00
+                        tr 
+                          th Special Offer Saving
+                          td £ 0.00
+                        tr 
+                          th Subtotal exc VAT
+                          td £ 4.80
+                        tr 
+                          th VAT
+                          td £ 482.00
+                        tr 
+                          th Grand Total inc VAT
+                          td.text-success £ 470.80
+                        tr 
+                          td(colspan="2")
+                            a.btn.btn-success(href="checkout.html") Proceed to checkout
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

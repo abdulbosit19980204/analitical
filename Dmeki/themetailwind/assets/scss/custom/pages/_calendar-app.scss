@@ -1,0 +1,59 @@
+/*******************
+ 22  CALENDAR START
+*********************/
+.codex-calendar{ 
+  
+  .events-list{
+    li{
+      font-size: 16px;
+      font-weight: 500;
+      padding: 12px 15px;
+      border-radius: 5px;
+      color: $white;
+      line-height: 1;     
+      i{
+        margin-inline-end: 10px;
+      }
+      &:nth-child(n+2){
+        margin-block-start: 15px;
+      }   
+    }
+  }
+  .fc-event-title{
+    padding: 10px 15px;
+    width: 100%; 
+    white-space: pre-wrap;  
+  }
+  .fc-button-group{    
+    button{
+      background-color: $theme-primary;
+      border-radius: 5px !important;  
+      text-transform: capitalize;  
+      padding: 7px 13px;   
+      border:none;
+      &:focus{
+        box-shadow: none !important;       
+      }
+      &:nth-child(n+2){
+        margin-inline-start: 10px !important;
+      }
+    }
+    
+  }
+  .fc-daygrid-event{
+    border:none;
+  } 
+  table{
+    thead{
+      .fc-col-header-cell{
+        padding: 10px 12px;
+        background-color: rgba($theme-primary,0.05) !important;
+      }
+    }
+  }
+  .fc {
+    .fc-toolbar-title{
+      color: $font-light;
+    }
+  }
+}

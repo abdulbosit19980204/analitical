@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- theme body start-->
+<div class="theme-body">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cdxemail-contain">
+                    <div class="email-sidebar cdxapp-sidebar">
+                        <div class="card">
+                            <div class="card-body"><a class="btn btn-primary" data-bs-toggle="modal"
+                                                      data-bs-target="#emailcreat"> <i class="mr-10"
+                                                                                       data-feather="plus"></i>Compose</a>
+                                <ul class="sidebarmenu-list">
+                                    <li><a class="menu-item" href="email-inbox.html">
+                                        <div class="icons"><i data-feather="mail"></i></div>
+                                        Inbox <span class="badge badge-primary ml-auto">76</span></a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="send"></i></div>
+                                        Sent</a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="edit"></i></div>
+                                        Drafts </a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="star"></i></div>
+                                        Starred <span
+                                            class="badge badge-primary">10                                                                      </span></a>
+                                    </li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="tag"></i></div>
+                                        Tags </a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="clock"></i></div>
+                                        snooz</a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="alert-octagon"></i></div>
+                                        Important</a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="message-circle"></i></div>
+                                        Chat</a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="trash"></i></div>
+                                        Trans </a></li>
+                                    <li><a class="menu-item" href="javascript:void(0);">
+                                        <div class="icons"><i data-feather="x-octagon"> </i></div>
+                                        Spam </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="email-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="seen-header">
+                                    <div class="media">
+                                        <div class="userimg-wrap"><img class="img-fluid w-50"
+                                                                       src="../assets/images/avtar/2.jpg" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <h6>mark wangar</h6>
+                                            <p><a href="mailto:mark@example.com">mark@example.com</a></p>
+                                        </div>
+                                        <ul class="emailseen-setting">
+                                            <li><a href="javascript:void(0)"><i class="fa fa-reply"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-trash"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="javascript:void(0)"><i class="fa fa-print"> </i></a></li>
+                                            <li>
+                                                <div class="action-menu">
+                                                    <div class="action-toggle"><i class="fa fa-ellipsis-v"></i>
+                                                    </div>
+                                                    <ul class="action-dropdown">
+                                                        <li><a href="javascript:void(0)">translate message</a></li>
+                                                        <li><a href="javascript:void(0)">filter this message</a>
+                                                        </li>
+                                                        <li><a href="javascript:void(0)">download message</a></li>
+                                                        <li><a href="javascript:void(0)">show original </a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <a class="cdxapp-toggle font-primary" href="javascript:void(0)"><i
+                                                class="ti-layout-grid2"></i></a>
+                                    </div>
+                                </div>
+                                <div class="seen-body" data-simplebar>
+                                    <h5>hello sir/madam</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                        eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                        est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                        eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident.</p>
+                                    <ul class="email-post">
+                                        <li><img class="img-fluid" src="../assets/images/pages/email/post/1.jpg"
+                                                 alt="mail-post"></li>
+                                        <li><img class="img-fluid" src="../assets/images/pages/email/post/2.jpg"
+                                                 alt="mail-post"></li>
+                                        <li><img class="img-fluid" src="../assets/images/pages/email/post/3.jpg"
+                                                 alt="mail-post"></li>
+                                        <li><img class="img-fluid" src="../assets/images/pages/email/post/4.jpg"
+                                                 alt="mail-post"></li>
+                                    </ul>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                        eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                        cupidatat non proident.</p>
+                                    <div class="email-reply">
+                                            <textarea class="form-control" placeholder="write your message"
+                                                      rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="seen-footer"><a class="btn btn-primary" href="javascript:void(0)"><i
+                                        class="fa fa-reply"> </i>reply </a><a class="btn btn-secondary"
+                                                                              href="javascript:void(0)"><i
+                                        class="fa fa-share"></i>forward</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button trigger modal-->
+        </div>
+    </div>
+    <!-- Modal-->
+    <div class="modal fade email-modal" id="emailcreat" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Mail</h5><span class="close-modal" data-bs-dismiss="modal"><i
+                        class="ti-close"></i></span>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="TO">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="CC">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" placeholder="SUBJECT">
+                        </div>
+                        <div class="form-group">
+                            <div class="ckmain">
+                                <div class="ckeditor-menu"></div>
+                                <div id="dmekikeditor"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="group-btn"><a class="btn btn-md btn-primary" href="javascript:void(0)"> <i
+                            data-feather="send"></i>Send</a><a class="btn btn-md btn-success"
+                                                               href="javascript:void(0)"> <i
+                            data-feather="save"></i>Save</a><a class="btn btn-md btn-danger"
+                                                               href="javascript:void(0)"> <i
+                            data-feather="x-square"></i>Discard</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+
+<!-- ckeditor  -->
+<script src="../assets/js/vendors/ckeditor/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#dmekikeditor'), {
+            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+            heading: {
+                options: [
+                    {model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph'},
+                    {model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1'},
+                    {model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2'}
+                ]
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
+{% endblock %}

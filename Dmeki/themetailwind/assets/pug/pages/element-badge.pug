@@ -1,0 +1,81 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Badge")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('badge','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .grid.grid-cols-12.cdx-gap
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Default Badge
+              .card-body
+                p.card-title-desc.mb-8 Use any of the available
+                  code.text-danger badge badge-*
+                  |&nbsp;classes quickly create a styled badge.                            
+                span.badge.badge-primary Primary
+                span.badge.badge-secondary Secondary
+                span.badge.badge-success Success
+                span.badge.badge-info Info
+                span.badge.badge-warning Warning
+                span.badge.badge-danger Danger
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Rounded Badge
+              .card-body
+                p.card-title-desc.mb-8 Use any of the available 
+                  code.text-danger badge badge-rounded*
+                  |&nbsp;classes quickly create a styled badge.                            
+                span.badge.badge-rounded-primary Primary
+                span.badge.badge-rounded-secondary Secondary
+                span.badge.badge-rounded-success Success
+                span.badge.badge-rounded-info Info
+                span.badge.badge-rounded-warning Warning
+                span.badge.badge-rounded-danger Danger
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Outlined Badge
+              .card-body
+                p.card-title-desc.mb-8 Use any of the available 
+                  code.text-danger badge badge-outline-*
+                  |&nbsp;classes quickly create a styled badge.                            
+                span.badge.badge-outline-primary Primary
+                span.badge.badge-outline-secondary Secondary
+                span.badge.badge-outline-success Success
+                span.badge.badge-outline-info Info
+                span.badge.badge-outline-warning Warning
+                span.badge.badge-outline-danger Danger
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Outline Rounded Badge
+              .card-body
+                p.card-title-desc.mb-8 Use any of the available 
+                  code.text-danger badge badge-roundedoutline-*
+                  |&nbsp;classes quickly create a styled badge.                            
+                span.badge.badge-roundedoutline-primary Primary
+                span.badge.badge-roundedoutline-secondary Secondary
+                span.badge.badge-roundedoutline-success Success
+                span.badge.badge-roundedoutline-info Info
+                span.badge.badge-roundedoutline-warning Warning
+                span.badge.badge-roundedoutline-danger Danger
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+
+    +footerfile

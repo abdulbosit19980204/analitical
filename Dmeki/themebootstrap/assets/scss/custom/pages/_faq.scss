@@ -1,0 +1,81 @@
+/*********************
+31  FAQ START
+**********************/
+.faq-searchwrap{
+    overflow: hidden;
+    .card-body{
+        background-image: url("../images/pages/faq/1.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;         
+        background-position: center; 
+        text-align: center;          
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:360px;
+        z-index:1;
+        &::before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($black, 0.5);
+            z-index: -1;
+        }
+        h1{
+            text-transform: capitalize;
+            color: $white;
+            margin-block-end: 25px;
+        }
+        .input-group{           
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            .input-group-text{
+                color: $white;
+            }
+        }
+    }
+}
+
+
+.codex-accordion{   
+    overflow: hidden;
+    .cdx-collapse{
+        padding:15px;
+        padding-inline-end: 30px;
+        display: block;       
+        border-bottom: 1px solid $theme-border ;      
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px; 
+        position: relative;
+        color: $codex-font-color;
+        font-size:16px;
+        font-weight: 500;
+        &:before{
+            content:"\f106";
+            font-family: $font-awesome;
+            position: absolute;            
+            inset-block-start:10px;            
+            inset-inline-end:15px;
+            font-size: 24px;           
+        }
+        &.collapsed{
+            &:before{
+                content:"\f107";
+            }
+        }  
+    }    
+    .accordion-item{
+        border: 1px solid $theme-border !important;
+        border-radius: 5px;
+        p{
+            font-size:14px;
+        }
+        &:nth-child(n+2){
+            margin-block-start: 20px;
+        }         
+    }
+}

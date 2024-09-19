@@ -1,0 +1,334 @@
+
+//-loader start
+mixin loader
+  .codex-loader      
+    .linespinner
+
+mixin taptop
+  .scroll-top
+    i.fa.fa-angle-double-up
+
+
+//- qty counter start
+mixin qtycounter
+  .input-group.pro-quantity
+    span.input-group-text.count-minus 
+      i(data-feather="minus")
+    input.form-control.pro-qty(type='text' name='qty count' value='1')
+    span.input-group-text.count-plus 
+      i(data-feather="plus")
+
+
+
+//- custom chekbox start             
+mixin checkinput(inputType, inputId, inputName, checked, inputClass)
+  span.custom-check-input.custom-chek
+    input.form-check-input(
+      type = inputType
+      id = inputId
+      name = inputName   
+      checked = checked                   
+    )   
+//- custom chekbox end
+
+//- rating list strat
+mixin proRating
+  ul.rating-list
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+    li
+      i.fa.fa-star
+
+//- rating list end
+
+//- top product start
+mixin filterproduct(prosrc ,proname, proprice)
+  .top-product
+    .product-imgwrap 
+      img.img-fluid(src="../assets/images/pages/product/"+ prosrc, alt= prosrc)
+    .product-detailwrap
+      a(href="product-detail.html")
+        h6= proname
+      +proRating   
+      .price= '$'+ proprice   
+//- top product end
+
+
+//- ecom product start
+mixin ecomproduct(proname,des,saledetail,ecompro)
+  .card.ecom-product
+    .card-body
+      .product-imgwrap
+        img.img-fluid(src="../assets/images/ecom-dashboard/product/"+ ecompro, alt=ecompro)       
+      .detail-wrap
+        a(href="product-detail.html")
+          h5= proname
+          p= des
+        h6.text-light= saledetail 
+        .rating-detail
+          +proRating
+//- ecom product start
+
+//- Product-Rating-START
+mixin proRatingWork(inputId)
+  .pro-rating                
+    - for(var i = 1; i < 6; i++)
+      input(type="radio", id=inputId+ i, name=inputId)
+      label.star(for=inputId+ i)    
+//- Product-Rating-END
+
+//- product box start
+mixin productBox(proImg, saleLabel, discountLabel, prodName, upadteProPrice, oldProPrice, ratingInputId)
+  .product-boxwrap
+    .product-imgwrap
+      a(href='product-detail.html')
+        img.img-fluid(src='../assets/images/pages/product/'+ proImg , alt="product box")
+      if saleLabel                                              
+        span.product-sale-label= saleLabel
+      if discountLabel
+        span.product-discount-label= discountLabel +'%'
+      ul.social
+        li
+          a(href='cart.html' data-tip='add to cart')
+            i.icofont-shopping-cart
+        li
+          a(href='product-detail.html' data-tip='Quick View')
+            i.icofont-eye-alt
+        li
+          a(href='wishlist.html' data-tip='Wishlist')
+           i.icofont-heart-alt
+    .product-detailwrap
+      div
+        a(href='product-detail.html')
+          h5= prodName
+        +proRatingWork(ratingInputId)   
+        .pro-price= '$'+ upadteProPrice              
+          span.old-price= '$'+ oldProPrice
+//- product box end
+
+
+
+
+//- user card start//
+mixin usercard (userimg,username,position)
+  .card.user-card
+    .card-header
+      .user-setting
+        .action-menu         
+          .action-toggle
+            i(data-feather="more-vertical")           
+          ul.action-dropdown
+            li
+              a(href="profile.html") 
+                i(data-feather="eye")
+                | View Profile
+            li
+              a(href="user-edit.html") 
+                i(data-feather="edit")
+                | Edit profile
+            li
+              button.btn
+                i(data-feather="trash")
+                | Delete profile
+    .card-body                       
+      .user-imgwrap         
+        img.img-fluid.rounded-50(src="../assets/images/avtar/"+ userimg, alt= userimg)
+      .user-detailwrap  
+        h3= username 
+        h6= position 
+        ul.codex-soclist
+          li
+            a(href="https://www.facebook.com/")
+              i.fa.fa-facebook
+          li
+            a(href="https://twitter.com/")
+              i.fa.fa-twitter
+          li
+            a(href="https://www.behance.net/")
+              i.fa.fa-behance
+          li
+            a(href="https://www.linkedin.com/")
+              i.fa.fa-linkedin
+        .group-btn
+          a.btn.btn-primary.btn-md(href="javascript:void(0);") message                   
+          a.btn.btn-secondary.btn-md(href="javascript:void(0);") follow
+//- user card end//
+
+
+
+//- blog wrapper
+mixin blowrapper(dateinfo,title,blogimg)
+  .card.blog-wrapper
+    .imgwrapper
+      img.img-fluid(src="../assets/images/pages/blog/"+ blogimg, alt= blogimg)     
+      a.hover-link(href="blog-detail.html")
+        i(data-feather="link")
+    .detailwrapper
+      a(href="blog-detail.html")
+        h4= title
+      ul.blogsoc-list
+        li
+          a(href="javascript:void(0)")
+            i(data-feather="user")
+            | admin
+        li
+          a(href="javascript:void(0)")
+            i(data-feather="message-circle")
+            | comment
+        li
+          a(href="javascript:void(0)")
+            i(data-feather="thumbs-up")
+            | like
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      .blog-footer
+        a.btn.btn-primary(href="blog-detail.html") read more
+        .date-info
+          i.fa.fa-calendar
+          span= dateinfo
+
+
+mixin contactcard(cname,cposistion,brithday,address,phonenumber,email,cadmin)
+  .card.contact-card
+    .card-body  
+      .media.align-items-center             
+        .user-imgwrapper          
+          img.img-fluid.rounded-50(src="../assets/images/avtar/"+ cadmin, alt= cadmin)  
+        .media-body
+          h4= cname
+          h6.text-light= cposistion 
+        .user-setting
+          .action-menu                       
+            .action-toggle
+              i(data-feather="more-vertical")
+            ul.action-dropdown
+              li
+                a.modal-toggle(href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#contactmodal") 
+                  i(data-feather="edit")                 
+                  | Edit contact
+              li
+                button.btn
+                  i(data-feather="trash")
+                  | Delete contact
+              li
+                button.btn
+                  i(data-feather="slash")
+                  | block contact
+      .user-detail
+        h5.text-primary.mb-10 
+          i.fa.fa-info-circle.mr-10
+          |infomation
+        p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+        ul.info-list
+          li
+            span brithday :- 
+            =brithday
+          li
+            span address :-
+            =address 
+          li
+            span phone :-
+            a(href="tel:"+ phonenumber)
+              =phonenumber 
+          li
+            span email :-
+            a(href="mailto:"+ email)
+              =email 
+        .user-action                   
+          a.btn.btn-primary(href='javascript:void(0);') 
+            i.fa.fa-commenting
+            //- | message                   
+          a.btn.btn-secondary(href='javascript:void(0);') 
+            i.fa.fa-phone             
+            //- | Call
+          a.btn.btn-success(href='javascript:void(0);') 
+            i.fa.fa-video-camera
+            //- |Video Call                    
+
+
+
+
+
+//- codex-breadcrumb start
+mixin codexbreadcrumb(pagename,pagetype)
+  .codex-breadcrumb   
+    .breadcrumb-contain
+      .left-breadcrumb
+        ul.breadcrumb.mb-0
+          li.breadcrumb-item
+            a(href='index.html') 
+              h1 Dashboard
+          li.breadcrumb-item
+            a(href='javascript:void(0);')= pagetype 
+          li.breadcrumb-item.active
+            a(href='javascript:void(0);')= pagename
+      .right-breadcrumb
+        ul
+          li
+            .bread-wrap
+              i.fa.fa-clock-o
+            span.liveTime
+          li
+            .bread-wrap
+              i.fa.fa-calendar
+            span.getDate 
+//- codex-breadcrumb end
+
+
+
+
+//- Pricing table 
+mixin pricingsimple(type,value,list1,list2,list3,list4,list5)
+  .codex-pricingtbl
+    .price-header               
+      h2= type
+      .price-value= value
+        span / month
+    ul.cdxprice-list
+      li
+        span= list1 
+        | Disk Space
+      li
+        span= list2
+        | Email Accounts
+      li
+        span= list3
+        | subdomailns
+      li
+        span= list4
+        | domains
+      li
+        span= list5
+        | bandwidth
+    a.btn.btn-primary(href='javascript:void(0);') Select Plan  
+
+mixin pricingadvance(pricingcls,type,value,priceicon,list1,list2,list3,list4,list5,btncls)
+  .codex-pricingadvance(class= pricingcls)
+    .price-header               
+      h3= type
+      .price-value= value
+        span / month
+    .price-icon
+      i(class= priceicon)
+    ul.cdxprice-list
+      li
+        span= list1 
+        | Disk Space
+      li
+        span= list2
+        | Email Accounts
+      li
+        span= list3
+        | subdomailns
+      li
+        span= list4
+        | domains
+      li
+        span= list5
+        | bandwidth
+    a.btn(href='javascript:void(0);' class= btncls) Select Plan  

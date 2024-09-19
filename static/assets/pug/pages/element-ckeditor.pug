@@ -1,0 +1,40 @@
+-var ckeditor = true;
+
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Ckeditor")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('modal','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row             
+            .col-6            
+              .card
+                .card-header
+                  h4 theme modal
+                .card-body
+                  #dmekikeditor
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+
+    +footerfile

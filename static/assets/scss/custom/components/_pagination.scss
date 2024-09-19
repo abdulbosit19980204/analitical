@@ -1,0 +1,39 @@
+/*******************
+  08 PAGINATION START
+********************/
+$pagination-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "light":      $theme-light,
+    "dark":       $theme-dark,
+);
+
+@each  $pagination-colorname , $pagination-color  in $pagination-colors {
+    .pagination-#{$pagination-colorname}{
+        .page-item{
+            &.active {
+                .page-link{
+                    background-color: $pagination-color;
+                    color: $white;
+                    border-color: $pagination-color;
+                }
+            }
+            .page-link{
+                color: $pagination-color;
+            }
+        }
+    }
+    
+}
+
+
+.pagination-md {
+    .page-link{
+        padding: 0.50rem 1rem;
+        font-size: 16px;
+    }
+}

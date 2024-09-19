@@ -1,0 +1,56 @@
+-var dropzone = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("dropzone")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('dropzone','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body.cdxshopping-cart
+        .container-fluid
+          .row          
+            .col-md-12
+              .card
+                .card-body                 
+                  form#demo-upload.dropzone.needsclick(action='/upload')
+                    .dz-message.needsclick
+                      .upload-icon
+                        i.fa.fa-cloud-upload
+                      h3 Drop files here or click to upload.
+                      p (This is just a demo dropzone. Selected files are
+                        strong not
+                          |  actually uploaded.)
+                  .preview-dropzon(style='display: none;')
+                    .dz-preview.dz-file-preview
+                      .dz-image
+                        img(data-dz-thumbnail='' src="" alt="")
+                      .dz-details
+                        .dz-size
+                          span(data-dz-size='')
+                        .dz-filename
+                          span(data-dz-name='')
+                      .dz-progress
+                        span.dz-upload(data-dz-uploadprogress='')                     
+                      .dz-success-mark
+                        i.fa.fa-check(aria-hidden='true')
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile  

@@ -1,0 +1,135 @@
+-var formvalidation = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Form Validation")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('form validation','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.codex-calendar
+        .custom-container
+          .row               
+            .col-md-12
+              .card
+                .card-header
+                  h4 basic validation
+                .card-body  
+                  form.row.needs-validation(novalidate='')
+                    .col-md-4
+                      .form-group
+                        label.form-label(for='validationCustom01') First name
+                        input#validationCustom01.form-control(type='text' value='thomos' required='')
+                        .valid-feedback
+                          | Looks good!
+                    .col-md-4
+                      .form-group
+                        label.form-label(for='validationCustom02') Last name
+                        input#validationCustom02.form-control(type='text' value='vactom' required='')
+                        .valid-feedback
+                          | Looks good!
+                    .col-md-4
+                      .form-group
+                        label.form-label(for='validationCustomUsername') Username
+                        .input-group.has-validation
+                          span#inputGroupPrepend.input-group-text @
+                          input#validationCustomUsername.form-control(type='text' aria-describedby='inputGroupPrepend' required='')
+                          .invalid-feedback
+                            | Please choose a username.
+                    .col-md-6
+                      .form-group
+                        label.form-label(for='validationCustom03') City
+                        input#validationCustom03.form-control(type='text' required='')
+                        .invalid-feedback
+                          | Please provide a valid city.
+                    .col-md-3
+                      .group-from
+                        label.form-label(for='validationCustom04') State
+                        select#validationCustom04.form-control(required='')
+                          option(selected='' disabled='' value='') Choose...
+                          option ...
+                        .invalid-feedback
+                          | Please select a valid state.
+                    .col-md-3
+                      .form-group
+                        label.form-label(for='validationCustom05') Zip
+                        input#validationCustom05.form-control(type='text' required='')
+                        .invalid-feedback
+                          | Please provide a valid zip.
+                    .col-12      
+                      .form-group             
+                        +checkinput('checkbox','rememberme', 'rememberme')                     
+                        label(for='rememberme')
+                          | Agree to terms and conditions
+                        .invalid-feedback
+                          | You must agree before submitting.
+                    .col-12
+                      button.btn.btn-primary(type='submit') Submit form
+            .col-md-12
+              .card
+                .card-header
+                  h4 validation with Tooltips
+                .card-body
+                  form.row.needs-validation(novalidate='')
+                    .col-md-4.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltip01') First name
+                        input#validationTooltip01.form-control(type='text' value='Mark' required='')
+                        .valid-tooltip
+                          | Looks good!
+                    .col-md-4.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltip02') Last name
+                        input#validationTooltip02.form-control(type='text' value='Otto' required='')
+                        .valid-tooltip
+                          | Looks good!
+                    .col-md-4.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltipUsername') Username
+                        .input-group.has-validation
+                          span#validationTooltipUsernamePrepend.input-group-text @
+                          input#validationTooltipUsername.form-control(type='text' aria-describedby='validationTooltipUsernamePrepend' required='')
+                          .invalid-tooltip
+                            | Please choose a unique and valid username.
+                    .col-md-6.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltip03') City
+                        input#validationTooltip03.form-control(type='text' required='')
+                        .invalid-tooltip
+                          | Please provide a valid city.
+                    .col-md-3.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltip04') State
+                        select#validationTooltip04.form-control(required='')
+                          option(selected='' disabled='' value='') Choose...
+                          option ...
+                        .invalid-tooltip
+                          | Please select a valid state.
+                    .col-md-3.position-relative
+                      .form-group
+                        label.form-label(for='validationTooltip05') Zip
+                        input#validationTooltip05.form-control(type='text' required='')
+                        .invalid-tooltip
+                          | Please provide a valid zip.
+                    .col-12
+                      button.btn.btn-primary(type='submit') Submit form
+   
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

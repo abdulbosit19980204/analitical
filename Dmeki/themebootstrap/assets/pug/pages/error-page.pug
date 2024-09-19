@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Error page")  
+  body
+    
+    // Error Start
+    section
+      .container
+        .row
+          .col-12
+            .codex-error
+              .error-detail
+                h1
+                  | o
+                  span op
+                  | s!
+                h2 This Page Not Found!
+                p Sorry, The Page You're Looking For Dose Not Exit. If You Think Something Is Broken, Report A Problem. Go Back To The Homepage.
+                a.btn.btn-primary(href='index.html')
+                  i(data-feather="home")
+                  |  Go Back Home
+    // Error Start
+
+    +footerfile

@@ -1,0 +1,16 @@
+/*********************
+  11 TABLE START
+*********************/
+.bordernone{
+    td{
+        border: none !important;
+    }
+}
+
+thead, tbody, tfoot, tr, td, th{
+    border-style: solid;
+}
+
+.table > :not(:last-child) > :last-child > *{
+    border-color: $theme-border;
+}

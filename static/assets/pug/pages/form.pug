@@ -1,0 +1,102 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Form")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('form','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.codex-calendar
+        .custom-container
+          .row              
+            .col-md-6
+              .card
+                .card-header
+                  h4 default form
+                .card-body  
+                  form(action='#')
+                    .form-group                   
+                      input.form-control(type='text' placeholder="Name")
+                    .form-group                   
+                      input.form-control(type='email' placeholder="Email")
+                    .form-group                    
+                      input.form-control(type='password' placeholder="Password")
+                    .form-group                 
+                      +checkinput('checkbox','rememberme', 'rememberme')
+                      label(for='rememberme') Remember me
+                    button.btn.btn-primary(type='submit') Submit
+            .col-md-6
+              .card
+                .card-header
+                  h4 form with label
+                .card-body  
+                  form(action='#')
+                    .form-group
+                      label.form-label  User Name       
+                      input.form-control(type='text' placeholder="Name")
+                    .form-group
+                      label.form-label  Email
+                      input.form-control(type='password' placeholder="password")                  
+                    .form-group
+                      +checkinput('checkbox','rememberme1', 'rememberme1')
+                      label(for='rememberme1') Remember me                   
+                    button.btn.btn-primary(type='submit') Submit
+            .col-md-6
+              .card
+                .card-header
+                  h4 form with icon
+                .card-body  
+                  form(action='#')
+                    .form-group
+                      label.form-label  User Name       
+                      .input-group
+                        span.input-group-text.bg-primary
+                          i.fa.fa-search.text-white
+                        input.form-control(type='text' placeholder="Name")
+                    .form-group
+                      label.form-label  Password
+                      .input-group
+                        span.input-group-text.bg-primary
+                          i.fa.fa-envelope-o.text-white
+                        input.form-control(type='password' placeholder="password")
+                    .form-group
+                      +checkinput('checkbox','rememberme3', 'rememberme3')
+                      label(for='rememberme3') Remember me                   
+                    button.btn.btn-primary(type='submit') Submit
+            .col-md-6
+              .card
+                .card-header
+                  h4 form with textarea
+                .card-body  
+                  form(action='#')
+                    .form-group
+                      label.form-label Email address
+                      input.form-control(type='email' placeholder='dmeki@example.com')
+                    .form-group                   
+                       textarea.form-control(rows='3'  placeholder="address")
+                    .form-group
+                      +checkinput('checkbox','rememberme4', 'rememberme4')
+                      label(for='rememberme4') Remember me                   
+                    button.btn.btn-primary(type='submit') Submit
+
+               
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

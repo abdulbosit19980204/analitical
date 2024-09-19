@@ -1,0 +1,562 @@
+/***************
+ 36 LANDING PAGE
+****************/
+.space-py-100{
+	padding-block-start: 100px;
+	padding-block-end: 100px;
+}
+.space-pt-100{
+	padding-block-start: 100px;
+}
+.space-pb-100{
+	padding-block-end: 100px;
+}
+.land-title{
+	margin-block-end:40px;
+	text-align: center;
+	h2{
+        color: $theme-primary;
+        font-size: calc(32px + (40 - 32) * ((100vw - 420px) / (1920 - 420)));
+		font-weight: 700;
+		text-transform: capitalize;
+		margin-block-end: 0;
+	}
+	p{		
+		margin-inline-start: auto;
+		margin-inline-end: auto;
+		margin-block-start: 5px;
+		font-size: calc(16px + (18 - 16) * ((100vw - 420px) / (1920 - 420)));
+	}
+}
+.land-header{
+	padding-block-start: 20px;
+	padding-block-end: 20px;
+	&.fixed{
+		position: fixed;
+		width: 100%;
+		background-color: transparent;	
+		animation: none;
+		transition: all 0.5s ease;
+		.menu-list {
+			a{
+				color: $white;
+				font-size: 18px;
+			}
+		}
+
+		.menu-action {
+			span{
+				background-color: $white;
+				&::after,&::before{
+					background-color: $white;
+				}
+			}
+			&.toggle-active {
+				span{
+					background-color: transparent;
+				}
+			}
+		}
+		&.sticky{
+			background-color: $white;
+			animation: fadeInDown 1s ease;
+			.codex-brand{
+				img{
+					filter: invert(1);
+				}
+			}
+			.menu-list {
+				a{
+					color: $black;
+				}
+			}
+			.menu-action{
+				i{
+					color: $black;
+				}
+			}
+		}
+	}
+	.header-contain{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.menu-list{
+		li{
+			display: inline-block;
+			+li{
+				margin-inline-start: 30px;
+			}
+		}
+	}
+	.menu-action{
+		margin-inline-start: 15px;
+		i{
+			color: $white;
+			font-size: 24px;
+		}
+	}
+}
+.intro{
+	height: 100vh;
+	position: relative;	
+	background-color: $black;
+	background-image: url('../images/landing/herointro.jpg');
+	&::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;	
+		background-color: rgba($black,0.8);
+	}
+	.intro-contain{
+		height: 100vh;
+		display: flex;
+		align-items: center;	
+		position: relative;
+		z-index: 1;
+		color: $white;		
+		padding-block-start:70px;
+		h1{
+			font-weight: 700;
+			font-size: calc(32px + (50 - 32) * ((100vw - 420px) / (1920 - 420)));
+			margin-block-end: 15px;
+		}
+		p{
+			color: $white;
+			font-size: calc(16px + (18 - 16) * ((100vw - 420px) / (1920 - 420)));
+		}
+		.btn{
+			display: flex;
+			width: fit-content;
+			align-items: center;		
+			font-size:18px;
+			margin-block-start:45px;
+			i{
+				margin-inline-end:10px;
+			}
+		}
+	}	
+}
+
+
+
+/* DEMO */
+.cdx-demos{
+	.cdx-row{
+		justify-content: center;
+	}
+}
+.demo-grid{
+	text-align: center;
+	.img-wrap{
+		overflow: hidden;
+		border-radius: 8px;
+		box-shadow: 0 0 15px rgba($black,0.15);
+		position: relative;
+		border: 10px solid $white;
+		.group-link{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			margin: auto;
+			background-color: rgba($black,0.8);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.5s ease;
+			border-radius: 8px;
+			.hover-link{
+				color:$white;
+				background-color: $white;
+				width: 50px;
+				height: 50px;
+				border-radius: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					color: $theme-primary;				
+					width: auto;
+					height: 24px;
+				}	
+				+.hover-link{
+						margin-left:10px;
+				}
+			}
+		}
+		img{
+			width:100%;
+			height: auto;
+			transition: all 0.5s ease;
+		}	
+	}
+	.demo-detail{
+		margin-block-start: 20px;
+		h3{
+			font-size: calc(22px + (26 - 22) * ((100vw - 420px) / (1920 - 420)));
+            font-weight:700;
+			text-transform: capitalize;
+		}
+	}
+	&:hover{
+		.img-wrap{		
+			img{
+				transform: scale(1.02);
+			}
+		}
+		.group-link{
+			opacity:1;
+			visibility:visible;
+		}
+	}
+}
+
+/* landing footer*/
+.landheader-comp{
+	background-color: $black;
+	.img-wrap{
+		border: 5px solid $white;
+		border-radius: 10px;	
+	}
+	.header-detail{	
+		padding-inline-end: 60px;
+		position: sticky;
+		top: 280px;
+		width: 100%;
+		margin-block-start: 100px;
+		h2{
+			font-size: calc(32px + (46 - 32) * ((100vw - 420px) / (1920 - 420)));
+			font-weight: 700;
+			color: $white;
+			margin-block-end:10px;
+		}
+		p{
+			color: $white;
+			font-size: calc(16px + (18 - 16) * ((100vw - 420px) / (1920 - 420)));
+			+p{
+				margin-block-start: 15px;
+			}
+		}
+		.btn{
+			margin-block-start:45px;
+		}
+	}
+}
+
+/* FEATHURES */
+.feathure{
+	.cdx-row{
+		margin-block-end: -35px;
+		>div{
+			margin-block-end: 35px;
+		}
+	}
+	
+}
+.feathure-grid{	
+	text-align: center;
+	box-shadow: 0 0 20px rgba($black,0.10);
+	padding:45px 0;
+	border-radius: 8px;
+	transition: all 0.5s ease;
+	background-color:$white;
+	&:hover{
+		box-shadow: 0 0 30px rgba($black,0.10);
+		background-color: rgba($theme-primary,0.04);
+	}
+	.icon-wrap{
+		background-color: rgba($theme-primary,0.1);
+		width: 75px;
+		height: 75px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-inline-start: auto;
+		margin-inline-end: auto;
+		i{
+			color: $theme-primary;		
+		}
+		img{
+			width: auto;
+			height: 35px;
+		}
+	}
+	h5{
+		font-weight:600;
+		margin-block-start: 15px;
+		text-transform: uppercase;
+	}
+}
+
+/* landing footer*/
+.lan-footer{
+	text-align: center;
+	background-color: $black;
+	.codex-brand{
+		margin-block-end: 30px;	
+	}
+	.support-contain{	
+		margin-inline-start: auto;
+		margin-inline-end: auto;
+		h2{
+            font-size: calc(22px + (36 - 22) * ((100vw - 420px) / (1920 - 420)));
+			font-weight: 700;
+			color:$white;		
+			line-height: 1.4;
+		}
+		p{
+			color:rgba($white,0.9);
+			font-size: calc(16px + (20 - 16) * ((100vw - 420px) / (1920 - 420)));
+		}
+		.btn{
+			margin-block-start:40px;
+		}
+	}
+	
+}
+
+
+
+/**landing responive**/
+
+
+@media screen and (max-width: 1199px){
+	/*header*/
+	header{
+		&.land-header{
+			.menu-list {
+				li{
+					.close-menu {
+						.menu-brand {
+							svg{
+								color: $black;
+							}
+						}
+					}
+					a{
+						color: $black;
+					}
+				}
+			}
+			&.fixed {
+				.menu-list{
+					a{
+						color: $black;
+					}
+					li{
+						display: block;
+						+li{
+							margin-inline-start: unset;
+						}
+					}
+				}
+			}
+		}	
+	}
+
+	
+
+	.menu-list{
+        position: fixed;
+        top: 0;
+        right: -350px;
+        width: 320px;           
+        height: 100%;
+        overflow: auto;
+        background-color: $white;
+        display: block;           
+        z-index: 9;
+        opacity: 0;
+        visibility: hidden;       
+        transition: all 0.5s ease;    
+        &.open{
+			right: 0;
+            opacity:1;
+            visibility:visible;    
+            border-top: 1px solid $theme-border;            
+        }
+        li {                
+            display: block;
+            position: relative;
+            .close-menu{
+                padding:25px 20px;
+                .menu-brand{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    img{
+                        width: 130px;
+                        height: auto;
+                    }
+                    svg{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            +li{
+                border-top: 1px solid $theme-border;
+            }
+            a{
+                padding:10px 20px;                   
+                width: 100%;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+            }
+            .submenu-list{
+                border-top: 1px solid $theme-border;
+                a{
+                    padding-inline-start: 30px;
+                    color: $font-light;
+                    font-size: 14px;
+                    i{
+                        position: absolute;
+                        top: 15px;
+                        right: 20px;
+                        transform: rotate(90deg);
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+                }
+                li{
+                    .secodnmenu-list{
+                        border-top: 1px solid $theme-border;
+                        a{
+                            padding-inline-start: 45px;
+                        }
+                    }
+                }
+            }
+        }
+         > li{
+            > a{                   
+                i{
+                    margin-inline-start: auto;
+                }
+            }
+         }
+    }
+
+	
+}
+@media screen and (max-width: 991px){
+	.land-title{
+		margin-block-end: 30px;
+	}
+	/*landing hero*/
+	.intro{
+		background-position: left !important;
+		.intro-contain{
+			text-align: center;
+			.btn{
+				margin-inline-start: auto;
+				margin-inline-end: auto;
+				margin-block-start: 30px;
+			}
+		}
+	}
+
+	/*header option*/
+	.landheader-comp {
+		.header-detail{
+			margin-block-start: unset;
+			position: static;
+			padding-inline-end: unset;
+			margin-block-end: 40px;
+			h2{
+				margin-block-end: 5px;
+			}
+			p {
+				+ p{
+					margin-block-start: 10px;
+				}
+			}
+			.btn{
+				margin-block-start:25px;
+			}
+		}
+	}
+
+	/*landing footer*/
+	.lan-footer {
+		.codex-brand {
+			margin-block-end:20px;
+			img{
+				width: 180px;
+			}
+		}
+		.support-contain {
+			.btn{
+				margin-block-start:30px;
+			}
+		}
+	}
+
+}
+
+
+@media screen and (max-width: 575px){
+	.land-title{
+		margin-block-end:20px;
+	}
+	.intro{
+		.intro-contain {
+			h1{
+				margin-block-end:10px;
+			}
+			.btn{
+				margin-block-start: 25px;
+			}
+		}
+	}
+
+	/*demo grid*/
+	.demo-grid {
+		.demo-detail{
+			margin-block-start:15px;
+		}
+	}
+
+	/*feathurs*/
+	.feathure-grid {
+		padding: 30px 10px;
+		background-color: $white;
+		.icon-wrap{
+			width: 60px;
+			height: 60px;
+			img{
+				height:24px;
+			}
+		}
+	}
+	.feathure {
+		.cdx-row {
+			margin-block-end: -30px;
+			> div{
+				margin-block-end: 30px;
+			}
+		}
+	}
+	/*fotoer*/
+	.lan-footer {
+		.codex-brand {
+			img{
+				width:160px;
+			}
+		}
+	}
+}
+
+

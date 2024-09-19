@@ -1,0 +1,85 @@
+-var calendar = true ;
+-var datepicker = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+
+  
+
+  +headerfile("Calendar")
+ 
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('calendar','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.codex-calendar
+        .custom-container
+          .row              
+            .col-12
+              .card
+                .card-body
+                  .row
+                    .col-xxl-3
+                      ul#codex-events-list.events-list
+                        li.fc-event.bg-primary
+                          i.fa.fa-birthday-cake
+                          | Birthday Party
+                        li.fc-event.bg-secondary
+                          i.fa.fa-handshake-o
+                          | Metting
+                        li.fc-event.bg-success
+                          i.fa.fa-graduation-cap
+                          | Holidays
+                        li.fc-event.bg-warning
+                          i.fa.fa-bus
+                          | Travel
+                        li.fc-event.bg-info
+                          i.fa.fa-building-o
+                          | Company
+                        li
+                          p.d-none
+                            input#drop-remove(type='checkbox')
+                            label(for='drop-remove') remove after drop
+                    .col-xxl-9                   
+                      #codex-calendar             
+          #e-modal.modal.fade(tabindex='-1')
+            .modal-dialog.modal-dialog-centered
+              .modal-content
+                .modal-header
+                  h5.modal-title Event
+                  span.close-modal(data-bs-dismiss='modal')             
+                    i.ti-close
+                .modal-body
+                  form#form-event.needs-validation(name='e-form' novalidate='')
+                    .row
+                      .col-12
+                        .form-group
+                          label.form-label Event Name
+                          input#startdate(type='hidden')
+                          input#allDay(type='hidden')
+                          input#e-title.form-control(placeholder='Add Event Name' type='text' name='title' required='' value='')
+                          .invalid-feedback Please provide a valid event name
+                    .row.mt-2
+                      .col-12.text-center                     
+                        button#btn-delete-event.btn.btn-danger(type='button') Delete
+                        button#btn-save-event.btn.btn-success(type='submit') Save
+
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

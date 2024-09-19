@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+<link href="{% static 'assets/css/vendor/datatable/jquery.dataTables.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/vendor/datatable/buttons.dataTables.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/vendor/datatable/custom-datatable.css' %}" rel="stylesheet">
+
+{% block content %}
+<!-- theme body start-->
+<div class="theme-body myCustomScrollbar cdxshopping-cart" data-mcs-theme="minimal-dark">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table productlist-tbl display dataTable cell-border" id="basicdata-tbl"
+                                   style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Caption Order</th>
+                                    <th>Client Name</th>
+                                    <th>Client Code</th>
+                                    <th>Type Price</th>
+                                    <th>Total</th>
+                                    <th>Date Order</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="/order-detail/{{order.NumOrder}}/?date={{order.DateOrder|date:'Ymdhis'}}">
+                                            {{order.NumOrder }}</a>
+                                    </td>
+                                    <td><a class="text_default" href="product-detail.html">{{ order.CaptionOrder}}</a>
+                                    </td>
+                                    <td>{{ order.ClientName }}</td>
+                                    <td>
+                                        <a href="/clien-detail/{{ order.ClientCode }}">
+                                            {{order.ClientCode }}</a>
+                                    </td>
+                                    <td>{{ order.TypePrice }}</td>
+                                    <td>{{order.Total}} uzs</td>
+                                    <td>{{order.DateOrder}}</td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+{% endblock %}
+<!-- Datatable-->
+<script src="{% static 'assets/js/vendors/datatable/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/jszip.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/custom-datatable.js' %}"></script>
+<script>
+    ClassicEditor
+        .create(document.querySelector('#crowenkeditor'), {
+            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+            heading: {
+                options: [
+                    {model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph'},
+                    {model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1'},
+                    {model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2'}
+                ]
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>

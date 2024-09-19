@@ -1,0 +1,111 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("theme colors")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('colors','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-12 
+              .card
+                .card-header 
+                  h4 default colors
+                .card-body
+                  .row.colors-exa
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-primary
+                      span primary
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-secondary
+                      span secondary
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-success
+                      span success
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-info
+                      span info
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-warning
+                      span waning
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-danger
+                      span danger
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-light
+                      span light
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-dark
+                      span dark
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-white
+                      span white
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-fontlight
+                      span font light
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-themebodycolor
+                      span theme body 
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-themefontcolor
+                      span theme font
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-themeborder
+                      span theme border
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-fb
+                      span facebook 
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-twt
+                      span twitter
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-insta
+                      span instagram
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-whp
+                      span whatsapp
+            .col-12 
+              .card
+                .card-header 
+                  h4 dark layout colors
+                .card-body
+                  .row.colors-exa
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-darkbody
+                      span dark body
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-darkcard
+                      span dark card
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-extradarkcard
+                      span extra dark
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                        .color-option.bg-darkfont
+                        span dark font
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-darksmallfont
+                      span dark small font
+                    .col-xxl-2.col-xl-4.col-lg-6.col-md-4.col-sm-6
+                      .color-option.bg-darkborder
+                      span dark border
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

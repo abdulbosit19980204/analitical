@@ -1,0 +1,123 @@
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	border-radius: 3px;
+	overflow: hidden;
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		&:checked  {
+			+ .switch-btn{			
+				&::before{			
+					transform: translateX(26px);
+				}
+			}
+		}	
+		&:disabled{
+			+ .switch-btn{
+				opacity: 0.5;
+			}
+		}
+	}
+	.switch-btn {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;	
+		transition: 0.4s;
+		&:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;		
+			transition: 0.4s;
+			border-radius: 3px;
+		}	
+	}
+	&.round{
+		border-radius:34px;
+		.switch-btn{
+			&:before{
+				border-radius:50%;
+			}
+		}
+	}
+	&.with-icon{
+		input{
+			&:checked  {
+				+ .switch-btn{			
+					&::before{			
+						content:"\e64c";
+					}
+				}
+			}
+		}
+		.switch-btn{
+			&::before{
+				font-size:12px;
+				content: "\e646";
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: $font-themify;
+			}
+		}
+	}
+}
+$switch-colors:(
+    "primary":    $theme-primary ,
+    "secondary":  $theme-secondary ,
+    "success":    $theme-success ,
+    "info":       $theme-info ,
+    "warning":    $theme-warning ,
+    "danger":     $theme-danger , 
+	"light":     $theme-light ,
+	"dark":     $theme-dark ,
+);
+@each  $switch-colorname , $switch-color  in $switch-colors {   
+	.switch-#{$switch-colorname}{	
+		input {		
+			&:checked  {
+				+ .switch-btn{
+					background-color: $switch-color;				
+				}
+			}			
+		}
+		.switch-btn {		
+			background-color: $bg-light;			
+			&:before {			
+				background-color: $white;			
+			}		
+		}
+	  }
+	.outline-#{$switch-colorname}{
+		border: 1px solid $switch-color;
+		input {		
+			&:checked  {
+				+ .switch-btn{				
+					&::before{
+						background-color: $switch-color;
+						transform: translateX(25px);
+					}
+				}
+			}			
+		}
+		.switch-btn {				
+			&:before {			
+				background-color: $bg-light;
+				bottom: 3px;			
+			}		
+		}
+	}
+}
+
+
+  

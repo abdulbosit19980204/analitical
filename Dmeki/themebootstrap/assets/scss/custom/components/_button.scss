@@ -1,0 +1,115 @@
+/*******************
+  04 BUTTON START
+*******************/
+$btn-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "dark":       $theme-dark,
+    "light":      $font-light, 
+    "white":      $white,
+);
+
+.btn{
+  border-radius:5px;
+  padding:10px 15px;
+  line-height: 1;
+  &.btn-md{
+    padding:10px 15px;
+  }
+}
+@each  $btn-colorname , $btn-color  in $btn-colors {
+    .btn-#{$btn-colorname}{
+        color: $white;    
+        background-color: $btn-color !important;   
+        border-color: $btn-color !important;      
+        &:hover{
+          color: $white;
+          background-color: rgba($btn-color,0.9) !important;      
+        }   
+        &:focus,
+        &:active{
+          box-shadow: 0 0 0 0.25rem rgba($btn-color,0.5) !important;
+        }     
+
+      &.btn_rounded{
+        border-radius: 30px;
+      }
+
+      &.dropdown-toggle-split{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+      ~{
+        .or-icon {
+          position: relative;
+          display: inline-block;
+          width:5px;
+          &:before {
+            position: absolute;
+            content: 'or';
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            width:25px;
+            height:25px;
+            border-radius:50%;
+            display: flex;
+            align-items:center;
+            justify-content: center;            
+            background-color:$theme-dark; 
+            color:$white; 
+            z-index:9;
+            font-size: 13px;
+          }
+        
+          &.sm{
+            &:before{
+              width:20px;
+              height:20px;
+              font-size: 11px;
+            }
+          }
+          &.lg {
+            &:before{
+              width:30px;
+              height:30px;
+              font-size: 17px;
+            }
+          }
+        }	
+        
+      }
+    }    
+    .btn.btn-outline-#{$btn-colorname}{    
+        background-color:transparent !important;                  
+        border-radius:5px;
+        border:1px solid $btn-color !important;
+        color: $btn-color !important;
+        &:hover,
+        &:focus,
+        &:active{
+          outline-color:$btn-color !important;
+          background-color: $btn-color !important;
+          color:$white !important;          
+        }
+        &:focus,
+        &:active{
+          box-shadow: 0 0 0 0.25rem rgba($btn-color, 0.5);
+        }
+    }
+    .btn-#{$btn-colorname}{      
+      background-color: $btn-color;
+      color: $white;  
+      border-radius:5px;  
+    }
+}
+
+.element-buttons{ 
+  .btn{
+    margin:3px 0;
+  }
+}

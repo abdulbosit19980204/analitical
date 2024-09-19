@@ -1,0 +1,415 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Modal")
+  body
+
+    +header
+
+
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('modal','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container.element-buttons
+          .row          
+            .col-xl-6            
+              .card
+                .card-header
+                  h4 theme modal
+                .card-body
+                  // normal modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#normalModal") Normal modal
+                  #normalModal.modal.fade
+                    .modal-dialog
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // normal modal end
+
+                  // static backdrop modal start
+                  button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop') static backdrop modal                  
+                  #staticBackdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+                    .modal-dialog
+                      .modal-content
+                        .modal-header
+                          h5#staticBackdropLabel.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Understood
+                  // static backdrop modal end
+
+
+                  // Scrolling long content modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#scrollinglongModal") Scrolling long content
+                  #scrollinglongModal.modal.fade
+                    .modal-dialog.modal-dialog-scrollable
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // Scrolling long content modal end
+
+            .col-xl-6            
+              .card
+                .card-header
+                  h4 advance modals
+                .card-body
+
+                  // Vertically centered modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#verticallycenterModal") Vertically centered
+                  #verticallycenterModal.modal.fade
+                    .modal-dialog.modal-dialog-centered
+                      .modal-content
+                        .modal-header
+                          h5.modal-title vertically center
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // Vertically centered modal end
+
+
+                  // Vertically centered modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#verticallycenterscrollModal") Vertically centered scrollable
+                  #verticallycenterscrollModal.modal.fade
+                    .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Vertically centered scrollable
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          p.mt-50 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // Vertically centered modal end
+
+                  // tool tip & popover modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#toolpopModal") tool tip & popover
+                  #toolpopModal.modal.fade
+                    .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Vertically centered scrollable
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                            h5 Popover in a modal
+                            p
+                              | This 
+                              a.btn.btn-secondary.popover-test(href='#' role='button' title='Popover title' data-bs-content='Popover body content is set in this attribute.') button
+                              |  triggers a popover on click.
+                            hr
+                            h5 Tooltips in a modal
+                            p
+                              a.tooltip-test(href='#' title='Tooltip') This link
+                              |  and 
+                              a.tooltip-test(href='#' title='Tooltip') that link
+                              |  have tooltips on hover.
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // tool tip & popover modal end
+
+
+                  // grid  modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#usegridModal") use grid
+                  #usegridModal.modal.fade
+                    .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Vertically centered scrollable
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          .container-fluid
+                            .row
+                              .col-md-4 .col-md-4
+                              .col-md-4.ms-auto .col-md-4 .ms-auto
+                            .row
+                              .col-md-3.ms-auto .col-md-3 .ms-auto
+                              .col-md-2.ms-auto .col-md-2 .ms-auto
+                            .row
+                              .col-md-6.ms-auto .col-md-6 .ms-auto
+                            .row
+                              .col-sm-9
+                                | Level 1: .col-sm-9
+                                .row
+                                  .col-8.col-sm-6
+                                    | Level 2: .col-8 .col-sm-6
+                                  .col-4.col-sm-6
+                                    | Level 2: .col-4 .col-sm-6
+
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // grid  modal end
+            .col-12            
+              .card
+                .card-header
+                  h4 Varying modal 
+                .card-body
+                  // Varying modal start
+                  button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#VaryingModal' data-bs-whatever='@mdo') Open modal for @mdo
+                  button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#VaryingModal' data-bs-whatever='@fat') Open modal for @fat
+                  button.btn.btn-primary(type='button' data-bs-toggle='modal' data-bs-target='#VaryingModal' data-bs-whatever='@getbootstrap') Open modal for @getbootstrap
+                  #VaryingModal.modal.fade
+                    .modal-dialog
+                      .modal-content
+                        .modal-header
+                          h5.modal-title New message
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          form
+                            .mb-3
+                              label.col-form-label(for='recipient-name') Recipient:
+                              input#recipient-name.form-control(type='text')
+                            .mb-3
+                              label.col-form-label(for='message-text') Message:
+                              textarea#message-text.form-control
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Send message
+                  // Varying modal end
+
+
+                  a.btn.btn-primary(data-bs-toggle='modal' href='#exampleModalToggle' role='button') Open first modal
+                  #exampleModalToggle.modal.fade(aria-hidden='true' aria-labelledby='exampleModalToggleLabel' tabindex='-1')
+                    .modal-dialog.modal-dialog-centered
+                      .modal-content
+                        .modal-header
+                          h5#exampleModalToggleLabel.modal-title Modal 1
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | Show a second modal and hide this one with the button below.
+                        .modal-footer
+                          button.btn.btn-primary(data-bs-target='#exampleModalToggle2' data-bs-toggle='modal' data-bs-dismiss='modal') Open second modal
+                  #exampleModalToggle2.modal.fade(aria-hidden='true' aria-labelledby='exampleModalToggleLabel2' tabindex='-1')
+                    .modal-dialog.modal-dialog-centered
+                      .modal-content
+                        .modal-header
+                          h5#exampleModalToggleLabel2.modal-title Modal 2
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | Hide this modal and show the first with the button below.
+                        .modal-footer
+                          button.btn.btn-primary(data-bs-target='#exampleModalToggle' data-bs-toggle='modal' data-bs-dismiss='modal') Back to first
+            .col-12            
+              .card
+                .card-header
+                  h4 sizing modal 
+                .card-body
+
+                  // xl modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#xlModal") extra larg modal
+                  #xlModal.modal.fade
+                    .modal-dialog.modal-xl
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // xl modal end
+
+
+                  // lg modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#lgModal") Large modal
+                  #lgModal.modal.fade
+                    .modal-dialog.modal-lg
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // lg modal end
+
+
+                  // sm modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#smModal") small modal
+                  #smModal.modal.fade
+                    .modal-dialog.modal-sm
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // sm modal end
+
+            .col-12            
+              .card
+                .card-header
+                  h4 Fullscreen Modal
+                .card-body
+
+                  //  Always full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#fullscreenModal") Full screen
+                  #fullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  //  Always full screen modal end
+
+
+                  //  small  device full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#smfullscreenModal") Full screen below sm
+                  #smfullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen-sm-down
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  //  small  device full screen modal end
+
+
+                  //  medium device full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#mdfullscreenModal") Full screen below md
+                  #mdfullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen-md-down
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  //  medium device full screen modal end
+
+
+                  //  large device full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#lgfullscreenModal") Full screen below lg
+                  #lgfullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen-lg-down
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  //  large device full screen modal end
+
+
+                  // extra large device full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#xlfullscreenModal") Full screen below xl
+                  #xlfullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen-xl-down
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // extra large device full screen modal end
+
+
+                  // extra large device full screen modal start
+                  button.btn.btn-primary(type="button"  data-bs-toggle="modal" data-bs-target="#xxlfullscreenModal") Full screen below xxl
+                  #xxlfullscreenModal.modal.fade
+                    .modal-dialog.modal-fullscreen-xxl-down
+                      .modal-content
+                        .modal-header
+                          h5.modal-title Modal title
+                          a(href='javascript:void(0);' data-bs-dismiss='modal' )
+                             i.ti-close
+                        .modal-body
+                          | ...
+                        .modal-footer
+                          button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Close
+                          button.btn.btn-primary.ml-10(type='button') Save changes
+                  // extra large device full screen modal end
+
+
+
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

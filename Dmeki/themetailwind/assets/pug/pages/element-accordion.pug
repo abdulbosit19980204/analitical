@@ -1,0 +1,100 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Accordion")
+  body
+
+    +header
+
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('accordion','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+          .grid.grid-cols-12           
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 default accordion
+                .card-body.grid.cdx-gap
+                  .accordion-grid                 
+                    .accordion-action
+                      | What does LOREM mean?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      | Where can I subscribe to your newsletter?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      | Where can in edit my address?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      | Can I order a free copy of a magazine to sample?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      | Do you accept orders via Phone or E-mail?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+            .col-span-12(class="md:col-span-6")
+              .card
+                .card-header
+                  h4 accordion with icon
+                .card-body.grid.cdx-gap
+                  .accordion-grid
+                    .accordion-action
+                      i.fa.fa-question-circle.mr-15
+                      | What does LOREM mean?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      i.fa.fa-question-circle.mr-15
+                      | Where can I subscribe to your newsletter?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      i.fa.fa-question-circle.mr-15
+                      | Where can in edit my address?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      i.fa.fa-question-circle.mr-15
+                      | Can I order a free copy of a magazine to sample?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                  .accordion-grid                 
+                    .accordion-action
+                      i.fa.fa-question-circle.mr-15
+                      | Do you accept orders via Phone or E-mail?
+                    .accordion-collapace
+                      .accordion-body
+                        p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+
+    +footerfile

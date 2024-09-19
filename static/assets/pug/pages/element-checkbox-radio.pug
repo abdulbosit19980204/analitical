@@ -1,0 +1,226 @@
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("chackbox & radio ")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('checkbox & radio','Input Element')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-md-3
+              .card
+                .card-header
+                  h4 Checkbox
+                .card-body
+                  .form-group
+                    .form-check.custom-chek
+                      input.form-check-input(type="checkbox" value="" id="Default")
+                      label.form-check-label(for="Default") Default                 
+                  .form-group
+                    .form-check.custom-chek.check-secondary
+                      input.form-check-input(type="checkbox" value="" id="secondarycheck")
+                      label.form-check-label(for="secondarycheck") Secondary Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-success
+                      input.form-check-input(type="checkbox" value="" id="successcheck")
+                      label.form-check-label(for="successcheck") Success Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-info
+                      input.form-check-input(type="checkbox" value="" id="infocheck")
+                      label.form-check-label(for="infocheck") Info Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-warning
+                      input.form-check-input(type="checkbox" value="" id="warningcheck")
+                      label.form-check-label(for="warningcheck") Warning Checkbox
+                  .form-group.mb-0
+                    .form-check.custom-chek.check-danger
+                      input.form-check-input(type="checkbox" value="" id="dangercheck")
+                      label.form-check-label(for="dangercheck") Danger Checkbox
+            .col-md-3
+              .card
+                .card-header
+                  h4 Checked checkbox
+                .card-body
+                  .form-group
+                    .form-check.custom-chek
+                      input.form-check-input(type="checkbox" value="" id="checkedDefault" checked)
+                      label.form-check-label(for="checkedDefault") Default                 
+                  .form-group
+                    .form-check.custom-chek.check-secondary
+                      input.form-check-input(type="checkbox" value="" id="checkedsecondarycheck" checked)
+                      label.form-check-label(for="checkedsecondarycheck") Secondary Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-success
+                      input.form-check-input(type="checkbox" value="" id="checkedsuccesscheck" checked)
+                      label.form-check-label(for="checkedsuccesscheck") Success Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-info
+                      input.form-check-input(type="checkbox" value="" id="checkedinfocheck" checked)
+                      label.form-check-label(for="checkedinfocheck") Info Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-warning
+                      input.form-check-input(type="checkbox" value="" id="checkedwarningcheck" checked)
+                      label.form-check-label(for="checkedwarningcheck") Warning Checkbox
+                  .form-group.mb-0
+                    .form-check.custom-chek.check-danger
+                      input.form-check-input(type="checkbox" value="" id="checkeddangercheck" checked)
+                      label.form-check-label(for="checkeddangercheck") Danger Checkbox
+            .col-md-3
+              .card
+                .card-header
+                  h4 disabled Checkbox
+                .card-body
+                  .form-group
+                    .form-check.custom-chek
+                      input.form-check-input(type="checkbox" value="" id="disabledDefault" disabled)
+                      label.form-check-label(for="disabledDefault") Default                 
+                  .form-group
+                    .form-check.custom-chek.check-secondary
+                      input.form-check-input(type="checkbox" value="" id="disabledsecondarycheck" disabled)
+                      label.form-check-label(for="disabledsecondarycheck") Secondary Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-success
+                      input.form-check-input(type="checkbox" value="" id="disabledsuccesscheck" disabled)
+                      label.form-check-label(for="disabledsuccesscheck") Success Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-info
+                      input.form-check-input(type="checkbox" value="" id="disabledinfocheck" disabled)
+                      label.form-check-label(for="disabledinfocheck") Info Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-warning
+                      input.form-check-input(type="checkbox" value="" id="disabledwarningcheck" disabled)
+                      label.form-check-label(for="disabledwarningcheck") Warning Checkbox
+                  .form-group.mb-0
+                    .form-check.custom-chek.check-danger
+                      input.form-check-input(type="checkbox" value="" id="disableddangercheck" disabled)
+                      label.form-check-label(for="disableddangercheck") Danger Checkbox
+            .col-md-3
+              .card
+                .card-header
+                  h4 Checked checkbox
+                .card-body
+                  .form-group
+                    .form-check.custom-chek
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckedDefault" checked disabled)
+                      label.form-check-label(for="disebledcheckedDefault") Default                 
+                  .form-group
+                    .form-check.custom-chek.check-secondary
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckedsecondarycheck" checked disabled)
+                      label.form-check-label(for="disebledcheckedsecondarycheck") Secondary Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-success
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckedsuccesscheck" checked disabled)
+                      label.form-check-label(for="disebledcheckedsuccesscheck") Success Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-info
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckedinfocheck" checked disabled)
+                      label.form-check-label(for="disebledcheckedinfocheck") Info Checkbox
+                  .form-group
+                    .form-check.custom-chek.check-warning
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckedwarningcheck" checked disabled)
+                      label.form-check-label(for="disebledcheckedwarningcheck") Warning Checkbox
+                  .form-group.mb-0
+                    .form-check.custom-chek.check-danger
+                      input.form-check-input(type="checkbox" value="" id="disebledcheckeddangercheck" checked disabled)
+                      label.form-check-label(for="disebledcheckeddangercheck") Danger Checkbox           
+            .col-md-3
+              .card
+                .card-header
+                  h4 radio
+                .card-body
+                  .form-group
+                    .form-check.custom-chek
+                      input.form-check-input(type="radio" value="" id="Defaultradio" name="radio")
+                      label.form-check-label(for="Defaultradio") Default                 
+                  .form-group
+                    .form-check.custom-chek.check-secondary
+                      input.form-check-input(type="radio" value="" id="secondaryradio" name="radio")
+                      label.form-check-label(for="secondaryradio") Secondary Radio
+                  .form-group
+                    .form-check.custom-chek.check-success
+                      input.form-check-input(type="radio" value="" id="successradio" name="radio")
+                      label.form-check-label(for="successradio") Success Radio
+                  .form-group
+                    .form-check.custom-chek.check-info
+                      input.form-check-input(type="radio" value="" id="inforadio" name="radio")
+                      label.form-check-label(for="inforadio") Info Radio
+                  .form-group
+                    .form-check.custom-chek.check-warning
+                      input.form-check-input(type="radio" value="" id="warningradio" name="radio")
+                      label.form-check-label(for="warningradio") Warning Radio
+                  .form-group.mb-0
+                    .form-check.custom-chek.check-danger
+                      input.form-check-input(type="radio" value="" id="dangerradio" name="radio")
+                      label.form-check-label(for="dangerradio") Danger Radio
+            .col-md-8
+              .row
+                .col-md-12
+                  .card
+                    .card-header
+                      h4 Inline Checkbox
+                    .card-body                 
+                      .form-check.custom-chek.form-check-inline
+                        input.form-check-input(type="checkbox" value="" id="inlineDefault")
+                        label.form-check-label(for="inlineDefault") Default                                  
+                      .form-check.custom-chek.form-check-inline.check-secondary
+                        input.form-check-input(type="checkbox" value="" id="inlinesecondarycheck")
+                        label.form-check-label(for="inlinesecondarycheck") Secondary Checkbox                 
+                      .form-check.custom-chek.form-check-inline.check-success
+                        input.form-check-input(type="checkbox" value="" id="inlinesuccesscheck")
+                        label.form-check-label(for="inlinesuccesscheck") Success Checkbox                 
+                      .form-check.custom-chek.form-check-inline.check-info
+                        input.form-check-input(type="checkbox" value="" id="inlineinfocheck")
+                        label.form-check-label(for="inlineinfocheck") Info Checkbox                 
+                      .form-check.custom-chek.form-check-inline.check-warning
+                        input.form-check-input(type="checkbox" value="" id="inlinewarningcheck")
+                        label.form-check-label(for="inlinewarningcheck") Warning Checkbox
+                      .form-check.custom-chek.form-check-inline.check-danger
+                        input.form-check-input(type="checkbox" value="" id="inlinedangercheck")
+                        label.form-check-label(for="inlinedangercheck") Danger Checkbox
+                .col-md-12
+                  .card
+                    .card-header
+                      h4 Inline Radio
+                    .card-body                 
+                      .form-check.custom-chek.form-check-inline
+                        input.form-check-input(type="radio" value="" id="inlineDefaultradio" name="radio")
+                        label.form-check-label(for="inlineDefaultradio") Default                                  
+                      .form-check.custom-chek.form-check-inline.check-secondary
+                        input.form-check-input(type="radio" value="" id="inlinesecondaryradio" name="radio")
+                        label.form-check-label(for="inlinesecondaryradio") Secondary radio                 
+                      .form-check.custom-chek.form-check-inline.check-success
+                        input.form-check-input(type="radio" value="" id="inlinesuccessradio" name="radio")
+                        label.form-check-label(for="inlinesuccessradio") Success radio                 
+                      .form-check.custom-chek.form-check-inline.check-info
+                        input.form-check-input(type="radio" value="" id="inlineinforadio" name="radio")
+                        label.form-check-label(for="inlineinforadio") Info radio                 
+                      .form-check.custom-chek.form-check-inline.check-warning
+                        input.form-check-input(type="radio" value="" id="inlinewarningradio" name="radio")
+                        label.form-check-label(for="inlinewarningradio") Warning radio
+                      .form-check.custom-chek.form-check-inline.check-danger
+                        input.form-check-input(type="radio" value="" id="inlinedangerradio" name="radio")
+                        label.form-check-label(for="inlinedangerradio") Danger radio
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile   

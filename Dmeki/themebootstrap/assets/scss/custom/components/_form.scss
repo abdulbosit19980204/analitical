@@ -1,0 +1,119 @@
+/****************
+ 05  FORM START
+*****************/
+
+.form-control-color{
+  display: block;
+  background-color: transparent;
+  border-color: $theme-border;
+  border-radius: 5px;
+}
+.form-control {
+  border-color: $theme-border;
+  font-size: 14px;
+  padding: 10px 15px;
+  color: $font-light;
+  border-radius: 5px;
+  &:focus {
+    box-shadow: none;
+    border-color: $theme-primary;
+    ~ .input-group-text {
+      border-color: $theme-primary;
+    }
+  }
+
+  &::placeholder {
+    color: $font-light;
+  }
+}
+
+.form-group {
+  margin-block-end: 20px;
+}
+
+.form-label {
+  text-transform: capitalize;
+  font-weight: 500;
+
+}
+
+.small-group {
+  display: flex;
+  align-items: center;
+
+  >div {
+    width: 100%;
+
+    &:nth-child(n+2) {
+      margin-inline-start: 15px;
+    }
+  }
+}
+
+select.form-control {
+  position: relative;
+  appearance: auto;
+}
+
+.input-group-text {
+  border-color: $theme-border;
+  color: $font-light;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* custom chekbox  start*/
+.custom-chek {
+  margin-block-end: 0;
+
+  .form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    border-color: $theme-border;
+    box-shadow: none;
+    margin-block-start: 1px;
+    &:checked {
+      background-color: $theme-primary;
+      border-color: $theme-primary;
+      box-shadow: none;
+    }
+  }
+
+  label {
+    margin-inline-start: 5px;
+    margin-block-end: 0 !important;
+  }
+}
+
+
+/* check color */
+$check-colors:(
+    "primary":    $theme-primary ,
+    "secondary":  $theme-secondary ,
+    "success":    $theme-success ,
+    "info":       $theme-info ,
+    "warning":    $theme-warning ,
+    "danger":     $theme-danger ,   
+);
+@each  $checkbox-colorname , $check-color  in $check-colors {   
+    .check-#{$checkbox-colorname} {
+      .form-check-input {       
+        border-color: $theme-border;
+        &:checked {
+          background-color: $check-color;
+          border-color: $check-color;         
+        }
+      }     
+    }
+}

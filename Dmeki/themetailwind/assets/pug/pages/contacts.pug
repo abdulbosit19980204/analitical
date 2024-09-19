@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Contacts")
+  body
+
+    +header    
+
+
+    .themebody-wrap    
+
+      // breadcrumb start
+      +codexbreadcrumb('contact','pages')
+      // breadcrumb end
+    
+      // theme body start
+      .theme-body       
+        .grid.grid-cols-12.cdx-gap
+          .col-span-12(class="md:col-span-12")
+            .card
+              .card-body
+                .contact-searchbar
+                  .input-group
+                    span.input-group-text
+                      i.fa.fa-search.text-light
+                    input(type="text" class="form-control" placeholder="Search Contact")
+                  a.btn.btn-primary(href="javascript:void(0)") Add Contact
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('mark wangar','ui desinger','28-02-1993',"164 Boston, USA",'+124589485589','mark@example.com','1.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('thomos vactom','ux desinger','02-05-1994',"164 Boston, USA",'+958589485589','thomas@example.com','2.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('johan deo','web desinger','08-04-1990',"164 Boston, USA",'+859589485589','johan@example.com','3.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('leena odem','web devloper','09-05-2001',"164 Boston, USA",'+682589485589','leena@example.com','4.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('vamsi ogel','project manager','29-03-1996',"164 Boston, USA",'+258589485589','vamsi@example.com','5.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('omini rome','game devloper','15-08-2000',"164 Boston, USA",'+425589485589','omini@example.com','6.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('mark wangar','ui desinger','28-02-1993',"164 Boston, USA",'+124589485589','mark@example.com','1.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('thomos vactom','ux desinger','02-05-1994',"164 Boston, USA",'+958589485589','thomas@example.com','2.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('johan deo','web desinger','08-04-1990',"164 Boston, USA",'+859589485589','johan@example.com','3.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('leena odem','web devloper','09-05-2001',"164 Boston, USA",'+682589485589','leena@example.com','4.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('vamsi ogel','project manager','29-03-1996',"164 Boston, USA",'+258589485589','vamsi@example.com','5.jpg')
+          .col-span-12(class="xl:col-span-4 md:col-span-6")
+            +contactcard('omini rome','game devloper','15-08-2000',"164 Boston, USA",'+425589485589','omini@example.com','6.jpg')
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+
+    +footerfile

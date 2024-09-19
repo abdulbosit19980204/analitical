@@ -1,0 +1,85 @@
+/****************
+28  TODO START
+*****************/
+
+.todo-content{
+	.todo-input{
+		input{
+			font-size: 15px;
+			text-transform: unset;
+		}
+	}
+	.add-todo{
+		background-color: $theme-primary;
+		color: $white;
+	}
+}
+.todo-list{
+	.line-through {
+		text-decoration: line-through;
+	}
+  li{
+    border: 1px solid $theme-border;
+	border-radius: 5px;	
+	overflow: hidden;
+	&:nth-child(n+2){
+		margin-block-start:10px;
+	}
+    .item-contain{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+	  width:100%;
+	  .todo-contian{
+		display: flex;		
+		width: 90%;
+		align-items: center;	
+		.todo-num{
+				background-color: rgba($theme-primary,0.05);
+				color:$theme-primary;
+				width: 45px;
+				height: 45px;
+				font-size: 22px;
+				font-weight: 600;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+		    }
+			.todo-data,
+			.update-data{
+				padding-inline-start:10px;
+				width: 100%;
+				display: flex;
+				align-items: center;	
+				font-size: 16px;		
+				input{
+					outline:none;
+					border:none;
+				}	
+			}	
+			.update-data{
+				display: inline-flex;
+			}
+			textarea{				
+				border:0;			
+				width: 100%;
+				color:red;
+				padding: 0;
+				line-height: 43px;
+				&:focus{
+					outline:none;
+				}
+			}
+	   }
+	   .todo-action{
+		  padding-inline-end:15px;
+		  .remove-todo{
+			margin-inline-start: 15px;
+		  }
+		i{
+			font-size:18px;
+		}
+	  }
+    }
+  }
+}

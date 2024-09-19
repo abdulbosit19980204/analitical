@@ -1,0 +1,69 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Light box")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('lightbox','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-12 
+              .card
+                .card-header 
+                  h4 light box
+                .card-body
+                  .row.gallery-row
+                    .col-lg-3.col-sm-6
+                      .cdxlight-box
+                        a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/1.jpg' data-caption='')
+                          img.img-fluid(src='../assets/images/pages/gallery/1.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/2.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/2.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/3.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/3.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                      .cdxlight-box
+                        a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/4.jpg' data-caption='')
+                          img.img-fluid(src='../assets/images/pages/gallery/4.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/5.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/5.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/6.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/6.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/7.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/7.jpg' alt="gallery")
+                    .col-lg-3.col-sm-6
+                        .cdxlight-box
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/8.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/8.jpg' alt="gallery")                             
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

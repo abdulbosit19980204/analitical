@@ -1,0 +1,32 @@
+{
+  "BusinessRegionReportRow": [
+    {
+      "Code": "00000000715",
+      "Name": "Учтепинский район-1",
+      "AKB": 4.0
+    }
+  ],
+  "CountAKB": 4.0,
+  "CountOKB": 224.0,
+  "Cash": 2066880.0,
+  "Transfer": 1069700.0,
+  "Sum": 3136580.0,
+  "AKBByCotegoriesRow": [
+    {
+      "Code": "00-00000033",
+      "Name": "FAX SOAP",
+      "AKB": 1.0
+    },
+    {
+      "Code": "00-00000188",
+      "Name": "DEO EMOTION",
+      "AKB": 1.0
+    },
+    {
+      "Code": "00-00000214",
+      "Name": "BABY DIAPERS EVY BABY",
+      "AKB": 4.0
+    }
+  ],
+  "CountVisited": 10.0
+}

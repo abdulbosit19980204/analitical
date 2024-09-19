@@ -1,0 +1,50 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Login")      
+  body   
+
+    // Login Start
+    .auth-main
+      .codex-authbox
+        .auth-header
+          .codex-brand
+            a(href="index.html")
+              img.img-fluid.light-logo(src="../assets/images/logo/logo.png" alt="")
+              img.img-fluid.dark-logo(src="../assets/images/logo/dark-logo.png" alt="")
+          h3 welcome to dmeki
+          h6 don't have an account? 
+            a.text-primary(href="register.html") creat an account
+        form(action="#")
+          .form-group
+            label.form-label Email
+            input.form-control(type="text" required  placeholder="Enter Your Email")
+          .form-group
+              label.form-label(for="Password") Password
+              .input-group.group-input
+                input.form-control.showhide-password(type='password' id="Password" placeholder='Enter Your Password' required='')
+                span.input-group-text.toggle-show.fa.fa-eye
+          .form-group.mb-0
+            .auth-remember                     
+              .form-check.custom-chek
+                input#agree.form-check-input(type='checkbox' value='' required='')
+                label.form-check-label(for='agree') Remember me
+              a.text-primary.f-pwd(href="forgot-password.html") Forgot your password?
+          .form-group
+            button.btn.btn-primary(type='submit')
+              i.fa.fa-sign-in
+              |  Login
+        .auth-footer
+          h5.auth-with Or login in with     
+          ul.login-list
+            li
+              a.bg-fb(href="javascript:void(0);") 
+                img.img-fluid(src="../assets/images/auth/1.png" alt="facebook")
+                | facebook
+            li
+              a.bg-google(href="javascript:void(0);") 
+                img.img-fluid(src="../assets/images/auth/2.png" alt="google")
+                | google
+    // Login End
+
+    +footerfile

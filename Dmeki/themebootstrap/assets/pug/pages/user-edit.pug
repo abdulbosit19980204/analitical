@@ -1,0 +1,147 @@
+-var select2 = true;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("User Edit")
+
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('edit profile','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container.codexedit-profile
+          .row          
+            .col-xl-4.col-md-5.cdx-xl-40    
+              .card
+                .card-header
+                  h4 My Infomation
+                .card-body 
+                  .info-group.mb-20  
+                    .media.align-items-center
+                      .userimg-wrap.mr-15
+                        img.img-fluid.w-50(src="../assets/images/avtar/1.jpg" alt="")
+                      .media-body
+                        h6 Mark Odem
+                        p.fs-14.text-light  Ui/Ux desinger
+                      span.badge.badge-primary
+                        a(href="javascript:void(0)")
+                          i.fa.fa-cloud-upload
+                  .info-group 
+                    form
+                      .form-group
+                        .small-group
+                          div
+                            label.form-label First Name
+                            input.form-control(type='text' placeholder="your first name" value="Mark")
+                          div                   
+                            label.form-label Last Name
+                            input.form-control(type='text' placeholder="your last name" value="Odem")
+                      .form-group
+                        .small-group
+                          div
+                            label.form-label Day
+                            select.form-control.hidesearch(name="day[]")
+                              option 01
+                              option 02
+                              option 03
+                              option 04
+                              option 05
+                              option 06
+                          div
+                            label.form-label Month                         
+                            select.form-control.hidesearch(name="month[]")
+                              option Jan
+                              option Feb
+                              option March
+                              option April
+                              option May
+                              option Jun
+                          div
+                            label.form-label Year
+                            select.form-control.hidesearch(name="year[]")
+                              option 1992
+                              option 1993
+                              option 1994
+                              option 1995
+                      .form-group
+                        label.form-label Designation
+                        input.form-control(type='text' placeholder="your designation name" value="Ui/Ux desinger")
+                      .form-group
+                        label.form-label Email Address
+                        input.form-control(type='text' placeholder="your email" value="mark@example.com")
+                      .form-group
+                        label.form-label Mobile
+                        input.form-control(type='text' placeholder="your mobile number" value="+9588489584")
+                      .form-group
+                        label.form-label Website
+                        input.form-control(type='text' placeholder="your website" value="https://dmeki.com")
+                      .form-group.mb-0
+                        a.btn.btn-primary(href="javascript:void(0)") submit
+            .col-xl-8.col-md-7.cdx-xl-60
+              .card
+                .card-header
+                  h4 contact infomation
+                .card-body
+                  form
+                    .form-group
+                      .small-group
+                        div
+                          label.form-label Mobile number
+                          input.form-control(type="number" placeholder="Enter Your Mobile Number")
+                        div
+                          label.form-label Email id
+                          input.form-control(type="email" placeholder="Enter Your  Email")
+                    .form-group
+                      .small-group  
+                        div
+                          label.form-label Address
+                          input.form-control(type="text" placeholder="Enter Your  Address")
+                        div
+                          label.form-label Website 
+                          input.form-control(type="text" placeholder="website link")
+                    .form-group
+                      .small-group  
+                        div
+                          label.form-label company
+                          input.form-control(type="text" placeholder="Enter company name")
+                        div
+                          label.form-label Postal/zip code 
+                          input.form-control(type="text" placeholder="zip code")
+                    .form-group
+                      .small-group  
+                        div
+                          label.form-label home town
+                          input.form-control(type="text" placeholder="Enter Your town city")
+                        div
+                          label.form-label city
+                          input.form-control(type="text" placeholder="Enter Your city")
+                        div
+                          label.form-label country
+                          input.form-control(type="text" placeholder="Enter Your website link")
+                    .form-group
+                      label.form-label about bio
+                      textarea.form-control(placeholder="enter your bio")
+                    .form-group.mb-0
+                      .group-btn
+                        a.btn.btn-success(href="javascript:void(0)") update
+                        a.btn.btn-danger(href="javascript:void(0)") Cancel
+      // theme body end
+                        
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

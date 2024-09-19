@@ -1,0 +1,187 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Accordion")
+  body
+
+    +header
+
+
+    .themebody-wrap
+      // breadcrumb start
+      +codexbreadcrumb('accordion','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row           
+            .col-md-6
+              .card
+                .card-header
+                  h4 default accordion
+                .card-body
+                    #install-que.codex-accordion.accordion.accordion-flush
+                      .accordion-item                 
+                        a.cdx-collapse(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#cdx-collapce1' )
+                          | What does LOREM mean?
+                        #cdx-collapce1.collapse.show(data-bs-parent='#install-que')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#cdx-collapce2' )
+                          | Where can I subscribe to your newsletter?
+                        #cdx-collapce2.collapse(data-bs-parent='#install-que')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#cdx-collapce3' )
+                          | Where can in edit my address?
+                        #cdx-collapce3.collapse(data-bs-parent='#install-que')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#cdx-collapce4' )
+                          | Can I order a free copy of a magazine to sample?
+                        #cdx-collapce4.collapse(data-bs-parent='#install-que')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#cdx-collapce5' )
+                          | Do you accept orders via Phone or E-mail?
+                        #cdx-collapce5.collapse(data-bs-parent='#install-que')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+            .col-md-6
+              .card
+                .card-header
+                  h4 accordion with icon
+                .card-body
+                    #accordion-withicon.codex-accordion.accordion.accordion-flush
+                      .accordion-item                 
+                        a.cdx-collapse(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#iconaccordian-collapce1' )
+                          i.fa.fa-question-circle.mr-15
+                          | What does LOREM mean?
+                        #iconaccordian-collapce1.collapse.show(data-bs-parent='#accordion-withicon')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#iconaccordian-collapce2' )
+                          i.fa.fa-question-circle.mr-15
+                          | Where can I subscribe to your newsletter?
+                        #iconaccordian-collapce2.collapse(data-bs-parent='#accordion-withicon')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#iconaccordian-collapce3' )
+                          i.fa.fa-question-circle.mr-15
+                          | Where can in edit my address?
+                        #iconaccordian-collapce3.collapse(data-bs-parent='#accordion-withicon')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#iconaccordian-collapce4' )
+                          i.fa.fa-question-circle.mr-15
+                          | Can I order a free copy of a magazine to sample?
+                        #iconaccordian-collapce4.collapse(data-bs-parent='#accordion-withicon')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+                      .accordion-item                 
+                        a.cdx-collapse.collapsed(href="javascript:void(0);" data-bs-toggle='collapse' data-bs-target='#iconaccordian-collapce5' )
+                          i.fa.fa-question-circle.mr-15
+                          | Do you accept orders via Phone or E-mail?
+                        #iconaccordian-collapce5.collapse(data-bs-parent='#accordion-withicon')
+                          .accordion-body
+                            p.text-light ‘Lorem ipsum dolor sit amet, consectetur adipisici elit…’ (complete text) is dummy text that is not meant to mean anything. It is used as a placeholder in magazine layouts, for example, in order to give an impression of the finished document. The text is intentionally unintelligible so that the viewer is not distracted by the content. The language is not real Latin and even the first word ‘Lorem’ does not exist. It is said that the lorem ipsum.
+            .col-md-6            
+              .card.buttons
+                .card-header
+                  h4 Bootstrap Default 
+                .card-body
+                  p.card-title-desc Click the accordions below to expand/collapse the accordion content.         
+                  br        
+                  #accordionExample.accordion
+                    .accordion-item
+                      h2#headingOne.accordion-header
+                        button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                          | Accordion Item #1
+                      #collapseOne.accordion-collapse.collapse(aria-labelledby='headingOne' data-bs-parent='#accordionExample')
+                        .accordion-body
+                          strong This is the first item&apos;s accordion body.
+                          |  It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.
+                    .accordion-item
+                      h2#headingTwo.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+                          | Accordion Item #2
+                      #collapseTwo.accordion-collapse.collapse(aria-labelledby='headingTwo' data-bs-parent='#accordionExample')
+                        .accordion-body
+                          strong This is the second item&apos;s accordion body.
+                          |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.
+                    .accordion-item
+                      h2#headingThree.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                          | Accordion Item #3
+                      #collapseThree.accordion-collapse.collapse.show(aria-labelledby='headingThree' data-bs-parent='#accordionExample')
+                        .accordion-body
+                          strong This is the third item&apos;s accordion body.
+                          |  It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.
+
+            .col-md-6            
+              .card.buttons
+                .card-header
+                  h4 Bootstrap Flush
+                .card-body
+                  p.card-title-desc 
+                    | Add 
+                    code .accordion-flush 
+                    | &nbsp;to remove the default 
+                    code background-color
+                    | &nbsp;, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.  
+                  #accordionFlushExample.accordion.accordion-flush
+                    .accordion-item
+                      h2#flush-headingOne.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
+                          | Accordion Item #1
+                      #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne' data-bs-parent='#accordionFlushExample')
+                        .accordion-body
+                          strong This is the first item&apos;s accordion body.
+                          |  It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.
+                    .accordion-item
+                      h2#flush-headingTwo.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
+                          | Accordion Item #2
+                      #flush-collapseTwo.accordion-collapse.collapse.show(aria-labelledby='flush-headingTwo' data-bs-parent='#accordionFlushExample')
+                        .accordion-body
+                          strong This is the first item&apos;s accordion body.
+                          |  It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.
+                    .accordion-item
+                      h2#flush-headingThree.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                          | Accordion Item #3
+                      #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+                        .accordion-body
+                          strong This is the first item&apos;s accordion body.
+                          |  It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It&apos;s also worth noting that just about any HTML can go within the 
+                          code .accordion-body
+                          | , though the transition does limit overflow.          
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

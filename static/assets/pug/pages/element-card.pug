@@ -1,0 +1,215 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Card")
+  body
+
+    +header
+
+
+    .themebody-wrap
+      // breadcrumb start
+      +codexbreadcrumb('card','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row.cdxcard-exa 
+            h4.mb-20 card with image
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/1.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/2.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+            .col-xl-4.col-sm-6             
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/3.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/4.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/5.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+            .col-xl-4.col-sm-6             
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/6.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  p.card-text.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                  a.btn.btn-primary.mt-15(href='javascript:void(0);') Read more
+          .row.cdxcard-exa 
+            h4.mb-20 listing card
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/1.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  ul.list-group.list-group-flush
+                    li.list-group-item An item
+                    li.list-group-item A second item
+                    li.list-group-item A third item 
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/2.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  ul.list-group.list-group-flush
+                    li.list-group-item An item
+                    li.list-group-item A second item
+                    li.list-group-item A third item 
+            .col-xl-4.col-sm-6
+              .card
+                img.img-fluid(src='../assets/images/pages/gallery/3.jpg' alt='')
+                .card-body
+                  h5.card-title Card title
+                  ul.list-group.list-group-flush
+                    li.list-group-item An item
+                    li.list-group-item A second item
+                    li.list-group-item A third item                 
+          .row.cdxcard-exa 
+            h4.mb-20 card with text
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+            .col-xl-4.col-sm-6
+              .card.text-center
+                .card-header
+                  h4 Featured
+                .card-body
+                  h5.card-title Special title treatment
+                  p.card-text With supporting text below as a natural lead-in to additional content.
+                  a.btn.btn-primary.mt-15(href='#') Go somewhere
+                .card-footer.text-muted
+                  | 2 days ago
+          .row.cdxcard-exa
+            h4.mb-20 colored card
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-primary.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Primary card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-secondary.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Secondary card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-success.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Success card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-danger.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Danger card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-warning.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Warning card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+            .col-xl-4.col-sm-6
+              .card.text-white.bg-info.mb-15
+                .card-header 
+                  h4.text-white Header
+                .card-body
+                  h5.card-title Info card title
+                  p.card-text
+                    | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+
+    +footerfile

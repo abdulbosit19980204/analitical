@@ -1,0 +1,59 @@
+
+  .line-through{
+    text-decoration:line-through;
+  }
+  .list-row textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+}
+  .right{
+    float:left
+  }
+  .edit-todo,.update-todo,.remove-todo{
+    padding: 0px 5px;
+    cursor:pointer;
+  }
+  .list-num{
+    font-weight:bold;
+    padding-inline-end:5px;
+  }
+  .todo-content .todo-list{
+    list-style-type: none;
+    padding-inline-start: 0px;
+    background: #f9f9f9;
+  }
+  .todo-content .list-error,.error{
+    color:red;
+  }
+  .todo-content .todo-list .list-row{
+    padding:5px 10px;
+    position:relative;
+    word-break: break-all;
+    display:flex;
+    font-size:18px;
+    transition:.1s;
+    cursor:pointer; 
+  }
+  .todo-content .list-row .list-data,.todo-content .list-row .update-data{
+    width:100%;
+    text-align:justify;
+  }
+  .todo-content .todo-list .list-row:nth-child(even){
+    background:#e4e4e4;
+  }
+  .todo-list .edit-todo,.remove-todo,.update-todo{
+    visibility:hidden;
+  }
+  .todo-content .todo-list .list-row:hover{
+    background:#d8d8d8;
+  }
+  .todo-content .todo-list .list-row:hover .edit-todo{
+    visibility:visible;
+  }
+  .todo-content .todo-list .list-row:hover .remove-todo{
+    visibility:visible;
+  }
+  .todo-content .todo-list .list-row:hover .update-todo{
+    visibility:visible;
+  }

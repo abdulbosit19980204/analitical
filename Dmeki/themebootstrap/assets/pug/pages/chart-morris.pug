@@ -1,0 +1,64 @@
+-var morrischart = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("morris")
+
+  
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('morrish chart','chart')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .container-fluid
+          .row         
+            .col-md-6
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  #morrisline
+            .col-md-6
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  #morrisarea
+            .col-md-6
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  #morrisbar
+            .col-md-6
+              .card
+                .card-header
+                  h4 Stacked Bar chart
+                .card-body
+                  #morrisbarstacked 
+            .col-md-6
+              .card
+                .card-header
+                  h4 Stacked Bar chart
+                .card-body
+                  #morrisdonut
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

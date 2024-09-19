@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <!-- Required meta tags-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="">
+      <meta name="keywords" content="admin template, html 5 admin template , dmeki admin , dashboard template, tailwind admin template, responsive admin template">
+      <title>
+         Dmeki | Data Table Advance
+      </title>
+      <!-- shortcut icon-->
+      <link rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
+      <!-- Fonts css-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+      <!-- Font awesome -->
+      <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet">
+      <link href="../assets/css/vendor/themify-icons.css" rel="stylesheet">
+      <link href="../assets/css/vendor/flag-icon/flag-icon.css" rel="stylesheet">
+      <link href="../assets/css/vendor/icoicon/icoicon.css" rel="stylesheet">
+      <!-- animat css-->
+      <link href="../assets/css/vendor/animate.css" rel="stylesheet">
+      <!--Datatable-->
+      <link href="../assets/css/vendor/datatable/jquery.dataTables.css" rel="stylesheet">
+      <link href="../assets/css/vendor/datatable/buttons.dataTables.css" rel="stylesheet">
+      <link href="../assets/css/vendor/datatable/custom-datatable.css" rel="stylesheet">
+      <!-- Scrollbar-->
+      <link href="../assets/css/vendor/simplebar.css" rel="stylesheet">
+      <!-- Custom css-->
+      <link href="../assets/css/style.css" id="customstyle" rel="stylesheet">
+    </head>
+  <body>   
+      <!-- Loader Start-->
+        <div class="codex-loader">     
+          <div class="linespinner"></div>
+        </div>
+      <!-- Loader End-->
+      <!-- Header Start-->
+      <header class="codex-header"> 
+        <div class="grid grid-cols-12">
+          <div class="col-span-12">
+            <div class="header-contian flex justify-between items-center">
+              <div class="header-left flex items-center">
+                <div class="sidebar-action"><i data-feather="menu"></i></div>
+                <div class="search-bar">
+                  <div class="form-group mb-0">
+                    <div class="input-group">
+                      <input class="form-control" type="text" value="" placeholder="Search Here....."><span class="input-group-text"><i class="fa fa-search"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-right flex items-center">
+                <ul class="nav-iconlist">  
+                  <li><a class="action-toggle action-dark" href="javascript:void(0)"><i class="fa fa-moon-o icon-dark"></i><i class="fa fa-sun-o icon-light" style="display:none;"></i></a></li>
+                  <li>                              <a class="action-toggle" href="javascript:void(0)"><i data-feather="bell"></i>
+                      <div class="noti-count">04</div></a>
+                    <div class="hover-dropdown navnotification-drop">
+                      <div class="drop-header">
+                        <h5>notification<span>05</span></h5>
+                      </div>
+                      <ul data-simplebar>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-primary"><i class="fa fa-check-square-o"></i></div>
+                              <div class="media-body">                          
+                                <h6>order Cheked</h6><span class="text-light">1 hour ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-secondary"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                              <div class="media-body">
+                                <h6>payment received</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                              <div class="media-body">
+                                <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                              <div class="media-body">
+                                <h6>payment received</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                              <div class="media-body">
+                                <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                              </div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                              <div class="media-body">
+                                <h6>order receved</h6><span class="text-light">1 day ago                  </span>
+                              </div>
+                            </div></a></li>
+                      </ul>
+                      <div class="drop-footer"><a href="#">See All Notification</a></div>
+                    </div>
+                  </li>
+                  <li>              <a class="action-toggle" href="javascript:void(0)"><i data-feather="shopping-cart"></i>
+                      <div class="noti-count">07</div></a>
+                    <div class="hover-dropdown navshop-drop">
+                      <div class="drop-header">
+                        <h5>Shopping<span>7</span></h5>
+                      </div>
+                      <ul data-simplebar>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>teddy bear</h6><span class="text-light">$250</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>iphone</h6><span class="text-light">$140</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Apple Airpod</h6><span class="text-light">$310</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Motors</h6><span class="text-light">$510</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                        <li><a href="javascript:void(0);">
+                            <div class="media">
+                              <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>iphone</h6><span class="text-light">$140</span>
+                              </div>
+                              <div class="close-pro"><i class="ti-trash"></i></div>
+                            </div></a></li>
+                      </ul>
+                      <div class="drop-footer"><a href="checkout.html">Checkout All</a></div>
+                    </div>
+                  </li>
+                  <li><a class="action-toggle btn-windowfull" href="javascript:void(0)"><i data-feather="maximize">             </i></a></li>
+                  <li class="nav-profile">              <a href="javascript:void(0)">
+                      <div class="media">
+                        <div class="user-icon"><img class="img-fluid rounded-50" src="../assets/images/avtar/3.jpg" alt="logo"></div>
+                        <div class="media-body">
+                          <h6>Thomas Vactom</h6><span class="text-light">Web designer</span>
+                        </div>
+                      </div></a>
+                    <div class="hover-dropdown navprofile-drop">                
+                      <ul>
+                        <li><a href="profile.html"><i class="ti-user"></i>profile</a></li>
+                        <li><a href="email-inbox.html"><i class="ti-email"></i>inbox</a></li>
+                        <li><a href="user-edit.html"> <i class="ti-settings"></i>setting     </a></li>
+                        <li>                                <a href="login.html"> <i class="fa fa-sign-out"></i>log out</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="customizer-layer"></div>
+      <div class="customizer-action"><i data-feather="settings"></i></div>
+      <div class="theme-cutomizer"> 
+        <div class="customizer-header">
+          <h4>Theme Setting<i data-feather="x"></i></h4>
+        </div>
+        <div class="customizer-body">
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Theme Color</h6>
+            <ul class="customizeoption-list themecolor-list">
+              <li class="color1"></li>
+              <li class="color2"></li>
+              <li class="color3"></li>
+              <li class="color4"></li>
+              <li class="color5"></li>
+              <li class="color6"></li>
+            </ul>
+          </div>
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Sidebar Mode</h6>
+            <ul class="customizeoption-list sidebaroption-list">
+              <li class="sidebarlight-action">light</li>
+              <li class="sidebardark-action">dark</li>
+              <li class="sidebargradient-action">gradient</li>
+            </ul>
+          </div>
+          <div class="cutomize-group">
+            <h6 class="customizer-title">Layout Direction</h6>
+            <ul class="customizeoption-list">
+              <li class="ltr-action">ltr</li>
+              <li class="rtl-action">rtl</li>
+            </ul>
+          </div>
+          <div class="cutomize-group mb-0">
+            <h6 class="customizer-title">Layout mode</h6>
+            <ul class="customizeoption-list">
+              <li class="light-action">light</li>
+              <li class="dark-action">dark  </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- sidebar start-->
+      <aside class="codex-sidebar">
+        <div class="logo-gridwrap"><a class="codexbrand-logo" href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt="theeme-logo"></a><a class="codex-darklogo" href="index.html"><img class="img-fluid" src="../assets/images/logo/dark-logo.png" alt="theeme-logo"></a>
+          <div class="sidebar-action"><i data-feather="menu"></i></div>
+        </div>
+        <div class="icon-logo"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/icon-logo.png" alt="theeme-logo"></a></div>
+        <div class="codex-menuwrapper">  
+          <ul class="codex-menu custom-scroll" data-simplebar>
+            <li class="cdxmenu-title">
+              <h5>Dashboards</h5>
+            </li>
+            <li class="menu-item"><a href="index.html">
+                <div class="icon-item"> <i data-feather="home"></i></div><span>default</span></a></li>
+            <li class="menu-item"><a href="ecommerce.html">
+                <div class="icon-item"> <i data-feather="airplay"></i></div><span>ecommerce     </span></a></li>
+            <li class="cdxmenu-title">
+              <h5>application</h5>
+            </li>
+            <li class="menu-item"><a href="calendar.html">
+                <div class="icon-item"> <i data-feather="calendar"> </i></div><span>calendar</span></a></li>
+            <li class="menu-item"><a href="chat.html">
+                <div class="icon-item"><i data-feather="message-square"></i></div><span>chat</span></a></li>
+            <li class="menu-item"><a href="todo.html"> 
+                <div class="icon-item"><i data-feather="clock"></i></div><span>todo</span></a></li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="mail"></i></div><span>email</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="email-inbox.html">email inbox</a></li>
+                <li><a href="email-read.html">email read </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"> <i data-feather="user"></i></div><span>Users  </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">
+                <li><a href="profile.html">profile</a></li>
+                <li><a href="user-list.html">user list</a></li>
+                <li><a href="user-edit.html">user edit</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="shopping-bag"> </i></div><span>ecommerce </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">
+                <li><a href="product.html">product</a></li>
+                <li><a href="product-detail.html">product detail</a></li>
+                <li><a href="add-product.html">add product</a></li>
+                <li><a href="product-list.html">product list</a></li>
+                <li><a href="order-history.html">order history</a></li>
+                <li><a href="cart.html">cart</a></li>
+                <li><a href="wishlist.html">wishlist</a></li>
+                <li><a href="checkout.html">checkout</a></li>
+                <li><a href="pricing.html">pricing</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="invoice.html">
+                <div class="icon-item"><i data-feather="file-minus"> </i></div><span>invoice</span></a></li>
+            <li class="cdxmenu-title">
+              <h5>pages          </h5>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="command"></i></div><span>blog</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="blog.html">blog list</a></li>
+                <li><a href="blog-detail.html">blog-detail</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="key"></i></div><span>Authentication</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="login.html">login         </a></li>
+                <li><a href="register.html">register</a></li>
+                <li><a href="forgot-password.html">forgot password</a></li>
+                <li><a href="new-password.html">reset password</a></li>
+                <li><a href="verify-email.html">verify email</a></li>
+                <li><a href="verify-pin.html">verify pin      </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="error-page.html">
+                <div class="icon-item"><i data-feather="alert-triangle"></i></div><span>error 404          </span></a></li>
+            <li class="menu-item"><a href="coming-soon.html"> 
+                <div class="icon-item"><i data-feather="watch"></i></div><span>coming soon         </span></a></li>
+            <li class="menu-item"><a href="element-apexchart.html"> 
+                <div class="icon-item"><i data-feather="pie-chart"></i></div><span>apex chart     </span></a></li>
+            <li class="menu-item"><a href="contacts.html"> 
+                <div class="icon-item"><i data-feather="phone-call"></i></div><span>contacts     </span></a></li>
+            <li class="menu-item"><a href="gallery.html"> 
+                <div class="icon-item"><i data-feather="image"></i></div><span>gallery</span></a></li>
+            <li class="cdxmenu-title">
+              <h5>Components      </h5>
+            </li>
+            <li class="menu-item"><a href="form.html">
+                <div class="icon-item"> <i data-feather="book"></i></div><span>form         </span></a></li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"> <i data-feather="database"></i></div><span>Table  </span><i class="fa fa-angle-down">      </i></a>
+              <ul class="submenu-list">        
+                <li><a href="data-table.html">Datatable</a></li>
+                <li><a href="data-table-advance.html">Datatable Advance </a></li>
+                <li><a href="data-table-ajax.html">Datatable Ajax</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="layout"></i></div><span>Elements</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="element-typography.html">typography</a></li>
+                <li><a href="element-color.html">color</a></li>
+                <li><a href="element-themeclass.html">helper class</a></li>
+                <li><a href="element-alert.html">Alert </a></li>
+                <li><a href="element-avtar.html">Avtar</a></li>
+                <li><a href="element-button.html">Button </a></li>
+                <li><a href="element-grid.html">grid</a></li>
+                <li><a href="element-dropdown.html">Dropdown                  </a></li>
+                <li><a href="element-accordion.html">Accordion</a></li>
+                <li><a href="element-badge.html">badge</a></li>
+                <li><a href="element-modal.html">modal</a></li>
+                <li><a href="element-tab.html">tabs         </a></li>
+                <li><a href="element-card.html">card         </a></li>
+                <li><a href="element-rangeslider.html">range slider</a></li>
+                <li><a href="element-scrollbar.html">scrollbar</a></li>
+                <li><a href="element-progressbar.html">progress bar</a></li>
+                <li><a href="element-pagination.html">pagination</a></li>
+                <li><a href="element-lightbox.html">light box</a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);"> 
+                <div class="icon-item"><i data-feather="slack"></i></div><span>Icons</span><i class="fa fa-angle-down"></i></a>
+              <ul class="submenu-list">
+                <li><a href="element-fontaw-icon.html">Font Awesome </a></li>
+                <li><a href="element-themify-icon.html">Themify  </a></li>
+                <li><a href="element-feather-icon.html">Feather  </a></li>
+                <li><a href="element-pe7-icon.html">Pe7</a></li>
+                <li><a href="element-icoicon.html">icoicon</a></li>
+                <li><a href="element-flag-icon.html">flag     </a></li>
+              </ul>
+            </li>
+            <li class="menu-item"><a href="faq.html"> 
+                <div class="icon-item"><i data-feather="help-circle"></i></div><span>faq     </span></a></li>
+          </ul>
+        </div>
+      </aside>
+      <!-- sidebar end-->
+      <!-- Header End-->
+    <div class="themebody-wrap">    
+      <!-- breadcrumb start-->
+        <div class="codex-breadcrumb">
+          <div class="custom-container">
+            <div class="breadcrumb-contain">
+              <div class="left-breadcrumb">
+                <ul class="breadcrumb mb-0">
+                  <li class="breadcrumb-item"><a href="index.html"> 
+                      <h1>Dashboard</h1></a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0);">table</a></li>
+                  <li class="breadcrumb-item active"><a href="javascript:void(0);">Datatable Advance</a></li>
+                </ul>
+              </div>
+              <div class="right-breadcrumb">
+                <ul>
+                  <li>
+                    <div class="bread-wrap"><i class="fa fa-clock-o"></i></div><span class="liveTime"></span>
+                  </li>
+                  <li>
+                    <div class="bread-wrap"><i class="fa fa-calendar"></i></div><span class="getDate"> </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- breadcrumb end-->
+      <!-- theme body start-->
+      <div class="theme-body">
+        <div class="grid grdi-cols-12">
+          <div class="col-span-12">
+            <div class="card">  
+              <div class="card-body">
+                <table class="display dataTable cell-border" id="datatbl-advance" style="width:100%">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Position</th>
+                      <th>Office</th>
+                      <th>Age</th>
+                      <th>Start date</th>
+                      <th>Salary</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Tiger Nixon</td>
+                      <td>System Architect</td>
+                      <td>Edinburgh</td>
+                      <td>61</td>
+                      <td>2011/04/25</td>
+                      <td>$320,800</td>
+                    </tr>
+                    <tr>
+                      <td>Garrett Winters</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>63</td>
+                      <td>2011/07/25</td>
+                      <td>$170,750</td>
+                    </tr>
+                    <tr>
+                      <td>Ashton Cox</td>
+                      <td>Junior Technical Author</td>
+                      <td>San Francisco</td>
+                      <td>66</td>
+                      <td>2009/01/12</td>
+                      <td>$86,000</td>
+                    </tr>
+                    <tr>
+                      <td>Cedric Kelly</td>
+                      <td>Senior Javascript Developer</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2012/03/29</td>
+                      <td>$433,060</td>
+                    </tr>
+                    <tr>
+                      <td>Airi Satou</td>
+                      <td>Accountant</td>
+                      <td>Tokyo</td>
+                      <td>33</td>
+                      <td>2008/11/28</td>
+                      <td>$162,700</td>
+                    </tr>
+                    <tr>
+                      <td>Brielle Williamson</td>
+                      <td>Integration Specialist</td>
+                      <td>New York</td>
+                      <td>61</td>
+                      <td>2012/12/02</td>
+                      <td>$372,000</td>
+                    </tr>
+                    <tr>
+                      <td>Herrod Chandler</td>
+                      <td>Sales Assistant</td>
+                      <td>San Francisco</td>
+                      <td>59</td>
+                      <td>2012/08/06</td>
+                      <td>$137,500</td>
+                    </tr>
+                    <tr>
+                      <td>Rhona Davidson</td>
+                      <td>Integration Specialist</td>
+                      <td>Tokyo</td>
+                      <td>55</td>
+                      <td>2010/10/14</td>
+                      <td>$327,900</td>
+                    </tr>
+                    <tr>
+                      <td>Colleen Hurst</td>
+                      <td>Javascript Developer</td>
+                      <td>San Francisco</td>
+                      <td>39</td>
+                      <td>2009/09/15</td>
+                      <td>$205,500</td>
+                    </tr>
+                    <tr>
+                      <td>Sonya Frost</td>
+                      <td>Software Engineer</td>
+                      <td>Edinburgh</td>
+                      <td>23</td>
+                      <td>2008/12/13</td>
+                      <td>$103,600</td>
+                    </tr>
+                    <tr>
+                      <td>Jena Gaines</td>
+                      <td>Office Manager</td>
+                      <td>London</td>
+                      <td>30</td>
+                      <td>2008/12/19</td>
+                      <td>$90,560</td>
+                    </tr>
+                    <tr>
+                      <td>Quinn Flynn</td>
+                      <td>Support Lead</td>
+                      <td>Edinburgh</td>
+                      <td>22</td>
+                      <td>2013/03/03</td>
+                      <td>$342,000</td>
+                    </tr>
+                    <tr>
+                      <td>Charde Marshall</td>
+                      <td>Regional Director</td>
+                      <td>San Francisco</td>
+                      <td>36</td>
+                      <td>2008/10/16</td>
+                      <td>$470,600</td>
+                    </tr>
+                    <tr>
+                      <td>Haley Kennedy</td>
+                      <td>Senior Marketing Designer</td>
+                      <td>London</td>
+                      <td>43</td>
+                      <td>2012/12/18</td>
+                      <td>$313,500</td>
+                    </tr>
+                    <tr>
+                      <td>Tatyana Fitzpatrick</td>
+                      <td>Regional Director</td>
+                      <td>London</td>
+                      <td>19</td>
+                      <td>2010/03/17</td>
+                      <td>$385,750</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Silva</td>
+                      <td>Marketing Designer</td>
+                      <td>London</td>
+                      <td>66</td>
+                      <td>2012/11/27</td>
+                      <td>$198,500</td>
+                    </tr>
+                    <tr>
+                      <td>Paul Byrd</td>
+                      <td>Chief Financial Officer (CFO)</td>
+                      <td>New York</td>
+                      <td>64</td>
+                      <td>2010/06/09</td>
+                      <td>$725,000</td>
+                    </tr>
+                    <tr>
+                      <td>Gloria Little</td>
+                      <td>Systems Administrator</td>
+                      <td>New York</td>
+                      <td>59</td>
+                      <td>2009/04/10</td>
+                      <td>$237,500</td>
+                    </tr>
+                    <tr>
+                      <td>Bradley Greer</td>
+                      <td>Software Engineer</td>
+                      <td>London</td>
+                      <td>41</td>
+                      <td>2012/10/13</td>
+                      <td>$132,000</td>
+                    </tr>
+                    <tr>
+                      <td>Dai Rios</td>
+                      <td>Personnel Lead</td>
+                      <td>Edinburgh</td>
+                      <td>35</td>
+                      <td>2012/09/26</td>
+                      <td>$217,500</td>
+                    </tr>
+                    <tr>
+                      <td>Jenette Caldwell</td>
+                      <td>Development Lead</td>
+                      <td>New York</td>
+                      <td>30</td>
+                      <td>2011/09/03</td>
+                      <td>$345,000</td>
+                    </tr>
+                    <tr>
+                      <td>Yuri Berry</td>
+                      <td>Chief Marketing Officer (CMO)</td>
+                      <td>New York</td>
+                      <td>40</td>
+                      <td>2009/06/25</td>
+                      <td>$675,000</td>
+                    </tr>
+                    <tr>
+                      <td>Caesar Vance</td>
+                      <td>Pre-Sales Support</td>
+                      <td>New York</td>
+                      <td>21</td>
+                      <td>2011/12/12</td>
+                      <td>$106,450</td>
+                    </tr>
+                    <tr>
+                      <td>Doris Wilder</td>
+                      <td>Sales Assistant</td>
+                      <td>Sydney</td>
+                      <td>23</td>
+                      <td>2010/09/20</td>
+                      <td>$85,600</td>
+                    </tr>
+                    <tr>
+                      <td>Angelica Ramos</td>
+                      <td>Chief Executive Officer (CEO)</td>
+                      <td>London</td>
+                      <td>47</td>
+                      <td>2009/10/09</td>
+                      <td>$1,200,000</td>
+                    </tr>
+                    <tr>
+                      <td>Gavin Joyce</td>
+                      <td>Developer</td>
+                      <td>Edinburgh</td>
+                      <td>42</td>
+                      <td>2010/12/22</td>
+                      <td>$92,575</td>
+                    </tr>
+                    <tr>
+                      <td>Jennifer Chang</td>
+                      <td>Regional Director</td>
+                      <td>Singapore</td>
+                      <td>28</td>
+                      <td>2010/11/14</td>
+                      <td>$357,650</td>
+                    </tr>
+                    <tr>
+                      <td>Brenden Wagner</td>
+                      <td>Software Engineer</td>
+                      <td>San Francisco</td>
+                      <td>28</td>
+                      <td>2011/06/07</td>
+                      <td>$206,850</td>
+                    </tr>
+                    <tr>
+                      <td>Fiona Green</td>
+                      <td>Chief Operating Officer (COO)</td>
+                      <td>San Francisco</td>
+                      <td>48</td>
+                      <td>2010/03/11</td>
+                      <td>$850,000</td>
+                    </tr>
+                    <tr>
+                      <td>Shou Itou</td>
+                      <td>Regional Marketing</td>
+                      <td>Tokyo</td>
+                      <td>20</td>
+                      <td>2011/08/14</td>
+                      <td>$163,000</td>
+                    </tr>
+                    <tr>
+                      <td>Michelle House</td>
+                      <td>Integration Specialist</td>
+                      <td>Sydney</td>
+                      <td>37</td>
+                      <td>2011/06/02</td>
+                      <td>$95,400</td>
+                    </tr>
+                    <tr>
+                      <td>Suki Burks</td>
+                      <td>Developer</td>
+                      <td>London</td>
+                      <td>53</td>
+                      <td>2009/10/22</td>
+                      <td>$114,500</td>
+                    </tr>
+                    <tr>
+                      <td>Prescott Bartlett</td>
+                      <td>Technical Author</td>
+                      <td>London</td>
+                      <td>27</td>
+                      <td>2011/05/07</td>
+                      <td>$145,000</td>
+                    </tr>
+                    <tr>
+                      <td>Gavin Cortez</td>
+                      <td>Team Leader</td>
+                      <td>San Francisco</td>
+                      <td>22</td>
+                      <td>2008/10/26</td>
+                      <td>$235,500</td>
+                    </tr>
+                    <tr>
+                      <td>Martena Mccray</td>
+                      <td>Post-Sales support</td>
+                      <td>Edinburgh</td>
+                      <td>46</td>
+                      <td>2011/03/09</td>
+                      <td>$324,050</td>
+                    </tr>
+                    <tr>
+                      <td>Unity Butler</td>
+                      <td>Marketing Designer</td>
+                      <td>San Francisco</td>
+                      <td>47</td>
+                      <td>2009/12/09</td>
+                      <td>$85,675</td>
+                    </tr>
+                    <tr>
+                      <td>Howard Hatfield</td>
+                      <td>Office Manager</td>
+                      <td>San Francisco</td>
+                      <td>51</td>
+                      <td>2008/12/16</td>
+                      <td>$164,500</td>
+                    </tr>
+                    <tr>
+                      <td>Hope Fuentes</td>
+                      <td>Secretary</td>
+                      <td>San Francisco</td>
+                      <td>41</td>
+                      <td>2010/02/12</td>
+                      <td>$109,850</td>
+                    </tr>
+                    <tr>
+                      <td>Vivian Harrell</td>
+                      <td>Financial Controller</td>
+                      <td>San Francisco</td>
+                      <td>62</td>
+                      <td>2009/02/14</td>
+                      <td>$452,500</td>
+                    </tr>
+                    <tr>
+                      <td>Timothy Mooney</td>
+                      <td>Office Manager</td>
+                      <td>London</td>
+                      <td>37</td>
+                      <td>2008/12/11</td>
+                      <td>$136,200</td>
+                    </tr>
+                    <tr>
+                      <td>Jackson Bradshaw</td>
+                      <td>Director</td>
+                      <td>New York</td>
+                      <td>65</td>
+                      <td>2008/09/26</td>
+                      <td>$645,750</td>
+                    </tr>
+                    <tr>
+                      <td>Olivia Liang</td>
+                      <td>Support Engineer</td>
+                      <td>Singapore</td>
+                      <td>64</td>
+                      <td>2011/02/03</td>
+                      <td>$234,500</td>
+                    </tr>
+                    <tr>
+                      <td>Bruno Nash</td>
+                      <td>Software Engineer</td>
+                      <td>London</td>
+                      <td>38</td>
+                      <td>2011/05/03</td>
+                      <td>$163,500</td>
+                    </tr>
+                    <tr>
+                      <td>Sakura Yamamoto</td>
+                      <td>Support Engineer</td>
+                      <td>Tokyo</td>
+                      <td>37</td>
+                      <td>2009/08/19</td>
+                      <td>$139,575</td>
+                    </tr>
+                    <tr>
+                      <td>Thor Walton</td>
+                      <td>Developer</td>
+                      <td>New York</td>
+                      <td>61</td>
+                      <td>2013/08/11</td>
+                      <td>$98,540</td>
+                    </tr>
+                    <tr>
+                      <td>Finn Camacho</td>
+                      <td>Support Engineer</td>
+                      <td>San Francisco</td>
+                      <td>47</td>
+                      <td>2009/07/07</td>
+                      <td>$87,500</td>
+                    </tr>
+                    <tr>
+                      <td>Serge Baldwin</td>
+                      <td>Data Coordinator</td>
+                      <td>Singapore</td>
+                      <td>64</td>
+                      <td>2012/04/09</td>
+                      <td>$138,575</td>
+                    </tr>
+                    <tr>
+                      <td>Zenaida Frank</td>
+                      <td>Software Engineer</td>
+                      <td>New York</td>
+                      <td>63</td>
+                      <td>2010/01/04</td>
+                      <td>$125,250</td>
+                    </tr>
+                    <tr>
+                      <td>Zorita Serrano</td>
+                      <td>Software Engineer</td>
+                      <td>San Francisco</td>
+                      <td>56</td>
+                      <td>2012/06/01</td>
+                      <td>$115,000</td>
+                    </tr>
+                    <tr>
+                      <td>Jennifer Acosta</td>
+                      <td>Junior Javascript Developer</td>
+                      <td>Edinburgh</td>
+                      <td>43</td>
+                      <td>2013/02/01</td>
+                      <td>$75,650</td>
+                    </tr>
+                    <tr>
+                      <td>Cara Stevens</td>
+                      <td>Sales Assistant</td>
+                      <td>New York</td>
+                      <td>46</td>
+                      <td>2011/12/06</td>
+                      <td>$145,600</td>
+                    </tr>
+                    <tr>
+                      <td>Hermione Butler</td>
+                      <td>Regional Director</td>
+                      <td>London</td>
+                      <td>47</td>
+                      <td>2011/03/21</td>
+                      <td>$356,250</td>
+                    </tr>
+                    <tr>
+                      <td>Lael Greer</td>
+                      <td>Systems Administrator</td>
+                      <td>London</td>
+                      <td>21</td>
+                      <td>2009/02/27</td>
+                      <td>$103,500</td>
+                    </tr>
+                    <tr>
+                      <td>Jonas Alexander</td>
+                      <td>Developer</td>
+                      <td>San Francisco</td>
+                      <td>30</td>
+                      <td>2010/07/14</td>
+                      <td>$86,500</td>
+                    </tr>
+                    <tr>
+                      <td>Shad Decker</td>
+                      <td>Regional Director</td>
+                      <td>Edinburgh</td>
+                      <td>51</td>
+                      <td>2008/11/13</td>
+                      <td>$183,000</td>
+                    </tr>
+                    <tr>
+                      <td>Michael Bruce</td>
+                      <td>Javascript Developer</td>
+                      <td>Singapore</td>
+                      <td>29</td>
+                      <td>2011/06/27</td>
+                      <td>$183,000</td>
+                    </tr>
+                    <tr>
+                      <td>Donna Snider</td>
+                      <td>Customer Support</td>
+                      <td>New York</td>
+                      <td>27</td>
+                      <td>2011/01/25</td>
+                      <td>$112,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- theme body end-->
+    </div>
+    <!-- footer start-->
+      <footer class="codex-footer">
+        <p>Copyright 2022-23 © dmeki All rights reserved.</p>
+      </footer>
+    <!-- footer end-->
+      <!-- main jquery-->
+      <script src="../assets/js/jquery-3.6.0.js"></script>
+      <!-- Feather iocns js-->
+      <script src="../assets/js/icons/feather-icon/feather.js"></script>
+      <!-- customizer-->
+      <script src="../assets/js/customizer.js"></script>
+      <!-- Scrollbar-->
+      <script src="../assets/js/vendors/simplebar.js"></script>
+      <!--Datatable-->
+      <script src="../assets/js/vendors/datatable/jquery.dataTables.min.js"></script>
+      <script src="../assets/js/vendors/datatable/dataTables.buttons.min.js"></script>
+      <script src="../assets/js/vendors/datatable/buttons.print.min.js"></script>
+      <script src="../assets/js/vendors/datatable/jszip.min.js"></script>
+      <script src="../assets/js/vendors/datatable/pdfmake.min.js"></script>
+      <script src="../assets/js/vendors/datatable/vfs_fonts.js"></script>
+      <script src="../assets/js/vendors/datatable/buttons.html5.min.js"></script>
+      <script src="../assets/js/vendors/datatable/custom-datatable.js"></script>
+      <!-- Custom script-->
+      <script src="../assets/js/custom-script.js"></script>
+  </body>
+</html>

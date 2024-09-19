@@ -1,0 +1,40 @@
+/********************
+ 16 PROGRESSBAR START
+*********************/
+  $progress-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "light":      $theme-light,
+    "dark":       $theme-dark,
+  );
+  .progress{
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 15px;
+    background-color: $bg-light;
+    display: flex;
+    align-items: center;
+    .progress-bar{
+      height: 100%;
+      transition:none !important;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  @each  $progress-colorname , $progress-color  in $progress-colors {
+      .progress-#{$progress-colorname}{
+          background-color: rgba($progress-color,0.1) !important;  
+          border-radius: 15px;
+          .progress-bar{
+            color: $white;
+            background-color: rgba($progress-color,1) !important;  
+          }                                        
+      }
+  }

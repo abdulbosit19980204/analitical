@@ -1,0 +1,97 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Typography")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('typography','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row           
+              .col-xl-6 
+                .card
+                  .card-header 
+                    h4 Headings
+                  .card-body.pt-20                        
+                    h1 H1 Theme Heading
+                    h2 H2 Theme Heading
+                    h3 H3 Theme Heading
+                    h4 H4 Theme Heading
+                    h5 H5 Theme Heading
+                    h6 H6 Theme Heading
+              .col-xl-6 
+                .card
+                  .card-header 
+                    h4 Heading with colors
+                  .card-body.pt-20                        
+                    h1.text-primary H1 Theme Heading
+                    h2.text-secondary H2 Theme Heading
+                    h3.text-success H3 Theme Heading
+                    h4.text-info H4 Theme Heading
+                    h5.text-warning H5 Theme Heading
+                    h6.text-danger H6 Theme Heading
+              .col-xl-6 
+                .card
+                  .card-header 
+                    h4 dishplay Headings
+                  .card-body.pt-20                        
+                    h1.display-1 Theme Heading
+                    h2.display-2 Theme Heading
+                    h3.display-3 Theme Heading
+                    h4.display-4 Theme Heading
+                    h5.display-5 Theme Heading
+                    h6.display-6 Theme Heading
+              .col-xl-6 
+                .card
+                  .card-header 
+                    h4 dishplay Heading with colors
+                  .card-body.pt-20                        
+                    h1.display-1.text-primary Theme Heading
+                    h2.display-2.text-secondary Theme Heading
+                    h3.display-3.text-success Theme Heading
+                    h4.display-4.text-info Theme Heading
+                    h5.display-5.text-warning Theme Heading
+                    h6.display-6.text-danger Theme Heading
+              .col-12
+                .card
+                  .card-header
+                    h4 Inline text elements
+                  .card-body
+                      p
+                        | You can use the mark tag to 
+                        mark highlight
+                        |  text.
+                      p
+                        del This line of text is meant to be treated as deleted text.
+                      p
+                        s This line of text is meant to be treated as no longer accurate.
+                      p
+                        ins This line of text is meant to be treated as an addition to the document.
+                      p
+                        u This line of text will render as underlined.
+                      p
+                        small This line of text is meant to be treated as fine print.
+                      p
+                        strong This line rendered as bold text.
+                      p
+                        em This line rendered as italicized text.           
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

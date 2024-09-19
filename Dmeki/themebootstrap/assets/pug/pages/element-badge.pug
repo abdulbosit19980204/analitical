@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Badge")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('badge','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-lg-6            
+              .card
+                .card-header
+                  h4 default badge
+                .card-body
+                  span.badge.badge-primary primary
+                  span.badge.badge-secondary secondary
+                  span.badge.badge-success  success
+                  span.badge.badge-warning warning
+                  span.badge.badge-info  info
+                  span.badge.badge-danger danger
+                  span.badge.badge-light light
+                  span.badge.badge-dark dark
+            .col-lg-6            
+              .card
+                .card-header
+                  h4 rounded badge
+                .card-body
+                  span.badge.badge-primary.rounded-pill Primary
+                  span.badge.badge-secondary.rounded-pill Secondary
+                  span.badge.badge-success.rounded-pill Success
+                  span.badge.badge-danger.rounded-pill Danger
+                  span.badge.badge-warning.rounded-pill Warning
+                  span.badge.badge-info.rounded-pill Info
+                  span.badge.badge-light.rounded-pill Light
+                  span.badge.badge-dark.rounded-pill Dark
+
+            .col-lg-6            
+              .card
+                .card-header
+                  h4 default badge
+                .card-body
+                  h1.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+                  h2.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+                  h3.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+                  h4.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+                  h5.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+                  h6.mb-5
+                    | Example heading 
+                    span.badge.bg-primary New
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

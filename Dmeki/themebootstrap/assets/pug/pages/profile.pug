@@ -1,0 +1,461 @@
+-var lightbox = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Profile")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('profile','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container.cdxuser-profile
+          .row         
+            .col-xl-3.cdx-xxl-30.cdx-xl-40
+              .row
+                .col-xl-12.col-md-6
+                  +usercard("4.jpg","Alex Spencer","ux designer")
+                .col-xl-12.col-md-6
+                  .card
+                    .card-header
+                      h4 
+                        i.fa.fa-user
+                        |Contact
+                    .card-body
+                      ul.contact-list
+                        li  
+                          .iocn-item
+                            i(data-feather="user")
+                          h6  Alex Spencer
+                        li  
+                          .iocn-item
+                            i(data-feather="bookmark")
+                          h6  studied in uk univercity
+                        li
+                          .iocn-item
+                            i(data-feather="phone-call")
+                          h6 
+                            a(href="tel:+9588489584") +9588489584
+                        li  
+                          .iocn-item
+                            i(data-feather="mail")
+                          h6  
+                            a(href="mailto:test@example.com") test@example.com
+                        li  
+                          .iocn-item
+                            i(data-feather="map-pin")
+                          h6  live in uk
+                        li  
+                          .iocn-item
+                            i(data-feather="globe")
+                          h6  https://dmeki.com
+                .col-xl-12.col-md-6
+                  .card
+                    .card-header
+                      h4 
+                        i.fa.fa-users
+                        |Followers
+                    .card-body
+                      ul.follower-list
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/1.jpg' alt='')
+                            .media-body
+                              h6 Mark Wongar
+                              p.text-light 3m follower 
+                            a(href="javascript:void(0)").badge.badge-primary 
+                              i(data-feather="plus")
+                              |follow
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/2.jpg' alt='')
+                            .media-body
+                              h6 Thomas Vactom
+                              p.text-light 4m follower 
+                            a(href="javascript:void(0)").badge.badge-secondary 
+                              i(data-feather="plus")
+                              |follow
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/3.jpg' alt='')
+                            .media-body
+                              h6 Lina Odem
+                              p.text-light 5k follower 
+                            a(href="javascript:void(0)").badge.badge-success 
+                              i(data-feather="plus")
+                              |follow
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/4.jpg' alt='')
+                            .media-body
+                              h6 Johan Deo
+                              p.text-light 10L follower 
+                            a(href="javascript:void(0)").badge.badge-info 
+                              i(data-feather="plus")
+                              |follow
+                .col-xl-12.col-md-6
+                  .card
+                    .card-header
+                      h4
+                        i.fa.fa-users 
+                        | Followings
+                    .card-body
+                      ul.follower-list
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/1.jpg' alt='')
+                            .media-body
+                              h6 Mark Wongar
+                              p.text-light 3m follower 
+                            a(href="javascript:void(0)").badge.badge-primary 
+                              i(data-feather='check')
+                              | following
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/2.jpg' alt='')
+                            .media-body
+                              h6 Thomas Vactom
+                              p.text-light 4m follower 
+                            a(href="javascript:void(0)").badge.badge-secondary
+                              i(data-feather='check')
+                              |following
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/3.jpg' alt='')
+                            .media-body
+                              h6 Lina Odem
+                              p.text-light 5k follower 
+                            a(href="javascript:void(0)").badge.badge-success
+                              i(data-feather='check')
+                              |following
+
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/3.jpg' alt='')
+                            .media-body
+                              h6 Johan Deo
+                              p.text-light 10L follower 
+                            a(href="javascript:void(0)").badge.badge-info
+                              i(data-feather='check')
+                              |following
+                .col-xl-12.col-md-6
+                  .card
+                    .card-header
+                      h4 
+                        i.fa.fa-picture-o
+                        |Gallery
+                    .card-body                    
+                      ul.gallerypost-list
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/1.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/1.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/2.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/2.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/3.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/3.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/4.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/4.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/5.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/5.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/6.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/6.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/7.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/7.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/8.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/8.jpg' alt="gallery")
+                        li                       
+                          a(data-fancybox='gallery' data-src='../assets/images/pages/gallery/9.jpg' data-caption='')
+                            img.img-fluid(src='../assets/images/pages/gallery/9.jpg' alt="gallery")
+                .col-xl-12.col-md-6
+                  .card
+                    .card-header
+                      h4
+                        i.fa.fa-user-plus 
+                        | Add friend
+                    .card-body
+                      ul.follower-list
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/1.jpg' alt='')
+                            .media-body
+                              h6 Mark Wongar
+                              p.text-light 3m follower 
+                            a(href="javascript:void(0)").badge.badge-primary add friend
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/2.jpg' alt='')
+                            .media-body
+                              h6 Thomas Vactom
+                              p.text-light 4m follower 
+                            a(href="javascript:void(0)").badge.badge-secondary add friend
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/3.jpg' alt='')
+                            .media-body
+                              h6 Lina Odem
+                              p.text-light 5k follower 
+                            a(href="javascript:void(0)").badge.badge-success add friend                           
+                        li
+                          .media.align-items-center
+                            img.img-fluid(src='../assets/images/avtar/3.jpg' alt='')
+                            .media-body
+                              h6 Johan Deo
+                              p.text-light 10L follower 
+                            a(href="javascript:void(0)").badge.badge-info add friend
+            .col-xl-9.cdx-xxl-70.cdx-xl-60
+              .row
+                .col-12
+                  ul.post-list
+                    li
+                      .post-contain
+                        .post-header
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                            .media-body
+                              h6 Graphics Community
+                              span 29 minutes ago
+                            .post-setting
+                              .action-menu                               
+                                .action-toggle
+                                  i.fa.fa-ellipsis-h
+                                ul.action-dropdown
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bookmark")
+                                      | save post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bell")
+                                      |Turn on notifications
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="x-circle")
+                                      |Hide post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="info")
+                                      | Report post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="trash-2")
+                                      |Delete post  
+                          .added-postdetail                            
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        .post-imgwrap
+                          img.img-fluid(src="../assets/images/pages/profile/post/1.jpg" alt="profile-post")
+                        .post-detail
+                            ul.postreact-status
+                              li
+                                a.btn.text-light(href="javascript:void(0)")
+                                  .like-status.bg-primary                                 
+                                    i.fa.fa-thumbs-o-up
+                                  | 5.5 m
+                              li
+                                span.d-flex 
+                                  a.btn.text-light.mr-10(href="javascript:void(0)") 500M comments                                                          
+                                  a.btn.text-light(href="javascript:void(0)") 120K shares
+                            ul.post-react
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | likes
+                              li
+                                a.btn.comment-toggle(href="javascript:void(0)")
+                                  i(data-feather="message-square")
+                                  | comment
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="share-2")
+                                  | share
+                            .addpost-comment.show
+                              .input-group
+                                input.form-control(type="text"  placeholder='Write a comment' )
+                                .input-group-text
+                                  ul.add-comment
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="smile")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="camera")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="video")
+                    li
+                      .post-contain
+                        .post-header
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                            .media-body
+                              h6 Web Community
+                              span 48 minutes ago
+                            .post-setting
+                              .action-menu                               
+                                .action-toggle
+                                  i.fa.fa-ellipsis-h
+                                ul.action-dropdown
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bookmark")
+                                      | save post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bell")
+                                      |Turn on notifications
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="x-circle")
+                                      |Hide post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="info")
+                                      | Report post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="trash-2")
+                                      |Delete post  
+                          .added-postdetail                            
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        .post-imgwrap
+                          img.img-fluid(src="../assets/images/pages/profile/post/2.jpg" alt="profile-post")
+                        .post-detail
+                            ul.postreact-status
+                              li
+                                a.btn.text-light(href="javascript:void(0)")
+                                  .like-status.bg-primary                                 
+                                    i.fa.fa-thumbs-o-up
+                                  | 5.5 m
+                              li
+                                span.d-flex 
+                                  a.btn.text-light.mr-10(href="javascript:void(0)") 500M comments                                                          
+                                  a.btn.text-light(href="javascript:void(0)") 120K shares
+                            ul.post-react
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | likes
+                              li
+                                a.btn.comment-toggle(href="javascript:void(0)")
+                                  i(data-feather="message-square")
+                                  | comment
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="share-2")
+                                  | share
+                            .addpost-comment
+                              .input-group
+                                input.form-control(type="text"  placeholder='Write a comment' )
+                                .input-group-text
+                                  ul.add-comment
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="smile")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="camera")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="video")
+                    li
+                      .post-contain
+                        .post-header
+                          .media
+                            img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                            .media-body
+                              h6 Developar Community
+                              span 1 hourse ago
+                            .post-setting
+                              .action-menu                               
+                                .action-toggle
+                                  i.fa.fa-ellipsis-h
+                                ul.action-dropdown
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bookmark")
+                                      | save post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="bell")
+                                      |Turn on notifications
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="x-circle")
+                                      |Hide post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="info")
+                                      | Report post
+                                  li
+                                    a(href="javascript:void(0)") 
+                                      i(data-feather="trash-2")
+                                      |Delete post  
+                          .added-postdetail                            
+                            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        .post-imgwrap.row
+                          .col-6
+                            img.img-fluid(src="../assets/images/pages/profile/post/3.jpg" alt="profile-post")
+                          .col-6
+                            img.img-fluid(src="../assets/images/pages/profile/post/4.jpg" alt="profile-post")
+                        .post-detail
+                            ul.postreact-status
+                              li
+                                a.btn.text-light(href="javascript:void(0)")
+                                  .like-status.bg-primary                                 
+                                    i.fa.fa-thumbs-o-up
+                                  | 5.5 m
+                              li
+                                span.d-flex 
+                                  a.btn.text-light.mr-10(href="javascript:void(0)") 500M comments                                                          
+                                  a.btn.text-light(href="javascript:void(0)") 120K shares
+                            ul.post-react
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="thumbs-up")
+                                  | likes
+                              li
+                                a.btn.comment-toggle(href="javascript:void(0)")
+                                  i(data-feather="message-square")
+                                  | comment
+                              li
+                                a.btn(href="javascript:void(0)")
+                                  i(data-feather="share-2")
+                                  | share
+                            .addpost-comment
+                              .input-group
+                                input.form-control(type="text"  placeholder='Write a comment' )
+                                .input-group-text
+                                  ul.add-comment
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="smile")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="camera")
+                                    li
+                                      a(href="javascript:void(0)")
+                                        i(data-feather="video")         
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

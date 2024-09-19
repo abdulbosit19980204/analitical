@@ -1,0 +1,72 @@
+/*******************
+  06 BADGE START
+********************/
+.badge{
+  text-transform:capitalize;
+  font-weight: 400;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  padding: 7px 10px;
+  line-height: 1;
+  +:nth-child(n+2){
+    margin-inline-start: 5px;
+  }
+}
+/* bg color */
+$badge-colors:(
+    "primary":    $theme-primary ,
+    "secondary":  $theme-secondary ,
+    "success":    $theme-success ,
+    "info":       $theme-info ,
+    "warning":    $theme-warning ,
+    "danger":     $theme-danger ,   
+);
+@each  $badge-colorname , $badge-color  in $badge-colors {
+    .badge-#{$badge-colorname}{        
+        color: rgba($badge-color,1) !important;               
+        font-size: 12px;
+        background-color: rgba($badge-color,0.1);
+        &:hover{
+          color: $white !important;
+          background-color: $badge-color;
+        }
+    }
+}
+
+@each  $badge-colorname , $badge-color  in $badge-colors {
+  .badge-rounded-#{$badge-colorname}{
+      background-color: rgba($badge-color,0.1) !important;      
+      color: rgba($badge-color,1) !important;     
+      font-size: 12px;      
+      border-radius:100px;            
+      &:hover{
+        color: $white !important;
+        background-color: $badge-color !important;
+      }
+  }
+}
+
+@each  $badge-colorname , $badge-color  in $badge-colors {
+  .badge-outline-#{$badge-colorname}{        
+      color: rgba($badge-color,1) !important;               
+      font-size: 12px;
+      border: 1px solid $badge-color;
+      &:hover{
+        color: $white !important;
+        background-color: $badge-color;
+      }
+  }
+}
+@each  $badge-colorname , $badge-color  in $badge-colors {
+  .badge-roundedoutline-#{$badge-colorname}{        
+      color: rgba($badge-color,1) !important;               
+      font-size: 12px;
+      border: 1px solid $badge-color;
+      border-radius:100px;
+      &:hover{
+        color: $white !important;
+        background-color: $badge-color;
+      }
+  }
+}

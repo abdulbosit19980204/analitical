@@ -1,0 +1,86 @@
+/*** 01 VARIABLES ***/
+/*** 02 TYPOGRAPHY ***/
+/*** 03 COMMON ***/
+/*** 04 BUTTON ***/
+/*** 05 FORM ***/
+/*** 06 BADGE ***/
+/*** 07 ALERTS ***/
+/*** 08 PAGINATION ***/
+/*** 09 CARD ***/
+/*** 10 TAB ***/
+/*** 11 TABLE ***/
+/*** 12 HEADER ***/
+/*** 13 FOOTER ***/
+/*** 14 DROPDOWN ***/
+/*** 15 MODAL ***/
+/*** 16 SIDEBAR ***/
+/*** 17 PROGRESS BAR ***/
+/*** 18 CUSTOMIZER ***/
+/*** 19 PRODUCT ***/
+/*** 20 CART ***/
+/*** 21 CHECKOUT ***/
+/*** 22 CALENDAR-APP ***/
+/*** 23 CHAT-APP ***/
+/*** 24 USER-APP ***/
+/*** 25 EMAIL-APP ***/
+/*** 26 AUTHENTICATION ***/
+/*** 27 BLOG ***/
+/*** 28 TODO ***/
+/*** 29 ERROR ***/
+/*** 30 CONTACTS ***/
+/*** 31 FAQ ***/
+/*** 32 PRICING ***/
+/*** 33 GALLERY ***/
+/*** 34 INVOICE ***/
+/*** 35 COMING-SOON ***/
+/*** 36 DASHBOARD ***/
+/*** 37 ECOMMERCE DASHBOARD ***/
+/*** 38 RESPONSIVE ***/
+/*******************
+ 02 TYPOGRAPHY START
+********************/
+body{
+	font-size: 14px;   
+    font-family: $font-rubik;
+    color: $codex-font-color;   
+	background-color: $bg-light;
+}
+a{
+  text-decoration: none;
+  color: $theme-primary;
+  &:hover{
+	color: currentColor;
+  }
+}
+h1,h2,h3,h4,h5,h6,p{
+	margin-block-end: 0;
+}
+ol, ul, dl{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style: none;
+}
+h1{	
+	font-size: 34px;
+}
+h2{
+	font-size: 30px;
+}
+h3{
+	font-size: 24px;
+}
+h4{
+	font-size: 20px;
+}
+h5{
+	font-size: 18px;
+}
+h6{
+	font-size: 16px;
+	font-weight: 400;
+}
+p{
+	color: $font-light
+}

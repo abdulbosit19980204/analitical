@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+      <!-- theme body start-->
+      <div class="theme-body codex-chat">
+        <div class="custom-container">
+          <div class="row">
+            <div class="col-12">
+              <div class="cdxchat-contain">
+                <div class="row">
+                  <div class="col chat-sidebar">
+                    <div class="card mb-0">
+                      <div class="card-body">
+                        <div class="admin-profile">
+                          <div class="media">
+                            <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt=""></div>
+                            <div class="media-body">
+                              <ul class="chaticon-list">
+                                <li><a href="javascript:void(0)"><i data-feather="message-square"></i></a></li>
+                                <li>
+                                  <div class="action-menu">
+                                    <div class="action-toggle"><i data-feather="more-vertical">                    </i></div>
+                                    <ul class="action-dropdown">
+                                      <li><a href="javascript:void(0)"> <i data-feather="users"></i>New Group</a></li>
+                                      <li><a href="profile.html"> <i data-feather="user"></i>Profile</a></li>
+                                      <li><a href="javascript:void(0)"> <i data-feather="message-circle"></i>Starred messages</a></li>
+                                      <li><a href="javascript:void(0)"> <i data-feather="settings"></i>Settings</a></li>
+                                      <li><a href="login.html"> <i data-feather="log-out"></i>Log out</a></li>
+                                    </ul>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="input-group"><span class="input-group-text"><i data-feather="search"></i></span>
+                            <input class="form-control" type="text" placeholder="Search">
+                          </div>
+                        </div>
+                        <ul class="user-caht-list" data-simplebar>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Alex Spencer</h6>
+                                <p> Typing..                      </p>
+                              </div>
+                              <div class="caht-status"> <span class="time-status">2:45<small class="ml-5">am</small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Thomas Vactom</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Tuesday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/3.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Johan Deo</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="badge badge-rounded-primary">5</span><span class="time-status">Wednesday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/4.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Mark Wongar</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Friday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/5.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Lina Odem</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">5:50<small class="ml-5">pm</small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/6.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Alex Spencer</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">1:33<small class="ml-5">am</small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/7.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Johan Deo</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Wednesday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/8.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Thomas Vactom</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Tuesday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/9.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Alex Spencer</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">1:33<small class="ml-5">am     </small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/10.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Mark Wongar</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Friday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/11.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Lina Odem</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">5:50<small class="ml-5">pm</small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/12.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Alex Spencer</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">1:33<small class="ml-5">am</small></span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/13.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Johan Deo</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Wednesday</span></div>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="media">
+                              <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/14.jpg" alt=""></div>
+                              <div class="media-body">
+                                <h6>Thomas Vactom</h6>
+                                <p> At work</p>
+                              </div>
+                              <div class="caht-status"><span class="time-status">Tuesday   </span></div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="chat-body">
+                      <div class="media">
+                        <div class="userimg-wrap"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt=""></div>
+                        <div class="media-body">
+                          <h6>Alex Spencer </h6>
+                          <p>online</p>
+                        </div>
+                        <ul class="chaticon-list">
+                          <li><a href="javascript:void(0)"><i data-feather="search"></i></a></li>
+                          <li><a href="javascript:void(0)"><i data-feather="phone"></i></a></li>
+                          <li><a href="javascript:void(0)"><i data-feather="video"></i></a></li>
+                          <li>
+                            <div class="action-menu">
+                              <div class="action-toggle"><i data-feather="more-vertical">  </i></div>
+                              <ul class="action-dropdown">
+                                <li><a href="javascript:void(0)"> <i data-feather="info"></i>Contact info                         </a></li>
+                                <li><a href="javascript:void(0)"> <i data-feather="volume-x"></i>Mute notifications</a></li>
+                                <li><a href="javascript:void(0)"> <i data-feather="x-octagon"></i>Clear messages</a></li>
+                                <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete chat                       </a></li>
+                              </ul>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="userchat-msgbox" data-simplebar>
+                        <ul>
+                          <li>
+                            <div class="user-msgbox">
+                              <div class="chat-contain"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet</p>
+                              </div><span class="msg-seen">2:45 <small>pm</small></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="admin-msgbox">
+                              <div class="chat-contain">
+                                <p>Adipisicing elit, sed do eiusmod.</p><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt="">
+                              </div><span class="msg-seen">2:50 <small class="mr-5">pm</small><i class="text-primary" data-feather="check"></i><i class="text-primary" data-feather="check"></i></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="admin-msgbox">
+                              <div class="chat-contain">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt="">
+                              </div><span class="msg-seen">2:51 <small class="mr-5">pm</small><i class="text-primary" data-feather="check"></i><i class="text-primary" data-feather="check"></i></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="user-msgbox">
+                              <div class="chat-contain"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                              </div><span class="msg-seen">4:30 <small class="mr-5">pm                       </small></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="admin-msgbox">
+                              <div class="chat-contain">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt="">
+                              </div><span class="msg-seen">4:35 <small class="mr-5">pm</small><i class="text-primary" data-feather="check"></i><i class="text-primary" data-feather="check"></i></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="user-msgbox">
+                              <div class="chat-contain"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                              </div><span class="msg-seen">5:01 <small class="mr-5">pm</small></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="user-msgbox">
+                              <div class="chat-contain"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt="">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+                              </div><span class="msg-seen">5:05 <small class="mr-5">pm</small></span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="admin-msgbox">
+                              <div class="chat-contain">
+                                <p>Adipisicing elit, sed do eiusmod.</p><img class="img-fluid" src="../assets/images/avtar/1.jpg" alt="">
+                              </div><span class="msg-seen">6:29 <small class="mr-5">pm</small><i class="text-primary" data-feather="check"></i><i class="text-primary" data-feather="check">                </i></span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="userchat-typebox d-flex">                  <a class="btn btn-primary mr-10"><i data-feather="smile"></i></a>
+                        <input class="form-control" type="text" placeholder="Type a message" value="" autocomplete="off"><a class="btn btn-primary ml-10"><i data-feather="mic"></i></a><a class="btn btn-primary ml-10"><i data-feather="send"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- theme body end-->
+
+{% endblock %}

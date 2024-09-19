@@ -1,0 +1,46 @@
+/*******************
+  07 ALERT START
+********************/
+$alert-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "light":      $theme-light,
+    "dark":       $theme-dark,
+);
+
+@each  $alert-colorname , $alert-color  in $alert-colors {
+    .alert-#{$alert-colorname}{
+        background-color: $alert-color; 
+        color: $white;     
+        border-color: $alert-color;
+        .alert-link{
+            color: $white;     
+        }
+    }
+
+    .alert-#{$alert-colorname}-outline{
+        color: $alert-color ;    
+        border: 1px solid $alert-color;           
+    }
+}
+
+.alert-light{
+    color: $font-light;
+    .alert-link{
+        color: $font-light;     
+    }
+}
+.alert-light-outline{
+    color: $font-light;
+}
+
+.card.alerts{   
+    .card-title-desc{    
+        margin-block-end: 24px;
+        font-size: 14px;
+    }   
+}

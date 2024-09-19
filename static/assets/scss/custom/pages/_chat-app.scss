@@ -1,0 +1,347 @@
+/*******************
+ 23  CHAT START
+*********************/
+.codex-chat {
+    margin-block-end: 20px;
+    .media {
+        align-items: center;
+
+        .userimg-wrap {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-inline-end: 15px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 5px;
+            }
+        }
+
+        .media-body {
+            h6 {
+                text-transform: capitalize;
+            }
+
+            p {
+                font-size: 14px;
+                color: $font-light;
+            }
+
+        }
+
+        .caht-status {
+            span {
+                display: block;
+                width: fit-content;
+                margin-inline-start: auto;
+            }
+
+            .time-status {
+                font-size: 14px;
+                color: $font-light;
+                float: right;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .chat-sidebar {       
+        max-width: 360px;           
+        .admin-profile {
+            margin-block-end: 15px;
+        }
+        .input-group {
+            margin-block-end: 20px;
+            border-radius: 5px;           
+            .input-group-text {               
+                color: $font-light;
+                background-color: transparent;
+                svg {
+                    width: 18px;
+                }
+            }           
+        }
+
+        .chaticon-list {
+            margin-inline-start: auto;
+            width: fit-content;
+        }
+
+        ul.user-caht-list {
+            max-height: 595px;
+            overflow: auto;
+            padding-inline-end: 10px;
+            li {
+                padding:10px;
+                border: 1px solid $theme-border;
+                border-radius: 5px;
+                &:nth-child(n+2) {                   
+                    margin-block-start:10px;                   
+                }
+            }
+        }
+    }
+
+    .chat-body {
+        background-color: $white;
+        border-radius: 0 5px 5px 0;
+        width: 100%;
+        border-radius: 5px;
+        position: relative;
+        box-shadow: 0 0 20px 5px rgba($black,0.05);
+        .media {
+            padding: 18px 20px;
+        }
+        .userchat-msgbox {
+            height: 585px;
+            padding: 25px 30px 0 25px;
+            overflow: auto;
+            background-color: $bg-light;
+
+            ul {
+                margin-block-end: 30px;
+            }
+
+            li {
+                display: block;
+
+                &:nth-child(n+2) {
+                    margin-block-start: 15px;
+                }
+            }
+
+            .user-msgbox {
+                .chat-contain {
+                    img{
+                        margin-inline-end: 15px;
+                    }
+                }
+            }
+
+            .admin-msgbox {
+                .chat-contain {
+                    img{
+                        margin-inline-start: 15px;
+                    }
+                }
+            }
+
+            .user-msgbox,
+            .admin-msgbox {
+                max-width: 50%;
+                width: fit-content;
+
+                .chat-contain {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 5px;
+                    }
+
+                    p {
+                        background-color: $white;
+                        padding: 10px 13px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        color: $font-light;
+                    }
+                }
+
+                .msg-seen {
+                    display: block;
+                    margin-inline-start: auto;
+                    margin-block-start: 10px;
+                    width: fit-content;
+                    font-size: 14px;
+                    color: $font-light;
+                    font-weight: 400;
+
+                    svg {
+                        width: 20px;
+                    }
+                }
+            }
+
+            .admin-msgbox {
+                margin-inline-start: auto;
+
+                .user-message {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+
+                    .send-details {
+                        width: 70%;
+
+                        p {
+                            background-color: $white;
+                            padding: 10px 13px;
+                            border-radius: 5px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .user_icon {
+                        img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+
+                .msg-seen {
+                    margin-inline-end: 55px;
+                }
+            }
+        }
+
+        .preView_box {
+            width: 100%;
+            position: absolute;
+            bottom: 100px;
+            background: #fff;
+
+            &.hidden {
+                display: none;
+            }
+
+            #imgPreview {
+                display: inline-block;
+                padding: 15px 0 0 25px;
+                position: relative;
+                width: 225px;
+                height: auto;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    width: 100%;
+                }
+
+                #removePreview_img {
+                    position: absolute;
+                    right: -10px;
+                    top: 5px;
+                }
+            }
+        }
+
+        .userchat-typebox {
+            padding: 25px;
+            i {
+                color: $theme-warning;
+            }
+            .form-control {
+                margin-inline-end: 10px;
+            }
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding:10px 15px;
+                svg{
+                    width: auto;
+                    height: 20px;
+                }
+                i {
+                    font-size: 20px;
+                    color: $white;
+                }
+            }
+        }
+
+        @keyframes dotAnimate {
+            0% {
+                transform: translateY(0px);
+                background-color: rgba($theme-primary, 0.3);
+            }
+
+            28% {
+                transform: translateY(-7px);
+                background-color: rgba($theme-primary, 0.5);
+            }
+
+            44% {
+                transform: translateY(0px);
+                background-color: rgba($theme-primary, 0.9);
+            }
+        }
+
+        .chat-bubble {
+            background-color: rgba($theme-primary, 0.1);
+            padding: 10px 20px 8px 20px;           
+            border-radius: 20px;
+            border-bottom-left-radius: 2px;
+            display: inline-block;
+            .typing {
+                align-items: center;
+                display: flex;
+                height: 17px;
+                .dot {
+                    animation: dotAnimate 1.8s infinite ease-in-out;
+                    background-color: $theme-primary;
+                    border-radius: 50%;
+                    height: 7px;
+                    margin-inline-end: 4px;
+                    vertical-align: middle;
+                    width: 7px;
+                    display: inline-block;
+
+                    &:nth-child(1) {
+                        animation-delay: 200ms;
+                    }
+
+                    &:nth-child(2) {
+                        animation-delay: 300ms;
+                    }
+
+                    &:nth-child(3) {
+                        animation-delay: 400ms;
+                    }
+
+                    &:last-child {
+                        margin-inline-end: 0;
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+    // .cdxchat-contain {
+    //     display: flex;
+    // }
+
+    .chaticon-list {
+        >li {
+            display: inline-block;
+            position: relative;
+
+            >a {
+                color: $font-light;
+            }
+
+            &:nth-child(n+2) {
+                margin-inline-start: 15px;
+            }
+
+            .theme-dropdown {
+                top: 100%;
+                right: 0;
+            }
+        }
+
+    }
+
+    .action-dropdown {
+        min-width: 195px;
+    }
+}

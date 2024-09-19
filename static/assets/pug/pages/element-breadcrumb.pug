@@ -1,0 +1,164 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Breadcrumb")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('breadrumbs','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row 
+            .col-xl-6
+              .card.buttons
+                .card-header
+                  h4 Simple Breadcrumbs
+                .card-body
+                  p.card-title-desc Use an ordered or unordered list with linked list items to create a minimally styled breadcrumb. Use our utilities to add additional styles as desired.
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item.active(aria-current='page') Dashboard
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item.active(aria-current='page') Application
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item
+                        a(href='#') Application 
+                      li.breadcrumb-item.active(aria-current='page') Profile
+            .col-xl-6
+              .card.buttons
+                .card-header
+                  h4 Dividers Breadcrumbs 
+                .card-body
+                  p.card-title-desc  Dividers are automatically added in CSS through ::before and content. They can be changed by modifying a local CSS custom property 
+                    code --bs-breadcrumb-divider
+                  nav(style="--bs-breadcrumb-divider: '>';")
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item.active(aria-current='page') Application
+                  nav(style="--bs-breadcrumb-divider: '*';")
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item
+                        a(href='#') Application 
+                      li.breadcrumb-item.active(aria-current='page') Profile
+                  nav(style="--bs-breadcrumb-divider: '-';")
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item
+                        a(href='#') Application 
+                      li.breadcrumb-item.active(aria-current='page') Profile          
+            .col-xl-6
+              .card.buttons
+                .card-header
+                  h4 SVG Icon set Breadcrumbs 
+                .card-body
+                  p.card-title-desc  It’s also possible to use an embedded SVG icon. Apply it via our CSS through ::before and content or
+                    br
+                    code style="--bs-breadcrumb-divider: SVG path"                  
+                  nav(style='--bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'8\' height=\'8\'%3E%3Cpath d=\'M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z\' fill=\'currentColor\'/%3E%3C/svg%3E");' aria-label='breadcrumb')
+                    ol.breadcrumb
+                      li.breadcrumb-item
+                        a(href='#') Home
+                      li.breadcrumb-item.active(aria-current='page') Library            
+            .col-xl-6
+              .card.buttons
+                .card-header
+                  h4 Breadcrumbs Align Right
+                .card-body            
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-end
+                      li.breadcrumb-item.active(aria-current='page') Dashboard
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-end
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item.active(aria-current='page') Application
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-end
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item
+                        a(href='#') Application 
+                      li.breadcrumb-item.active(aria-current='page') Profile
+            .col-xl-6 
+              .card.buttons
+                .card-header
+                  h4 Breadcrumbs Color Variant
+                .card-body   
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.btn-primary.p-2
+                      li.breadcrumb-item.active.text-white(aria-current='page') 
+                        i.fa.fa-star-o.mr-5
+                        | Dashboard               
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.btn-secondary.p-2
+                      li.breadcrumb-item
+                        a.text-white(href='#') Dashboard
+                      li.breadcrumb-item
+                        a.text-white(href='#') Application 
+                      li.breadcrumb-item.active.text-white(aria-current='page') Profile
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.btn-dark.p-2
+                      li.breadcrumb-item
+                        a(href='#').text-white 
+                          i.fa.fa-dot-circle-o.mr-5
+                          | Dashboard
+                      li.breadcrumb-item
+                        a(href='#').text-white 
+                          i.fa.fa-dot-circle-o.mr-5
+                          | Application 
+                      li.breadcrumb-item.active.text-white(aria-current='page')                       
+                        | Profile
+            .col-xl-6
+              .card.buttons
+                .card-header
+                  h4 Breadcrumbs Align Center
+                .card-body           
+                  p &nbsp;
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-center
+                      li.breadcrumb-item.active(aria-current='page') Dashboard
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-center
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item.active(aria-current='page') Application
+                  nav(aria-label='breadcrumb')
+                    ol.breadcrumb.justify-content-center
+                      li.breadcrumb-item
+                        a(href='#') Dashboard
+                      li.breadcrumb-item
+                        a(href='#') Application 
+                      li.breadcrumb-item.active(aria-current='page') Profile
+      // theme body end      
+
+
+
+
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

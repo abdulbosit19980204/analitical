@@ -1,0 +1,504 @@
+-var ckeditor = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Email Inbox")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('email','application')
+      // breadcrumb end
+      
+      // theme body start
+      .theme-body
+        .custom-container
+          .row                
+            .col-12
+              .cdxemail-contain
+                .email-sidebar.cdxapp-sidebar
+                  .card
+                    .card-body
+                      a.btn.btn-primary(data-bs-toggle='modal' data-bs-target='#emailcreat') 
+                       i(data-feather="plus")
+                       | Compose
+                      ul.sidebarmenu-list
+                          li                                 
+                            a.menu-item(href='email-inbox.html')
+                              .icons
+                                i(data-feather="mail")
+                              |  Inbox 
+                              span.badge.badge-primary.ml-auto 76
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="send")
+                              |  Sent
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="edit")
+                              |  Drafts 
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="star")
+                              |  Starred 
+                              span.badge.badge-primary 10                                                                      
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="tag")
+                              |  Tags 
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="clock")
+                              |  snooz
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="alert-octagon")
+                              |  Important
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="message-circle")
+                              | Chat
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="trash")
+                              |  Trans                             
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="x-octagon")                             
+                              |  Spam                                                                        
+                .email-body
+                  .card
+                    .card-body
+                      .email-header
+                        ul.mailreact-list                       
+                          li
+                            .mail-check
+                              +checkinput('checkbox','category-1', 'category')
+                          li  
+                            a.btn.btn-primary(href='javascript:void(0)')
+                              i(data-feather="refresh-ccw")
+                          li
+                            a.btn.btn-primary(href="javascript:void(0)")
+                              i(data-feather="trash-2")
+                          li
+                            a.btn.btn-primary(href="javascript:void(0)")
+                              i(data-feather="alert-octagon")                        
+                          li
+                            .action-menu                             
+                              a.btn-primary.action-toggle(href="javascript:void(0)" )
+                                i(data-feather="more-vertical")
+                              ul.action-dropdown
+                                li
+                                  a(href='#') 
+                                    i(data-feather="archive")
+                                    | archive
+                                li
+                                  a(href='#') 
+                                    i(data-feather="bookmark")
+                                    | Read
+                                li
+                                  a(href='#') 
+                                    i(data-feather="book")
+                                    | unread
+                                li
+                                  a(href='#') 
+                                    i(data-feather="clock")
+                                    | snooz
+                        .mailreact-right
+                          ul.mailreact-list
+                            li
+                              .input-group
+                                .input-group-text.bg-transparent.cdxappsearch-toggle
+                                  i(data-feather="search")
+                                input(type="text" class="form-control" placeholder="Search mail")                       
+                          a.cdxapp-toggle.btn.btn-primary(href="javascript:void(0);")
+                            i.ti-layout-grid2
+                      ul.nav.nav-tabs
+                        li
+                          a.active(data-bs-toggle='tab' href='#Primary') 
+                            i(data-feather="airplay")
+                            | Primary                
+                        li
+                          a(data-bs-toggle='tab' href='#Social')
+                            i(data-feather="user")
+                            | Social               
+                        li
+                          a(data-bs-toggle='tab' href='#Promotions')
+                            i(data-feather="tag")
+                            | Promotions
+                      .tab-content
+                        #Primary.tab-pane.fade.active.show
+                          ul.mail-list(data-simplebar)
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check1","mail1")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Alex Spencer
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 4:58 
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check2","mail2")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Thomas Vactom
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 6:00
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check3","mail2")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name lina odem
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 6:38
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check4","mail3")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:30
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check5","mail4")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name vamsi ogel
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:58
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check6","mail5")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name omeni rome
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:15
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check7","mail6")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name meena wonger
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:45
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check8","mail7")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:00
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check9","mail8")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Alex Spencer
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:28
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check10","mail9")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Thomas Vactom
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:45
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check11","mail10")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name lina odem
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 12:00
+                                    span pm
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check12","mail14")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 3:45
+                                    span pm
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check13","mail2")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name lina odem
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 6:38
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check14","mail3")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:30
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check15","mail4")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name vamsi ogel
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:58
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check16","mail5")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name omeni rome
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:15
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                        #Social.tab-pane.fade
+                          ul.mail-list(data-simplebar)
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check17","email-1")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:30
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check18","email-2")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name vamsi ogel
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 9:58
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check19","email-3")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name omeni rome
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:15
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check20","email-4")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name meena wonger
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:45
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check21","email-5")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:00
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check22","email-6")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Alex Spencer
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:28
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check23","email-7")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Thomas Vactom
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:45
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                        #Promotions.tab-pane.fade
+                          ul.mail-list(data-simplebar)
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check-20","email06")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name omeni rome
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:15
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check-21","email07")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name meena wonger
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 10:45
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check-22","email08")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name mark wongar
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:00
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+                            li
+                              .mail-item
+                                +checkinput("checkbox","check-23","email09")                     
+                                i.like-mail.text-warning(data-feather="star")
+                                h6.parson-name Alex Spencer
+                                p Primary Designing With Our Top 10 Templates from 2021 ✨ - Hey there, RJ Did you know 5 million projects were created and downloaded.
+                                .mail-right
+                                  .mail-time 11:28
+                                    span am
+                                  .delet-mail 
+                                    i.text-danger(data-feather="x-circle")
+        // Modal     
+        #emailcreat.modal.fade.email-modal(data-bs-keyboard='false' tabindex='-1' aria-labelledby='emailcreat' aria-hidden='true')
+          .modal-dialog.modal-dialog-centered
+            .modal-content
+              .modal-header
+                h5.modal-title New Mail
+                span.close-modal(data-bs-dismiss='modal')
+                  i.ti-close
+              .modal-body
+                form
+                  .form-group
+                    input#toInput.form-control(type="text" placeholder="TO")
+                  .form-group
+                    input.form-control(type="text" placeholder="CC")
+                  .form-group
+                    input.form-control(type="text" placeholder="SUBJECT")
+                  .form-group
+                    .ckmain                 
+                      .ckeditor-menu
+                      #dmekikeditor
+              .modal-footer
+                .group-btn
+                  a.btn.btn-md.btn-primary(href="javascript:void(0)") 
+                    i(data-feather="send")
+                    | Send
+                  a.btn.btn-md.btn-success(href="javascript:void(0)") 
+                    i(data-feather="save")
+                    | Save
+                  a.btn.btn-md.btn-danger(href="javascript:void(0)" data-bs-dismiss="modal")  
+                    i(data-feather="x-square")
+                    | Discard                                     
+      // theme body end
+
+    
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile    
+                   
+    script.
+      ClassicEditor
+        .create( document.querySelector( '#dmekikeditor' ), {
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                ]
+            }
+        } )
+        .catch( error => {
+            console.log( error );
+        } );

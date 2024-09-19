@@ -1,0 +1,102 @@
+/*******************
+38  RESPONSVIE START
+********************/
+
+body{
+	&.rtlmode{
+		direction:rtl;
+
+
+		/*form*/
+		.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu), .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3){
+			border-top-left-radius: 0;
+			border-bottom-left-radius:0;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+
+		/*slick slider*/
+		.slick-slider{
+			direction: ltr;
+		}
+		.apexcharts-canvas{
+			direction: ltr;
+		}
+		.ecompro-slide {
+			.slick-next{
+				left: unset;
+			}
+		}
+
+		/*customizer*/
+		.theme-cutomizer{
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+		.customizer-action{
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		.theme-cutomizer {
+			.customizer-body {
+				.customizer-title{
+					color: $dark-font;
+				}
+			}
+		}
+
+		/*pricing table*/
+		.codex-pricingtbl {
+			.cdxprice-list {
+				li{	
+					direction: ltr;
+				}
+			}
+		}	
+		.codex-pricingadvance {
+			.cdxprice-list {
+				li{
+					direction: ltr;
+				}
+			}
+		}
+
+		/*invoice*/
+		.cdx-invoice {
+			.invoice-user {
+				.right-user {
+					li{
+						direction: ltr;
+					}
+				}
+			}
+		}
+
+		/*blog*/	
+		.blgcomment-list {
+			li {
+				.media {
+					.media-body {
+						h5 {
+							.comment-time{
+								float: left;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
+}

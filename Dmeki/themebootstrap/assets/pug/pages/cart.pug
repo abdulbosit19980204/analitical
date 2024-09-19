@@ -1,0 +1,143 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Cart")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('cart','ecommerce')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body.cdxshopping-cart
+        .custom-container
+          .row                
+            .col-12
+              .card
+                .card-body
+                  .table-responsive
+                    table.table.cart-tbl
+                      thead
+                        tr
+                          th.text-primary.fs-16 Product
+                          th.text-primary.fs-16 Product name
+                          th.text-primary.fs-16 Quantity
+                          th.text-primary.fs-16 Price
+                          th.text-primary.fs-16 Tax
+                          th.text-primary.fs-16 Total
+                          th.text-primary.fs-16 Action
+                      tbody.cartBody
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/1.jpg" alt="")
+                          td Cheks red Shirt
+                          td
+                            +qtycounter
+                          td $241
+                          td $2.4 
+                          td $241   
+                          td
+                            .cart-action
+                              a.text-success(href="javascript:void(0)") 
+                                i(data-feather="heart")
+                              a.delete.text-danger.ml-10(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/2.jpg" alt="")
+                          td pink T-shirt
+                          td
+                            +qtycounter
+                          td $241
+                          td $2.4 
+                          td $241   
+                          td
+                            .cart-action
+                              a.text-success(href="javascript:void(0)") 
+                                i(data-feather="heart")
+                              a.delete.text-danger.ml-10(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/3.jpg" alt="")
+                          td Sky blue shirt
+                          td
+                            +qtycounter
+                          td $241
+                          td $2.4 
+                          td $241   
+                          td
+                            .cart-action
+                              a.text-success(href="javascript:void(0)") 
+                                i(data-feather="heart")
+                              a.delete.text-danger.ml-10(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/4.jpg" alt="")
+                          td rounded neck whtie T-shirt
+                          td
+                            +qtycounter
+                          td $241
+                          td $2.4 
+                          td $241   
+                          td
+                            .cart-action
+                              a.text-success(href="javascript:void(0)") 
+                                i(data-feather="heart")
+                              a.delete.text-danger.ml-10(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                  .cartbtn-group
+                    div
+                      a.btn.btn-primary(href="product.html") Continue Shopping      
+                    div
+                      .group-btn
+                        a.btn.btn-success(href="javascript:void(0);") Update Cart 
+                        a.btn.btn-danger.removeAll-cart(href="javascript:void(0);") Clear Shopping Cart
+          .row.d-flex.justify-content-end
+            .col-xxl-4.col-lg-5.col-md-6
+              .card
+                .card-body
+                  .table-responsive
+                    table.table.chekout-tbl
+                      tbody 
+                        tr 
+                          th Discounts
+                          td £ 16.00
+                        tr 
+                          th Special Offer Saving
+                          td £ 0.00
+                        tr 
+                          th Subtotal exc VAT
+                          td £ 4.80
+                        tr 
+                          th VAT
+                          td £ 482.00
+                        tr 
+                          th Grand Total inc VAT
+                          td.text-success £ 470.80
+                        tr 
+                          td(colspan="2")
+                            a.btn.btn-success(href="checkout.html") Proceed to checkout
+
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

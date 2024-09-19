@@ -1,0 +1,56 @@
+-var ionRangeslider = true;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Range Slider")
+  body
+
+    +header
+
+    .themebody-wrap
+      
+      // breadcrumb start
+      +codexbreadcrumb('Range slider','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container.element-buttons
+          .row          
+            .col-12 
+              .card
+                .card-header 
+                  h4 basic slider
+                .card-body
+                  .mb-20       
+                    input(type="text" class="basic-range" name="my-range" value="")
+                  input(type="text" class="minmax-range" name="my-range" value="")
+
+            .col-12 
+              .card
+                .card-header 
+                  h4 range with negative values
+                .card-body             
+                  .mb-20  
+                    input(type="text" class="negetive-valrange" name="my-range" value="")    
+                  input(type="text" class="negetivestap-valragne" name="my-range" value="") 
+            .col-12 
+              .card
+                .card-header 
+                  h4 range with custom values
+                .card-body 
+                  .mb-20                           
+                    input(type="text" class="custom-valrange" name="my-range" value="")
+                  input(type="text" class="evenstring-range" name="my-range" value="")    
+      // theme body end
+        
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

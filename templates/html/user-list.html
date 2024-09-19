@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- theme body start-->
+<div class="theme-body">
+    <div class="custom-container">
+        <div class="row">
+            {% for client in clients %}
+            <div class="col-xl-2 col-lg-3 col-sm-3 cdx-xxl-33 cdx-xl-33">
+                <div class="card user-card">
+                    <div class="card-header">
+                        <div class="user-setting">
+                            <div class="action-menu">
+                                <div class="action-toggle"><i data-feather="more-vertical"> </i></div>
+                                <ul class="action-dropdown">
+                                    <li><a href="/client-profile"> <i data-feather="eye"></i>View Profile</a></li>
+                                    <li><a href="/client-edit"> <i data-feather="edit"></i>Edit profile</a></li>
+                                    <li>
+                                        <button class="btn"><i data-feather="trash"></i>Delete profile</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="user-imgwrap"><img class="img-fluid rounded-50"
+                                                       src="{% static 'assets/images/avtar/1.jpg' %}" alt="1.jpg"></div>
+                        <div class="user-detailwrap">
+                            <h3>{{ client.Name }}</h3>
+                            <h6>{{ client.Signboard }}</h6>
+                            <ul class="codex-soclist">
+                                <li><a href="https://www.facebook.com/"><i class="fa fa-phone"></i></a></li>
+                                <li><a href="https://twitter.com/"><i class="fa fa-telegram"></i></a></li>
+                                <li><a href="https://www.behance.net/"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                            <div class="group-btn"><a class="btn btn-outline-primary btn-md"
+                                                      href="javascript:void(0);"><i class="fa fa-plus"></i> Create order
+                            </a><a
+                                    class="btn btn-outline-secondary btn-md" href="javascript:void(0);"><i
+                                    class="fa fa-list-alt"></i> Order List</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+
+{% endblock %}

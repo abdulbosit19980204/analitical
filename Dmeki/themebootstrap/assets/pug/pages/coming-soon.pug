@@ -1,0 +1,57 @@
+-var comingsoon = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Coming soon")
+  body
+
+  
+    // coming soon start
+    section.coming-soon
+      .container.position-relative
+        .row
+          .col-12.col-md-9.col-lg-7.mx-auto
+            .coming-detail.text-white.text-center.wow.fadeInUp
+              h1 We&apos;re Coming Soon
+              p
+                | Our website is under construction. We&apos;ll be here soon with our new awesome site,
+                | subscribe to be notified.
+              .countdown-wrap
+                .row.cdx-row
+                  .col-sm-3.col-6
+                    .countdown-grid
+                      h2.mb-0.day 180
+                      h5.mb-0 Days
+                  .col-sm-3.col-6
+                    .countdown-grid
+                      h2.mb-0.hour 06
+                      h5.mb-0 Hours
+                  .col-sm-3.col-6
+                    .countdown-grid
+                      h2.mb-0.minute 02
+                      h5.mb-0 Minutes
+                  .col-sm-3.col-6
+                    .countdown-grid
+                      h2.mb-0.second 42
+                      h5.mb-0 Seconds
+              form.newsletter-form.position-relative
+                .input-group
+                  input.form-control(type='email' placeholder='Enter your email' name='email' required)
+                  span.input-group-text 
+                    button(type='submit') Subscribe
+              ul.social-list
+                li
+                  a(href='Javascript:void(0)')
+                    i.fa.fa-facebook-f
+                li
+                  a(href='Javascript:void(0)')
+                    i.fa.fa-twitter
+                li
+                  a(href='Javascript:void(0)')
+                    i.fa.fa-instagram
+                li
+                  a(href='Javascript:void(0)')
+                    i.fa.fa-linkedin
+    // coming soon end
+      
+    +footerfile

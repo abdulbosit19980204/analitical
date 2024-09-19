@@ -1,0 +1,204 @@
+-var ckeditor = true;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Email Read")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('email','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row                
+            .col-12
+              .cdxemail-contain
+                .email-sidebar.cdxapp-sidebar
+                  .card
+                    .card-body
+                      a.btn.btn-primary(data-bs-toggle='modal' data-bs-target='#emailcreat') 
+                       i.mr-10(data-feather="plus")
+                       | Compose
+                      ul.sidebarmenu-list
+                          li                                 
+                            a.menu-item(href='email-inbox.html')
+                              .icons
+                                i(data-feather="mail")
+                              |  Inbox 
+                              span.badge.badge-primary.ml-auto 76
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="send")
+                              |  Sent
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="edit")
+                              |  Drafts 
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="star")
+                              |  Starred 
+                              span.badge.badge-primary 10                                                                      
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="tag")
+                              |  Tags 
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                  i(data-feather="clock")
+                              |  snooz
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="alert-octagon")
+                              |  Important
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="message-circle")
+                              | Chat
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="trash")
+                              |  Trans                             
+                          li
+                            a.menu-item(href='javascript:void(0);')
+                              .icons
+                                i(data-feather="x-octagon")                             
+                              |  Spam                                                                        
+                .email-body
+                  .card
+                    .card-body
+                      .seen-header
+                        .media
+                          .userimg-wrap
+                            img.img-fluid.w-50(src="../assets/images/avtar/2.jpg" alt="")
+                          .media-body
+                            h6 mark wangar
+                            p  
+                              a(href="mailto:mark@example.com") mark@example.com
+                          ul.emailseen-setting
+                            li
+                              a(href="javascript:void(0)")
+                                i.fa.fa-reply
+                            li
+                              a(href="javascript:void(0)")
+                                i.fa.fa-trash
+                            li
+                              a(href="javascript:void(0)")
+                                i.fa.fa-star
+                            li
+                              a(href="javascript:void(0)")
+                                i.fa.fa-print                     
+                            li
+                              .action-menu                               
+                                .action-toggle
+                                  i.fa.fa-ellipsis-v
+                                ul.action-dropdown
+                                  li
+                                    a(href="javascript:void(0)") translate message
+                                  li
+                                    a(href="javascript:void(0)") filter this message
+                                  li
+                                    a(href="javascript:void(0)") download message
+                                  li
+                                    a(href="javascript:void(0)") show original                         
+                          a.cdxapp-toggle.font-primary(href="javascript:void(0)")
+                            i.ti-layout-grid2
+                      .seen-body(data-simplebar)
+                        h5 hello sir/madam
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        ul.email-post
+                          li
+                            img.img-fluid(src="../assets/images/pages/email/post/1.jpg" alt="mail-post")
+                          li
+                            img.img-fluid(src="../assets/images/pages/email/post/2.jpg" alt="mail-post")
+                          li
+                            img.img-fluid(src="../assets/images/pages/email/post/3.jpg" alt="mail-post")
+                          li
+                            img.img-fluid(src="../assets/images/pages/email/post/4.jpg" alt="mail-post")
+                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+                        .email-reply
+                          textarea.form-control(placeholder="write your message"  rows="5")
+                      .seen-footer                 
+                        a.btn.btn-primary(href="javascript:void(0)")
+                          i.fa.fa-reply 
+                          | reply                
+                        a.btn.btn-secondary(href="javascript:void(0)")
+                          i.fa.fa-share
+                          | forward
+            // Button trigger modal
+        
+        // Modal
+        #emailcreat.modal.fade.email-modal(data-bs-keyboard='false')
+          .modal-dialog.modal-dialog-centered
+            .modal-content
+              .modal-header
+                h5.modal-title New Mail
+                span.close-modal(data-bs-dismiss='modal')
+                  i.ti-close
+              .modal-body
+                form
+                  .form-group
+                    input.form-control(type="text" placeholder="TO")
+                  .form-group
+                    input.form-control(type="text" placeholder="CC")
+                  .form-group
+                    input.form-control(type="text" placeholder="SUBJECT")
+                  .form-group
+                    .ckmain                 
+                      .ckeditor-menu
+                      #dmekikeditor
+              .modal-footer
+                .group-btn
+                  a.btn.btn-md.btn-primary(href="javascript:void(0)") 
+                    i(data-feather="send")
+                    | Send
+                  a.btn.btn-md.btn-success(href="javascript:void(0)") 
+                    i(data-feather="save")
+                    | Save
+                  a.btn.btn-md.btn-danger(href="javascript:void(0)") 
+                    i(data-feather="x-square")
+                    | Discard
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile
+        
+    script.
+      ClassicEditor
+        .create( document.querySelector( '#dmekikeditor' ), {
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+            heading: {
+                options: [
+                    { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                    { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                    { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+                ]
+            }
+        } )
+        .catch( error => {
+            console.log( error );
+        } );

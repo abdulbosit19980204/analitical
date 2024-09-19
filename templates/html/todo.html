@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- theme body start-->
+<div class="theme-body">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card buttons">
+                    <div class="card-header">
+                        <h4>Todo&nbsp;<span class="countTodo"></span></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="todo-content">
+                            <div class="todo-input form-group">
+                                <div class="input-group">
+                                    <input class="form-control todoInput" type="text"
+                                           placeholder="Enter Something Here.."><a
+                                        class="input-group-text border-0 add-todo" href="javascript:void(0);">Add to
+                                    task </a>
+                                </div>
+                                <div class="error"></div>
+                            </div>
+                            <ul class="todo-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+<!-- Todo list-->
+<script src="{% static 'assets/js/vendors/todo/todo.js' %}"></script>
+{% endblock %}

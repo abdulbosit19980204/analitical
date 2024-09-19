@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="" />
+  <meta name="description" content="Dmeki">
+  <meta name="author" content="">
+  <title>Dmeki | Documentation</title>
+
+  <!-- shortcut icon-->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+
+  <!-- Theme Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="httpss://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Font awesome CSS -->
+  <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet"> 
+
+  <!-- Prism CSS -->
+  <link href="assets/css/prism.css" rel="stylesheet">
+
+  <!-- Style CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+  <!-- sidebar start -->
+  <div class="cdx-sidebar">
+    <div class="codex-brand">     
+      <img src="../assets/images/logo/logo.png" alt="" class="img-fluid">
+    </div>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="#start" class="active">
+          Getting Started
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#installing">
+          installing
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#features">
+          features
+        </a>
+      </li>     
+      <li class="menu-item">
+        <a href="#folders">
+          Folder Structure
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#htmls">
+          HTML Structure
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#csss">
+          CSS Structure
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#jss">
+          js Structure
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#credits">
+          source & credits
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="cdx-layer"></div>
+  <!-- sidebar end -->
+
+  <!-- dock header start -->
+  <header class="dock-header">
+    <div class="custom-container ">     
+      <div class="header-contain">
+        <ul>
+          <li>
+            <a href="../html/index.html" target="-blank">Preview</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center">         
+          <div class="menu-action">
+            <i class="fa fa-bars open-menu"></i>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </header>
+  <!-- dock header end -->
+
+
+  <!-- theme body start-->
+  <div class="dock-body">
+
+
+    <!-- Intro start -->
+    <section class="features space-py-60" id="start">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>Dmeki - Admin Dashboard Html Tailwind Template</h4>
+          </div>
+          <div class="card-body">
+            <h5>Getting Started</h5>
+            <p>Dmeki is a responsive HTML 5 Tailwind Based admin dashboard template. This Admin dashboard template is comfortable with all devices & all browser like mobile, laptop, tablet , desktop , Mozilla Firefox , chrome , opera, safari.</p>
+            <p>Everyone who is working as a developer and looking for an admin template for quick and easy custom developer-friendly HTML based template, with all type of useful features, and easily customizable no further than Dmeki. We’ve considered the highest industrial standards and quality to bring them the very best admin template that is not only fast and easy to use but quickly expandable. They'll be able to build their own customizable application according their requirement with very less effort.</p>
+            <p>Dmeki is built with CSS3, Tailwind, HTML5, Latest JQuery, SCSS,  Variable so developers can easily customize and develop Dashboard Template. The most important thing is that it is 100% W3C Validated , structured code completely well commented code.</p>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- Intro end -->
+
+
+    <!-- installing start -->
+    <section class="space-pb-60" id="installing">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>installing</h4>
+          </div>
+          <div class="card-body">
+            <h5>Install Node.Js</h5>
+            <ul class="featuer-list">
+              <li>First, you download node.js and install.</li>
+              <li>you can download node js from <a class="telink" href="https://nodejs.org/en/download/"
+                  target="-blank">nodejs.org</a></li>
+              <li>You can check node js version in your terminal using this commands <span class="telink">node
+                  -v</span> and <span class="telink">npm -v</span></li>
+            </ul>
+            <h5>Install Gulp</h5>
+            <p>Gulp is a cross-platform, streaming task runner that lets developers automate many
+              development tasks. At a high level, gulp reads files as streams and pipes the streams to different
+              tasks. These tasks are code-based and use plugins. The tasks modify the files, building source files
+              into production files.<a href="https://gulpjs.com/" class="telink">Gulp js</a> is a toolkit that helps
+              you automate time consuming tasks in your workflow.</p>
+            <ul class="featuer-list">
+              <li>First set the project path using you terminal</li>
+              <li>after set project path then use npm i command and install node modules.</li>
+              <li>gulp watchcommand (for run project).</li>
+              <li>use gulp watch command for run your project.</li>
+            </ul>
+            <h5>Dependencies For Gulp</h5>
+            <ul class="featuer-list">
+              <li>gulp</li>
+              <li>gulp-sass</li>
+              <li>sass</li>
+              <li>gulp-postcss</li>
+              <li>tailwindcss</li>
+              <li>gulp-pug</li>
+              <li>gulp-autoprefixer</li>
+              <li>browser-sync</li>
+            </ul>
+            <p>for about more details in gulp plugin use this link <a class="telink"
+                href="https://gulpjs.com/plugins" target="-blank">https://gulpjs.com/plugins</a></p>
+            <h5 style="margin-top:10px">Set Live Reload Path</h5>
+            <ul class="featuer-list mb-0">
+              <li>Set This Path in gulpfile.js</li>
+              <li>proxy: "http:/localhost/Project/...File-Path..."</li>
+            </ul>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- installing end -->
+
+    <!-- dock features start -->
+    <section class="features space-pb-60" id="features">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>Dmeki features</h4>
+          </div>
+          <div class="card-body">
+            <ul class="featuer-list mb-0">
+              <li>2 Different Dashboard</li>
+               <li>40+ Html Files</li>
+               <li>100% responsive</li>
+               <li>Included SCSS</li>
+               <li>Range Slider</li>
+               <li>Google Fonts</li>
+               <li>Chat Application</li>
+               <li>feather icons</li>
+               <li>Data Table</li>
+               <li>Font Awesome</li>
+               <li>Invoice Page</li>
+               <li>W3C Valid Markup</li>
+               <li>Used Google Fonts</li>   
+               <li>Easy to Customize</li>
+               <li>Dark & Light Mode</li>
+               <li>Developer Friendly</li>
+               <li>Fully Responsive layout</li>
+               <li>Detailed Documentation</li>
+               <li>Build With Tailwind</li>
+               <li>Cross Browser Compatible</li>
+               <li>Well Documented and Commented</li>
+               <li>Well Commented and Clean Codes</li>
+               <li>Clean, Modern, Minimal & Creative Design</li>
+            </ul>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- dock features end -->
+
+
+
+
+
+
+    <!-- Folder Structure start-->
+    <section class="space-pb-60" id="folders">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>Folder Structure</h4>
+          </div>
+          <div class="card-body">
+            <ul class="folder-list">
+              <li>
+                <a href="javascript:void(0);"> <i class="fa fa-folder"></i>Dmeki</a>
+                <ul class="wtree">
+                  <li>
+                    <a href="javascript:void(0);"> <i class="fa fa-folder"></i>assets</a>
+                    <ul>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>css</a></li>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>fonts</a></li>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>images</a></li>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>js</a></li>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>pug</a></li>
+                      <li><a href="javascript:void(0);"><i class="fa fa-folder"></i>scss</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="javascript:void(0);"> <i class="fa fa-folder"></i>documentation</a></li>
+                  <li><a href="javascript:void(0);"> <i class="fa fa-folder"></i>html</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- Folder Structure end-->
+
+    
+
+
+    <!-- HTML Structure start-->
+    <section class="space-pb-60" id="htmls">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>Html structure</h4>
+          </div>
+          <div class="card-body">
+            <div class="copycode-grid">
+              <pre>
+                <code class="language-markup">
+                  &lt;!DOCTYPE html&gt;
+                  &lt;html lang="en"&gt;
+                    &lt;head&gt;
+                      &lt;meta charset="utf-8"&gt;
+                      &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+                      &lt;meta name="keywords" content=""&gt;
+                      &lt;meta name="description" content="Dmeki - Admin Dashboard Html 5 Tailwind Responsive Template"&gt;
+                      &lt;title&gt; Dmeki | Home &lt;/title&gt;
+                      &lt;!-- favicon--&gt;
+                      &lt;link rel="shortcut icon" type="image/png" href="../assets/images/logo/icon-logo.webp"&gt;
+                      &lt;!-- google fonts--&gt;
+                      &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+                      &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""&gt;
+                      &lt;link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;amp;display=swap" rel="stylesheet"&gt;
+                      &lt;link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;amp;display=swap" rel="stylesheet"&gt;
+                      &lt;!-- font awesome css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/font-awesome.css"&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/themify-icons.css"&gt;
+                      &lt;!-- animate css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/animate.css"&gt;
+                      &lt;!-- magnific popup css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/magnific-popup.css"&gt;
+                      &lt;!-- simplebar css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/simplebar.css"&gt;
+                      &lt;!-- fancybox css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/fancybox.css"&gt;
+                      &lt;!-- nice select css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/nice-select.css"&gt;
+                      &lt;!-- sal css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/sal.css"&gt;
+                      &lt;!-- swiper css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/vendor/swiper-bundle.min.css"&gt;
+                      &lt;!-- tailwindcss css --&gt;
+                      &lt;!-- main css--&gt;
+                      &lt;link rel="stylesheet" type="text/css" href="../assets/css/style.css"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+
+                      &lt;!-- loader start--&gt;
+                      &lt;div class="codex-loader"&gt;&lt;/div&gt;
+                      &lt;!-- loader end--&gt;
+
+                      &lt;!-- header start--&gt;
+                      &lt;div class="top-header"&gt;&lt;/div&gt;
+                      &lt;header&gt;&lt;/header&gt;
+                      &lt;div class="search-bar"&gt;&lt;/div&gt;
+                      &lt;!-- header end--&gt;
+
+                      &lt;!-- hero intro start--&gt;
+                      &lt;section class="hero-intro"&gt;&lt;/section&gt;
+                      &lt;!-- hero intro end--&gt;
+
+                      &lt;!-- category start--&gt;
+                      &lt;section class="category space-py-100"&gt;&lt;/section&gt;
+                      &lt;!-- category end--&gt;
+                    
+                      &lt;!-- course start--&gt;
+                      &lt;section class="bg-light space-py-100"&gt;&lt;/section&gt;
+                      &lt;!-- course end--&gt;
+
+                      &lt;!-- discount banner start--&gt;
+                      &lt;section class="discount-upcoming cdx-overlay space-py-100"&gt;&lt;/section&gt;
+                      &lt;!-- discount banner end--&gt;
+                  
+                      &lt;!-- testimonial start--&gt;
+                      &lt;section class="space-py-100"&gt;
+                      &lt;/section&gt;
+                      &lt;!-- testimonial end--&gt;
+
+                      &lt;!-- subscrib start--&gt;
+                      &lt;section class="newsletter-subscribe"&gt;&lt;/section&gt;
+                      &lt;!-- subscrib end--&gt;
+
+                      &lt;!-- why choose start--&gt;
+                      &lt;section class="why-choose space-py-100"&gt;&lt;/section&gt;
+                      &lt;!-- why choose end --&gt;
+
+                      &lt;!-- team start--&gt;
+                      &lt;section class="space-py-100 bg-light"&gt;&lt;/section&gt;
+                      &lt;!-- team end--&gt;
+
+                      &lt;!-- blog start--&gt;
+                      &lt;section class="space-py-100"&gt;&lt;/section&gt;
+                      &lt;!-- blog end--&gt;
+
+                      &lt;!-- footer start --&gt;
+                      &lt;footer class="space-py-100"&gt;
+
+                      &lt;!-- Tap To Top Start--&gt;
+                      &lt;a class="scroll-top" href="Javascript:void(0)"&gt;&lt;i class="fa fa-angle-double-up"&gt;&lt;/i&gt;&lt;/a&gt;
+                      &lt;!-- Tap To Top End--&gt;
+                      &lt;/footer&gt;
+
+                      &lt;div class="subfooter"&gt;&lt;/div&gt;
+                      &lt;!-- footer end--&gt;
+                      &lt;!-- chat bar start--&gt;
+                      &lt;div class="livechat-bar"&gt;&lt;/div&gt;
+                      &lt;!-- chat bar end--&gt;
+
+                      &lt;!-- jQuery js--&gt;
+                      &lt;script src="../assets/js/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- feather icon--&gt;
+                      &lt;script src="../assets/js/feather.min.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- swiper js--&gt;
+                      &lt;script src="../assets/js/swiper-bundle.min.js"&gt;&lt;/script&gt;
+                      &lt;script src="../assets/js/swiper-custom.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- magnific popup js--&gt;
+                      &lt;script src="../assets/js/magnific-popup.min.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- modernizr js--&gt;
+                      &lt;script src="../assets/js/modernizr.min.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- nice select js--&gt;
+                      &lt;script src="../assets/js/jquery.nice-select.min.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- custom scrollbar--&gt;
+                      &lt;script src="../assets/js/simplebar.js"&gt;&lt;/script&gt;
+
+                      &lt;!-- custom scrollbar--&gt;
+                      &lt;script src="../assets/js/sal.js"&gt;&lt;/script&gt;
+                      &lt;!-- fancybox js--&gt;
+                      &lt;script src="../assets/js/fancybox.js"&gt;&lt;/script&gt;
+                      &lt;!-- chat js--&gt;
+                      &lt;script src="../assets/js/chat.js"&gt;&lt;/script&gt;
+                      &lt;!-- timer js--&gt;
+                      &lt;script src="../assets/js/countdown.js"&gt;&lt;/script&gt;
+                      &lt;!-- custom script js--&gt;
+                      &lt;script src="../assets/js/script.js"&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                  &lt;/html&gt;
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- HTML Structure end-->
+
+    <!-- CSS Structure start-->
+    <section class="space-pb-60" id="csss">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>css structure</h4>
+          </div>
+          <div class="card-body">
+            <div class="copycode-grid">
+              <pre><code class="language-css">
+                * {
+                    margin: 0;
+                    padding: 0;
+                  }
+
+                  body {
+                    font-family: "Rajdhani", sans-serif;
+                    font-weight: 500;
+                    color: #181e43;
+                    font-size: 14px;
+                  }
+
+                  ul {
+                    margin: 0;
+                    padding: 0;
+                  }
+
+                  li {
+                    list-style: none;
+                  }
+
+                  a,
+                  button {
+                    transition: all 0.3s ease;
+                  }
+
+                  button {
+                    cursor: pointer;
+                  }
+
+                  button:focus {
+                    outline: 0;
+                  }
+
+                  a {
+                    color: #181e43;
+                    text-decoration: none;
+                    outline: none;
+                  }
+                  a:visited, a:focus, a:active, a:hover {
+                    text-decoration: none;
+                    outline: none;
+                    color: #181e43;
+                  }
+
+                  h1, h2, h3, h4, h5, h6, p {
+                    margin-bottom: 0;
+                  }
+
+                  h1 {
+                    font-size: 70px;
+                  }
+
+                  h2 {
+                    font-size: 45px;
+                  }
+
+                  h3 {
+                    font-size: 24px;
+                  }
+
+                  h4 {
+                    font-size: 22px;
+                  }
+
+                  h5 {
+                    font-size: 18px;
+                  }
+
+                  h6 {
+                    font-size: 16px;
+                  }
+
+                  p {
+                    font-size: calc(16px + 2 * (100vw - 420px) / 1500);
+                    font-weight: 400;
+                    color: #99a4b1;
+                    font-family: "Rubik", sans-serif;
+                  }
+
+                  .img-fluid {
+                    width: 100%;
+                  }
+
+                  img {
+                    display: inline-block;
+                  }
+
+                  svg {
+                    display: inline-block;
+                  }
+
+                  h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+                    line-height: 1.2;
+                  }
+</code></pre>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- CSS Structure end-->
+
+
+    <!-- js Structure start-->
+    <section class="space-pb-60" id="jss">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>js structure</h4>
+          </div>
+          <div class="card-body">
+            <div class="copycode-grid">
+              <pre><code class="language-css"> 
+                //*** Loader Show
+                $(window).on('load', function() {
+                    $(".codex-loader").fadeOut("slow");
+                });
+
+                $(document).ready(function() {
+
+                    //*** sticky header     
+                    $(window).scroll(function() {
+                        if($(this).scrollTop() > 50){
+                            $('header').addClass("sticky");
+                            $('header.land-header').removeClass("fixed");
+                        } else {
+                            $('header').removeClass("sticky");
+                            $('header.land-header').addClass("fixed");
+                        }
+                    });
+                 });
+               </code></pre>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- js Structure end-->
+
+
+    <!-- Credits start -->
+    <section class="space-pb-60" id="credits">
+      <div class="custom-container">       
+        <div class="card">
+          <div class="card-header dock-title">
+            <h4>Source & Credits</h4>
+          </div>
+          <div class="card-body">
+            <ul class="featuer-list">
+              <li><a href="https://www.freepik.com/">freepik</a></li>
+              <li><a href="https://www.pexels.com/">pexels</a></li>
+              <li><a href="https://www.flaticon.com/">flaticon</a></li>
+              <li><a href="https://jquery.com/">jquery</a></li>
+              <li><a href="https://animate.style/">animate css</a></li>             
+              <li><a href="https://swiperjs.com/">swiper slider</a></li>
+              <li><a href="https://fontawesome.com/v4/">fontawesome</a></li>
+              <li><a href="https://www.kunkalabs.com/mixitup/">mixitup</a></li>
+              <li><a href="https://www.smoothscroll.net/win/">smooth scroll</a></li>
+              <li><a href="https://dimsemenov.com/plugins/magnific-popup/">magnific popup</a></li>
+              <li><a href="https://jquery-plugins.net/sal-js-lightweight-scroll-animation-library">sal animation</a></li>
+            </ul>
+          </div>
+        </div>       
+      </div>
+    </section>
+    <!-- Credits end -->
+
+  </div>
+
+  <!-- main jquery-->
+  <script src="../assets/js/jquery-3.6.0.js"></script> 
+
+  <!-- Prism js-->
+  <script src="assets/js/prism.js"></script>
+
+  <!-- Custom script-->
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

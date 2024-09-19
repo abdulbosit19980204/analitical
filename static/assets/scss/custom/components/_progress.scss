@@ -1,0 +1,23 @@
+/********************
+ 16 PROGRESSBAR START
+*********************/
+  $progress-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "light":      $theme-light,
+    "dark":       $theme-dark,
+  );
+  @each  $progress-colorname , $progress-color  in $progress-colors {
+      .progress-#{$progress-colorname}{
+          background-color: rgba($progress-color,0.1) !important;  
+          border-radius: 15px;
+          .progress-bar{
+            background-color: rgba($progress-color,1) !important;  
+            transition:none !important;
+          }                                        
+      }
+  }

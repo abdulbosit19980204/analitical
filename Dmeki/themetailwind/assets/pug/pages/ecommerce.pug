@@ -1,0 +1,572 @@
+-var apexchart = true ;
+-var mapchart  = true ;
+-var ecommercedash = true ;
+-var slickslider   = true ;
+-var prism         = true ;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Ecommerce Dashboard")
+  body
+
+    +header
+
+
+    
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('ecommerce dashboard','dashboard')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body(data-simplebar)
+        .common-dash
+          .grid.grid-cols-12.cdx-gap
+            .col-span-12(class="2xl:col-span-3 sm:col-span-6")
+              .card.sale-revenue
+                .card-header
+                  h4 total earnings     
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly             
+                .card-body.progressCounter
+                  h2 $
+                    span.count 485347
+                    span.badge.badge-primary 25.7%
+                      i.fa.fa-angle-up                   
+                  .progress.progress-primary
+                    .progress-bar(role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100")  
+                  h4.text-light this week extra  earnings in 
+                    span.text-primary $1,827.24                   
+            .col-span-12(class="2xl:col-span-3 sm:col-span-6")
+              .card.sale-revenue
+                .card-header
+                  h4 total Sale   
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly            
+                .card-body.progressCounter
+                  h2 $
+                    span.count 32586
+                    span.badge.badge-secondary 25.7%
+                      i.fa.fa-angle-up 
+                  .progress.progress-secondary
+                    .progress-bar(role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100")  
+                  h4.text-light this week extra sale in  
+                    span.text-secondary $1,827.24                  
+            .col-span-12(class="2xl:col-span-3 sm:col-span-6")
+              .card.sale-revenue
+                .card-header
+                  h4 total profit   
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly           
+                .card-body.progressCounter
+                  h2 $
+                    span.count 255719
+                    span.badge.badge-success 20.5%
+                      i.fa.fa-angle-up 
+                  .progress.progress-success
+                    .progress-bar(role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100")  
+                  h4.text-light this week extra profit in 
+                    span.text-success $1,7.24                  
+            .col-span-12(class="2xl:col-span-3 sm:col-span-6")
+              .card.sale-revenue
+                .card-header
+                  h4 total order   
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly            
+                .card-body.progressCounter
+                  h2 $
+                    span.count 1082
+                    span.badge.badge-info 30.00%
+                      i.fa.fa-angle-up 
+                  .progress.progress-info
+                    .progress-bar(role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100")  
+                  h4.text-light this week extra order in 
+                    span.text-info $1,20.24 
+            .col-span-12(class="2xl:col-span-8 xl:col-span-6")
+              .card.overall-revenuetbl
+                .card-header
+                  h4 Overall Revenue
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body                
+                  #over-revenue               
+            .col-span-12(class="2xl:col-span-4 lg:col-span-6  md:order-1 xl:order-none")
+              .card.top-sellintbl
+                .card-header
+                  h4 Top Selling Products
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  .overflow-x-auto
+                    table.table
+                      thead
+                        tr
+                          th Product
+                          th Price
+                          th Stock
+                      tbody
+                        tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt="")
+                              .media-body
+                                a(href="product-detail.html")
+                                  h6 Headphones JBL
+                                span Electronics                       
+                          td.text-light $703
+                          td.text-light 5 sold
+                        tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="")  
+                              .media-body
+                                a(href="product-detail.html")
+                                  h6 Smart watch
+                                span electronics                       
+                          td.text-light $837
+                          td.text-light 2 sold
+                        tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt="")         
+                              .media-body
+                                a(href="product-detail.html")
+                                  h6 Sun glasses 
+                                span fashion                       
+                          td.text-light $459
+                          td.text-light 6 sold
+                        tr              
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt="")     
+                              .media-body
+                                a(href="product-detail.html")
+                                  h6 Eye shadows
+                                span cosmetic
+                          td.text-light $423
+                          td.text-light 5 sold
+                        tr              
+                            td
+                              .media
+                                .img-wrap
+                                  img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt="")        
+                                .media-body
+                                  a(href="product-detail.html")
+                                    h6 Eyelash
+                                  span Cosmetic
+                            td.text-light $902
+                            td.text-light 10 sold
+                        tr              
+                            td
+                              .media
+                                .img-wrap
+                                  img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="")      
+                                .media-body
+                                  a(href="product-detail.html")
+                                    h6 Gold side table
+                                  span Furniture                      
+                            td.text-light $390
+                            td.text-light 2 sold
+            .col-span-12(class="2xl:col-span-8 xl:col-span-6")
+              .card.recent-ordertbl
+                .card-header
+                  h4 Recent Orders
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body                   
+                  .overflow-x-auto
+                    table.table
+                      thead
+                        tr                       
+                          th Customer
+                          th Invoice
+                          th Pusrchase on
+                          th Amout
+                          th Status
+                          th Tracking
+                      tbody
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="recent-product")
+                              .media-body
+                                | Mark Jecon
+                          td #4789347
+                          td 15 Mar 2022
+                          td $72545
+                          td 
+                            span.badge.badge-primary done
+                          td GO4YOU
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="recent-product")
+                              .media-body
+                                | Wamsi Odem
+                          td #2387349
+                          td 03 Jul 2022
+                          td $38445
+                          td 
+                            span.badge.badge-secondary Pending
+                          td PU58OU
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/3.jpg" alt="recent-product")
+                              .media-body
+                                | Svenja Olank
+                          td #4385809
+                          td 23 Apr 2022
+                          td $29023
+                          td 
+                            span.badge.badge-danger cancle
+                          td HDRYO5
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/4.jpg" alt="recent-product")
+                              .media-body
+                                | Jacob Jones
+                          td #8934090
+                          td 20 Nov 2022
+                          td $20867
+                          td 
+                            span.badge.badge-primary done
+                          td SOPY8U
+                        tr
+                          td
+                            .media
+                              .img-wrap
+                                img.img-fluid(src="../assets/images/avtar/5.jpg" alt="recent-product")
+                              .media-body
+                                | Guy Hawkins
+                          td #4579034
+                          td 19 Jan 2022
+                          td $48187
+                          td 
+                            span.badge.badge-secondary Pending
+                          td KO8LOP               
+            .col-span-12(class="2xl:col-span-4 lg:col-span-6 xl:order-none md:order-1")
+              .card.sale-categorychart
+                .card-header
+                  h4 Product Status    
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  #sale-category
+                  .category-count
+                    h2 55.8 %               
+            .col-span-12
+              .ecompro-slide
+                div
+                  +ecomproduct('Range Rower','(Above & Beyond)','1835 Sales','1.jpg')
+                div
+                  +ecomproduct('Jaguar','(The Art of Performance)','8,856 Sales','2.jpg')
+                div
+                  +ecomproduct('Mahindra','(Work hard and play hard)','65,480 Sales','3.jpg')
+                div
+                  +ecomproduct('Tesla','(Ride Free)','1479 Sales','4.jpg')
+                div
+                  +ecomproduct('BMW','(Ultimate Driving Machine)','6,742 Sales','5.jpg')
+            .col-span-12(class="xl:col-span-6")
+              .card.earning-revenue
+                .card-header
+                  h4 selling growth
+                  .setting-card.action-menu
+                    a.action-toggle(href="javascript:void(0)")
+                      i.codeCopy(data-feather="more-horizontal")
+                    ul.action-dropdown
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-o
+                          | weekly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar-check-o
+                          | monthly
+                      li
+                        a(href='javascript:void(0);')
+                          i.fa.fa-calendar
+                          | yearly
+                .card-body
+                  #earning-revenue               
+            .col-span-12(class="xl:col-span-6")
+              .card.payment-method
+                .card-header
+                  h4  Payment method 
+                .card-body
+                  ul.tabs.tab-primary.mb-15
+                    li.active
+                      a(href='#tab1')
+                       i.fa.fa-credit-card 
+                       | Credit 
+                    li
+                      a(href='#tab2')
+                        i.icofont-credit-card
+                        | Debit Card
+                    li
+                      a(href='#tab3') 
+                        i.icofont-mastercard-alt
+                        | Master card
+                  .tab-contents
+                    #tab1.tab-item.show
+                      form
+                        .form-group
+                          .small-group
+                            div
+                              label.form-label Card number
+                              input.form-control(type="text"  placeholder="1234 5678 9012 3456")                        
+                            div
+                              label.form-label Card holder
+                              input.form-control(type="text"  placeholder="John Doe")
+                        .form-group
+                          label.form-label Expiration Date
+                          .small-group
+                            div
+                              select.form-control(name='month')
+                                option(value='january') January
+                                option(value='february') February
+                                option(value='march') March
+                                option(value='april') April
+                                option(value='may') May
+                                option(value='june') June
+                                option(value='july') July
+                                option(value='august') August
+                                option(value='september') September
+                                option(value='october') October
+                                option(value='november') November
+                                option(value='december') December
+                            div    
+                              select.form-control(name='Year')
+                                option(value='2022') 2022
+                                option(value='2023') 2023
+                                option(value='2024') 2024
+                                option(value='2025') 2025
+                                option(value='2026') 2026
+                                option(value='2027') 2027
+                                option(value='2028') 2028
+                        .form-group                     
+                          .cdx-cvc
+                            label.form-label CVC
+                            .cvc-group
+                              input.form-control(type='text' maxlength='3' size='4' placeholder='123')
+                              p Three or four digits, usually found on the back of the card
+                        .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+                    #tab2.tab-item
+                      form
+                        .form-group
+                          .small-group
+                            div
+                              label.form-label Card number
+                              input.form-control(type="text"  placeholder="1234 5678 9012 3456")                        
+                            div
+                              label.form-label Card holder
+                              input.form-control(type="text"  placeholder="John Doe")
+                        .form-group
+                          label.form-label Expiration Date
+                          .small-group
+                            div
+                              select.form-control(name='month')
+                                option(value='january') January
+                                option(value='february') February
+                                option(value='march') March
+                                option(value='april') April
+                                option(value='may') May
+                                option(value='june') June
+                                option(value='july') July
+                                option(value='august') August
+                                option(value='september') September
+                                option(value='october') October
+                                option(value='november') November
+                                option(value='december') December
+                            div    
+                              select.form-control(name='Year')
+                                option(value='2022') 2022
+                                option(value='2023') 2023
+                                option(value='2024') 2024
+                                option(value='2025') 2025
+                                option(value='2026') 2026
+                                option(value='2027') 2027
+                                option(value='2028') 2028
+                        .form-group                     
+                          .cdx-cvc
+                            label.form-label CVC
+                            .cvc-group
+                              input.form-control(type='text' maxlength='3' size='4' placeholder='123')
+                              p Three or four digits, usually found on the back of the card
+                        .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+                    #tab3.tab-item
+                      form
+                        .form-group
+                          .small-group
+                            div
+                              label.form-label Card number
+                              input.form-control(type="text"  placeholder="1234 5678 9012 3456")                        
+                            div
+                              label.form-label Card holder
+                              input.form-control(type="text"  placeholder="John Doe")
+                        .form-group
+                          label.form-label Expiration Date
+                          .small-group
+                            div
+                              select.form-control(name='month')
+                                option(value='january') January
+                                option(value='february') February
+                                option(value='march') March
+                                option(value='april') April
+                                option(value='may') May
+                                option(value='june') June
+                                option(value='july') July
+                                option(value='august') August
+                                option(value='september') September
+                                option(value='october') October
+                                option(value='november') November
+                                option(value='december') December
+                            div    
+                              select.form-control(name='Year')
+                                option(value='2022') 2022
+                                option(value='2023') 2023
+                                option(value='2024') 2024
+                                option(value='2025') 2025
+                                option(value='2026') 2026
+                                option(value='2027') 2027
+                                option(value='2028') 2028
+                        .form-group                     
+                          .cdx-cvc
+                            label.form-label CVC
+                            .cvc-group
+                              input.form-control(type='text' maxlength='3' size='4' placeholder='123')
+                              p Three or four digits, usually found on the back of the card
+                        .form-group.mb-0                     
+                          a.btn.btn-primary(href="javascript:void(0)") Proceed
+      // theme body start
+
+    // footer start
+    +footer
+    // footer end
+
+    +footerfile        

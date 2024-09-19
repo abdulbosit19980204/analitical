@@ -1,0 +1,733 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Dropdown")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('dropdown','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container.element-buttons
+          .row 
+            .col--12
+              .card.buttons
+                .card-header
+                  h4 Single Button Dropdown
+                .card-body
+                  p.card-title-desc Any single .btn can be turned into a dropdown toggle with some markup changes. Here’s how you can put them to work with either 
+                    code
+                      | button
+                    |  elements:                     
+                  .dropdown
+                    button#single-dropdown.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown button
+                    ul.dropdown-menu(aria-labelledby='single-dropdown')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here                  
+            .col--12
+              .card.buttons
+                .card-header
+                  h4 Sizing
+                .card-body
+                  p.card-title-desc.mb-35 Add&nbsp;
+                    code .btn.btn-sm && .btn.btn-lg
+                    |&nbsp;for additional sizes.           
+                  .row                      
+                    .col-sm-4.mb-5 
+                      .dropdown
+                        button#single-dropdown-1.btn.btn-info.btn-sm.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          | Dropdown button
+                        ul.dropdown-menu(aria-labelledby='single-dropdown-1')
+                          li
+                            a.dropdown-item(href='#') Action
+                          li
+                            a.dropdown-item(href='#') Another action
+                          li
+                            a.dropdown-item(href='#') Something else here    
+                    .col-sm-4.mb-5 
+                      .dropdown
+                        button#single-dropdown-2.btn.btn-info.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          | Dropdown button
+                        ul.dropdown-menu(aria-labelledby='single-dropdown-2')
+                          li
+                            a.dropdown-item(href='#') Action
+                          li
+                            a.dropdown-item(href='#') Another action
+                          li
+                            a.dropdown-item(href='#') Something else here    
+                    .col-sm-4.mb-5 
+                      .dropdown
+                        button#single-dropdown-3.btn.btn-info.btn-lg.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                          | Dropdown button
+                        ul.dropdown-menu(aria-labelledby='single-dropdown-3')
+                          li
+                            a.dropdown-item(href='#') Action
+                          li
+                            a.dropdown-item(href='#') Another action
+                          li
+                            a.dropdown-item(href='#') Something else here 
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Color Variant
+                .card-body
+                  p.card-title-desc The best part is you can do this with any button variant, too:               
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Primary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Secondary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-success.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Success
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-info.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Info
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-warning.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Warning
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link  
+                  .btn-group
+                    button.btn.btn-danger.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Danger
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link               
+                  .btn-group
+                    button.btn.btn-dark.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dark
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Roundend Button Drowndown
+                .card-body
+                  p.card-title-desc Use any of the available                 
+                    code .btn-rounded
+                    |&nbsp;classes quickly create a styled button.             
+                  .btn-group
+                    button.btn.btn-primary.btn-rounded.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Primary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-secondary.btn-rounded.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Secondary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-success.btn-rounded.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Success
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+            .col-xxl-6 
+              .card.buttons
+                .card-header
+                  h4 Split button
+                .card-body
+                  p.card-title-desc 
+                    | Similarly, create split button dropdowns with virtually the same markup as single button dropdowns, but with the code addition of 
+                    code .dropdown-toggle-split
+                    |&nbsp;for proper spacing around the dropdown caret.               
+                  .btn-group
+                    button.btn.btn-info(type='button') Info
+                    button.btn.btn-info.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Info
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-danger(type='button') Danger
+                    button.btn.btn-danger.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Danger
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-dark(type='button') Dark
+                    button.btn.btn-dark.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Dark
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+            .col-xxl-6 
+              .card.buttons
+                .card-header
+                  h4 Split Roundend Button Drowndown  
+                .card-body
+                  p.card-title-desc Use any of the available                 
+                    code .btn-rounded
+                    |&nbsp;classes quickly create a styled button.
+                    br
+                    |&nbsp;                 
+                  .btn-group
+                    button.btn.btn-secondary.btn-rounded(type='button') Secondary
+                    button.btn.btn-secondary.btn-rounded.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Secondary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-success.btn-rounded(type='button') Success
+                    button.btn.btn-success.btn-rounded.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Success
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-info.btn-rounded(type='button') Info
+                    button.btn.btn-info.btn-rounded.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Info
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link               
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Outline Button Dropdown
+                .card-body
+                  p.card-title-desc Use any of the available 
+                    code .btn-outline-*
+                    |&nbsp;classes quickly create a styled button.               
+                  .btn-group
+                    button.btn.btn-outline-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Primary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Secondary
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-success.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Success
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-info.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Info
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link               
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Outline Split Button Dropdown
+                .card-body
+                  p.card-title-desc Use any of the available 
+                    code .btn-outline-*
+                    |&nbsp;classes quickly create a styled button.                 
+                  .btn-group
+                    button.btn.btn-outline-success(type='button') Success
+                    button.btn.btn-outline-success.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Success
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-info(type='button') Info
+                    button.btn.btn-outline-info.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Info
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-danger(type='button') Danger
+                    button.btn.btn-outline-danger.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Danger
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-outline-dark(type='button') Dark
+                    button.btn.btn-outline-dark.dropdown-toggle.dropdown-toggle-split(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      span.visually-hidden Dark
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link             
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Dropdown Alignment options
+                .card-body
+                  p.card-title-desc Taking most of the options shown above, here’s a small kitchen sink demo of various dropdown alignment options in one place. Add 
+                    code .btn-group
+                    |&nbsp;with&nbsp;
+                    code .dropstart
+                    |  , 
+                    code .dropup
+                    |  , 
+                    code .dropend  
+                    |.          
+                  .btn-group.dropstart
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Left
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                  .btn-group.dropup
+                    button.btn.btn-info.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      |  Dropdown Top
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item             
+                 
+                  .btn-group
+                    button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdwon Center
+                    ul.dropdown-menu.dropdown-menu-end
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                  .btn-group.dropend
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Right
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+                      li
+                        a.dropdown-item(href='#') Menu item
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Dropdown Content
+                .card-body
+                  p.card-title-desc Dropdown menu ex:- Header, Divider, Form, Text.
+                    br
+                    | &nbsp;     
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Header
+                    ul.dropdown-menu
+                      li
+                        h6.dropdown-header Dropdown header
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Divider
+                    ul.dropdown-menu
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Text
+                    .dropdown-menu.p-4.text-muted
+                      p.fs-14
+                        | Some example text that&apos;s free-flowing within the dropdown menu.
+                      p.fs-14.mb-0
+                        | And this is more example text.
+                  .btn-group
+                    button.btn.btn-primary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown Form
+                    .dropdown-menu
+                      form.px-4.py-3
+                        .mb-3
+                          label.form-label(for='email') Email address
+                          input#email.form-control(type='email' placeholder='email@example.com')
+                        .mb-3
+                          label.form-label(for='password') Password
+                          input#password.form-control(type='password' placeholder='Password')
+                        .mb-3                        
+                          +checkinput('checkbox','form','form1')
+                          label Remember me
+                        button.btn.btn-primary.w-100(type='submit') Sign in
+                      .dropdown-divider
+                      a.dropdown-item.text-center.fs-14(href='#') New around here? Sign up
+                      a.dropdown-item.text-center.fs-14(href='#') Forgot password?
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Dark Dropdown
+                .card-body
+                  p.card-title-desc Opt into darker dropdowns to match a dark navbar or custom style by adding
+                    code .dropdown-menu-dark
+                    |&nbsp;onto an existing 
+                    code .dropdown-menu.
+                    |&nbsp; No changes are required to the dropdown items.
+                  .dropdown
+                    button#darkDropdown.btn.btn-dark.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      | Dropdown button
+                    ul.dropdown-menu.dropdown-menu-dark(aria-labelledby='darkDropdown')
+                      li
+                        a.dropdown-item.active(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here
+                      li
+                        hr.dropdown-divider
+                      li
+                        a.dropdown-item(href='#') Separated link
+            .col-xxl-6
+              .card.buttons
+                .card-header
+                  h4 Icon Dropdown
+                .card-body
+                  p.card-title-desc Use any of the available 
+                    code .icon-Btn
+                    |&nbsp;classes quickly create a styled button. 
+                    br
+                    |&nbsp;
+                  .btn-group
+                    button#icon-dropdown-1.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-facebook
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-1')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here  
+                  .btn-group.ml-14
+                    button#icon-dropdown-2.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-instagram
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-2')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here  
+                  .btn-group.ml-14
+                    button#icon-dropdown-3.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-whatsapp
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-3')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here  
+                  .btn-group.ml-14
+                    button#icon-dropdown-4.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-twitter
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-4')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-14
+                    button#icon-dropdown-5.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-google-plus
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-5')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-14
+                    button#icon-dropdown-6.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-linkedin
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-6')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-14
+                    button#icon-dropdown-7.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-github
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-7')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-14
+                    button#icon-dropdown-8.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-pinterest
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-8')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-14
+                    button#icon-dropdown-9.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-whatsapp
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-9')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+                  .btn-group.ml-15
+                    button#icon-dropdown-10.btn.btn-primary.icon-Btn.btn-rounded(type='button' data-bs-toggle='dropdown' aria-expanded='false')
+                      i.fa.fa-telegram
+                    ul.dropdown-menu(aria-labelledby='icon-dropdown-10')
+                      li
+                        a.dropdown-item(href='#') Action
+                      li
+                        a.dropdown-item(href='#') Another action
+                      li
+                        a.dropdown-item(href='#') Something else here 
+      // theme body end
+                 
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

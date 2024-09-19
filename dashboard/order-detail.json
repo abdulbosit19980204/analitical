@@ -1,0 +1,39 @@
+{
+    "Credit": "False",
+    "CodePrice": "00000000003",
+    "DateOrder": "datetime.datetime(2024, 9, 2, 10, 1, 12)",
+    "CodeSklad": "00000000201",
+    "CommentSupervisor": "None",
+    "CommentForwarder": "None",
+    "CommentAgent": "None",
+    "ProductRows": [
+        {
+            "Rows": [
+                {
+                    "CodeProduct": "00-00000648",
+                    "NameProduct": "Туалетное Мыло Duru Fresh Sen Ocean Bre. Pvc 100Gr*4*16",
+                    "Amount": 4,
+                    "Price": 24980.0,
+                    "Total": 99920.0,
+                    "DiscountRate": 0.0,
+                    "Weight": 1.8,
+                    "Capacity": 0.0048
+                }
+            ]
+        }
+    ],
+    "CompetitorRows": [
+        "None"
+    ],
+    "ShippingDate": "datetime.datetime(2024, 9, 3, 0, 0)",
+    "CreditDetailsList": {
+        "Rows": [
+            {
+                "DateOfPayment": "20240903000000",
+                "Total": 99920.0
+            }
+        ]
+    },
+    "OrderType": 3,
+    "CodeOrg": "00000000001"
+}

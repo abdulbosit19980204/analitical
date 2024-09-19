@@ -1,0 +1,157 @@
+/*******************
+  34  INVOICE START
+********************/
+.cdx-invoice{
+    .codex-brand{       
+        .codexdark-logo {
+            display: none;
+        }
+    }
+    .head-invoice{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;     
+        background-color: rgba($theme-primary , 0.05);
+        padding: 25px;     
+        .contact-list{
+            li{
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 500;
+                .icon-wrap{
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 5px;
+                    background-color: $theme-primary;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-inline-end: 15px;
+                    i{
+                        color: $white;
+                        font-size: 14px;
+                    }
+                }
+                +li{
+                    margin-block-start:10px;
+                }
+            }
+        }
+    }
+    .invoice-user{
+        margin-block-start: 20px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        .left-user{
+            h5{
+                text-transform: uppercase;
+                color: $theme-primary;
+                margin-block-end: 10px;
+            }
+            .detail-list{
+                li{
+                    display: flex;
+                    align-items: center;
+                    font-size: 16px;
+                    .icon-wrap{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-inline-end: 10px;
+                    }                    
+                }    
+            }
+        }
+        .right-user{
+            li{
+                font-size: 16px;
+                font-weight: 500;
+                text-transform: capitalize;
+                span{
+                    font-weight: 400;
+                    color: $font-light;
+                    margin-inline-start: 15px;
+                }
+            }
+        }
+    }
+    .body-invoice{
+        margin-block-start:25px;
+        .table{
+            tr{
+                th{
+                    background-color: $theme-primary;
+                    color: $white;
+                    border: none;
+                    font-size: 13px;
+                    text-align: center;
+                    text-transform:capitalize;
+                }
+                td{
+                    text-transform: capitalize;                    
+                    font-weight: 500;
+                    text-align: center;
+                    padding: 20px 10px;
+                    border: 1px solid $theme-border;
+                }
+            }
+        }
+    }
+    .footer-invoice{
+        margin-block-start: 20px;       
+        width:30%;               
+        margin-inline-start: auto;
+        .table{
+            td{
+                text-transform: capitalize;
+                font-weight: 500;
+                border: 1px solid $theme-border;                    
+                padding: 12px 20px;
+                &:nth-child(2){
+                    color: $theme-primary;
+                }
+            }
+            tr{
+                &:last-child{
+                    td{                                        
+                        font-size: 16px;
+                    }
+                }
+            }
+        }       
+    }
+    .invoice-action{
+        display: flex;
+        justify-content: center;
+        margin-block-start:20px;
+        padding-block-start: 20px;
+        border-top: 1px solid $theme-border;
+        .btn{
+            text-transform: capitalize;
+        }
+    }
+}
+
+
+@media print {
+    .hidden-print {
+        display: none;
+    }
+    .invoice {
+        font-size: 11px !important;
+        overflow: hidden !important;
+        footer {
+            position: absolute;
+            bottom: 10px;
+            page-break-after: always;
+        }
+        >div {
+            &:last-child {
+                page-break-before: always;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,73 @@
+-var select2 = true;
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("select 2")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('select 2','Input Element')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row              
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 default
+                .card-body
+                  .input-group
+                    select.form-control.basic-select(name='state')
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 Multi select
+                .card-body
+                  .input-group
+                    select.form-control.basic-select(name="states[]" multiple="multiple")
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+            .col-xxl-4.col-md-6
+              .card
+                .card-header
+                  h4 hide select search
+                .card-body
+                  .input-group
+                    select.form-control.hidesearch(name="states[]")
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+                      option(value='AL') Alabama
+                      option(value='WY') Wyoming
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile   

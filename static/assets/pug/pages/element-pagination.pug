@@ -1,0 +1,287 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Pagination")
+  body
+
+    +header
+
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('pagination','element')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 normal pagination
+                .card-body
+                  nav(aria-label='Page navigation example')
+                    ul.pagination
+                      li.page-item
+                        a.page-link(href='#') Previous
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#') Next
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 pagination with icon
+                .card-body
+                  nav(aria-label='Page navigation example')
+                    ul.pagination
+                      li.page-item
+                        a.page-link(href='#' aria-label='Previous')
+                          span(aria-hidden='true') &laquo;
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#' aria-label='Next')
+                          span(aria-hidden='true') &raquo;
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 Disabled and active states
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination
+                      li.page-item.disabled
+                        a.page-link(href='#' tabindex='-1') Previous
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#') Next
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 primary pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-primary
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 secondary pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-secondary
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 success pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-success
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 info pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-info
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-xxl-4.col-md-6            
+              .card.buttons
+                .card-header
+                  h4 warning pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-warning
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-xxl-4            
+              .card.buttons
+                .card-header
+                  h4 danger pagination
+                .card-body
+                  nav(aria-label='...')
+                    ul.pagination.pagination-danger
+                      li.page-item
+                        a.page-link(href='#' tabindex='-1') 
+                          i.fa.fa-angle-left
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item.active(aria-current='page')
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#')
+                          i.fa.fa-angle-right
+            .col-12            
+              .card.buttons
+                .card-header
+                  h4 sizing pagination
+                .card-body.overflow-hidden
+                  .row
+                    .col-xxl-4.my-3
+                      nav(aria-label='...')
+                        ul.pagination.pagination-lg
+                          li.page-item
+                            a.page-link(href='#') Previous
+                          li.page-item
+                            a.page-link(href='#') 1
+                          li.page-item
+                            a.page-link(href='#') 2
+                          li.page-item
+                            a.page-link(href='#') 3
+                          li.page-item
+                            a.page-link(href='#') Next
+                    .col-xxl-4.my-3
+                      nav(aria-label='...')
+                        ul.pagination.pagination-md
+                          li.page-item
+                            a.page-link(href='#') Previous
+                          li.page-item
+                            a.page-link(href='#') 1
+                          li.page-item
+                            a.page-link(href='#') 2
+                          li.page-item
+                            a.page-link(href='#') 3
+                          li.page-item
+                            a.page-link(href='#') Next
+                    .col-xxl-4.my-3
+                      nav(aria-label='...')
+                        ul.pagination.pagination-sm
+                          li.page-item
+                            a.page-link(href='#') Previous
+                          li.page-item
+                            a.page-link(href='#') 1
+                          li.page-item
+                            a.page-link(href='#') 2
+                          li.page-item
+                            a.page-link(href='#') 3
+                          li.page-item
+                            a.page-link(href='#') Next
+            .col-12            
+              .card.buttons
+                .card-header
+                  h4 pagination alignment
+                .card-body
+                  nav.my-3(aria-label='Page navigation example')
+                    ul.pagination
+                      li.page-item.disabled
+                        a.page-link(href='#' tabindex='-1') Previous
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#') Next
+                  nav.my-3(aria-label='Page navigation example')
+                    ul.pagination.justify-content-center
+                      li.page-item.disabled
+                        a.page-link(href='#' tabindex='-1') Previous
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#') Next
+                  nav.my-3(aria-label='Page navigation example')
+                    ul.pagination.justify-content-end
+                      li.page-item.disabled
+                        a.page-link(href='#' tabindex='-1') Previous
+                      li.page-item
+                        a.page-link(href='#') 1
+                      li.page-item
+                        a.page-link(href='#') 2
+                      li.page-item
+                        a.page-link(href='#') 3
+                      li.page-item
+                        a.page-link(href='#') Next
+
+
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

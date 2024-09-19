@@ -1,0 +1,52 @@
+-var dataTable = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Data Table Ajex")      
+  body 
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Datatable Ajax','application')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body.codex-chat
+        
+        .custom-container        
+          .row
+            .col-12
+              .card   
+                  .card-body
+                      table#datatbl-ajax.display.dataTable.cell-border(style='width:100%')
+                          thead
+                              tr
+                                  th Name
+                                  th Position
+                                  th Office
+                                  th Age
+                                  th Start date
+                                  th Salary                        
+                          //- tfoot
+                          //-     tr
+                          //-         th Name
+                          //-         th Position
+                          //-         th Office
+                          //-         th Age
+                          //-         th Start date
+                          //-         th Salary
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+
+    +footerfile

@@ -1,0 +1,93 @@
+-var sparklinechart = true ;
+-var customsparklinechart = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("sparkline")
+  
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Apex Charts','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .container-fluid
+          .row
+            .col-md-6
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  .splinechart
+            .col-md-6
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  .spareachart
+            .col-md-6
+              .card
+                .card-header
+                  h4 line area chart
+                .card-body
+                  .splineareachart
+            .col-md-6
+              .card
+                .card-header
+                  h4 range chart
+                .card-body
+                  .sprangechart
+            .col-md-6
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  .spbarchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 stacked bar chart
+                .card-body
+                  .spstackedchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 negetive bar chart
+                .card-body
+                  .spnegbarchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 Tristate chart
+                .card-body
+                  .sptristaterchart
+            .col-md-6
+              .card
+                .card-header
+                  h4 Pie  chart
+                .card-body
+                  .sppiechart
+            .col-md-6
+              .card
+                .card-header
+                  h4 Box Plots  chart
+                .card-body
+                  .spboxplotschart
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

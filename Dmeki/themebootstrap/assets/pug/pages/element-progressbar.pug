@@ -1,0 +1,133 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Progressbar")
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('progress bar','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-12            
+              .card
+                .card-header
+                  h4 normal progress bars
+                .card-body               
+                  .progress.progress-primary.mb-10
+                    .progress-bar(style='width: 25%')
+                  .progress.progress-primary.mb-10
+                    .progress-bar(style='width: 50%')
+                  .progress.progress-primary.mb-10
+                    .progress-bar(style='width: 75%')
+                  .progress.progress-primary
+                    .progress-bar(style='width: 100%')
+            .col-12            
+              .card
+                .card-header
+                  h4 different theme colors progress bars
+                .card-body
+                  .progress.progress-primary.mb-10
+                    .progress-bar
+                  .progress.progress-secondary.mb-10
+                    .progress-bar(style='width: 20%')
+                  .progress.progress-success.mb-10
+                    .progress-bar(style='width: 30%')
+                  .progress.progress-info.mb-10
+                    .progress-bar(style='width: 40%')
+                  .progress.progress-warning.mb-10
+                    .progress-bar(style='width: 50%')
+                  .progress.progress-danger
+                    .progress-bar(style='width: 60%')
+            .col-12            
+              .card
+                .card-header
+                  h4 progress bar label
+                .card-body
+                  .progress.progress-primary.mb-10
+                    .progress-bar
+                  .progress.progress-secondary.mb-10
+                    .progress-bar(style='width: 20%') 20%
+                  .progress.progress-success.mb-10
+                    .progress-bar(style='width: 30%') 30%
+                  .progress.progress-info.mb-10
+                    .progress-bar(style='width: 40%') 40%
+                  .progress.progress-warning.mb-10
+                    .progress-bar(style='width: 50%') 50%
+                  .progress.progress-danger
+                    .progress-bar(style='width: 60%') 60%
+
+            .col-12            
+              .card
+                .card-header
+                  h4 progress bar with hight
+                .card-body
+                  .progress.progress-primary.mb-10(style='height:5px')
+                    .progress-bar(style='width: 20%')
+                  .progress.progress-secondary.mb-10(style='height:10px')
+                    .progress-bar(style='width: 30%')
+                  .progress.progress-success(style='height:15px')
+                    .progress-bar(style='width: 40%')               
+            .col-12            
+              .card
+                .card-header
+                  h4 Multiple bars progress
+                .card-body
+                  .progress.mb-10
+                    .progress-bar(style='width: 15%' )
+                    .progress-bar.bg-success(style='width: 30%' )
+                    .progress-bar.bg-info(style='width: 20%' )
+                  .progress
+                    .progress-bar.bg-secondary(style='width: 20%')
+                    .progress-bar.bg-warning(style='width: 25%')
+                    .progress-bar.bg-danger(style='width: 30%')
+            .col-12            
+              .card
+                .card-header
+                  h4 Striped progress bar
+                .card-body
+                  .progress.progress-primary.mb-10
+                    .progress-bar.progress-bar-striped(style='width: 10%' )
+                  .progress.progress-secondary.mb-10
+                    .progress-bar.progress-bar-striped(style='width: 25%' )
+                  .progress.progress-success.mb-10
+                    .progress-bar.progress-bar-striped(style='width: 50%' )
+                  .progress.progress-info.mb-10
+                    .progress-bar.progress-bar-striped(style='width: 75%' )
+                  .progress.progress-danger
+                    .progress-bar.progress-bar-striped(style='width: 100%')
+            .col-12            
+              .card
+                .card-header
+                  h4 animated Striped progress bar
+                .card-body
+                  .progress.progress-primary.mb-10
+                    .progress-bar.progress-bar-striped.progress-bar-animated(style='width: 10%')
+                  .progress.progress-secondary.mb-10
+                    .progress-bar.progress-bar-striped.progress-bar-animated(style='width: 25%')
+                  .progress.progress-success.mb-10
+                    .progress-bar.progress-bar-striped.progress-bar-animated(style='width: 50%')
+                  .progress.progress-info.mb-10
+                    .progress-bar.progress-bar-striped.progress-bar-animated(style='width: 75%')
+                  .progress.progress-danger
+                    .progress-bar.progress-bar-striped.progress-bar-animated(style='width: 100%')
+
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

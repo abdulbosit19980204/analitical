@@ -1,0 +1,258 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Tabs")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('tabs','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row         
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 primary tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-primary
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#primarytab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#primarytab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#prmarytab-3') Review
+                  .tab-content.mt-15
+                    #primarytab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #primarytab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #prmarytab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 secondary tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-secondary
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#secondarytab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#secondarytab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#secodnarytab-3') Review
+                  .tab-content.mt-15
+                    #secondarytab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #secondarytab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #secodnarytab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 success tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-success
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#successtab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#succestab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#successtab-3') Review
+                  .tab-content.mt-15
+                    #successtab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #succestab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #successtab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 info tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-info
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#infotab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#infotab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#infotab-3') Review
+                  .tab-content.mt-15
+                    #infotab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #infotab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #infotab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 warning tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-warning
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#warningtab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#warnintab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#warningtab-3') Review
+                  .tab-content.mt-15
+                    #warningtab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #warnintab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #warningtab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 danger tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-danger
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#dangertab-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#dangertab-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#dangertab-3') Review
+                  .tab-content.mt-15
+                    #dangertab-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #dangertab-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #dangertab-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 primary border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-primary-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#primaryborder-1') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#primaryborder-2') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#primaryborder-3') Review
+                  .tab-content.mt-15
+                    #primaryborder-1.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #primaryborder-2.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #primaryborder-3.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 secodnary border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-secondary-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#secondarytab-17') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#secondarytab-18') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#secondarytab-19') Review
+                  .tab-content.mt-15
+                    #secondarytab-17.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #secondarytab-18.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #secondarytab-19.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 success border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-success-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#successtab-4') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#successtab-5') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#successtab-6') Review
+                  .tab-content.mt-15
+                    #successtab-4.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #successtab-5.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #successtab-6.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 info border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-info-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#infotab-7') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#infotab-8') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#infotab-9') Review
+                  .tab-content.mt-15
+                    #infotab-7.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #infotab-8.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #infotab-9.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 warning border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-warning-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#warningtab-10') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#warningtab-11') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#warningtab-12') Review
+                  .tab-content.mt-15
+                    #warningtab-10.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #warningtab-11.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #warningtab-12.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-lg-6
+              .card
+                .card-header 
+                  h4 danger border tab
+                .card-body                 
+                  ul.nav.nav-tabs.cdx-tab.tab-danger-border
+                    li
+                      a.btn.active(data-bs-toggle='tab' href='#dangertab-13') Description                
+                    li
+                      a.btn(data-bs-toggle='tab' href='#dangertab-14') Information               
+                    li
+                      a.btn(data-bs-toggle='tab' href='#dangertab-15') Review
+                  .tab-content.mt-15
+                    #dangertab-13.tab-pane.fade.active.show
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. 
+                    #dangertab-14.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #dangertab-15.tab-pane.fade
+                      p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

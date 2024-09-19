@@ -1,0 +1,88 @@
+-var apexchart = true ;
+-var customapexchart = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("apex chart")
+
+  
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Apex Charts','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .container-fluid
+          .row         
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  #apex-linechart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  #apex-areachart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 column chart
+                .card-body
+                  #apex-columnchart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  #apex-barchart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 mix chart
+                .card-body
+                  #apex-mixchart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 timeline chart
+                .card-body
+                  #apex-timelinechart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 candel stick chart
+                .card-body
+                  #apex-candlechart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 radial chart
+                .card-body
+                  #apex-radialchart
+            .col-xxl-4.cdx-xxl-50.col-md-6 
+              .card
+                .card-header
+                  h4 radar chart
+                .card-body
+                  #apex-radarchart
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

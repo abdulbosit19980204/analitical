@@ -1,0 +1,45 @@
+/*******************
+  06 BADGE START
+********************/
+.badge{
+  text-transform:capitalize;
+  font-weight: 400;
+  +:nth-child(n+2){
+    margin-inline-start: 5px;
+  }
+}
+/* bg color */
+$badge-colors:(
+    "primary":    $theme-primary ,
+    "secondary":  $theme-secondary ,
+    "success":    $theme-success ,
+    "info":       $theme-info ,
+    "warning":    $theme-warning ,
+    "danger":     $theme-danger ,   
+);
+@each  $badge-colorname , $badge-color  in $badge-colors {
+    .badge-#{$badge-colorname}{
+        background-color: rgba($badge-color,0.1) !important;              
+        color: rgba($badge-color,1) !important;       
+        font-size: 12px;
+        padding: 7px 10px;        
+        &:hover{
+          color: $white !important;
+          background-color: $badge-color !important;
+        }
+    }
+}
+
+@each  $badge-colorname , $badge-color  in $badge-colors {
+  .badge-rounded-#{$badge-colorname}{
+      background-color: rgba($badge-color,0.1) !important;      
+      color: rgba($badge-color,1) !important;
+      border: 1px solid rgba($badge-color,1);
+      font-size: 12px;      
+      border-radius:50%;            
+      &:hover{
+        color: $white !important;
+        background-color: $badge-color !important;
+      }
+  }
+}

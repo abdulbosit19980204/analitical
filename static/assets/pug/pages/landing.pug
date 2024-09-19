@@ -1,0 +1,407 @@
+doctype html
+html(lang="en")
+  
+  head
+
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='author' content='')
+    meta(name="keywords" content="admin template,html 5 admin template , dmeki admin , dashboard template, bootstrap 5 admin template, responsive admin template")
+
+    title Dmeki - Responsive Admin Dashboard Template
+
+    // shortcut icon
+    link(rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon")
+
+
+    // Fonts css
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet")
+
+    // Font awesome 
+    link(href='../assets/css/vendor/font-awesome.css'  rel='stylesheet')
+    link(href='../assets/css/vendor/icoicon/icoicon.css'  rel='stylesheet')
+    
+    // animat css
+    link(href='../assets/css/vendor/animate.css'  rel='stylesheet')
+
+    // Bootstrap css
+    link(href='../assets/css/vendor/bootstrap.css'  rel='stylesheet')
+
+    // Custom css
+    link(href='../assets/css/style.css'  rel='stylesheet')   
+
+  body
+
+    // header start
+    header.land-header.fixed
+      .container
+        .row
+          .col-12
+            .header-contain.position-relative
+              .codex-brand
+                a(href='#')                  
+                  img.img-fluid.dark-logo(src='../assets/images/logo/dark-logo.png' alt='')
+              .d-flex.align-items-center
+                .menu-block                
+                  ul.menu-list  
+                    li.d-xl-none
+                      a.close-menu(href='javascript:void(0);')
+                        .menu-brand
+                          img.img-fluid(src="../assets/images/logo/logo.png" alt="")
+                          i(data-feather="x")             
+                    li.menu-item
+                      a(href='#demos') Demos
+                    li.menu-item
+                      a(href='#innderpages') Inner pages
+                    li.menu-item
+                      a(href='#features') Features
+                  a.menu-action.d-xl-none(href='javascript:void(0);')
+                    i.fa.fa-bars
+    // header end
+
+  
+    // intro start
+    section.intro     
+      .container
+        .row
+          .col-xl-6.col-lg-7.col-lg-7
+            .intro-contain
+              div
+                h1.wow.fadeInLeft(data-wow-duration="1s") Dmeki - Responsive Admin Dashboard Template
+                p.wow.fadeInLeft(data-wow-duration="1.5s") Dmeki Is A Bootstrap 5 & Tailwind Responisve admin Template. Dmeki Responisve Template Is The Most Developer Friendly & Highly Customizable Responisve Admin Template Based On Bootstrap 5 & Tailwind. It Has 2 Dashboard and 50+ Different Inner Pages  Which Are Managed By SCSS Only.
+                a.btn.btn-primary(href='#demos' data-wow-duration="1.8s")
+                  i.fa.fa-television(aria-hidden='true')
+                  | live demo      
+    // intro end
+
+
+    // demo start
+    section#demos.space-py-100
+      .container
+        .row
+          .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+            .land-title
+              h2.wow.fadeInLeft Home Pages
+              p.wow.fadeInRight Comes with 2 Dahsboard available with multi element that better for your choice. Dmeki  is one of the best  Admin Template for your Business.
+        .row.cdx-row.justify-content-center
+          .col-md-6.wow.fadeInUp(data-wow-duration="0.8s")
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/demo/1.jpg' alt='')
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/index.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/index.html')                   
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 home
+          .col-md-6.wow.fadeInUp(data-wow-duration="1.5s")
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/demo/2.jpg' alt='')
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/ecommerce.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/ecommerce.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 home tow
+    // demo end
+   
+
+    // header otpion start
+    section.landheader-comp.space-py-100.overflow-visible     
+      .container
+        .row
+          .col-lg-6
+            .header-detail
+              div
+                h2.wow.fadeInUp(data-wow-duration="0.8s") 3+ Application
+                p.wow.fadeInUp(data-wow-duration="1.3s") Comes with 3+ Application available for your choice. Dmeki is one of the best  Admin Template for your Business.
+                a.btn.btn-primary.btn-md.wow.fadeInUp(data-wow-duration="1.8s" href="javascript:void(0);") Exploar now
+          .col-lg-6
+            .row.cdx-row
+              .col-lg-12.col-md-6
+                .demo-grid
+                  .img-wrap
+                    img.img-fluid(src='../assets/images/landing/application/1.jpg' alt='')
+                  .demo-detail
+                    h3.text-white Calendar
+              .col-lg-12.col-md-6
+                .demo-grid
+                  .img-wrap
+                    img.img-fluid(src='../assets/images/landing/application/2.jpg' alt='')          
+                  .demo-detail
+                    h3.text-white Email Detail
+              .col-lg-12.col-md-6
+                .demo-grid
+                  .img-wrap
+                    img.img-fluid(src='../assets/images/landing/application/3.jpg' alt='')          
+                  .demo-detail
+                    h3.text-white Chat
+              .col-lg-12.col-md-6
+                .demo-grid
+                  .img-wrap
+                    img.img-fluid(src='../assets/images/landing/application/4.jpg' alt='')      
+                  .demo-detail
+                    h3.text-white Profile
+    // header otpion End
+
+  
+    // innderpages start
+    section#innderpages.space-py-100
+      .container
+        .row
+          .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+            .land-title
+              h2.wow.fadeInUp(data-wow-duration="1s") Dedicated Inner Pages             
+        .row.cdx-row
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/1.jpg' alt='')               
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/product.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/product.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 product
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/2.jpg' alt='')               
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/blog.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/blog.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 blog
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/3.jpg' alt='')
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/faq.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/faq.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 faq
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/4.jpg' alt='')
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/blog-detail.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/blog-detail.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 blog detail
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/5.jpg' alt='')               
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/contacts.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/contacts.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 contacts
+          .col-lg-4.col-md-6.wow.fadeInUp
+            .demo-grid
+              .img-wrap
+                img.img-fluid(src='../assets/images/landing/innerpages/6.jpg' alt='')                
+                .group-link
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/bootstrap-theme/dmeki/html/gallery.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/bootstrap.png' alt='')
+                  a.hover-link(target="_blank" href='https://codextheme.codexperts.in/tailwind-theme/dmeki/html/gallery.html')
+                    img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              .demo-detail
+                h3 gallery
+    // innderpages end
+
+
+    // feathure start
+    section#features.feathure.bg-white.space-py-100
+      .container
+        .row
+          .col-12
+            .land-title
+              h2.wow.fadeInUp(data-wow-duration="1s") Dmeki Features
+        .row.cdx-row.justify-content-center
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/1.png' alt='')
+              h5 html 5
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/2.png' alt='')
+              h5 CSS 3
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/3.png' alt='')
+              h5 SCSS
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/4.png' alt='')
+              h5 Bootstrap
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/tailwind.png' alt='')
+              h5 tailwind
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/5.png' alt='')
+              h5 Google Font
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/6.png' alt='')
+              h5 Dark Mode
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/7.png' alt='')
+              h5 Fully Responsive
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/8.png' alt='')
+              h5 Clean Code
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/9.png' alt='')
+              h5 Free Updates
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/10.png' alt='')
+              h5 Forms
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/11.png' alt='')
+              h5 Easy To Customize
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/12.png' alt='')
+              h5 Gulp
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/13.png' alt='')
+              h5 jQuery
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/14.png' alt='')
+              h5 Well Documented
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/15.png' alt='')
+              h5 W3 Validated
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/16.png' alt='')
+              h5 High Performance
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/17.png' alt='')
+              h5 Browser Compatibility
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/18.png' alt='')
+              h5 Great Support
+          .col-lg-3.col-6.wow.fadeInUp
+            .feathure-grid
+              .icon-wrap
+                img.img-fluid(src='../assets/images/landing/feathure/19.png' alt='')
+              h5 Password Show/Hide
+    // feathure end
+  
+    // footer start
+    footer.lan-footer.space-py-100
+      .container
+        .row
+          .col-lg-8.offset-lg-2
+            .support-contain
+              .codex-brand
+                a(href="#")
+                  img.img-fluid.wow.fadeInUp(src='../assets/images/logo/dark-logo.png' alt='theeme-logo')
+              h2.wow.fadeInLeft Let's Buy Our Unique & Creative Design Responsive Admin Template
+    // footer end
+
+
+    // tap to top start
+    .scroll-top
+      i.fa.fa-angle-double-up
+    // tap to top end
+    
+
+    // main jquery
+    script(src="../assets/js/jquery-3.6.0.js")
+
+    // Feather iocns js
+    script(src="../assets/js/icons/feather-icon/feather.js")
+
+    // Wow js
+    script(src="../assets/js/vendors/wow.min.js")
+
+    // Bootstrap js
+    script(src="../assets/js/bootstrap.bundle.min.js")
+     
+    
+    script.
+
+      //*** Header Js ***//
+      $(window).scroll(function() { 
+        if ($(window).scrollTop() > 100) {
+          $('header').addClass('sticky');
+        } else {
+          $('header').removeClass('sticky');
+        }
+      }); 
+
+      //*** Menu Js ***//
+      $(document).on("click",'.menu-action',function(){    
+        $('.menu-list').toggleClass('open');       
+      });
+      $(document).on("click",'.close-menu',function(){    
+        $('.menu-list').removeClass('open');       
+      });
+
+      //*** BACK TO TOP START ***//
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 450) {
+          $('.scroll-top').addClass('show');
+        } else {
+          $('.scroll-top').removeClass('show');
+        } 
+      });
+      $(document).ready(function(){
+        $(document).on("click",'.scroll-top',function(){    
+          $('html, body').animate({scrollTop:0}, '450');
+        });
+      });
+      
+      //*** WOW Js ***//
+      new WOW().init();

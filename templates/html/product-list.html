@@ -1,0 +1,323 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--Datatable-->
+<link href="{% static 'assets/css/vendor/datatable/jquery.dataTables.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/vendor/datatable/buttons.dataTables.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/vendor/datatable/custom-datatable.css' %}" rel="stylesheet">
+
+
+<div class="theme-body myCustomScrollbar cdxshopping-cart" data-mcs-theme="minimal-dark">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table productlist-tbl display dataTable cell-border" id="basicdata-tbl"
+                                   style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Product detail</th>
+                                    <th>Price</th>
+                                    <th>Stock Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/1.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">cheks ewsShirt</a></td>
+                                    <td>$263</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/2.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">pink T-shirt</a></td>
+                                    <td>$247</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/3.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">sky blue shirt</a></td>
+                                    <td>$241</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/4.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">white T-shirt</a></td>
+                                    <td>$150</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/5.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">blue jacket</a></td>
+                                    <td>$320</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"> </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/1.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">cheks ewsShirt</a></td>
+                                    <td>$263</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/2.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">pink T-shirt</a></td>
+                                    <td>$247</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/3.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">sky blue shirt</a></td>
+                                    <td>$241</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/4.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">white T-shirt</a></td>
+                                    <td>$150</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/5.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">blue jacket</a></td>
+                                    <td>$320</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"> </i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/1.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">cheks ewsShirt</a></td>
+                                    <td>$263</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/2.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">pink T-shirt</a></td>
+                                    <td>$247</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/3.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">sky blue shirt</a></td>
+                                    <td>$241</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/4.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">white T-shirt</a></td>
+                                    <td>$150</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/5.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">blue jacket</a></td>
+                                    <td>$320</td>
+                                    <td><span class="badge badge-danger">sold</span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a class="delete text-danger"
+                                                                               href="javascript:void(0)"> <i
+                                                data-feather="trash-2"> </i></a></div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+<!-- ckeditor  -->
+<script src="{% static 'assets/js/vendors/ckeditor/ckeditor.js' %}"></script>
+<!-- Datatable-->
+<script src="{% static 'assets/js/vendors/datatable/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/jszip.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/datatable/custom-datatable.js' %}"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelector('#crowenkeditor'), {
+            toolbar: ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote'],
+            heading: {
+                options: [
+                    {model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph'},
+                    {model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1'},
+                    {model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2'}
+                ]
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
+{% endblock %}

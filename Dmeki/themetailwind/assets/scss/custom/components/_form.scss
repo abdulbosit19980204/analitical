@@ -1,0 +1,118 @@
+/****************
+ 05  FORM START
+*****************/
+.input-group{ 
+    position: relative;
+    display: flex;   
+    align-items: stretch;
+    width: 100%;
+  .input-group-text{
+    display: flex;
+    align-items: center;
+    border: 1px solid $theme-border;      
+    line-height: inherit;
+    padding: 0px 15px;   
+    border-radius:5px;
+    white-space: nowrap;
+    svg{
+      width: 16px;
+      height: auto;
+    }   
+  }
+  >:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  >:not(:first-child) {
+    margin-left: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  } 
+}
+.form-control,.form-select {
+  padding: 12px 18px;
+  color: $font-light;
+  border-radius: 5px;
+  border:1px solid $theme-border;
+  outline: none;
+  display: block;
+  width: 100%; 
+  &::placeholder {
+    color: $font-light;
+  }
+}
+.form-group {
+  margin-block-end: 20px;
+}
+.form-label {
+  text-transform: capitalize;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.small-group {
+  display: flex;
+  align-items: center;
+
+  >div {
+    width: 100%;
+
+    &:nth-child(n+2) {
+      margin-inline-start: 15px;
+    }
+  }
+}
+
+select.form-control {
+  position: relative;
+  appearance: auto;
+}
+
+.input-group-text {
+  border-color: $theme-border;
+  color: $font-light;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+/* custom chekbox  start*/
+.custom-chek {
+  margin-block-end: 0;
+  vertical-align: middle;
+  .form-check-input {
+    width: 1.2em;
+    height: 1.2em;
+    border:1px solid $theme-border;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-block-start: 1px;
+    appearance: none;
+    &:checked {
+      background-color: $theme-primary;
+      border-color: $theme-primary;
+      accent-color: $theme-primary;
+      box-shadow: none;
+      appearance: auto;
+    }
+    &[type="radio"]{
+      border-radius:50%;
+    }
+  }
+
+  label {
+    margin-inline-start: 5px;
+    margin-block-end: 0 !important;
+  }
+}
+

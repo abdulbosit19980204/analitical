@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- theme body start-->
+<div class="theme-body">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row position-relative">
+                    <div class="col-xl-3 cdx-xxl-30 product-filter cdxapp-xl-sidebar">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Category </h5>
+                                <ul class="filter-list">
+                                    <li>
+                                        <div class="chek-group mb-8">                 <span
+                                                class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="checkAll" name="category"></span>
+                                            <label class="fs-16 ml-5" for="checkAll">All</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="category-2" name="category"
+                                       checked=""></span>
+                                            <label class="fs-16 ml-5" for="category-2">Mens</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="category-3" name="category"></span>
+                                            <label class="fs-16 ml-5" for="category-3">Womans</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="category-4" name="category"></span>
+                                            <label class="fs-16 ml-5" for="category-4">Child</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="category-5" name="category"></span>
+                                            <label class="fs-16 ml-5" for="category-5">House &amp; kitchen</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="category-6" name="category"></span>
+                                            <label class="fs-16 ml-5" for="category-6">Technology </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Price Range</h5>
+                                <ul class="filter-list">
+                                    <li>
+                                        <div class="chek-group mb-8">                 <span
+                                                class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="radio" id="pricerange-1" name="priceRange"></span>
+                                            <label class="fs-16 ml-5" for="pricerange-1">Up to $100</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="radio" id="pricerange-2" name="priceRange"></span>
+                                            <label class="fs-16 ml-5" for="pricerange-2">Up to $500</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="radio" id="pricerange-3" name="priceRange"></span>
+                                            <label class="fs-16 ml-5" for="pricerange-3">Up to $1000</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="radio" id="pricerange-4" name="priceRange"></span>
+                                            <label class="fs-16 ml-5" for="pricerange-4">Up to $1500</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="radio" id="pricerange-5" name="priceRange"
+                                       checked="checked"></span>
+                                            <label class="fs-16 ml-5" for="pricerange-5">Up to $2000</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="range-group">
+                                            <input class="minmax-range" type="text" name="my-range" value="">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Discount </h5>
+                                <ul class="filter-list">
+                                    <li>
+                                        <div class="chek-group mb-5"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="checkAll-discount"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="checkAll-discount">All</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-5"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="discount-1"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="discount-1">20% - 40% Discount</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-5"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="discount-2"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="discount-2">40% - 60% Discount</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-5"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="discount-3"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="discount-3">60% - 80% Discount</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group mb-5"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="discount-4"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="discount-4">80% - 90% Discount</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chek-group"><span class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="discount-5"
+                                       name="discount-group"></span>
+                                            <label class="fs-16 ml-5" for="discount-5">90% - 95% Discount </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Colors</h5>
+                                <ul class="product-color">
+                                    <li class="bg-primary">
+                                        <div></div>
+                                    </li>
+                                    <li class="bg-secondary">
+                                        <div></div>
+                                    </li>
+                                    <li class="bg-success">
+                                        <div></div>
+                                    </li>
+                                    <li class="bg-info">
+                                        <div></div>
+                                    </li>
+                                    <li class="bg-warning">
+                                        <div></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Top Products</h5>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/1.jpg"
+                                                                      alt="1.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>cheks red shirt</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$241</div>
+                                    </div>
+                                </div>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/2.jpg"
+                                                                      alt="2.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>pink T-shirt</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$125</div>
+                                    </div>
+                                </div>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/3.jpg"
+                                                                      alt="3.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>sky blue shirt</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$267</div>
+                                    </div>
+                                </div>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/4.jpg"
+                                                                      alt="4.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>white T-shirt</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$487</div>
+                                    </div>
+                                </div>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/5.jpg"
+                                                                      alt="5.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>blue jacket</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$874</div>
+                                    </div>
+                                </div>
+                                <div class="top-product">
+                                    <div class="product-imgwrap"><img class="img-fluid"
+                                                                      src="../assets/images/pages/product/6.jpg"
+                                                                      alt="6.jpg"></div>
+                                    <div class="product-detailwrap"><a href="product-detail.html">
+                                        <h6>black T-shirt</h6></a>
+                                        <ul class="rating-list">
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <div class="price">$367</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 cdx-xxl-70 cdx-xl-100">
+                        <div class="row grid-view-page">
+                            <div class="col-12">
+                                <div class="card mb-20">
+                                    <div class="card-body">
+                                        <div class="grid-wrap-header">
+                                            <ul class="gridfilter-list">
+                                                <li class="cdxapp-toggle d-lg-none"><a href="javascript:void(0);">
+                                                    <i data-feather="filter"></i></a></li>
+                                                <li class="gridview-toggle"><a href="javascript:void()"><i
+                                                        data-feather="grid"></i></a></li>
+                                                <li class="listview-toggle"><a href="javascript:void()"> <i
+                                                        data-feather="list"> </i></a></li>
+                                            </ul>
+                                            <div><a class="btn btn-primary" href="add-product.html"> <i
+                                                    class="ti-plus mr-5"></i>Add Product</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-24">
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img
+                                            class="img-fluid" src="{% static 'assets/images/pages/product/1.jpg' %}"
+                                            alt="product box"></a><span class="product-sale-label">Hot</span><span
+                                            class="product-discount-label">-8%</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>Cheks red Shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-11" name="input-1">
+                                                <label class="star" for="input-11"> </label>
+                                                <input type="radio" id="input-12" name="input-1">
+                                                <label class="star" for="input-12"> </label>
+                                                <input type="radio" id="input-13" name="input-1">
+                                                <label class="star" for="input-13"> </label>
+                                                <input type="radio" id="input-14" name="input-1">
+                                                <label class="star" for="input-14"> </label>
+                                                <input type="radio" id="input-15" name="input-1">
+                                                <label class="star" for="input-15"> </label>
+                                            </div>
+                                            <div class="pro-price">$252<span class="old-price">$238</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+{% endblock %}

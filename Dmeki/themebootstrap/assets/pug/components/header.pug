@@ -1,0 +1,189 @@
+// Loader Start
++loader
+// Loader End
+
+// Header Start
+header.codex-header 
+  .header-contian.d-flex.justify-content-between.align-items-center
+    .header-left.d-flex.align-items-center
+      .sidebar-action.navicon-wrap
+        i(data-feather="menu")
+      .search-bar
+        .form-group.mb-0
+          .input-group
+            input.form-control(type="text" value="" placeholder="Search Here.....")
+            span.input-group-text
+              i(data-feather="search")
+    .header-right.d-flex.align-items-center.justify-content-end
+      ul.nav-iconlist   
+        li
+          .navicon-wrap.action-dark
+            i.fa.fa-moon-o.icon-dark
+            i.fa.fa-sun-o.icon-light(style='display:none;')
+        li                               
+          .navicon-wrap
+            i(data-feather="bell")
+            .noti-count 04
+          .hover-dropdown.navnotification-drop
+            .drop-header
+              h5 notification
+                span 05
+            ul(data-simplebar)
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-primary
+                      i.fa.fa-check-square-o
+                    .media-body
+                        h6 order Cheked
+                        span.text-light 1 hour ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-secondary
+                      i.fa.fa-first-order
+                    .media-body
+                      h6 order receved
+                      span.text-light 1 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-success
+                      i.fa.fa-money
+                    .media-body
+                      h6 payment received
+                      span.text-light 2 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-warning
+                      i.fa.fa-truck
+                    .media-body
+                      h6 order shipped
+                      span.text-light 2 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-info
+                      i.fa.fa-first-order
+                    .media-body
+                      h6 order receved
+                      span.text-light 1 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-success
+                      i.fa.fa-money
+                    .media-body
+                      h6 payment received
+                      span.text-light 2 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-warning
+                      i.fa.fa-truck
+                    .media-body
+                      h6 order shipped
+                      span.text-light 2 day ago
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .icon-nav.bg-info
+                      i.fa.fa-first-order
+                    .media-body
+                      h6 order receved
+                      span.text-light 1 day ago
+            .drop-footer
+              a(href="email-inbox.html") See All Notification
+        li
+          .navicon-wrap
+            i(data-feather="shopping-cart")
+            .noti-count 07
+          .hover-dropdown.navshop-drop
+            .drop-header
+                h5 Shopping
+                  span 7
+            ul(data-simplebar)
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .img-wrap
+                      img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt="")
+                    .media-body
+                      h6 teddy bear
+                      span.text-light $250
+                    .close-pro
+                      i.ti-trash
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .img-wrap
+                      img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt="")
+                    .media-body
+                      h6 iphone
+                      span.text-light $140
+                    .close-pro
+                      i.ti-trash
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .img-wrap
+                      img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt="")
+                    .media-body
+                      h6 Apple Airpod
+                      span.text-light $310
+                    .close-pro
+                      i.ti-trash
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .img-wrap
+                      img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt="")
+                    .media-body
+                      h6 Motors
+                      span.text-light $510
+                    .close-pro
+                      i.ti-trash
+              li
+                a(href="javascript:void(0);")
+                  .media
+                    .img-wrap
+                      img.img-fluid(src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt="")
+                    .media-body
+                      h6 iphone
+                      span.text-light $140
+                    .close-pro
+                      i.ti-trash
+            .drop-footer
+              a(href="checkout.html") Checkout All
+        li
+          .navicon-wrap.btn-windowfull
+            i(data-feather="maximize")
+        li.nav-profile
+          .media
+            .user-icon
+              img.img-fluid.rounded-50(src='../assets/images/avtar/3.jpg' alt='logo')
+            .media-body
+              h6 Thomas Vactom
+              span.text-light Web designer
+          .hover-dropdown.navprofile-drop
+            ul
+              li
+                a(href="profile.html")
+                  i.ti-user
+                  | profile
+              li
+                a(href="email-inbox.html")
+                  i.ti-email
+                  | inbox
+              li
+                a(href="user-edit.html")
+                  i.ti-settings
+                  | setting
+              li
+                a(href="login.html")
+                  i.fa.fa-sign-out
+                  | log out
+// Header End
+
+include sidebar

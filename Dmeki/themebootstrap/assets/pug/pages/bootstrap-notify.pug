@@ -1,0 +1,41 @@
+doctype html
+html(lang="en")
+  
+  include ../components/mixinfiles
+  +headerfile("bootstrap notify")
+
+  body
+    
+    +header
+
+    .themebody-wrap
+
+
+      // breadcrumb start
+      +codexbreadcrumb('bootstrap notify','element')
+      // breadcrumb end
+     
+      
+      // theme body start     
+      .theme-body.codex-calendar
+        .container-fluid
+          .row
+            .col-md-6
+              .card
+                .card-header
+                  h4 square switch
+                .card-body
+                  .d-flex.flex-wrap.gap-3
+                    a.btn.btn-primary(href="javascript:void(0);" onclick="primarynotify()") primary
+                    a.btn.btn-secondary(href="javascript:void(0);" onclick="secondarynotify()") secondary
+                    a.btn.btn-success(href="javascript:void(0);" onclick="successnotify()") success
+                    a.btn.btn-info(href="javascript:void(0);" onclick="infonotify()") info
+                    a.btn.btn-warning(href="javascript:void(0);" onclick="warningnotify()") warning
+                    a.btn.btn-danger(href="javascript:void(0);" onclick="dangernotify()") danger
+      // theme body end
+    
+    // footer start
+    +footer
+    // footer end
+
+    +footerfile   

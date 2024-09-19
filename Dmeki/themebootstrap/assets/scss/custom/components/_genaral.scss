@@ -1,0 +1,275 @@
+.flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/**datepicker**/
+.datepicker{
+    box-shadow: 0 5px 15px rgba($black,10%);
+    border: none;
+    z-index: 9999;
+    .datepicker--nav-action{
+        background-color: $theme-primary;
+        path{
+            stroke: $white;
+        }
+    }
+    .datepicker--nav{
+        padding: 10px;
+    }
+    .datepicker--nav-title{
+        letter-spacing: 0.05px;
+        font-weight:600;
+        color:$black;
+        i{
+            color: $font-light;
+        }
+    }
+    .datepicker--day-name{
+        color:$black;
+        font-weight:600;
+    }
+    .datepicker--cell{
+        &.-current-{
+            color: $theme-primary;
+            background-color: rgba($theme-primary,0.08);
+        }
+        &.-selected-{
+            color: $white;
+            background-color: $theme-primary;
+        }
+    }   
+}
+.ui-datepicker{
+    box-shadow: 0 0 20px 5px rgba($black,0.05);
+    padding:8px;
+    .ui-datepicker-header{
+        padding-top: 0;        
+    }
+    &.ui-widget{
+        &.ui-widget-content{
+            border: none;
+        }
+    }
+    .ui-widget-header{
+        background-color: transparent;
+        border: none;
+    }
+    .ui-datepicker-prev,.ui-datepicker-next{
+        background-color:$theme-primary;	
+    }
+    .ui-datepicker-prev,.ui-datepicker-next{
+        top:1px;
+        span{
+            display: none;
+        }       
+        &::before{
+            color:$white;
+            font-family: $font-awesome;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            font-weight:500;
+        }
+    }
+    .ui-datepicker-prev{
+        border-color: $theme-primary;
+        left: 2px !important;
+        &::before{
+            content: "\f104";
+        }
+    }
+    .ui-datepicker-next{
+        border-color: $theme-primary;
+        right: 2px !important;
+        &::before{
+            content: "\f105";
+        }
+    }   
+    .ui-datepicker-calendar{
+        border-top: 1px solid $theme-border;
+        margin-top: 5px;
+    }
+    .ui-state-default{
+        background-color: transparent;
+        border: 1px solid $theme-border;
+        text-align: center;
+        &.ui-state-active{  
+            color: $white;
+            background-color: $theme-primary;
+        }
+    } 
+    .ui-state-highlight{
+        color: $theme-primary;
+        background-color: rgba($theme-primary,0.2);
+        border-color: rgba($theme-primary,0.2);
+    }   
+}
+
+
+/*datetime picker*/
+// .xdsoft_datetimepicker{
+//     padding:10px;
+//     border: none;
+//     border-radius:5px;
+//     box-shadow: 0 0 20px 5px rgba($black,0.05);
+//     .xdsoft_datepicker{
+//         margin-left: 0;
+//     }
+//     .xdsoft_prev{
+//         background-image:none;
+//         &::before{
+//             font-family: $font-awesome;
+//             content: "\f104";
+//             position: absolute;
+//             top: 0;
+//             left: 0;
+//             color: $white;
+//         }
+//     }
+// }
+
+// .xdsoft_datetimepicker {
+//     .xdsoft_next,.xdsoft_prev,.xdsoft_today_button{
+//         background-color: $theme-primary;
+//         color: $white;
+//         border-radius:5px;
+//     } 
+// }
+
+/**select 2**/
+.select2-dropdown{
+    z-index: 9999;
+}
+.select2-container {   
+    .select2-selection--single{
+        height:auto;
+        border-color: $theme-border;
+    }
+}
+.select2-container--default {
+    .select2-selection--single {
+        .select2-selection__rendered{
+            line-height:unset;
+            padding:10px 15px;
+            color: $font-light;
+            border-radius: 5px;           
+        }
+        .select2-selection__arrow{
+            width: auto;
+            height: auto;           
+            line-height: 1;
+            top: 13px;
+            right: 15px;
+            b{
+                display: none;
+            }
+            &::before{
+                content: "\f107";
+                font-family: $font-awesome;
+                color: $font-light;
+                top: 0;
+                right: 0;
+                font-size: 18px;
+            }           
+        }
+    }
+}
+
+
+
+/** chart **/
+.echart{
+    width: 100%;  
+    height: 350px; 
+}
+
+.chartjs-main{
+    canvas{
+        width: 100%;  
+    height: 350px;
+    }
+    .doughnutchart{
+        width: 60% !important;
+        height: auto !important;
+    }
+}
+
+
+/*data table*/
+.dataTables_wrapper {           
+    .dataTables_length,.dataTables_filter {
+        margin-bottom:15px;
+        select,input{
+            border-color: $theme-border;
+            outline: none;
+            &:focus{
+                border-color: $theme-border;
+                outline: none;
+            }
+        }
+    }
+   
+    .dataTables_info{
+        margin-top:15px;
+    }
+    .dt-button{
+        background-color:$theme-primary;
+        border-color:$theme-primary;
+        color: $white;
+        &:hover{
+            background-color:$theme-primary !important;
+        }
+    }
+    .dataTables_paginate {
+        margin-top:15px;
+        .paginate_button{
+            border: 1px solid $theme-border !important;
+            outline: none;
+            box-shadow: none;
+            &.current,&:hover{
+                background: $theme-primary !important;
+                color: $white !important;
+                border-color: $theme-primary !important;
+                box-shadow: none;
+                &:hover{
+                    background: $theme-primary !important;
+                    color: $white !important;
+                    border-color: $theme-primary !important;
+                }
+            }
+        }
+    }
+    &.no-footer {
+        .dataTables_scrollBody{
+            border-color: $theme-border;
+        }
+    }
+}
+table.dataTable {
+    border-top: 1px solid $theme-border;
+    thead {
+        th{
+            font-weight: 600;
+        }
+    }
+    thead,tbody {            
+        th,td{
+            border-color: $theme-border;               
+            border-left: 1px solid $theme-border;
+            vertical-align: middle;
+        }
+    }   
+    tfoot {
+        margin-top:15px;
+        th,td {
+            border:1px solid $theme-border;           
+        }
+    }
+    &.no-footer{
+        border-bottom: none;
+}
+}    

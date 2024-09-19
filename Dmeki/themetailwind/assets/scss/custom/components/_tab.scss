@@ -1,0 +1,77 @@
+/**************
+ 10 TAB CSS START
+***************/
+/* tab color */
+$tab-colors:(
+    "primary":    $theme-primary,
+    "secondary":  $theme-secondary,
+    "success":    $theme-success,
+    "info":       $theme-info,
+    "warning":    $theme-warning,
+    "danger":     $theme-danger,
+    "light":      $theme-light,
+    "dark":       $theme-dark,
+);
+
+@each  $tab-colorname , $tab-color  in $tab-colors {   
+    .tabs{        
+        &.tab-#{$tab-colorname}{       
+            li{
+                &.active{
+                    a{
+                        background-color: rgba($tab-color,1) !important;        
+                        color: $white;                 
+                    }
+                }               
+            }
+        }   
+    }
+}
+
+@each  $tab-colorname , $tab-color  in $tab-colors {   
+    .tabs{        
+        &.tab-#{$tab-colorname}-border{       
+            li{
+                a{
+                    border: 1px solid rgba($tab-color,1) !important;
+                    color: rgba($tab-color,1) ;
+                }
+                &.active{
+                    a{       
+                        background-color: rgba($tab-color,1) !important;
+                        color: $white;                 
+                    }
+                }
+                +li{
+                    margin-inline-start: 10px;
+                }
+            }
+        }   
+    }
+}
+
+.tabs{   
+    display: flex;
+    align-items: center;   
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    li{
+        a{
+            color: $black;
+            font-weight:500;
+            padding:10px 25px;
+            border-radius: 5px;
+            display: block;
+        }       
+    }
+}
+.tab-contents{
+    margin-top:15px;
+    > .tab-item{
+        display: none;       
+    }
+    >.show{
+        display: block;              
+        animation: fadeIn 0.5s ease;
+    }   
+}

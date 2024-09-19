@@ -1,0 +1,119 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Wishlist")
+  body
+    
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('wishlist','ecommerce')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body.cdxshopping-cart
+        .custom-container
+          .row              
+            .col-12
+              .card
+                .card-body
+                  .table-responsive
+                    table.table.cart-tbl
+                      thead
+                        tr
+                          th.text-primary.fs-16 Product
+                          th.text-primary.fs-16 Product name                       
+                          th.text-primary.fs-16 Price
+                          th.text-primary.fs-16 Stock Status
+                          th.text-primary.fs-16 Add to cart
+                          th.text-primary.fs-16 Action
+                      tbody
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/1.jpg" alt="")
+                          td  
+                            a.text-default(href="product-detail.html") cheks ewsShirt
+                          td $263
+                          td
+                            span.badge.badge-success in stock 
+                          td 
+                            a.btn.btn-primary.btn-md(href="cart.html") Add to cart
+                          td
+                            .cart-action                           
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/2.jpg" alt="")
+                          td 
+                            a.text-default(href="product-detail.html") pink T-shirt
+                          td $247
+                          td
+                            span.badge.badge-danger sold
+                          td 
+                            a.btn.btn-primary.btn-md(href="cart.html") Add to cart
+                          td
+                            .cart-action                           
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/3.jpg" alt="")
+                          td 
+                            a.text-default(href="product-detail.html") sky blue shirt
+                          td $241
+                          td
+                            span.badge.badge-success in stock 
+                          td 
+                            a.btn.btn-primary.btn-md(href="cart.html") Add to cart
+                          td
+                            .cart-action                           
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/4.jpg" alt="")
+                          td 
+                            a.text-default(href="product-detail.html") white T-shirt
+                          td $150
+                          td
+                            span.badge.badge-success in stock 
+                          td 
+                            a.btn.btn-primary.btn-md(href="cart.html") Add to cart
+                          td
+                            .cart-action                           
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+                        tr
+                          td
+                            .product-imgwrap
+                              img.img-fluid(src="../assets/images/pages/product/5.jpg" alt="")
+                          td 
+                            a.text-default(href="product-detail.html") blue jacket
+                          td $320
+                          td
+                            span.badge.badge-danger sold
+                          td 
+                            a.btn.btn-primary.btn-md(href="cart.html") Add to cart
+                          td
+                            .cart-action                           
+                              a.delete.text-danger(href="javascript:void(0)") 
+                                i(data-feather="trash-2")
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

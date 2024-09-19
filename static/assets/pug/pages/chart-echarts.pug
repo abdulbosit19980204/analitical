@@ -1,0 +1,70 @@
+-var echart = true ;
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("echarts")
+ 
+
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Echart','charts')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .container-fluid
+          .row         
+            .col-md-6
+              .card
+                .card-header
+                  h4 line chart
+                .card-body
+                  #linechart.echart
+            .col-md-6
+              .card
+                .card-header
+                  h4 area chart
+                .card-body
+                  #eareachart.echart
+            .col-md-6
+              .card
+                .card-header
+                  h4 bar chart
+                .card-body
+                  #ebarchart.echart
+            .col-md-6
+              .card
+                .card-header
+                  h4 doughnut chart
+                .card-body
+                  #edoughnutchart.echart.position-relative
+            .col-md-6
+              .card
+                .card-header
+                  h4 Scatter chart
+                .card-body
+                  #escatterchart.echart
+            .col-md-6
+              .card
+                .card-header
+                  h4 gauge chart
+                .card-body
+                  #egaugechart.echart
+                    
+      // theme body end
+
+    // footer start 
+    +footer
+    // footer end
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile

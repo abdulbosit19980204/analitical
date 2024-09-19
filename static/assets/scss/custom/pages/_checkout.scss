@@ -1,0 +1,40 @@
+/***********************
+  21 CHECKOUT START
+************************/
+.checkout-page{   
+    .payment-detail{
+        ul{
+            li{
+                &:nth-child(n+2){
+                    margin-inline-start: 20px;
+                }
+                a{
+                    border: 1px solid $theme-border;                          
+                    padding: 12px 20px;    
+                    border-radius: 5px;
+                    display: inline-block;
+                    i{                        
+                        margin-inline-end:10px;
+                    }
+                    &.active{
+                        background-color: $theme-primary;
+                        color: $white;                       
+                    }
+                }    
+            }
+        }
+    }
+    .cdx-cvc{
+        .cvc-group{
+            display: flex;
+            align-items: center;
+            .form-control{
+                width: 80px;
+                margin-inline-end:15px;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+    }
+}

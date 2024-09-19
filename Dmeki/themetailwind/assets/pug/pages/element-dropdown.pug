@@ -1,0 +1,285 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Dropdown")
+  body
+
+    +header
+
+
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('dropdown','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .grid.grid-cols-12.cdx-gap
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Default Alerts
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown
+                    button.btn.btn-primary(href="javascript:void(0);") Primary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox                                  
+                  .dropdown
+                    button.btn.btn-secondary(href="javascript:void(0);") secodary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown
+                    button.btn.btn-success(href="javascript:void(0);") success
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown
+                    button.btn.btn-info(href="javascript:void(0);") info
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown
+                    button.btn.btn-warning(href="javascript:void(0);") warning
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown
+                    button.btn.btn-danger(href="javascript:void(0);") danger
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Hovered Dropdown
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown.on-hover
+                    button.btn.btn-primary(href="javascript:void(0);") Primary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Inbox                                  
+                  .dropdown.on-hover
+                    button.btn.btn-secondary(href="javascript:void(0);") secodary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover
+                    button.btn.btn-success(href="javascript:void(0);") success
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover
+                    button.btn.btn-info(href="javascript:void(0);") info
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.on-hover
+                    button.btn.btn-warning(href="javascript:void(0);") warning
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.on-hover
+                    button.btn.btn-danger(href="javascript:void(0);") danger
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Alignment Dropdown
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown.top
+                    button.btn.btn-primary(href="javascript:void(0);") Top
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Inbox                                  
+                  .dropdown.left
+                    button.btn.btn-secondary(href="javascript:void(0);") left
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.right
+                    button.btn.btn-success(href="javascript:void(0);") right
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.bottom
+                    button.btn.btn-info(href="javascript:void(0);") bottom
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox                 
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Hovered Alignment Dropdown
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown.on-hover.top
+                    button.btn.btn-primary(href="javascript:void(0);") Top
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") Inbox                                  
+                  .dropdown.on-hover.left
+                    button.btn.btn-secondary(href="javascript:void(0);") left
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover.right
+                    button.btn.btn-success(href="javascript:void(0);") right
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover.bottom
+                    button.btn.btn-info(href="javascript:void(0);") bottom
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox 
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Colored Dropdown
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown.dropdown-primary
+                    button.btn.btn-primary(href="javascript:void(0);") Primary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox                                  
+                  .dropdown.dropdown-secondary
+                    button.btn.btn-secondary(href="javascript:void(0);") secodary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.dropdown-success
+                    button.btn.btn-success(href="javascript:void(0);") success
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.dropdown-info
+                    button.btn.btn-info(href="javascript:void(0);") info
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.dropdown-warning
+                    button.btn.btn-warning(href="javascript:void(0);") warning
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.dropdown-danger
+                    button.btn.btn-danger(href="javascript:void(0);") danger
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+          .col-span-12(class="2xl:col-span-6")
+            .card
+              .card-header 
+                h4 Hovered Colored Dropdown
+              .card-body.grid.cdx-gap
+                .flex.flex-wrap.gap-2(class="2md:justify-center")
+                  .dropdown.on-hover.dropdown-primary
+                    button.btn.btn-primary(href="javascript:void(0);") Primary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox                                  
+                  .dropdown.on-hover.dropdown-secondary
+                    button.btn.btn-secondary(href="javascript:void(0);") secodary
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover.dropdown-success
+                    button.btn.btn-success(href="javascript:void(0);") success
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox               
+                  .dropdown.on-hover.dropdown-info
+                    button.btn.btn-info(href="javascript:void(0);") info
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.on-hover.dropdown-warning
+                    button.btn.btn-warning(href="javascript:void(0);") warning
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+                  .dropdown.on-hover.dropdown-danger
+                    button.btn.btn-danger(href="javascript:void(0);") danger
+                    ul.dropdown-menu
+                      li.dropdown-item
+                        a(href="javascript:void(0);") profile
+                      li.dropdown-item
+                        a(href="javascript:void(0);") inbox
+      // theme body end
+                 
+    // footer start
+    +footer
+    // footer end
+
+    +footerfile

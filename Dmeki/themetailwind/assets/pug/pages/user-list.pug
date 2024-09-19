@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("User list")
+  body
+
+    +header
+
+
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('user list','application')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+        .grid.grid-cols-12.cdx-gap
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("1.jpg","Alex Spencer","ux designer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("2.jpg","Thomas Vactom","Vido Editor")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("3.jpg","Johan Deo","ui desinger")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("4.jpg","Mark Wongar","web developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("5.jpg","Lina Odem","app developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("6.jpg","vamsi ogel","game developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("7.jpg","omeni rome","logo desinger")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("8.jpg","meena wongar","project manag")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("9.jpg","Alex Spencer","ux designer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("10.jpg","Thomas Vactom","Vido Editor")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("11.jpg","Johan Deo","ui desinger")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("12.jpg","Mark Wongar","web developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("13.jpg","Lina Odem","app developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("14.jpg","vamsi ogel","game developer")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("5.jpg","omeni rome","logo desinger")
+          .col-span-12(class="xl:col-span-3 lg:col-span-4 sm:col-span-6")
+            +usercard("6.jpg","meena wongar","project manag")
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+
+    +footerfile

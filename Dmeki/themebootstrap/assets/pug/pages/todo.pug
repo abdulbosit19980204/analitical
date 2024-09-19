@@ -1,0 +1,44 @@
+-var todoList = true;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Todo")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('to-do','pages')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-12
+              .card.buttons
+                .card-header
+                  h4 Todo&nbsp;
+                    span.countTodo
+                .card-body                      
+                  .todo-content
+                      .todo-input.form-group
+                        .input-group
+                          input.form-control.todoInput(type='text' placeholder="Enter Something Here.." )                       
+                          a.input-group-text.border-0.add-todo(href="javascript:void(0);") Add to task                         
+                        .error                  
+                      ul.todo-list                                          
+      // theme body end
+
+                                      
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

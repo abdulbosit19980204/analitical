@@ -1,0 +1,290 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Tabs")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('tab','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+          .grid.grid-cols-12.cdx-gap
+            .col-span-6            
+              .card
+                .card-header
+                  h4 Primary tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-primary
+                    li.active
+                      a.tab-link(href='#tab1') Tab 1
+                    li
+                      a.tab-link(href='#tab2') Tab 2
+                    li
+                      a.tab-link(href='#tab3') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab1.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab2.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab3.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 Primary tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-secondary
+                    li.active
+                      a(href='#tab4') Tab 1
+                    li
+                      a(href='#tab5') Tab 2
+                    li
+                      a(href='#tab6') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab4.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab5.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab6.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 success tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-success
+                    li.active
+                      a(href='#tab7') Tab 1
+                    li
+                      a(href='#tab8') Tab 2
+                    li
+                      a(href='#tab9') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab7.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab8.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab9.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 info tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-info
+                    li.active
+                      a(href='#tab10') Tab 1
+                    li
+                      a(href='#tab11') Tab 2
+                    li
+                      a(href='#tab12') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab10.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab11.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab12.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 warning tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-warning
+                    li.active
+                      a(href='#tab13') Tab 1
+                    li
+                      a(href='#tab14') Tab 2
+                    li
+                      a(href='#tab15') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab13.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab14.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab15.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 danger tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-danger
+                    li.active
+                      a(href='#tab16') Tab 1
+                    li
+                      a(href='#tab17') Tab 2
+                    li
+                      a(href='#tab18') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab16.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab17.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab18.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 Primary border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-primary-border
+                    li.active
+                      a(href='#tab19') Tab 1
+                    li
+                      a(href='#tab20') Tab 2
+                    li
+                      a(href='#tab21') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab19.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab20.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab21.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 secondary border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-secondary-border
+                    li.active
+                      a(href='#tab22') Tab 1
+                    li
+                      a(href='#tab23') Tab 2
+                    li
+                      a(href='#tab24') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab22.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab23.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab24.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 success border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-success-border
+                    li.active
+                      a(href='#tab25') Tab 1
+                    li
+                      a(href='#tab26') Tab 2
+                    li
+                      a(href='#tab27') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab25.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab26.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab27.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 info border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-info-border
+                    li.active
+                      a(href='#tab28') Tab 1
+                    li
+                      a(href='#tab29') Tab 2
+                    li
+                      a(href='#tab30') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab28.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab29.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab30.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 warning border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-warning-border
+                    li.active
+                      a(href='#tab31') Tab 1
+                    li
+                      a(href='#tab32') Tab 2
+                    li
+                      a(href='#tab33') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab31.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab32.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab33.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+            .col-span-6            
+              .card
+                .card-header
+                  h4 danger border tab
+                .card-body
+                  // Tabs
+                  ul.tabs.tab-danger-border
+                    li.active
+                      a(href='#tab34') Tab 1
+                    li
+                      a(href='#tab35') Tab 2
+                    li
+                      a(href='#tab36') Tab 3                   
+
+                  // Tab Contents
+                  .tab-contents
+                    #tab34.tab-item.show
+                      p 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab35.tab-item
+                      p 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                    #tab36.tab-item
+                      p 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+
+    +footerfile

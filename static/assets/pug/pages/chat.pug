@@ -1,0 +1,329 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+
+  +headerfile("Chat")
+  
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('Chat','application')
+      // breadcrumb end
+
+
+      // theme body start
+      .theme-body.codex-chat
+        .custom-container
+          .row
+            .col-12
+              .cdxchat-contain
+                .row
+                  .col.chat-sidebar
+                    .card.mb-0
+                      .card-body                    
+                        .admin-profile
+                          .media
+                            .userimg-wrap
+                              img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                            .media-body
+                              ul.chaticon-list
+                                li
+                                  a(href="javascript:void(0)")
+                                    i(data-feather="message-square")
+                                li
+                                  .action-menu
+                                    .action-toggle
+                                      i(data-feather="more-vertical")                     
+                                    ul.action-dropdown
+                                      li
+                                        a(href="javascript:void(0)") 
+                                          i(data-feather="users")
+                                          | New Group
+                                      li
+                                        a(href="profile.html") 
+                                          i(data-feather="user")
+                                          | Profile
+                                      li
+                                        a(href="javascript:void(0)") 
+                                          i(data-feather="message-circle")
+                                          | Starred messages
+                                      li
+                                        a(href="javascript:void(0)") 
+                                          i(data-feather="settings")
+                                          | Settings
+                                      li
+                                        a(href="login.html") 
+                                          i(data-feather="log-out")
+                                          | Log out
+                        .form-group
+                          .input-group
+                            span.input-group-text
+                              i(data-feather="search")
+                            input(type="text" class="form-control" placeholder="Search")
+                        ul.user-caht-list(data-simplebar)
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                              .media-body
+                                h6 Alex Spencer
+                                p  Typing..                      
+                              .caht-status 
+                                span.time-status 2:45
+                                  small.ml-5 am
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                              .media-body
+                                h6 Thomas Vactom
+                                p  At work
+                              .caht-status
+                                span.time-status Tuesday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/3.jpg" alt="")
+                              .media-body
+                                h6 Johan Deo
+                                p  At work
+                              .caht-status
+                                span.badge.badge-rounded-primary 5
+                                span.time-status Wednesday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/4.jpg" alt="")
+                              .media-body
+                                h6 Mark Wongar
+                                p  At work
+                              .caht-status
+                                span.time-status Friday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/5.jpg" alt="")
+                              .media-body
+                                h6 Lina Odem
+                                p  At work
+                              .caht-status
+                                span.time-status 5:50
+                                    small.ml-5 pm
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/6.jpg" alt="")
+                              .media-body
+                                h6 Alex Spencer
+                                p  At work
+                              .caht-status
+                                span.time-status 1:33
+                                    small.ml-5 am
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/7.jpg" alt="")
+                              .media-body
+                                h6 Johan Deo
+                                  
+                                p  At work
+                              .caht-status
+                                span.time-status Wednesday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/8.jpg" alt="")
+                              .media-body
+                                h6 Thomas Vactom
+                                p  At work
+                              .caht-status
+                                span.time-status Tuesday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/9.jpg" alt="")
+                              .media-body
+                                h6 Alex Spencer
+                                p  At work
+                              .caht-status
+                                span.time-status 1:33
+                                    small.ml-5 am     
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/10.jpg" alt="")
+                              .media-body
+                                h6 Mark Wongar
+                                p  At work
+                              .caht-status
+                                span.time-status Friday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/11.jpg" alt="")
+                              .media-body
+                                h6 Lina Odem
+                                p  At work
+                              .caht-status
+                                span.time-status 5:50
+                                    small.ml-5 pm
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/12.jpg" alt="")
+                              .media-body
+                                h6 Alex Spencer
+                                p  At work
+                              .caht-status
+                                span.time-status 1:33
+                                    small.ml-5 am
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/13.jpg" alt="")
+                              .media-body
+                                h6 Johan Deo
+                                  
+                                p  At work
+                              .caht-status
+                                span.time-status Wednesday
+                          li
+                            .media
+                              .userimg-wrap
+                                img.img-fluid(src="../assets/images/avtar/14.jpg" alt="")
+                              .media-body
+                                h6 Thomas Vactom
+                                p  At work
+                              .caht-status
+                                span.time-status Tuesday   
+                  .col                   
+                    .chat-body
+                      .media                
+                        .userimg-wrap
+                          img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                        .media-body
+                          h6 Alex Spencer 
+                          p online
+                        ul.chaticon-list                       
+                          li
+                            a(href="javascript:void(0)")
+                              i(data-feather="search")
+                          li
+                            a(href="javascript:void(0)")
+                              i(data-feather="phone")
+                          li
+                            a(href="javascript:void(0)")
+                              i(data-feather="video")
+                          li
+                            .action-menu                          
+                              .action-toggle
+                                i(data-feather="more-vertical")   
+                              ul.action-dropdown
+                                li
+                                  a(href="javascript:void(0)") 
+                                    i(data-feather="info")
+                                    | Contact info                         
+                                li
+                                  a(href="javascript:void(0)") 
+                                    i(data-feather="volume-x")
+                                    |Mute notifications
+                                li
+                                  a(href="javascript:void(0)") 
+                                    i(data-feather="x-octagon")
+                                    |Clear messages
+                                li
+                                  a(href="javascript:void(0)") 
+                                    i(data-feather="trash-2")
+                                    | Delete chat                       
+                      .userchat-msgbox(data-simplebar)
+                        ul
+                          li
+                            .user-msgbox  
+                              .chat-contain
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                                p Lorem ipsum dolor sit amet
+                              span.msg-seen 2:45 
+                                small pm
+                          li
+                            .admin-msgbox
+                              .chat-contain
+                                p Adipisicing elit, sed do eiusmod.
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                              span.msg-seen 2:50 
+                                small.mr-5 pm
+                                i.text-primary(data-feather="check")
+                                i.text-primary(data-feather="check")
+                          li
+                            .admin-msgbox
+                              .chat-contain
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                              span.msg-seen 2:51 
+                                small.mr-5 pm
+                                i.text-primary(data-feather="check")
+                                i.text-primary(data-feather="check")
+                          li
+                            .user-msgbox
+                              .chat-contain
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                              span.msg-seen 4:30 
+                                small.mr-5 pm                       
+                          li
+                            .admin-msgbox
+                              .chat-contain
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                              span.msg-seen 4:35 
+                                small.mr-5 pm
+                                i.text-primary(data-feather="check")
+                                i.text-primary(data-feather="check")
+                          li
+                            .user-msgbox
+                              .chat-contain
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                              span.msg-seen 5:01 
+                                small.mr-5 pm
+                          li
+                            .user-msgbox
+                              .chat-contain
+                                img.img-fluid(src="../assets/images/avtar/2.jpg" alt="")
+                                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+                              span.msg-seen 5:05 
+                                small.mr-5 pm
+                          li
+                            .admin-msgbox
+                              .chat-contain
+                                p Adipisicing elit, sed do eiusmod.
+                                img.img-fluid(src="../assets/images/avtar/1.jpg" alt="")
+                              span.msg-seen 6:29 
+                                small.mr-5 pm
+                                i.text-primary(data-feather="check")
+                                i.text-primary(data-feather="check")                 
+                      .userchat-typebox.d-flex                   
+                          a.btn.btn-primary.mr-10
+                            i(data-feather="smile")
+                          input(type="text" class="form-control" placeholder="Type a message" value="" autocomplete="off")                         
+                          a.btn.btn-primary.ml-10
+                            i(data-feather="mic")
+                          a.btn.btn-primary.ml-10
+                            i(data-feather="send")
+      // theme body end
+
+
+    // footer start
+    +footer
+    // footer end
+    
+
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile    

@@ -1,0 +1,263 @@
+-var slickslider = true ;
+
+doctype html
+html(lang="en")
+
+  include ../components/mixinfiles
+  +headerfile("Product Detail")
+
+  body
+
+    +header
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('product','ecommerce')
+      // breadcrumb end
+
+  
+      // theme body start
+      .theme-body.product-detail-page
+        .custom-container
+          .row         
+            .col-md-5.cdx-xl-45
+              .product-card
+                .product-for
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/1.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/2.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/3.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/4.jpg" alt="product-detail")
+                .product-to
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/1.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/2.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/3.jpg" alt="product-detail")
+                  div
+                    .product-imgwrap
+                      img.img-fluid(src="../assets/images/pages/product-detail/4.jpg" alt="product-detail")
+            .col-md-7.cdx-xl-55.cdxpro-detail
+               .product-card
+                  .detail-group
+                    .media
+                      div
+                        h2 Men Pink T-shirtual Jacket
+                        h6.text-light Special price
+                        ul.product-rating
+                          li
+                            i.fa.fa-star
+                          li
+                            i.fa.fa-star
+                          li
+                            i.fa.fa-star
+                          li
+                            i.fa.fa-star
+                          li
+                            i.fa.fa-star-o
+                        ul.product-price
+                          li.new-price $70
+                          li.old-price.text-light.fw-400 
+                            del $80
+                          li.ofr-price
+                            span.badge.badge-success 32% off
+                      .media-body
+                        .product-share
+                          span.proshare-toggle
+                            //- i.fa.fa-share-alt.mr-10
+                            i(data-feather="share-2")                         
+                          ul.share-iconlist
+                            li.bg-fb
+                              a(href="https://www.facebook.com/")
+                                i.fa.fa-facebook
+                            li.bg-twt
+                              a(href="https://twitter.com/")
+                                i.fa.fa-twitter
+                            li.bg-insta
+                              a(href="https://www.instagram.com/")
+                                i.fa.fa-instagram
+                            li.bg-whp
+                              a(href="https://www.whatsapp.com/")
+                                i.fa.fa-whatsapp
+                  
+                  .detail-group
+                    h6 product detail
+                    p.mb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud 
+                    h5.mb-5 Hurry! Only 3 left in stock
+                    .progress.progress-danger
+                        .progress-bar.progress-bar-striped.progress-bar-animated(role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%")
+                    .text-danger.fs-14.mt-5.mb-10.fw-500 20 sold in last 24 hours
+                    h6 select size
+                    ul.product-size
+                      li
+                        a(href="javascript:void(0);") s
+                      li
+                        a(href="javascript:void(0);") m
+                      li
+                        a(href="javascript:void(0);") l
+                      li
+                        a(href="javascript:void(0);") xl    
+                  .detail-group
+                    h6 select color
+                    ul.product-color
+                      li.bg-primary
+                        div
+                      li.bg-secondary
+                        div
+                      li.bg-success
+                        div
+                      li.bg-info
+                        div
+                      li.bg-warning                        
+                        div
+                    h6 Quantity
+                    .mb-15                 
+                      +qtycounter
+                    a.btn.btn-primary(href="cart.html") add to cart
+                    a.btn.btn-primary.ml-15(href="wishlist.html") wishlist
+                  .detail-group.pb-0.mb-0.border-0
+                    h6 Delivery
+                    .input-group.product-delivery
+                      span.input-group-text
+                        i.fa.fa-map-marker
+                      input(type="text" class="form-control" value="368900" placeholder="Enter your pincod")
+                      span.input-group-text
+                        | check
+                    h5.fs-14.mt-10.text-light Usually delivered in 3 days            
+            .col-sm-12
+              .product-card.product-detail-tab
+                ul.nav.nav-tabs
+                  li
+                    a.btn.active(data-bs-toggle='tab' href='#tab-1') Description                
+                  li
+                    a.btn(data-bs-toggle='tab' href='#tab-2') Information               
+                  li
+                    a.btn(data-bs-toggle='tab' href='#tab-3') Review (03)
+                .tab-content
+                  #tab-1.tab-pane.fade.active.show
+                    p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  #tab-2.tab-pane.fade
+                    p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  #tab-3.tab-pane.fade
+                    ul.review-list
+                      li
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/2.jpg" alt="review")
+                          .media-body                          
+                            a(href="profile.html")
+                              h5 Thomas Vactom
+                            ul.rating-list
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                        p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           
+                      li
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/3.jpg" alt="review")
+                          .media-body
+                            a(href="profile.html")
+                              h5 Johan deo
+                            ul.rating-list
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                        p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           
+                      li
+                        .media
+                          img.img-fluid(src="../assets/images/avtar/4.jpg" alt="review")
+                          .media-body
+                            a(href="profile.html")
+                              h5 Omeni Rome
+                            ul.rating-list
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                              li
+                                i.fa.fa-star
+                        p.text-light Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           
+                    .review-box
+                      h4.mb-5 Your Rating
+                      ul.rating-list.mb-10
+                        li
+                          i.fa.fa-star
+                        li
+                          i.fa.fa-star
+                        li
+                          i.fa.fa-star
+                        li
+                          i.fa.fa-star
+                        li
+                          i.fa.fa-star
+                      h4.mb-10 Write Review
+                      form.form-theme
+                        .form-group
+                          .small-group
+                            div
+                              input.form-control(type='text' placeholder="Enter your name")
+                            div
+                              input.form-control(type='email' placeholder="Enter your email")
+                        .form-group
+                          textarea.form-control(placeholder="Your Review")
+                        .form-group.mb-0
+                          a.btn.btn-primary(href='javascript:void(0)') Post review
+            .col-12
+              .related-product.mb-20 
+                h3.mb-20 Related products
+                .slide-5.arrow-style1(data-slick='{"slidesToShow": 4, "slidesToScroll": 1}')
+                  div
+                    +productBox('1.jpg', 'Hot', '-8', 'Cheks red Shirt', '252', '238','input-1')
+                  div
+                    +productBox('2.jpg', 'Hot', '', 'pink T-shirt', '180', '180','input-2')
+                  div
+                    +productBox('3.jpg', '', '-18', 'sky blue shirt', '90', '110','input-3')
+                  div
+                    +productBox('4.jpg', 'Hot', '', 'white T-shirt', '80', '80','input-4')
+                  div
+                    +productBox('5.jpg', '', '-38', 'blue jacket', '78', '110','input-5')
+                  div
+                    +productBox('6.jpg', 'Hot', '', 'Black T-shirt', '35', '35','input-6')
+                  div
+                    +productBox('7.jpg', '', '-14', 'Leather Jacket', '71', '89','input-7')
+      // theme body end
+                  
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

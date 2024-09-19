@@ -1,0 +1,107 @@
+-var lightbox = true ;
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("theme colors")
+  body
+
+    +header
+
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('color','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body       
+          .grid.grid-cols-12.cdx-gap
+            .col-span-12 
+              .card
+                .card-header 
+                  h4 default colors
+                .card-body
+                  .grid.grid-cols-12.colors-exa.cdx-gap
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-primary
+                      span primary
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-secondary
+                      span secondary
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-success
+                      span success
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-info
+                      span info
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-warning
+                      span waning
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-danger
+                      span danger
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-light
+                      span light
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-dark
+                      span dark
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-white
+                      span white
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-fontlight
+                      span font light
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-themebodycolor
+                      span theme body 
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-themefontcolor
+                      span theme font
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-themeborder
+                      span theme border
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-fb
+                      span facebook 
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-twt
+                      span twitter
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-insta
+                      span instagram
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-whp
+                      span whatsapp
+            .col-span-12 
+              .card
+                .card-header 
+                  h4 dark layout colors
+                .card-body
+                  .grid.grid-cols-12.colors-exa.cdx-gap
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-darkbody
+                      span dark body
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-darkcard
+                      span dark card
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-extradarkcard
+                      span extra dark
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                        .color-option.bg-darkfont
+                        span dark font
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-darksmallfont
+                      span dark small font
+                    .col-span-12(class="2xl:col-span-2 xl:col-span-4 lg:col-span-6 md:col-span-4 sm:col-span-6")
+                      .color-option.bg-darkborder
+                      span dark border
+      // theme body end
+    
+    // footer start 
+    +footer
+    // footer end
+
+
+    +footerfile

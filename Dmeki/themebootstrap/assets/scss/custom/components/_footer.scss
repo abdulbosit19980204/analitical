@@ -1,0 +1,15 @@
+/*******************
+  13 FOOTER START
+********************/
+.codex-footer {          
+    background-color: $white ;
+    padding: 15px 15px;
+    text-align: center;   
+    transition: all 0.5s ease;
+    box-shadow: 0 0 40px 5px rgba($black,0.05);
+    margin-inline-start: 270px;
+    width: calc(100% - 270px);
+    p{              
+        font-size: 15px;
+    }   
+}

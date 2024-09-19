@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- theme body start-->
+<div class="theme-body product-detail-page">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-md-10 cdx-xl-55 cdxpro-detail">
+                <div class="product-card">
+                    <div class="detail-group">
+                        <div class="media">
+                            <div>
+                                <h2>{{order_detail.DateOrder}}</h2>
+                                <h6 class="text-light">Special price: {{order_detail.CodePrice}}</h6>
+                                <ul class="product-rating">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star-o"></i></li>
+                                </ul>
+                                <ul class="product-price">
+                                    {% for i in order_detail.CreditDetailsList.Rows %}
+                                    <li class="new-price">{{i.Total}} uzs</li>
+                                    <li class="old-price text-light fw-400">
+                                        <!--                                        <del>{% widthratio i.Total 1 6.8 %}</del>-->
+                                        {% if order_detail.Credit == True %}
+                                        <span class="text-danger">Credit</span>
+                                        {% else%}
+                                        <del>Credit</del>
+                                    <li class="ofr-price"><span class="badge badge-success">32% off</span></li>
+
+                                    {% endif %}
+                                    </li>
+                                    {% endfor %}
+
+                                </ul>
+                            </div>
+                            <div class="media-body">
+                                <div class="product-share"><span class="proshare-toggle"><i
+                                        data-feather="share-2">                        </i></span>
+                                    <ul class="share-iconlist">
+                                        <li class="bg-fb"><a href="https://www.facebook.com/"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                        <li class="bg-twt"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li class="bg-insta"><a href="https://www.instagram.com/"><i
+                                                class="fa fa-instagram"></i></a></li>
+                                        <li class="bg-whp"><a href="https://www.whatsapp.com/"><i
+                                                class="fa fa-whatsapp"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <h6>Comment Supervisor: <span class="text-muted">{{order_detail.CommentSupervisor }}</span></h6>
+                        <h6>Comment Forwarder: <span class="text-muted">{{order_detail.CommentForwarder }}</span></h6>
+                        <h6>Comment Agent: <span class="text-muted">{{order_detail.CommentAgent }}</span></h6>
+                        <hr>
+                        <h5 class="mb-5">Order Date: {{order_detail.DateOrder}}</h5>
+                        <h5 class="mb-5">Order Type: {{order_detail.OrderType}}</h5>
+                        <hr>
+                        <div class="table-responsive">
+                            <table class="table ml-1">
+                                <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Amout</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for row in order_detail.ProductRows %}
+                                {% for product in row.Rows %}
+
+                                <tr>
+                                    <td><a href="/product-info/{{product.CodeProduct}}">{{product.CodeProduct}}</a></td>
+                                    <td>{{product.NameProduct}}</td>
+                                    <td>{{product.Price}} uzs</td>
+                                    <td>{{product.Amount}}</td>
+                                    <td>{{product.Total}}</td>
+                                </tr>
+
+
+                                {% endfor %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="detail-group pb-0 mb-0 border-0">
+                        <h6>Delivery</h6>
+                        <div class="input-group product-delivery"><span class="input-group-text"><i
+                                class="fa fa-map-marker"></i></span>
+                            <input class="form-control" type="text" value="368900" placeholder="Enter your pincod"><span
+                                    class="input-group-text">Done</span>
+                        </div>
+                        <h5 class="fs-14 mt-10 text-light"> Delivered on {{order_detail.ShippingDate}} </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="product-card product-detail-tab">
+                    <ul class="nav nav-tabs">
+                        <li><a class="btn active" data-bs-toggle="tab" href="#tab-1">Description </a></li>
+                        <li><a class="btn" data-bs-toggle="tab" href="#tab-2">Information </a></li>
+                        <li><a class="btn" data-bs-toggle="tab" href="#tab-3">Review (03)</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="tab-1">
+                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-2">
+                            <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                                deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-3">
+                            <ul class="review-list">
+                                <li>
+                                    <div class="media"><img class="img-fluid" src="../assets/images/avtar/2.jpg"
+                                                            alt="review">
+                                        <div class="media-body"><a href="profile.html">
+                                            <h5>Thomas Vactom</h5></a>
+                                            <ul class="rating-list">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                </li>
+                                <li>
+                                    <div class="media"><img class="img-fluid" src="../assets/images/avtar/3.jpg"
+                                                            alt="review">
+                                        <div class="media-body"><a href="profile.html">
+                                            <h5>Johan deo</h5></a>
+                                            <ul class="rating-list">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                </li>
+                                <li>
+                                    <div class="media"><img class="img-fluid" src="../assets/images/avtar/4.jpg"
+                                                            alt="review">
+                                        <div class="media-body"><a href="profile.html">
+                                            <h5>Omeni Rome</h5></a>
+                                            <ul class="rating-list">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                                </li>
+                            </ul>
+                            <div class="review-box">
+                                <h4 class="mb-5">Your Rating</h4>
+                                <ul class="rating-list mb-10">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h4 class="mb-10">Write Review</h4>
+                                <form class="form-theme">
+                                    <div class="form-group">
+                                        <div class="small-group">
+                                            <div>
+                                                <input class="form-control" type="text" placeholder="Enter your name">
+                                            </div>
+                                            <div>
+                                                <input class="form-control" type="email" placeholder="Enter your email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Your Review"></textarea>
+                                    </div>
+                                    <div class="form-group mb-0"><a class="btn btn-primary" href="javascript:void(0)">Post
+                                        review</a></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- theme body end-->
+{% endblock %}
+

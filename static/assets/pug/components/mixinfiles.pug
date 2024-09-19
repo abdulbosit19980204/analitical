@@ -1,0 +1,112 @@
+mixin headerfile(pageTitle)
+
+  head
+
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    meta(name='author' content='')
+    meta(name="keywords" content="admin template,html 5 admin template , dmeki admin , dashboard template, bootstrap 5 admin template, responsive admin template")
+
+    title
+      | Dmeki |
+      = pageTitle
+
+    // shortcut icon
+    link(rel="icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon")
+    link(rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon")
+
+    // Fonts css
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet")
+  
+    // Font awesome 
+    link(href='../assets/css/vendor/font-awesome.css'  rel='stylesheet')
+
+    // themify icon
+    link(href='../assets/css/vendor/themify-icons.css'  rel='stylesheet')
+
+    if flagicon
+      // flag icon
+      link(href='../assets/css/vendor/flag-icon/flag-icon.css'  rel='stylesheet')
+
+    if icoicon
+      // ico icon
+      link(href='../assets/css/vendor/icoicon/icoicon.css'  rel='stylesheet')
+
+    if morrischart
+      // morris chart
+      link(href='../assets/css/vendor/chart/morris.css'  rel='stylesheet')
+    
+    if slickslider
+      // Slick slider
+      link(href='../assets/css/vendor/slider/slick-slider/slick.css'  rel='stylesheet')
+      link(href='../assets/css/vendor/slider/slick-slider/slick-theme.css'  rel='stylesheet')
+   
+    if ionRangeslider
+      // ion range slider
+      link(href='../assets/css/vendor/range-slider/ion-rangeslider.css'  rel='stylesheet')
+
+    if calendar
+      // Calendar
+      link(href='../assets/css/vendor/calendar/calendar.css'  rel='stylesheet')
+      
+    if Pe7_icon
+      // Pe7 Icon
+      link(href='../assets/css/vendor/pe7-icon/helper.css'  rel='stylesheet')
+      link(href='../assets/css/vendor/pe7-icon/pe7-icon.css'  rel='stylesheet')
+
+    if lightbox
+      // lightbox
+      link(href='../assets/css/vendor/light-box/fancybox.css'  rel='stylesheet')     
+
+    if datepicker
+      // datepicker
+      link(href='../assets/css/vendor/datepicker/datepicker.css'  rel='stylesheet')
+
+    if uidatepicker
+      // ui datepicker
+      link(href='../assets/css/vendor/datepicker/jquery-ui.css'  rel='stylesheet')    
+
+    if datetimepicker
+      // datetimepicker
+      link(href='../assets/css/vendor/datetimepicker/jquery.datetimepicker.css'  rel='stylesheet')        
+
+    if select2
+      // select 2 css
+      link(href='../assets/css/vendor/select2/select2.min.css'  rel='stylesheet')
+
+    if sweetalert2
+      // select 2 css
+      link(href='../assets/css/vendor/sweetalert/sweetalert2.min.css'  rel='stylesheet')
+
+    if dataTable
+      //Datatable
+      link(href="../assets/css/vendor/datatable/jquery.dataTables.css" rel="stylesheet")
+      link(href="../assets/css/vendor/datatable/buttons.dataTables.css" rel="stylesheet")
+      link(href="../assets/css/vendor/datatable/custom-datatable.css" rel="stylesheet")
+
+    // Scrollbar
+    link(href='../assets/css/vendor/simplebar.css'  rel='stylesheet')
+    
+    // Bootstrap css
+    link(href='../assets/css/vendor/bootstrap.css'  rel='stylesheet')
+
+    // Custom css
+    link(href='../assets/css/style.css' id="customstyle"  rel='stylesheet')
+
+//- Mixin start
+include ../mixin/mixin
+
+mixin header
+  include header
+
+mixin sidebar
+  include sidebar
+
+mixin footer
+  include footer
+
+mixin footerfile
+  include footer-file

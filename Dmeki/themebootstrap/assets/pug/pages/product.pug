@@ -1,0 +1,198 @@
+-var ionRangeslider = true;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Product")
+  
+  body
+    +header      
+
+
+    .themebody-wrap
+
+      // breadcrumb start
+      +codexbreadcrumb('product','ecommerce')
+      // breadcrumb end
+    
+
+      // theme body start
+      .theme-body
+        .custom-container
+          .row          
+            .col-12
+              .row.position-relative
+                .col-xl-3.cdx-xxl-30.product-filter.cdxapp-xl-sidebar
+                  .card
+                    .card-body                
+                      h5.filter-title Category      
+                      ul.filter-list                  
+                        li
+                          .chek-group.mb-8                  
+                            +checkinput('checkbox','checkAll', 'category')
+                            label.fs-16.ml-5(for='checkAll')
+                              | All
+                        li
+                          .chek-group.mb-8
+                            +checkinput('checkbox','category-2', 'category','')
+                            label.fs-16.ml-5(for='category-2')
+                              | Mens
+                        li
+                          .chek-group.mb-8
+                            +checkinput('checkbox','category-3', 'category')
+                            label.fs-16.ml-5(for='category-3')
+                              | Womans
+                        li
+                          .chek-group.mb-8
+                            +checkinput('checkbox','category-4', 'category')
+                            label.fs-16.ml-5(for='category-4')
+                              | Child
+                        li
+                          .chek-group.mb-8
+                            +checkinput('checkbox','category-5', 'category')
+                            label.fs-16.ml-5(for='category-5')
+                              | House &amp; kitchen
+                        li  
+                          .chek-group
+                            +checkinput('checkbox','category-6', 'category')
+                            label.fs-16.ml-5(for='category-6')
+                              | Technology                                   
+                  .card
+                    .card-body
+                      h5.filter-title Price Range
+                      ul.filter-list 
+                        li
+                          .chek-group.mb-8                  
+                            +checkinput('radio','pricerange-1', 'priceRange')
+                            label.fs-16.ml-5(for='pricerange-1')
+                              | Up to $100
+                        li
+                          .chek-group.mb-8
+                            +checkinput('radio','pricerange-2', 'priceRange')
+                            label.fs-16.ml-5(for='pricerange-2')
+                              | Up to $500
+                        li
+                          .chek-group.mb-8
+                            +checkinput('radio','pricerange-3', 'priceRange')
+                            label.fs-16.ml-5(for='pricerange-3')
+                              | Up to $1000
+                        li
+                          .chek-group.mb-8
+                            +checkinput('radio','pricerange-4', 'priceRange')
+                            label.fs-16.ml-5(for='pricerange-4')
+                              | Up to $1500
+                        li
+                          .chek-group
+                            +checkinput('radio','pricerange-5', 'priceRange','checked')
+                            label.fs-16.ml-5(for='pricerange-5')
+                              | Up to $2000
+                        li
+                          .range-group
+                            input(type="text" class="minmax-range" name="my-range" value="")
+                           
+                  .card
+                    .card-body
+                      h5.filter-title Discount 
+                      ul.filter-list 
+                        li
+                          .chek-group.mb-5
+                            +checkinput('checkbox','checkAll-discount', 'discount-group')
+                            label.fs-16.ml-5(for='checkAll-discount')
+                              | All
+                        li
+                          .chek-group.mb-5
+                            +checkinput('checkbox','discount-1', 'discount-group')
+                            label.fs-16.ml-5(for='discount-1')
+                              | 20% - 40% Discount
+                        li
+                          .chek-group.mb-5
+                            +checkinput('checkbox','discount-2', 'discount-group')
+                            label.fs-16.ml-5(for='discount-2')
+                              | 40% - 60% Discount
+                        li
+                          .chek-group.mb-5
+                            +checkinput('checkbox','discount-3', 'discount-group')
+                            label.fs-16.ml-5(for='discount-3')
+                              | 60% - 80% Discount
+                        li
+                          .chek-group.mb-5
+                            +checkinput('checkbox','discount-4', 'discount-group')
+                            label.fs-16.ml-5(for='discount-4')
+                              | 80% - 90% Discount
+                        li
+                          .chek-group
+                            +checkinput('checkbox','discount-5', 'discount-group')
+                            label.fs-16.ml-5(for='discount-5')
+                              | 90% - 95% Discount  
+                  .card
+                    .card-body
+                      h5.filter-title Colors
+                      ul.product-color
+                          li.bg-primary
+                            div
+                          li.bg-secondary
+                            div
+                          li.bg-success
+                            div
+                          li.bg-info
+                            div
+                          li.bg-warning                        
+                            div                                                                                       
+                  .card
+                    .card-body 
+                      h5.filter-title Top Products
+                      +filterproduct('1.jpg','cheks red shirt','241')
+                      +filterproduct('2.jpg','pink T-shirt','125')
+                      +filterproduct('3.jpg','sky blue shirt','267')
+                      +filterproduct('4.jpg','white T-shirt','487')
+                      +filterproduct('5.jpg','blue jacket','874')
+                      +filterproduct('6.jpg','black T-shirt','367')                     
+                .col-xl-9.cdx-xxl-70.cdx-xl-100
+                  .row.grid-view-page          
+                    .col-12 
+                      .card.mb-20
+                        .card-body
+                          .grid-wrap-header
+                            ul.gridfilter-list
+                              li.cdxapp-toggle.d-lg-none
+                                a(href="javascript:void(0);") 
+                                  i(data-feather="filter")
+                              li.gridview-toggle                              
+                                a(href="javascript:void()")
+                                  i(data-feather="grid")
+                              li.listview-toggle
+                                a(href="javascript:void()") 
+                                  i(data-feather="list")                         
+                            div
+                              a.btn.btn-primary(href="add-product.html") 
+                                i.ti-plus.mr-5
+                                | Add Product
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('1.jpg', 'Hot', '-8', 'Cheks red Shirt', '252', '238','input-1')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('2.jpg', 'Hot', '', 'pink T-shirt', '180', '180','input-2')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('3.jpg', '', '-18', 'sky blue shirt', '90', '110','input-3')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('4.jpg', 'Hot', '', 'white T-shirt', '80', '80','input-4')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('5.jpg', '', '-38', 'blue jacket', '78', '110','input-5')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('6.jpg', 'Hot', '', 'Black T-shirt', '35', '35','input-6')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('7.jpg', '', '-14', 'Leather Jacket', '71', '89','input-7')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('8.jpg', 'Hot', '', 'dark blue jacket', '106', '106','input-8')
+                    .col-md-4.col-sm-6.mb-24
+                      +productBox('9.jpg', '', '-25', 'woamn white T-shirt', '100', '75','input-9')
+      // theme body end
+          
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

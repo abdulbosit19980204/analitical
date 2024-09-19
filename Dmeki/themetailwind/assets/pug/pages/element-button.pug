@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Button")
+  body
+
+    +header
+
+    .themebody-wrap     
+
+      // breadcrumb start
+      +codexbreadcrumb('button','element')
+      // breadcrumb end
+
+      // theme body start
+      .theme-body
+        .grid.grid-cols-12.cdx-gap.element-buttons         
+            .col-span-12(class="2xl:col-span-6")
+              .card
+                .card-header 
+                  h4 Default Button
+                .card-body
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code.text-danger btn btn-*
+                    |&nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-primary Primary
+                  button.btn.btn-secondary Secondary
+                  button.btn.btn-success Success
+                  button.btn.btn-info Info
+                  button.btn.btn-warning Warning
+                  button.btn.btn-danger Danger
+            .col-span-12(class="2xl:col-span-6")
+              .card
+                .card-header 
+                  h4 Outlined Button
+                .card-body
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code.text-danger btn btn-outline*
+                    | &nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-outline-primary Primary
+                  button.btn.btn-outline-secondary Secondary
+                  button.btn.btn-outline-success Success
+                  button.btn.btn-outline-info Info
+                  button.btn.btn-outline-warning Warning
+                  button.btn.btn-outline-danger Danger
+            .col-span-12(class="2xl:col-span-6")
+              .card
+                .card-header 
+                  h4 Default Medium Button
+                .card-body
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code.text-danger btn btn-md btn-*
+                    |&nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-primary.btn-md Primary
+                  button.btn.btn-secondary.btn-md Secondary
+                  button.btn.btn-success.btn-md Success
+                  button.btn.btn-info.btn-md Info
+                  button.btn.btn-warning.btn-md Warning
+                  button.btn.btn-danger.btn-md Danger
+            .col-span-12(class="2xl:col-span-6")
+              .card
+                .card-header 
+                  h4 Outlined Medium Button
+                .card-body
+                  p.card-title-desc.mb-8 Use any of the available 
+                    code.text-danger btn btn-md btn-outline*
+                    |&nbsp;classes quickly create a styled button.                            
+                  button.btn.btn-outline-primary.btn-md Primary
+                  button.btn.btn-outline-secondary.btn-md Secondary
+                  button.btn.btn-outline-success.btn-md Success
+                  button.btn.btn-outline-info.btn-md Info
+                  button.btn.btn-outline-warning.btn-md Warning
+                  button.btn.btn-outline-danger.btn-md Danger
+      // theme body end
+        
+    // footer start 
+    +footer
+    // footer end
+
+    +footerfile

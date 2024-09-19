@@ -1,0 +1,68 @@
+-var loginJs = true;
+
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Register")      
+  body       
+    
+    // authentication start
+    section.py-100
+      .container
+        .row
+          .col-12
+            .codex-authbox
+              .auth-header
+                .codex-brand
+                  a(href="index.html")
+                    img.img-fluid.light-logo(src="../assets/images/logo/logo.png" alt="")
+                    img.img-fluid.dark-logo(src="../assets/images/logo/dark-logo.png" alt="")
+                h3 Create your account
+                h6 Already have an account? 
+                  a.text-primary(href="login.html") login in here
+              form(action="#")                 
+                .form-group
+                  label.form-label Name
+                  input.form-control(type="text" placeholder="Enter Your Name" required)
+                .form-group
+                  label.form-label Email
+                  input.form-control(type="email" placeholder="Enter Your Email" required)
+                .form-group
+                  label.form-label Mobile No.
+                  input.form-control(type="text" placeholder="Enter Your Phone Number" required)
+                .form-group
+                  label.form-label(for="Password") Password
+                  .input-group.group-input
+                    input.form-control.showhide-password(type='password' id="Password" placeholder='Enter Your Password' required='')
+                    span.input-group-text.toggle-show.fa.fa-eye
+                .form-group.mb-0
+                  .auth-remember
+                    .form-check.custom-chek
+                      input#agree.form-check-input(type='checkbox' value='' required='')
+                      label.form-check-label(for='agree') I Agree Terms and conditions
+                .form-group                   
+                  button.btn.btn-primary(type='submit')
+                    i.fa.fa-paper-plane
+                    |  Register
+              .auth-footer
+                h5.auth-with or register in with
+                ul.login-list
+                  li
+                    a.bg-fb(href="javascript:void(0);") 
+                      img.img-fluid(src="../assets/images/auth/1.png" alt="facebook")
+                      | facebook
+                  li
+                    a.bg-google(href="javascript:void(0);") 
+                      img.img-fluid(src="../assets/images/auth/2.png" alt="google")
+                      | google
+    // authentication end
+
+    // footer start
+    +footer
+    // footer end
+    
+    // back to top start //
+    +taptop
+    // back to top end //
+    
+    +footerfile

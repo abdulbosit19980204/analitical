@@ -1,0 +1,42 @@
+doctype html
+html(lang="en")
+  include ../components/mixinfiles
+  +headerfile("Blog")
+  body
+
+    +header
+
+    .themebody-wrap
+
+      // theme body start
+      +codexbreadcrumb('blog','pages')
+      // theme body end
+      
+      // theme body start
+      .theme-body
+         
+        .custom-container       
+          .row         
+            .col-xl-4.col-sm-6.cdx-xl-50           
+              +blowrapper('17 jan 2022','letest news post','1.jpg')
+            .col-xl-4.col-sm-6.cdx-xl-50
+              +blowrapper('28 feb 2022','letest news post','2.jpg')
+            .col-xl-4.col-sm-6.cdx-xl-50
+              +blowrapper('25 march 2022','letest news post','3.jpg')
+            .col-xl-4.col-sm-6.cdx-xl-50
+              +blowrapper('30 apil 2022','letest news post','4.jpg')
+            .col-xl-4.col-sm-6.cdx-xl-50
+              +blowrapper('05 june 2022','letest news post','5.jpg')
+            .col-xl-4.col-sm-6.cdx-xl-50
+              +blowrapper('19 july 2022','letest news post','6.jpg')          
+      // theme body end
+
+    // footer start
+    +footer
+    // footer end 
+
+    // back to top start //
+    +taptop
+    // back to top end //
+
+    +footerfile        
