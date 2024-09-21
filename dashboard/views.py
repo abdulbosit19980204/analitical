@@ -164,6 +164,7 @@ class RefreshView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         # Fetch warehouse data from the client service
         c_warehouses = client.service.GetWarehouses()
+
         # print(c_warehouses)
         warehouse_list = []
         for i in c_warehouses:

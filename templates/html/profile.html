@@ -31,10 +31,10 @@
                             </div>
                             <div class="card-body">
                                 <div class="user-imgwrap"><img class="img-fluid rounded-50"
-                                                               src="../assets/images/avtar/4.jpg" alt="4.jpg"></div>
+                                                               src="{{ request.user.picture.url }}" alt="4.jpg"></div>
                                 <div class="user-detailwrap">
                                     <h3>{{ request.user.first_name }} {{request.user.last_name }}</h3>
-                                    <h6>ux designer</h6>
+                                    <h6>{{reques.user.project}} | Agent</h6>
                                     <ul class="codex-soclist">
                                         <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
                                         <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>

@@ -12,4 +12,4 @@ class SignUpForm(UserCreationForm):
 class UserEditForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = '__all__'
+        fields = ['first_name', 'last_name', 'phone_number', 'email', 'tg_username', 'tg_code', 'picture']

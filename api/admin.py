@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization
+from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization, Nomenklatura
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
 
@@ -46,12 +46,17 @@ class CustomUserAdmin(UserTypeAdmin):
     list_display = ('id', 'username', 'email', 'first_name',)
 
 
+class NomenklaturaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ('id', 'name', 'artikul')
+
+
 admin.site.register(UserType, UserTypeAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(KPI)
 admin.site.register(Project)
 admin.site.register(Warehouse)
 admin.site.register(Organization)
+admin.site.register(Nomenklatura, NomenklaturaAdmin)
 
 # ********************** unregistred*************
 admin.site.unregister(Group)

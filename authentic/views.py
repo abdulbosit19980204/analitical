@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.views import View
 from .forms import SignUpForm, UserEditForm
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from api.models import Project, Warehouse, CustomUser
 
@@ -36,19 +36,24 @@ class RegisterView(View):
         return render(request, 'registration/register.html', {'form': form})
 
 
-class UserEditView(LoginRequiredMixin, generic.ListView):
-    model = User
-    template_name = 'user-edit.html'
-    context_object_name = 'users'
+class UserEditView(LoginRequiredMixin, View):
     login_url = reverse_lazy('authentic:login')
 
     # form_class = UserEditForm
 
     def get(self, request):
-        form = UserEditForm()
+        form = UserEditForm(instance=request.user)
         user = request.user
         data = {'form': form}
         return render(request, 'user-edit.html', {'form': form})
+
+    def post(self, request):
+        form = UserEditForm(data=request.POST, instance=request.user, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Information was updated successfully!')
+            return redirect('/accounts/profile/')
+        return render(request, 'user-edit.html', {'form': form, 'errors': form.errors})
 
 
 class Connect1CView(View):

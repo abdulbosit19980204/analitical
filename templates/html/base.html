@@ -62,8 +62,9 @@
                     <div class="navicon-wrap">
                         <a href="{% url 'dashboard:refresh' %}">
                             <i class="fa fa-refresh icon-dark"></i><i
-                                class="fa fa-refresh icon-light" style="display:none;"></i></div>
-                    </a>
+                                class="fa fa-refresh icon-light" style="display:none;"></i>
+                        </a>
+                    </div>
                 </li>
                 <li>
                     <div class="navicon-wrap action-dark"><i class="fa fa-moon-o icon-dark"></i><i
@@ -180,7 +181,7 @@
                             <li><a href="javascript:void(0);">
                                 <div class="media">
                                     <div class="img-wrap"><img class="img-fluid"
-                                                               src="../assets/images/ecom-dashboard/small-pro/3.jpg"
+                                                               src="{% static 'assets/images/ecom-dashboard/small-pro/3.jpg' %}"
                                                                alt=""></div>
                                     <div class="media-body">
                                         <h6>Apple Airpod</h6><span class="text-light">$310</span>
@@ -220,7 +221,7 @@
                 <li class="nav-profile">
                     <div class="media">
                         <div class="user-icon"><img class="img-fluid rounded-50"
-                                                    src="{% static 'assets/images/avtar/3.jpg' %}"
+                                                    src="{{ request.user.picture.url }}"
                                                     alt="logo"></div>
                         <div class="media-body">
                             <h6>{{ request.user }}</h6><span
@@ -250,12 +251,13 @@
 <!-- Header End-->
 <!-- sidebar start-->
 <aside class="codex-sidebar">
-    <div class="logo-gridwrap"><a class="codexbrand-logo" href="/"><img class="img-fluid"
-                                                                        src="{% static 'assets/images/logo/glogo50x100.png' %}"
-                                                                        alt="theeme-logo"></a><a
-            class="codex-darklogo" href="/"><img class="img-fluid"
+    <div class="logo-gridwrap">
+        <a class="codexbrand-logo" href="/"><img class="img-fluid"
                                                  src="{% static 'assets/images/logo/glogo50x100.png' %}"
                                                  alt="theeme-logo"></a>
+        <a class="codex-darklogo" href="/"><img class="img-fluid"
+                                                src="{% static 'assets/images/logo/glogo50x100.png' %}"
+                                                alt="theeme-logo"></a>
         <div class="sidebar-action"><i data-feather="menu"></i></div>
     </div>
     <div class="icon-logo"><a href="index.html"><img class="img-fluid"

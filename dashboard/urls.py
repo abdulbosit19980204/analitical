@@ -15,7 +15,7 @@ urlpatterns = [
     path('email/read', EmailReadView.as_view(), name='email-read'),
     path('profile', ProfileView.as_view(), name='profile'),
     path('accounts/profile/', ProfileView.as_view(), name='profile'),
-
+    
     path('user-list', UserListView.as_view(), name='user-list'),
 
     path('product-list', ProductListView.as_view(), name='product-list'),
