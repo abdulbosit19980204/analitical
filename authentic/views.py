@@ -22,7 +22,7 @@ class LoginView(generic.ListView):
     context_object_name = 'users'
 
 
-class RegisterView(View):
+class RegisterView(UserPassesTestMixin, View):
     def get(self, request):
         form = SignUpForm()
         return render(request, 'registration/register.html', {'form': form})
@@ -34,6 +34,12 @@ class RegisterView(View):
             messages.success(request, 'Account was created for you!')
             return redirect('/auth/login')
         return render(request, 'registration/register.html', {'form': form})
+
+    def test_func(self):
+        user = self.request.user
+        if user.is_authenticated:
+            return False
+        return True
 
 
 class UserEditView(LoginRequiredMixin, View):
@@ -52,7 +58,7 @@ class UserEditView(LoginRequiredMixin, View):
         if form.is_valid():
             form.save()
             messages.success(request, 'Information was updated successfully!')
-            return redirect('/accounts/profile/')
+            return redirect('dashboard:profile', )
         return render(request, 'user-edit.html', {'form': form, 'errors': form.errors})
 
 

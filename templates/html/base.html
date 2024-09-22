@@ -34,7 +34,6 @@
     <link href="{% static 'assets/css/vendor/datatable/buttons.dataTables.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/vendor/datatable/custom-datatable.css' %}" rel="stylesheet">
 
-
 </head>
 <body>
 <!-- Loader Start-->
@@ -260,9 +259,9 @@
                                                 alt="theeme-logo"></a>
         <div class="sidebar-action"><i data-feather="menu"></i></div>
     </div>
-    <div class="icon-logo"><a href="index.html"><img class="img-fluid"
-                                                     src="{% static 'assets/images/logo/icon-logo.png' %}"
-                                                     alt="theeme-logo"></a></div>
+    <div class="icon-logo"><a href="/"><img class="img-fluid"
+                                            src="{% static 'assets/images/logo/icon-logo.png' %}"
+                                            alt="theeme-logo"></a></div>
     <div class="codex-menuwrapper">
         <ul class="codex-menu custom-scroll" data-simplebar>
             <li class="cdxmenu-title">
@@ -270,10 +269,45 @@
             </li>
             <li class="menu-item"><a href="/">
                 <div class="icon-item"><i data-feather="home"></i></div>
-                <span>default</span></a></li>
+                <span>Basic|Home</span></a></li>
             <li class="menu-item"><a href="/ecommerce">
                 <div class="icon-item"><i data-feather="airplay"></i></div>
                 <span>Savdo statistikasi</span></a></li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="users"></i></div>
+                <span>Clients</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="/user-list">Clients list</a></li>
+                    <li><a href="/client-create">Client Create</a></li>
+                </ul>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="shopping-bag"></i></div>
+                <span>Savdo</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="/product">product</a></li>
+                    <li><a href="/product-detail">product detail</a></li>
+                    <li><a href="/add-product">add product</a></li>
+                    <li><a href="/product-list">product list</a></li>
+                    <li><a href="/order-history">order history</a></li>
+                    <li><a href="/cart">cart</a></li>
+                    <li><a href="/wishlist">wishlist</a></li>
+                    <li><a href="/checkout">checkout</a></li>
+                    <li><a href="/pricing">pricing</a></li>
+                </ul>
+            </li>
+            <li class="cdxmenu-title">
+                <h5>Profile</h5>
+            </li>
+            <li class="menu-item"><a href="javascript:void(0);">
+                <div class="icon-item"><i data-feather="user"></i></div>
+                <span>Agent</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="/profile">profile</a></li>
+                    <li><a href="{% url 'authentic:user-edit' %}">Change Data</a></li>
+                    <li><a href="{% url 'authentic:user-edit' %}">Change Password</a></li>
+                </ul>
+            </li>
             <li class="cdxmenu-title">
                 <h5>application</h5>
             </li>
@@ -294,30 +328,7 @@
                     <li><a href="/email/read">email read</a></li>
                 </ul>
             </li>
-            <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="user"></i></div>
-                <span>Client</span><i class="fa fa-angle-down"></i></a>
-                <ul class="submenu-list">
-                    <li><a href="/profile">profile</a></li>
-                    <li><a href="/user-list">Clients list</a></li>
-                    <li><a href="{% url 'authentic:user-edit' %}">user edit</a></li>
-                </ul>
-            </li>
-            <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="shopping-bag"></i></div>
-                <span>Savdo</span><i class="fa fa-angle-down"></i></a>
-                <ul class="submenu-list">
-                    <li><a href="/product">product</a></li>
-                    <li><a href="/product-detail">product detail</a></li>
-                    <li><a href="/add-product">add product</a></li>
-                    <li><a href="/product-list">product list</a></li>
-                    <li><a href="/order-history">order history</a></li>
-                    <li><a href="/cart">cart</a></li>
-                    <li><a href="/wishlist">wishlist</a></li>
-                    <li><a href="/checkout">checkout</a></li>
-                    <li><a href="/pricing">pricing</a></li>
-                </ul>
-            </li>
+
             <li class="menu-item"><a href="/invoice">
                 <div class="icon-item"><i data-feather="file-minus"></i></div>
                 <span>invoice</span></a></li>

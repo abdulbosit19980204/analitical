@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load to_replace %}
 {% block content %}
+
 <!-- theme body start-->
 <div class="theme-body">
     <div class="custom-container cdxuser-profile">
@@ -34,12 +36,20 @@
                                                                src="{{ request.user.picture.url }}" alt="4.jpg"></div>
                                 <div class="user-detailwrap">
                                     <h3>{{ request.user.first_name }} {{request.user.last_name }}</h3>
-                                    <h6>{{reques.user.project}} | Agent</h6>
+                                    <h6>Agent id: {{request.user.code}}</h6>
                                     <ul class="codex-soclist">
-                                        <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="https://www.behance.net/"><i class="fa fa-behance"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+                                        <li>
+                                            {% if "@" in request.user.tg_username %}
+                                            <a href="https://t.me/{{ request.user.tg_username|to_replace:'' }}">
+                                                <i class="fa fa-telegram"></i></a>
+                                            {% else %}
+                                            <a href="https://t.me/{{request.user.tg_username}}"> <i
+                                                    class="fa fa-telegram"></i></a>
+                                            {% endif %}
+
+                                        </li>
+                                        <li><a href="https://instagram.com/"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href=""><i class="fa fa-phone"></i></a></li>
                                     </ul>
                                     <div class="group-btn"><a class="btn btn-primary btn-md" href="javascript:void(0);">message </a><a
                                             class="btn btn-secondary btn-md" href="javascript:void(0);">follow</a></div>
@@ -308,238 +318,96 @@
             <div class="col-xl-9 cdx-xxl-70 cdx-xl-60">
                 <div class="row">
                     <div class="col-12">
-                        <ul class="post-list">
-                            <li>
-                                <div class="post-contain">
-                                    <div class="post-header">
-                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
-                                                                alt="">
-                                            <div class="media-body">
-                                                <h6>Graphics Community</h6><span>29 minutes ago</span>
-                                            </div>
-                                            <div class="post-setting">
-                                                <div class="action-menu">
-                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
-                                                    <ul class="action-dropdown">
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="bookmark"></i>save post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
-                                                            on notifications</a></li>
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="x-circle"></i>Hide post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
-                                                            post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
-                                                            post </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="added-postdetail">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                                occaecat cupidatat non proident.</p>
-                                        </div>
+                        <div class="row">
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Business regions</h4>
                                     </div>
-                                    <div class="post-imgwrap"><img class="img-fluid"
-                                                                   src="../assets/images/pages/profile/post/1.jpg"
-                                                                   alt="profile-post"></div>
-                                    <div class="post-detail">
-                                        <ul class="postreact-status">
-                                            <li><a class="btn text-light" href="javascript:void(0)">
-                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
-                                                </div>
-                                                5.5 m</a></li>
-                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
-                                                                         href="javascript:void(0)">500M comments                                                          </a><a
-                                                    class="btn text-light"
-                                                    href="javascript:void(0)">120K shares</a></span></li>
-                                        </ul>
-                                        <ul class="post-react">
-                                            <li><a class="btn" href="javascript:void(0)"><i
-                                                    data-feather="thumbs-up"></i>likes</a></li>
-                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
-                                                    data-feather="message-square"></i>comment</a></li>
-                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
-                                            </li>
-                                        </ul>
-                                        <div class="addpost-comment show">
-                                            <div class="input-group">
-                                                <input class="form-control" type="text" placeholder="Write a comment">
-                                                <div class="input-group-text">
-                                                    <ul class="add-comment">
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="smile"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="camera"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="video"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <select class="form-control basic-select" name="state">
+                                                {% for i in business_reg %}
+                                                <option value="AL">{{i.Name}}</option>
+                                                {% endfor %}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="post-contain">
-                                    <div class="post-header">
-                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
-                                                                alt="">
-                                            <div class="media-body">
-                                                <h6>Web Community</h6><span>48 minutes ago</span>
-                                            </div>
-                                            <div class="post-setting">
-                                                <div class="action-menu">
-                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
-                                                    <ul class="action-dropdown">
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="bookmark"></i>save post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
-                                                            on notifications</a></li>
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="x-circle"></i>Hide post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
-                                                            post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
-                                                            post </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="added-postdetail">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                                occaecat cupidatat non proident.</p>
-                                        </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Price List</h4>
                                     </div>
-                                    <div class="post-imgwrap"><img class="img-fluid"
-                                                                   src="../assets/images/pages/profile/post/2.jpg"
-                                                                   alt="profile-post"></div>
-                                    <div class="post-detail">
-                                        <ul class="postreact-status">
-                                            <li><a class="btn text-light" href="javascript:void(0)">
-                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
-                                                </div>
-                                                5.5 m</a></li>
-                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
-                                                                         href="javascript:void(0)">500M comments                                                          </a><a
-                                                    class="btn text-light"
-                                                    href="javascript:void(0)">120K shares</a></span></li>
-                                        </ul>
-                                        <ul class="post-react">
-                                            <li><a class="btn" href="javascript:void(0)"><i
-                                                    data-feather="thumbs-up"></i>likes</a></li>
-                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
-                                                    data-feather="message-square"></i>comment</a></li>
-                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
-                                            </li>
-                                        </ul>
-                                        <div class="addpost-comment">
-                                            <div class="input-group">
-                                                <input class="form-control" type="text" placeholder="Write a comment">
-                                                <div class="input-group-text">
-                                                    <ul class="add-comment">
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="smile"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="camera"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="video"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <select class="form-control hidesearch" name="states[]">
+                                                {% for i in price_list %}
+                                                <option value="{{i.code}}">{{i.Name}}</option>
+                                                {% endfor %}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="post-contain">
-                                    <div class="post-header">
-                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/1.jpg"
-                                                                alt="">
-                                            <div class="media-body">
-                                                <h6>Developar Community</h6><span>1 hourse ago</span>
-                                            </div>
-                                            <div class="post-setting">
-                                                <div class="action-menu">
-                                                    <div class="action-toggle"><i class="fa fa-ellipsis-h"></i></div>
-                                                    <ul class="action-dropdown">
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="bookmark"></i>save post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="bell"></i>Turn
-                                                            on notifications</a></li>
-                                                        <li><a href="javascript:void(0)"> <i
-                                                                data-feather="x-circle"></i>Hide post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="info"></i>Report
-                                                            post</a></li>
-                                                        <li><a href="javascript:void(0)"> <i data-feather="trash-2"></i>Delete
-                                                            post </a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="added-postdetail">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                                                occaecat cupidatat non proident.</p>
-                                        </div>
+                            </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Agent Sklad</h4>
                                     </div>
-                                    <div class="post-imgwrap row">
-                                        <div class="col-6"><img class="img-fluid"
-                                                                src="../assets/images/pages/profile/post/3.jpg"
-                                                                alt="profile-post"></div>
-                                        <div class="col-6"><img class="img-fluid"
-                                                                src="../assets/images/pages/profile/post/4.jpg"
-                                                                alt="profile-post"></div>
-                                    </div>
-                                    <div class="post-detail">
-                                        <ul class="postreact-status">
-                                            <li><a class="btn text-light" href="javascript:void(0)">
-                                                <div class="like-status bg-primary"><i class="fa fa-thumbs-o-up"></i>
-                                                </div>
-                                                5.5 m</a></li>
-                                            <li><span class="d-flex"> <a class="btn text-light mr-10"
-                                                                         href="javascript:void(0)">500M comments                                                          </a><a
-                                                    class="btn text-light"
-                                                    href="javascript:void(0)">120K shares</a></span></li>
-                                        </ul>
-                                        <ul class="post-react">
-                                            <li><a class="btn" href="javascript:void(0)"><i
-                                                    data-feather="thumbs-up"></i>likes</a></li>
-                                            <li><a class="btn comment-toggle" href="javascript:void(0)"><i
-                                                    data-feather="message-square"></i>comment</a></li>
-                                            <li><a class="btn" href="javascript:void(0)"><i data-feather="share-2"></i>share</a>
-                                            </li>
-                                        </ul>
-                                        <div class="addpost-comment">
-                                            <div class="input-group">
-                                                <input class="form-control" type="text" placeholder="Write a comment">
-                                                <div class="input-group-text">
-                                                    <ul class="add-comment">
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="smile"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="camera"></i></a></li>
-                                                        <li><a href="javascript:void(0)"><i
-                                                                data-feather="video"> </i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    <div class="card-body">
+                                        <div class="input-group">
+                                            <select class="form-control hidesearch" name="states[]">
+                                                {% for i in sklad %}
+                                                <option value="{{i.code}}">{{i.Name}}</option>
+                                                {% endfor %}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header"><h3>Visited</h3></div>
+                                    <div class="card-body">
+                                        <div class="timeline timeline-left">
+                                            {% for i in gps %}
+                                            <div class="timeline-grid">
+                                                <div class="icon-wrap"><img class="img-fluid"
+                                                                            src="{{ request.user.picture.url }}"
+                                                                            alt=""></div>
+                                                <div class="timeline-content">
+                                                    <h3>{{i.NameClient}}</h3>
+                                                    <div class="timeline-date"><i class="fa fa-calendar"></i>{{i.FixingDate}}
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-muted">Longitude: </span> <span>{{i.Longitude}}</span>
+                                                        <span class="text-muted">Latitude: </span>
+                                                        <span>{{i.Latitude}}</span>
+                                                    </div>
+                                                    <div>
+
+                                                    </div>
+                                                    <div class="embed-responsive ">
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24296.09405535166!2d${{i.Longitude}}!3d${{i.Latitude}}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a4ea6b86e67%3A0x91ed3e9e44b3b0ab!2z0J3QvtCy0LfQsA!5e1!3m2!1sen!2s!4v1726959915070!5m2!1sen!2s"
+                                                                height="150" style="border:0;"
+                                                                width="200"
+                                                                allowfullscreen="" loading="lazy"
+                                                                referrerpolicy="no-referrer-when-downgrade"
+                                                                id="gmap"></iframe>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -547,4 +415,6 @@
     </div>
 </div>
 <!-- theme body end-->
+<script src="{% static 'assets/js/vendors/select2/select2.min.js' %}"></script>
+<script src="{% static 'assets/js/vendors/select2/custom-select2.js' %}"></script>
 {% endblock %}

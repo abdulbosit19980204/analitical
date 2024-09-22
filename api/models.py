@@ -82,3 +82,29 @@ class Nomenklatura(BaseField, models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Client(BaseField, models.Model):
+    name = models.CharField(max_length=150)
+    code = models.CharField(max_length=30)
+    signboard = models.CharField(max_length=100)
+    inn = models.CharField(max_length=100)
+    adressDelivery = models.CharField(max_length=300)
+    referencePoint = models.CharField(max_length=100)
+    longitude = models.DecimalField(max_digits=5, decimal_places=2)
+    latitude = models.DecimalField(max_digits=5, decimal_places=2)
+    contactPerson = models.CharField(max_length=100)
+    contactPersonPhone = models.CharField(max_length=100)
+    responsiblePerson = models.CharField(max_length=100)
+    responsiblePersonPhone = models.CharField(max_length=100)
+    tradePointType = models.CharField(max_length=100)
+    theNumberOfOrders = models.CharField(max_length=100)
+    creditLimit = models.DecimalField(max_digits=5, decimal_places=2)
+    accumulatedCredit = models.DecimalField(max_digits=5, decimal_places=2)
+    codeRegion = models.CharField(max_length=100)
+    director = models.CharField(max_length=100)
+    mfo = models.CharField(max_length=100)
+    bankAccount = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name

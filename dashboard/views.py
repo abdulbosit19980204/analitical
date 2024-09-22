@@ -20,7 +20,6 @@ class IndexView(LoginRequiredMixin, View):
             report = client.service.GetDailyReport(code)
             d['kpi'] = kpi
             d['report'] = report
-            print(d)
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
 
@@ -78,6 +77,17 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
     template_name = 'profile.html'
     context_object_name = 'users'
     login_url = reverse_lazy('dashboard:login')
+
+    def get(self, request):
+        code = request.user.code
+        d = {}
+        # print(client.service.GetProductBalance())
+        d['business_reg'] = client.service.GetBusinessRegions(code)
+        d['price_list'] = client.service.GetPriceTypes(code)
+        d['sklad'] = client.service.GetWarehousesUser(code)
+        d['gps'] = client.service.GetGPS(code, '20240921110122')[:6]
+
+        return render(request, 'profile.html', context=d)
 
 
 class UserListView(LoginRequiredMixin, View):
@@ -164,9 +174,14 @@ class RefreshView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         # Fetch warehouse data from the client service
         c_warehouses = client.service.GetWarehouses()
-
-        # print(c_warehouses)
+        c_organizations = client.service.GetOrganizations()
         warehouse_list = []
+        organizations_list = []
+        for i in c_organizations:
+            if not Organization.objects.filter(code=i['Code']).exists():
+                organization = Organization(code=i['Code'], name=i['Name'])
+                organizations_list.append(organization)
+        Organization.objects.bulk_create(organizations_list)
         for i in c_warehouses:
             # Get the Organization object based on i['Organization']
             organization = Organization.objects.filter(code=i['Organization']).first()
