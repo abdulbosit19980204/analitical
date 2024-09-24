@@ -5,8 +5,9 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, authenticate, logout
 
-from api.models import Warehouse, Organization
+from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail
 from authentic.integrations import client, GetDailyReport, werehouse
+from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -173,29 +174,9 @@ class RefreshView(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         # Fetch warehouse data from the client service
-        c_warehouses = client.service.GetWarehouses()
-        c_organizations = client.service.GetOrganizations()
-        warehouse_list = []
-        organizations_list = []
-        for i in c_organizations:
-            if not Organization.objects.filter(code=i['Code']).exists():
-                organization = Organization(code=i['Code'], name=i['Name'])
-                organizations_list.append(organization)
-        Organization.objects.bulk_create(organizations_list)
-        for i in c_warehouses:
-            # Get the Organization object based on i['Organization']
-            organization = Organization.objects.filter(code=i['Organization']).first()
-            # Check if the warehouse already exists based on unique fields (e.g., name and organization)
-            if not Warehouse.objects.filter(name=i['Name'], organization=organization).exists():
-                # Create the Warehouse object
-                warehouse = Warehouse(
-                    name=i['Name'],
-                    code=i['Code'],  # Replace with correct field from i
-                    organization=organization  # Assign the foreign key here
-                )
-                warehouse_list.append(warehouse)
-
-        # Bulk create new warehouses
-        Warehouse.objects.bulk_create(warehouse_list)
-
+        # Werehouse_sync()
+        # Organizations_sync()
+        Clients_sync(request.user.code)
+        Orders_sync(request.user.code)
+        OrderDetails_sync(request.user.code)
         return redirect('dashboard:index')
