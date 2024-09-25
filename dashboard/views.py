@@ -176,6 +176,7 @@ class RefreshView(LoginRequiredMixin, View):
         # Fetch warehouse data from the client service
         # Werehouse_sync()
         # Organizations_sync()
+        print(client.service.GetProductBalance('00000000004', '00000000201'))
         Clients_sync(request.user.code)
         Orders_sync(request.user.code)
         OrderDetails_sync(request.user.code)

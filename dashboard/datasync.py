@@ -67,10 +67,7 @@ def OrderDetails_sync(code):
     order_detail_list = []
 
     for i in order:
-        print(i.dateOrder)
         o_time = str(i.dateOrder).replace("-", "").replace("+00:00", "").replace(" ", '').replace(':', '')
-        print(o_time)
-        print(order_detail_list)
         c_order_detail = client.service.GetOrderDetails(i.numOrder, o_time, o_time)
 
         if not OrderDetail.objects.filter(numOrder=i.numOrder,

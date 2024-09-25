@@ -223,8 +223,12 @@
                                                     src="{{ request.user.picture.url }}"
                                                     alt="logo"></div>
                         <div class="media-body">
-                            <h6>{{ request.user }}</h6><span
-                                class="text-light">Web designer</span>
+                            <h6>
+                                {% if request.user.is_superuser %}
+                                <span><i class="fa fa-star text-warning"></i></span>
+                                {% endif %} {{ request.user}}
+                            </h6><span
+                                class="text-light">ТП | Agent</span>
                         </div>
                     </div>
                     <div class="hover-dropdown navprofile-drop">

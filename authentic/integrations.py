@@ -19,7 +19,7 @@ client = Client(wsdl=reasionReturn, transport=transport, plugins=[history], sett
 
 def user():
     user = client.service.GetUserByTelegramID(6410170725)
-    print(user)
+    # print(user)
 
 
 # user()
@@ -30,7 +30,7 @@ def customers(login, password):
     print(customers)
 
 
-# customers('ТП-19', '1919')
+# customers('ТП-12', '1424')
 
 
 def priceList(userCode):
@@ -102,7 +102,7 @@ def getKPI(CodeUser):
     print(Kpi)
 
 
-getKPI('000000327')
+# getKPI('000000327')
 
 
 def getOrderList(CodeAgent):
@@ -182,4 +182,20 @@ def werehouse():
     werehouses = client.service.GetWarehouses()
     print(werehouses)
 
+
 # werehouse()
+
+def getShippingList(userCode):
+    shippingList = client.service.GetShippingList(userCode)
+    print(shippingList)
+
+
+getShippingList('000000184')
+
+
+def GetPackage(dateOfPackage, codeUser, codeClient):
+    package = client.service.GetPackage(dateOfPackage, codeUser, codeClient)
+    print(package)
+
+
+# GetPackage('20240922000000', '000000327', '')

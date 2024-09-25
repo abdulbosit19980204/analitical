@@ -39,12 +39,14 @@ class WarehouseInline(admin.TabularInline):
 
 
 class WarehouseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description')
-    inlines = [Organization, ]
+    list_display = ('id', 'name', 'code', 'description')
+    list_display_links = ('id', 'name')
+    list_filter = ('organization',)
 
 
 class CustomUserAdmin(UserTypeAdmin):
-    list_display = ('id', 'username', 'email', 'first_name',)
+    list_display = ('id', 'username', 'email', 'first_name', 'last_name', 'phone_number', 'tg_username')
+    list_display_links = ('id', 'username')
 
 
 class NomenklaturaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -54,14 +56,14 @@ class NomenklaturaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('id', 'agent', 'client', 'numOrder', 'dateOrder')
     list_display_links = ('id', 'agent', 'client', 'numOrder')
-    list_filter = ('agent_id', 'agent', 'client',)
+    list_filter = ('agent_id', 'agent',)
 
 
 admin.site.register(UserType, UserTypeAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(KPI)
 admin.site.register(Project)
-admin.site.register(Warehouse)
+admin.site.register(Warehouse, WarehouseAdmin)
 admin.site.register(Organization)
 admin.site.register(Nomenklatura, NomenklaturaAdmin)
 admin.site.register(Client)
