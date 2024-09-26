@@ -1,4 +1,7 @@
+from audioop import reverse
+
 from django.urls import path
+from django.contrib.auth import views as auth_views
 from .views import IndexView, EcommerceView, CalendarView, ChatView, TodoView, EmailListView, EmailReadView, \
     ProfileView, UserListView, ProductListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
     OrderDetailView
@@ -15,7 +18,7 @@ urlpatterns = [
     path('email/read', EmailReadView.as_view(), name='email-read'),
     path('profile', ProfileView.as_view(), name='profile'),
     path('accounts/profile/', ProfileView.as_view(), name='profile'),
-    
+
     path('user-list', UserListView.as_view(), name='user-list'),
 
     path('product-list', ProductListView.as_view(), name='product-list'),
@@ -24,5 +27,7 @@ urlpatterns = [
     path('product/', ProductView.as_view(), name='product'),
     path('error', ErrorPageView.as_view(), name='error'),
     path('invoice', InvoiceView.as_view(), name='invoice'),
+
+
 
 ]

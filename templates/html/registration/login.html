@@ -16,8 +16,33 @@
             </h6>
         </div>
         <form action="/auth/login/" method="post">
-            {{ form|crispy}}
+            <!--            {{ form|crispy}}-->
             {% csrf_token %}
+
+            {% if form.errors %}
+            <ul>
+                {% for field, error in form.errors.items %}
+                <div class="alert alert-danger" role="alert">{{error}}</div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div class="form-group">
+                <label class="form-label">Username</label>
+                <input class="form-control" name="username" id="id_username" type="text" required
+                       autocomplete="username"
+                       placeholder="Enter Your Login">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="id_password">Password</label>
+                <div class="input-group group-input showhide-password">
+                    <input class="form-control showhide-password" name="password" type="password" id="id_password"
+                           autocomplete="current-password"
+                           placeholder="Enter Your Password" required=""><span
+                        class="input-group-text toggle-show fa fa-eye"></span>
+                </div>
+            </div>
+
             <div class="form-group">
                 <button class="btn btn-outline-primary" type="submit"><i class="fa fa-sign-in"></i> Login</button>
             </div>
