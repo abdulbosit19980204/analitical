@@ -1,0 +1,147 @@
+<div class="product-card product-detail-tab">
+    <ul class="nav nav-tabs">
+        {% for product in products %}
+        <li>
+            <a class="btn btn-outline-primary" data-bs-toggle="tab" href="#tab-{{ forloop.counter }}">
+                {{ forloop.counter }} {{ product.ProductBrand }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+        {% for product in products %}
+        <div class="tab-pane fade {% if forloop.first %}active show{% endif %}" id="tab-{{ forloop.counter }}">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table productlist-tbl display dataTable cell-border" id="basicdata-tbl"
+                                   style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Product detail</th>
+                                    <th>Price</th>
+                                    <th>Stock Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap">
+                                            <img class="img-fluid" src="../assets/images/pages/product/1.jpg" alt="">
+                                        </div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">{{ product.ProductName }}</a>
+                                    </td>
+                                    <td>{{ product.Price }}</td>
+                                    <td>
+                                            <span class="badge {% if product.StockStatus == 'in stock' %}badge-success{% else %}badge-danger{% endif %}">
+                                                {{ product.StockStatus }}
+                                            </span>
+                                    </td>
+                                    <td>
+                                        <div class="cart-action">
+                                            <a class="delete text-success" href="javascript:void(0)">
+                                                <i data-feather="edit"></i>
+                                            </a>
+                                            <a class="delete text-danger" href="javascript:void(0)">
+                                                <i data-feather="trash-2"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="product-card product-detail-tab">
+    <ul class="nav nav-tabs">
+        {% for product in products %}
+        <li><a class="btn btn-outline-primary" data-bs-toggle="tab" href="#tab-{{ forloop.counter }}">
+            {{ forloop.counter }}{{product.ProductBrand}}</a>
+        </li>
+        {% endfor %}
+
+    </ul>
+    <div class="tab-content">
+        {% for product in products %}
+        <div class="tab-pane fade active show" id="tab-{{forloop.counter}}">
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table productlist-tbl display dataTable cell-border"
+                                   id="basicdata-tbl"
+                                   style="width:100%">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Product detail</th>
+                                    <th>Price</th>
+                                    <th>Stock Status</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="product-imgwrap"><img class="img-fluid"
+                                                                          src="../assets/images/pages/product/1.jpg"
+                                                                          alt=""></div>
+                                    </td>
+                                    <td><a class="text-default" href="product-detail.html">cheks
+                                        ewsShirt</a></td>
+                                    <td>$263</td>
+                                    <td><span class="badge badge-success">in stock </span></td>
+                                    <td>
+                                        <div class="cart-action"><a class="delete text-success"
+                                                                    href="javascript:void(0)"> <i
+                                                data-feather="edit"></i></a><a
+                                                class="delete text-danger"
+                                                href="javascript:void(0)"> <i
+                                                data-feather="trash-2"></i></a></div>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="codex-accordion accordion accordion-flush" id="accordion-withicon">
+
+    <div class="accordion-item"><a class="cdx-collapse collapsed" href="javascript:void(0);"
+                                   data-bs-toggle="collapse"
+                                   data-bs-target="#iconaccordian-collapce{{forloop.counter}}"><i
+            class="fa fa-star mr-15"></i>Brand: {{product.ProductBrand}}
+        newsletter?</a>
+        <div class="collapse" id="iconaccordian-collapce{{forloop.counter}}"
+             data-bs-parent="#accordion-withicon">
+            <div class="accordion-body">
+                <p class="text-light">
+
+                <h6>{{forloop.counter}}</h6>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

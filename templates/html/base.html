@@ -228,7 +228,7 @@
                                 <span><i class="fa fa-star text-warning"></i></span>
                                 {% endif %} {{ request.user}}
                             </h6><span
-                                class="text-light">ТП | Agent</span>
+                                class="text-light">id: {{request.user.code}}</span>
                         </div>
                     </div>
                     <div class="hover-dropdown navprofile-drop">
@@ -264,8 +264,9 @@
         <div class="sidebar-action"><i data-feather="menu"></i></div>
     </div>
     <div class="icon-logo"><a href="/"><img class="img-fluid"
-                                            src="{% static 'assets/images/logo/icon-logo.png' %}"
+                                            src="{% static 'assets/images/logo/glogo100x100.png' %}"
                                             alt="theeme-logo"></a></div>
+    {% if request.user.c1_connected %}
     <div class="codex-menuwrapper">
         <ul class="codex-menu custom-scroll" data-simplebar>
             <li class="cdxmenu-title">
@@ -377,15 +378,19 @@
 
         </ul>
     </div>
+    {% endif %}
 </aside>
+
+
 <!-- sidebar end-->
+
 <div class="themebody-wrap">
     <!-- breadcrumb start-->
     <div class="codex-breadcrumb">
         <div class="breadcrumb-contain">
             <div class="left-breadcrumb">
                 <ul class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">
+                    <li class="breadcrumb-item"><a href="/">
                         <h1>Dashboard</h1></a></li>
                     <li class="breadcrumb-item active"><a href="javascript:void(0);">Default</a></li>
                 </ul>
@@ -411,6 +416,7 @@
     {% endblock %}
     <!-- theme body end-->
 </div>
+
 <!-- footer start-->
 <footer class="codex-footer">
     <p>© Gloriya Global | 2024-25 </p>

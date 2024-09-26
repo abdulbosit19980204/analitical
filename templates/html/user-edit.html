@@ -6,6 +6,7 @@
 <div class="theme-body">
     <div class="custom-container codexedit-profile">
         <div class="row">
+            {% if request.user.c1_connected %}
             <div class="col-xl-8 col-md-5 cdx-xl-30">
                 <div class="card">
                     <div class="card-body">
@@ -18,46 +19,19 @@
                     </div>
                 </div>
             </div>
-            {% if request.user.c1_connected %}
-            <div class="col-xl-4 col-md-5 cdx-xl-30">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="text-muted">Connect to 1C</h1>
-                        <div class="mt-5 pb-5"></div>
-                        <div class="mt-5 pb-5"></div>
-                        <h3 class="text-success">Your are connected</h3>
-                        </form>
-                    </div>
-                </div>
 
-            </div>
-            {% else %}
-            <div class="col-xl-4 col-md-5 cdx-xl-30">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="text-muted">Connect to 1C</h1>
-                        <div class="mt-5 pb-5"></div>
-                        <div class="mt-5 pb-5"></div>
-                        <form class="form" action="{% url 'authentic:connect-1c' %}" method="post">
-                            {% csrf_token %}
-                            <h3 class="text-danger">{{ error }}</h3>
-                            <div class="form-group">
-                                <label for="1c_login">Login</label>
-                                <input class="form-control" id="1c_login" name="login-1c" placeholder="Login"
-                                       type="text">
-                            </div>
-                            <div class="form-group">
-                                <label for="1c_password">Password</label>
-                                <input class="form-control" id="1c_password" name="password-1c" placeholder="Password"
-                                       type="password">
-                            </div>
-                            <button class="btn btn-success" type="submit">Connect</button>
-                        </form>
-                    </div>
-                </div>
+            <!--            <div class="col-xl-4 col-md-5 cdx-xl-30">-->
+            <!--                <div class="card">-->
+            <!--                    <div class="card-body">-->
+            <!--                        <h1 class="text-muted">Connect to 1C</h1>-->
+            <!--                        <div class="mt-5 pb-5"></div>-->
+            <!--                        <div class="mt-5 pb-5"></div>-->
+            <!--                        <h3 class="text-success">Your are connected</h3>-->
+            <!--                        </form>-->
+            <!--                    </div>-->
+            <!--                </div>-->
 
-            </div>
-            {% endif %}
+            <!--            </div>-->
             <div class="col-xl-4 col-md-5 cdx-xl-40">
                 <div class="card">
                     <div class="card-header">
@@ -67,29 +41,30 @@
                         <div class="info-group mb-20">
                             <div class="media align-items-center">
                                 <div class="userimg-wrap mr-15"><img class="img-fluid w-50"
-                                                                     src="../assets/images/avtar/1.jpg" alt=""></div>
+                                                                     src="{{ form.picture.value.url }}"
+                                                                     alt=""></div>
                                 <div class="media-body">
-                                    <h6>Mark Odem</h6>
-                                    <p class="fs-14 text-light"> Ui/Ux desinger</p>
+
+                                    <h6>{{request.user.first_name}} {{request.user.last_name}}</h6>
+                                    <p class="fs-14 text-light">id: {{request.user.code}}</p>
                                 </div>
-                                <span class="badge badge-primary"><a href="javascript:void(0)"><i
-                                        class="fa fa-cloud-upload"></i></a></span>
+                                <span class="badge badge-success"> connected<a href="javascript:void(0)"><i
+                                        class="fa fa-check text-success"></i></a></span>
                             </div>
                         </div>
                         <div class="info-group">
                             <form>
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <div class="small-group">
+                                    <div class="small-group " disabled="">
                                         <div>
                                             <label class="form-label">First Name</label>
-                                            <input class="form-control" type="text" placeholder="your first name"
-                                                   value="Mark">
+
+                                            {{form.first_name}}
                                         </div>
                                         <div>
                                             <label class="form-label">Last Name</label>
-                                            <input class="form-control" type="text" placeholder="your last name"
-                                                   value="Odem">
+                                            {{form.last_name}}
                                         </div>
                                     </div>
                                 </div>
@@ -129,27 +104,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Designation</label>
-                                    <input class="form-control" type="text" placeholder="your designation name"
-                                           value="Ui/Ux desinger">
-                                </div>
-                                <div class="form-group">
                                     <label class="form-label">Email Address</label>
-                                    <input class="form-control" type="text" placeholder="your email"
-                                           value="mark@example.com">
+                                    {{form.email}}
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Mobile</label>
-                                    <input class="form-control" type="text" placeholder="your mobile number"
-                                           value="+9588489584">
+                                    {{form.phone_number}}
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label">Website</label>
-                                    <input class="form-control" type="text" placeholder="your website"
-                                           value="https://dmeki.com">
+                                    <label class="form-label">Telegram</label>
+                                    {{form.tg_username}}
                                 </div>
-                                <div class="form-group mb-0"><a class="btn btn-primary"
-                                                                href="javascript:void(0)">submit</a></div>
+
                             </form>
                         </div>
                     </div>
@@ -227,6 +193,34 @@
                     </div>
                 </div>
             </div>
+            {% else %}
+            <div class="col-xl-4 col-md-5 cdx-xl-30">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-muted">Connect to 1C</h1>
+                        <div class="mt-5 pb-5"></div>
+                        <div class="mt-5 pb-5"></div>
+                        <form class="form" action="{% url 'authentic:connect-1c' %}" method="post">
+                            {% csrf_token %}
+                            <h3 class="text-danger">{{ error }}</h3>
+                            <div class="form-group">
+                                <label for="1c_login">Login</label>
+                                <input class="form-control" id="1c_login" name="login-1c" placeholder="Login"
+                                       type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="1c_password">Password</label>
+                                <input class="form-control" id="1c_password" name="password-1c" placeholder="Password"
+                                       type="password">
+                            </div>
+                            <button class="btn btn-success" type="submit">Connect</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+
         </div>
     </div>
 </div>

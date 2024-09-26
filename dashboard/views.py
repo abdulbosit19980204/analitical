@@ -1,3 +1,5 @@
+from itertools import product
+
 from django.contrib.auth.models import User
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -7,7 +9,8 @@ from django.contrib.auth import login, authenticate, logout
 
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail
 from authentic.integrations import client, GetDailyReport, werehouse
-from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync
+from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
+    GetProductsBlance_sync
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -121,6 +124,20 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
     context_object_name = 'users'
     login_url = reverse_lazy('dashboard:login')
 
+    def get(self, request):
+        d = {}
+        codeSklad = request.user.codeSklad.code
+        codeProject = request.user.codeProject.code
+        products = GetProductsBlance_sync(code_project=codeProject, code_sklad=codeSklad)
+        d['products'] = products
+        return render(request, 'product-list.html', context=d)
+
+    def post(self, request):
+        d = {}
+        code_sklad = request.user.code_sklad
+        GetProductsBlance_sync(code_sklad=code_sklad)
+        return render(request, 'product-list.html', context=d)
+
 
 class ProductView(generic.ListView):
     model = User
@@ -176,7 +193,7 @@ class RefreshView(LoginRequiredMixin, View):
         # Fetch warehouse data from the client service
         # Werehouse_sync()
         # Organizations_sync()
-        print(client.service.GetProductBalance('00000000004', '00000000201'))
+        # print(client.service.GetProductBalance('00000000004', '00000000201'))
         Clients_sync(request.user.code)
         Orders_sync(request.user.code)
         OrderDetails_sync(request.user.code)

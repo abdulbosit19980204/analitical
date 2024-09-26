@@ -73,7 +73,7 @@ TEMPLATES = [
             ],
             'libraries': {
                 'to_replace': 'api.templatetags.to_replace',
-
+                'calc_protsent': 'api.templatetags.calc_protsent',
             }
         },
     },

@@ -85,3 +85,8 @@ def OrderDetails_sync(code):
             )
             order_detail_list.append(i_order_detail)
     OrderDetail.objects.bulk_create(order_detail_list)
+
+
+def GetProductsBlance_sync(code_project='00000000004', code_sklad='00000000201'):
+    products = client.service.GetProductBalance(code_project, code_sklad)
+    return products
