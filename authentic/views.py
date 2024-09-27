@@ -79,13 +79,16 @@ class Connect1CView(View):
                 user.last_name = lf[1]
 
                 # user.code = user_1c.Code
-                # codeSklad1 = Warehouse.objects.all(code=user_1c.CodeProject).first()
-                # project1 = Project.objects.all(code=user_1c.CodeProject).first()
-                # if codeSklad1 != None and project1 != None:
-                #     user.codeSklad = codeSklad1
-                # user.codeProject = project1
+                project_code = f'0000000000{user_1c.CodeProject}'
+                print(user_1c, project_code)
+                codeSklad1 = Warehouse.objects.filter(code=user_1c.CodeSklad).first()
+                project1 = Project.objects.filter(code=project_code).first()
+                print(codeSklad1, project1)
 
-                user.save(update_fields=['c1_connected', 'code', 'first_name', 'last_name'])
+                user.codeSklad = codeSklad1
+                user.codeProject = project1
+
+                user.save(update_fields=['c1_connected', 'code', 'first_name', 'last_name', 'codeSklad', 'codeProject'])
                 return redirect('authentic:user-edit')
             else:
                 error = f'User was connected to {codeuser.username}'
