@@ -59,6 +59,13 @@ class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_filter = ('agent_id', 'agent',)
 
 
+class ClientAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ('id', 'name', 'code', 'inn', 'mfo')
+    list_display_links = ('id', 'name', 'code')
+    list_filter = ('signboard',)
+    search_fields = ('name', 'inn', 'contactPersonPhone')
+
+
 admin.site.register(UserType, UserTypeAdmin)
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(KPI)
@@ -66,7 +73,7 @@ admin.site.register(Project)
 admin.site.register(Warehouse, WarehouseAdmin)
 admin.site.register(Organization)
 admin.site.register(Nomenklatura, NomenklaturaAdmin)
-admin.site.register(Client)
+admin.site.register(Client, ClientAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(OrderDetail)
 # ********************** unregistred*************

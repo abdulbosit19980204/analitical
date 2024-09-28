@@ -41,7 +41,14 @@ def Clients_sync(code):
         for i in c_clients:
             if not Client.objects.filter(code=i['Code']).exists():
                 i_client = Client(code=i['Code'], name=i['Name'], signboard=i['Signboard'], inn=i['INN'],
-                                  adressDelivery=i['AdressDelivery'])
+                                  adressDelivery=i['AdressDelivery'], referencePoint=i['ReferencePoint'],
+                                  longitude=i['Longitude'], latitude=i['Latitude'], contactPerson=i['ContactPerson'],
+                                  contactPersonPhone=i['ContactPersonPhone'], responsiblePerson=i['ResponsiblePerson'],
+                                  responsiblePersonPhone=i['ResponsiblePersonPhone'],
+                                  tradePointType=i['TradePointType'], theNumberOfOrders=i['TheNumberOfOrders'],
+                                  creditLimit=i['CreditLimit'],
+                                  accumulatedCredit=i['AccumulatedCredit'], codeRegion=i['CodeRegion'],
+                                  director=i['Director'], mfo=i['MFO'], bankAccount=i['BankAccount'])
                 client_list.append(i_client)
         Client.objects.bulk_create(client_list)
 
