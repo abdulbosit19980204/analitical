@@ -85,14 +85,6 @@ class KPI(BaseField, models.Model):
     akbPercent = models.DecimalField(max_digits=5, decimal_places=2)
 
 
-class Nomenklatura(BaseField, models.Model):
-    artikul = models.CharField(max_length=100, unique=True)
-    name = models.CharField(max_length=100)
-    project = models.ForeignKey(Project, on_delete=models.SET_NULL, null=True)
-
-    def __str__(self):
-        return self.name
-
 
 class Client(BaseField, models.Model):
     name = models.CharField(max_length=150)

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'api',
     'dashboard',
     'authentic',
+    'product',
 ]
 
 MIDDLEWARE = [

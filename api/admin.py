@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization, Nomenklatura, Client, Order, \
+from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization, Client, Order, \
     OrderDetail
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
@@ -49,10 +49,6 @@ class CustomUserAdmin(UserTypeAdmin):
     list_display_links = ('id', 'username')
 
 
-class NomenklaturaAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display = ('id', 'name', 'artikul')
-
-
 class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('id', 'agent', 'client', 'numOrder', 'dateOrder')
     list_display_links = ('id', 'agent', 'client', 'numOrder')
@@ -72,9 +68,9 @@ admin.site.register(KPI)
 admin.site.register(Project)
 admin.site.register(Warehouse, WarehouseAdmin)
 admin.site.register(Organization)
-admin.site.register(Nomenklatura, NomenklaturaAdmin)
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(OrderDetail)
+
 # ********************** unregistred*************
 admin.site.unregister(Group)
