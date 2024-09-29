@@ -22,7 +22,31 @@
                                 </div>
                                 <div class="error"></div>
                             </div>
-                            <ul class="todo-list"></ul>
+                            <ul class="todo-list">
+                                <div class="row cdxcard-exa">
+                                    <h4 class="mb-20">{{request.user.first_name}} {{request.user.last_name}} </h4>
+                                    {% for todo in todos %}
+                                    <div class="col-xl-4 col-sm-6">
+                                        <div class="card text-center">
+                                            <div class="card-header">
+                                                <!--                                                <h4>Featured</h4>-->
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{todo.title}}</h5>
+                                                <p class="card-text">{{todo.description}}</p>
+                                                {% if todo.done %}
+                                                <a class="btn btn-success mt-15 fa fa-check" href="#"> done</a>
+                                                {% else %}
+                                                <!--                                                <a class="btn btn-danger mt-15 fa fa-check" href="#"> done</a>-->
+                                                {% endif %}
+                                            </div>
+                                            <div class="card-footer text-muted">{{todo.deadline}}</div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+                            </ul>
                         </div>
                     </div>
                 </div>

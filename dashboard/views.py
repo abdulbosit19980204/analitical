@@ -1,5 +1,4 @@
-from itertools import product
-
+from django.db.models import Count
 from django.contrib.auth.models import User
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -7,7 +6,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, authenticate, logout
 
-from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail
+from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages
 from authentic.integrations import client, GetDailyReport, werehouse
 from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
     GetProductsBlance_sync
@@ -26,13 +25,6 @@ class IndexView(LoginRequiredMixin, View):
             d['report'] = report
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
-
-
-# class IndexView(LoginRequiredMixin, generic.ListView):
-#     model = User
-#     template_name = 'index.html'
-#     context_object_name = 'users'
-#     login_url = reverse_lazy('authentic:login')
 
 
 class EcommerceView(LoginRequiredMixin, generic.ListView):
@@ -55,11 +47,15 @@ class ChatView(LoginRequiredMixin, generic.ListView):
     login_url = reverse_lazy('dashboard:login')
 
 
-class TodoView(LoginRequiredMixin, generic.ListView):
-    model = User
-    template_name = 'todo.html'
-    context_object_name = 'users'
+class TodoView(LoginRequiredMixin, View):
     login_url = reverse_lazy('dashboard:login')
+
+    def get(self, request):
+        d = {}
+        todos = Todo.objects.filter(author=request.user)
+        d['todos'] = todos
+
+        return render(request, 'todo.html', context=d)
 
 
 class EmailListView(LoginRequiredMixin, generic.ListView):
@@ -90,7 +86,15 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d['price_list'] = client.service.GetPriceTypes(code)
         d['sklad'] = client.service.GetWarehousesUser(code)
         d['gps'] = client.service.GetGPS(code, '20240921110122')[:6]
-
+        recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[:5]
+        orders = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+                                                                                                 'clientName').annotate(
+            Count("clientCode")).order_by('-clientCode__count'))
+        d['recently_clients'] = recently_clients
+        d['active_clients'] = orders[:5]
+        d['passive_clients'] = orders[5:10]
+        d['gallery_images'] = VisitingImages.objects.filter(author=request.user)[:5]
+        print(d['passive_clients'])
         return render(request, 'profile.html', context=d)
 
 
@@ -109,13 +113,6 @@ class ClientProfileView(LoginRequiredMixin, View):
 
     def get(self, request, pk):
         pass
-
-
-# class UserListView(LoginRequiredMixin, generic.ListView):
-#     model = User
-#     template_name = 'user-list.html'
-#     context_object_name = 'users'
-#     login_url = reverse_lazy('dashboard:login')
 
 
 class ProductListView(LoginRequiredMixin, generic.ListView):

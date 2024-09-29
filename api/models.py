@@ -85,7 +85,6 @@ class KPI(BaseField, models.Model):
     akbPercent = models.DecimalField(max_digits=5, decimal_places=2)
 
 
-
 class Client(BaseField, models.Model):
     name = models.CharField(max_length=150)
     code = models.CharField(max_length=30)
@@ -151,3 +150,25 @@ class OrderDetail(BaseField, models.Model):
 
     def __str__(self):
         return self.numOrder
+
+
+# from api.models import
+class Todo(models.Model):
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    deadline = models.DateTimeField()
+    done = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.title
+
+
+class VisitingImages(BaseField, models.Model):
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='images/visiting_images')
+
+    def __str__(self):
+        return self.title

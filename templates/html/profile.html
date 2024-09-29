@@ -96,58 +96,24 @@
                     <div class="col-xl-12 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4><i class="fa fa-users"></i>Followers</h4>
+                                <h4><i class="fa fa-users"></i>Acctive Clients</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="follower-list">
+                                    {% for i in active_clients %}
                                     <li>
                                         <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   src="{% static 'assets/images/avtar/1.jpg' %}"
                                                                                    alt="">
                                             <div class="media-body">
-                                                <h6>Mark Wongar</h6>
-                                                <p class="text-light">3m follower </p>
+                                                <h6>{{i.clientName}}</h6>
+                                                <span class="text-light">{{i.clientCode__count}} orders </span>
+                                                <a class="badge badge-primary" href="javascript:void(0)"> <i
+                                                        data-feather="plus"></i></a>
                                             </div>
-                                            <a class="badge badge-primary" href="javascript:void(0)"> <i
-                                                    data-feather="plus"></i>follow</a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/2.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Thomas Vactom</h6>
-                                                <p class="text-light">4m follower </p>
-                                            </div>
-                                            <a class="badge badge-secondary" href="javascript:void(0)"> <i
-                                                    data-feather="plus"></i>follow</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/3.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Lina Odem</h6>
-                                                <p class="text-light">5k follower </p>
-                                            </div>
-                                            <a class="badge badge-success" href="javascript:void(0)"> <i
-                                                    data-feather="plus"></i>follow</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/4.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Johan Deo</h6>
-                                                <p class="text-light">10L follower </p>
-                                            </div>
-                                            <a class="badge badge-info" href="javascript:void(0)"> <i
-                                                    data-feather="plus"></i>follow</a>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -155,58 +121,24 @@
                     <div class="col-xl-12 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4><i class="fa fa-users"> </i>Followings</h4>
+                                <h4><i class="fa fa-users"> </i>Passive Clients</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="follower-list">
+                                    {% for i in passive_clients %}
                                     <li>
                                         <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   src="{% static 'assets/images/avtar/1.jpg' %}"
                                                                                    alt="">
                                             <div class="media-body">
-                                                <h6>Mark Wongar</h6>
-                                                <p class="text-light">3m follower </p>
+                                                <h6>{{i.clientName}}</h6>
+                                                <p class="text-light">{{i.clientCode__count}} orders</p>
                                             </div>
                                             <a class="badge badge-primary" href="javascript:void(0)"> <i
-                                                    data-feather="check"></i>following</a>
+                                                    data-feather="plus"></i>Create Order</a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/2.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Thomas Vactom</h6>
-                                                <p class="text-light">4m follower </p>
-                                            </div>
-                                            <a class="badge badge-secondary" href="javascript:void(0)"><i
-                                                    data-feather="check"></i>following</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/3.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Lina Odem</h6>
-                                                <p class="text-light">5k follower </p>
-                                            </div>
-                                            <a class="badge badge-success" href="javascript:void(0)"><i
-                                                    data-feather="check"></i>following</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/3.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Johan Deo</h6>
-                                                <p class="text-light">10L follower </p>
-                                            </div>
-                                            <a class="badge badge-info" href="javascript:void(0)"><i
-                                                    data-feather="check"></i>following</a>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -218,42 +150,13 @@
                             </div>
                             <div class="card-body">
                                 <ul class="gallerypost-list">
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/1.jpg"
+                                    {% for i in gallery_images %}
+                                    <li><a data-fancybox="gallery"
+                                           data-src="{{ i.image.url }}"
                                            data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/1.jpg"
+                                                                src="{{i.image.url}}"
                                                                 alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/2.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/2.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/3.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/3.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/4.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/4.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/5.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/5.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/6.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/6.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/7.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/7.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/8.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/8.jpg"
-                                                                alt="gallery"></a></li>
-                                    <li><a data-fancybox="gallery" data-src="../assets/images/pages/gallery/9.jpg"
-                                           data-caption=""><img class="img-fluid"
-                                                                src="../assets/images/pages/gallery/9.jpg"
-                                                                alt="gallery"></a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -261,54 +164,25 @@
                     <div class="col-xl-12 col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4><i class="fa fa-user-plus"> </i>Add friend</h4>
+                                <h4><i class="fa fa-user-plus"> </i>Recently Added Clients</h4>
                             </div>
                             <div class="card-body">
                                 <ul class="follower-list">
+                                    {% for i in recently_clients %}
                                     <li>
                                         <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/1.jpg"
+                                                                                   src="{% static 'assets/images/avtar/2.jpg' %}"
                                                                                    alt="">
                                             <div class="media-body">
-                                                <h6>Mark Wongar</h6>
-                                                <p class="text-light">3m follower </p>
+                                                <h6>{{i.name}}</h6>
+                                                <p class="text-light"><i class="fa fa-phone"></i>
+                                                    {{i.contactPersonPhone}} </p>
                                             </div>
-                                            <a class="badge badge-primary" href="javascript:void(0)">add friend</a>
+                                            <a class="badge badge-secondary"
+                                               href="javascript:void(0)">{{i.created_at|date:"d, M, Y" }}</a>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/2.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Thomas Vactom</h6>
-                                                <p class="text-light">4m follower </p>
-                                            </div>
-                                            <a class="badge badge-secondary" href="javascript:void(0)">add friend</a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/3.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Lina Odem</h6>
-                                                <p class="text-light">5k follower </p>
-                                            </div>
-                                            <a class="badge badge-success" href="javascript:void(0)">add friend </a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="media align-items-center"><img class="img-fluid"
-                                                                                   src="../assets/images/avtar/3.jpg"
-                                                                                   alt="">
-                                            <div class="media-body">
-                                                <h6>Johan Deo</h6>
-                                                <p class="text-light">10L follower </p>
-                                            </div>
-                                            <a class="badge badge-info" href="javascript:void(0)">add friend</a>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
