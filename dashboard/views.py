@@ -87,12 +87,15 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d['sklad'] = client.service.GetWarehousesUser(code)
         d['gps'] = client.service.GetGPS(code, '20240921110122')[:6]
         recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[:5]
-        orders = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-                                                                                                 'clientName').annotate(
-            Count("clientCode")).order_by('-clientCode__count'))
+        active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+                                                                                                    'clientName').annotate(
+            Count("clientCode")).order_by('-clientCode__count')
+        passive_clients = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+                                                                                                          'clientName').annotate(
+            Count("clientCode")).order_by('clientCode__count'))
         d['recently_clients'] = recently_clients
-        d['active_clients'] = orders[:5]
-        d['passive_clients'] = orders[5:10]
+        d['active_clients'] = active_clients[:5]
+        d['passive_clients'] = passive_clients[:5]
         d['gallery_images'] = VisitingImages.objects.filter(author=request.user)[:5]
         print(d['passive_clients'])
         return render(request, 'profile.html', context=d)

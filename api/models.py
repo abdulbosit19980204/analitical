@@ -152,6 +152,30 @@ class OrderDetail(BaseField, models.Model):
         return self.numOrder
 
 
+class OrderProductRows(BaseField, models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    CodeProduct = models.CharField(max_length=100, blank=True, null=True)
+    NameProduct = models.CharField(max_length=100, blank=True, null=True)
+    Amount = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    Price = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    Total = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    DiscountRate = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+    Weight = models.DecimalField(max_digits=15, decimal_places=4, blank=True, null=True)
+    Capacity = models.DecimalField(max_digits=15, decimal_places=4, blank=True, null=True)
+
+    def __str__(self):
+        return self.NameProduct
+
+
+class OrderCreditDetailsList(BaseField, models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    DateOfPayment = models.DateTimeField(blank=True, null=True)
+    Total = models.DecimalField(max_digits=15, decimal_places=2, blank=True, null=True)
+
+    def __str__(self):
+        return self.order.numOrder
+
+
 # from api.models import
 class Todo(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

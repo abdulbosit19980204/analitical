@@ -1,5 +1,9 @@
-from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail
+from itertools import product
+
+from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, OrderProductRows, \
+    OrderCreditDetailsList
 from authentic.integrations import client
+from datetime import datetime
 
 
 def Werehouse_sync():
@@ -74,11 +78,12 @@ def Orders_sync(code):
 def OrderDetails_sync(code):
     order = Order.objects.filter(agent__code=code)
     order_detail_list = []
+    order_product_rows_list = []
+    credit_details_list = []
     if order:
         for i in order:
             o_time = str(i.dateOrder).replace("-", "").replace("+00:00", "").replace(" ", '').replace(':', '')
             c_order_detail = client.service.GetOrderDetails(i.numOrder, o_time, o_time)
-
             if not OrderDetail.objects.filter(numOrder=i.numOrder,
                                               CodeSklad=c_order_detail['CodeSklad']).exists():
                 i_order_detail = OrderDetail(
@@ -93,7 +98,38 @@ def OrderDetails_sync(code):
                     order=Order.objects.filter(numOrder=i.numOrder).first(),
                 )
                 order_detail_list.append(i_order_detail)
+                for j in c_order_detail['ProductRows'][0]['Rows']:
+                    order_product_row = OrderProductRows(
+                        order=i,
+                        CodeProduct=j['CodeProduct'],
+                        NameProduct=j['NameProduct'],
+                        Amount=j['Amount'],
+                        Price=j['Price'],
+                        Total=j['Total'],
+                        DiscountRate=j['DiscountRate'],
+                        Weight=j['Weight'],
+                        Capacity=j['Capacity']
+                    )
+                    order_product_rows_list.append(order_product_row)
+                credit = c_order_detail['CreditDetailsList']
+                if credit is not None:
+                    for k in credit.Rows:
+                        # Convert the string "20240930000000" to a proper datetime object
+                        date_of_payment_str = k['DateOfPayment']
+                        try:
+                            date_of_payment = datetime.strptime(date_of_payment_str, '%Y%m%d%H%M%S')
+                        except ValueError:
+                            date_of_payment = None
+                        credit_detail = OrderCreditDetailsList(
+                            order=i,
+                            Total=k['Total'],
+                            DateOfPayment=date_of_payment,
+                        )
+                        credit_details_list.append(credit_detail)
+                    print(credit_details_list)
         OrderDetail.objects.bulk_create(order_detail_list)
+        OrderProductRows.objects.bulk_create(order_product_rows_list)
+        OrderCreditDetailsList.objects.bulk_create(credit_details_list)
 
 
 def GetProductsBlance_sync(code_project='00000000004', code_sklad='00000000201'):

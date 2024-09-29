@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization, Client, Order, \
-    OrderDetail, Todo, VisitingImages
+    OrderDetail, Todo, VisitingImages, OrderCreditDetailsList, OrderProductRows
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
 
@@ -55,6 +55,12 @@ class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_filter = ('agent_id', 'agent',)
 
 
+class OrderDetailAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    list_display = ('id', 'order', 'numOrder', 'CodeSklad', 'ShippingDate')
+    list_display_links = ('order', 'id',)
+    list_filter = ('order', 'CodeSklad', 'ShippingDate', 'numOrder')
+
+
 class ClientAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('id', 'name', 'code', 'inn', 'mfo', 'codeRegion')
     list_display_links = ('id', 'name', 'code')
@@ -70,9 +76,11 @@ admin.site.register(Warehouse, WarehouseAdmin)
 admin.site.register(Organization)
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Order, OrderAdmin)
-admin.site.register(OrderDetail)
+admin.site.register(OrderDetail, OrderDetailAdmin)
 admin.site.register(Todo)
 admin.site.register(VisitingImages)
+admin.site.register(OrderCreditDetailsList)
+admin.site.register(OrderProductRows)
 
 # ********************** unregistred*************
 admin.site.unregister(Group)
