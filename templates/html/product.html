@@ -11,46 +11,49 @@
                     <div class="col-xl-3 cdx-xxl-30 product-filter cdxapp-xl-sidebar">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="filter-title">Category </h5>
+                                <h5 class="filter-title">Brand </h5>
                                 <ul class="filter-list">
                                     <li>
                                         <div class="chek-group mb-8">                 <span
                                                 class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="checkAll" name="category"></span>
-                                            <label class="fs-16 ml-5" for="checkAll">All</label>
+                                <input class="form-check-input" type="checkbox" id="checkAllBrand"
+                                       name="category" checked=""></span>
+                                            <label class="fs-16 ml-5" for="checkAllBrand">All</label>
                                         </div>
                                     </li>
+                                    {% for brand in brands %}
                                     <li>
                                         <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="category-2" name="category"
-                                       checked=""></span>
-                                            <label class="fs-16 ml-5" for="category-2">Mens</label>
+                                <input class="form-check-input" type="checkbox" id="{{brand.id}}" name="category"
+                                ></span>
+                                            <label class="fs-16 ml-5" for="{{brand.id}}">{{brand.name}}</label>
                                         </div>
                                     </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="filter-title">Series </h5>
+                                <ul class="filter-list">
+                                    <li>
+                                        <div class="chek-group mb-8">                 <span
+                                                class="custom-check-input custom-chek">
+                                <input class="form-check-input" type="checkbox" id="checkAllSeries"
+                                       name="category" checked=""></span>
+                                            <label class="fs-16 ml-5" for="checkAllSeries">All</label>
+                                        </div>
+                                    </li>
+                                    {% for seria in series %}
                                     <li>
                                         <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="category-3" name="category"></span>
-                                            <label class="fs-16 ml-5" for="category-3">Womans</label>
+                                <input class="form-check-input" type="checkbox" id="{{seria.id}}" name="category"
+                                ></span>
+                                            <label class="fs-16 ml-5" for="{{seria.id}}">{{seria.name}}</label>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="category-4" name="category"></span>
-                                            <label class="fs-16 ml-5" for="category-4">Child</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="category-5" name="category"></span>
-                                            <label class="fs-16 ml-5" for="category-5">House &amp; kitchen</label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="chek-group"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="category-6" name="category"></span>
-                                            <label class="fs-16 ml-5" for="category-6">Technology </label>
-                                        </div>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -291,41 +294,44 @@
                                     </div>
                                 </div>
                             </div>
+                            {% for product in products %}
                             <div class="col-md-4 col-sm-6 mb-24">
                                 <div class="product-boxwrap">
-                                    <div class="product-imgwrap"><a href="product-detail.html"><img
-                                            class="img-fluid" src="{% static 'assets/images/pages/product/1.jpg' %}"
+                                    <div class="product-imgwrap"><a href="/product-detail"><img
+                                            class="img-fluid"
+                                            src="{% static 'assets/images/pages/product/evyap-products.png' %}"
                                             alt="product box"></a><span class="product-sale-label">Hot</span><span
                                             class="product-discount-label">-8%</span>
                                         <ul class="social">
                                             <li><a href="cart.html" data-tip="add to cart"><i
-                                                    class="icofont-shopping-cart"></i></a></li>
+                                                    class="fa fa-shopping-cart"></i></a></li>
                                             <li><a href="product-detail.html" data-tip="Quick View"><i
-                                                    class="icofont-eye-alt"></i></a></li>
+                                                    class=" fa fa-eye "></i></a></li>
                                             <li><a href="wishlist.html" data-tip="Wishlist"><i
-                                                    class="icofont-heart-alt"></i></a></li>
+                                                    class="icofont-heart-alt fa fa-heart-o"></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="product-detailwrap">
                                         <div><a href="product-detail.html">
-                                            <h5>Cheks red Shirt</h5></a>
+                                            <h5>{{product.print_title}}</h5></a>
                                             <div class="pro-rating">
-                                                <input type="radio" id="input-11" name="input-1">
-                                                <label class="star" for="input-11"> </label>
-                                                <input type="radio" id="input-12" name="input-1">
-                                                <label class="star" for="input-12"> </label>
-                                                <input type="radio" id="input-13" name="input-1">
-                                                <label class="star" for="input-13"> </label>
-                                                <input type="radio" id="input-14" name="input-1">
-                                                <label class="star" for="input-14"> </label>
-                                                <input type="radio" id="input-15" name="input-1">
-                                                <label class="star" for="input-15"> </label>
+                                                <input type="radio" id="input-11-{{product.id}}" name="input-1">
+                                                <label class="star" for="input-11-{{product.id}}"> </label>
+                                                <input type="radio" id="input-12-{{product.id}}" name="input-1">
+                                                <label class="star" for="input-12-{{product.id}}"> </label>
+                                                <input type="radio" id="input-13-{{product.id}}" name="input-1">
+                                                <label class="star" for="input-13-{{product.id}}"> </label>
+                                                <input type="radio" id="input-14-{{product.id}}" name="input-1">
+                                                <label class="star" for="input-14-{{product.id}}"> </label>
+                                                <input type="radio" id="input-15-{{product.id}}" name="input-1">
+                                                <label class="star" for="input-15-{{product.id}}"> </label>
                                             </div>
                                             <div class="pro-price">$252<span class="old-price">$238</span></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            {% endfor %}
 
                         </div>
                     </div>

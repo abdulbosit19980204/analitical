@@ -150,104 +150,31 @@
                                     <th>Product</th>
                                     <th>Price</th>
                                     <th>Stock</th>
+                                    <th>Total</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {% for i in topSellingProducts %}
                                 <tr>
                                     <td>
                                         <div class="media">
                                             <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/1.jpg"
+                                                                       src="{% static 'assets/images/ecom-dashboard/small-pro/1.jpg' %}"
                                                                        alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Headphones JBL</h6>
-                                            </a><span>Electronics                       </span></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$703</td>
-                                    <td class="text-light">5 sold</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/2.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Smart watch</h6></a><span>electronics                       </span>
+                                            <div class="media-body">
+                                                <a href="/product-detail">
+                                                    <h6>{{i.NameProduct}}</h6>
+                                                </a>
+                                                <span>{{i.CodeProduct}}</span>
+
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="text-light">$837</td>
-                                    <td class="text-light">2 sold</td>
+                                    <td class="text-light">{{i.Price}}</td>
+                                    <td class="text-light">{{i.Amount}} sold</td>
+                                    <td class="text-light">{{i.Total__sum}} sum</td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/3.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Sun glasses </h6></a><span>fashion                       </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$459</td>
-                                    <td class="text-light">6 sold</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/4.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Eye shadows</h6></a><span>cosmetic</span></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$423</td>
-                                    <td class="text-light">5 sold</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/5.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Eyelash</h6></a><span>Cosmetic</span></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$902</td>
-                                    <td class="text-light">10 sold</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/2.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Gold side table</h6></a><span>Furniture                      </span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$390</td>
-                                    <td class="text-light">2 sold</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/ecom-dashboard/small-pro/3.jpg"
-                                                                       alt=""></div>
-                                            <div class="media-body"><a href="product-detail.html">
-                                                <h6>Lawson sofa</h6></a><span>Furniture</span></div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">$902</td>
-                                    <td class="text-light"> 5 sold</td>
-                                </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -385,16 +312,17 @@
             </div>
             <div class="col-12">
                 <div class="ecompro-slide arrow-style1">
+                    {% for i in productSelling %}
                     <div>
                         <div class="card ecom-product">
                             <div class="card-body">
                                 <div class="product-imgwrap"><img class="img-fluid"
-                                                                  src="../assets/images/ecom-dashboard/product/1.jpg"
+                                                                  src="{% static 'assets/images/ecom-dashboard/product/1.jpg' %}"
                                                                   alt="1.jpg"></div>
-                                <div class="detail-wrap"><a href="product-detail.html">
-                                    <h5>Range Rower</h5>
-                                    <p>(Above &amp; Beyond)</p></a>
-                                    <h6 class="text-light">1835 Sales</h6>
+                                <div class="detail-wrap"><a href="/product-detail">
+                                    <h5>{{i}}</h5>
+                                    <p>id: {{i.CodeProduct}}</p></a>
+                                    <h6 class="text-light">Price: {{i.Price}}</h6>
                                     <div class="rating-detail">
                                         <ul class="rating-list">
                                             <li><i class="fa fa-star"></i></li>
@@ -408,98 +336,8 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="card ecom-product">
-                            <div class="card-body">
-                                <div class="product-imgwrap"><img class="img-fluid"
-                                                                  src="../assets/images/ecom-dashboard/product/2.jpg"
-                                                                  alt="2.jpg"></div>
-                                <div class="detail-wrap"><a href="product-detail.html">
-                                    <h5>Jaguar</h5>
-                                    <p>(The Art of Performance)</p></a>
-                                    <h6 class="text-light">8,856 Sales</h6>
-                                    <div class="rating-detail">
-                                        <ul class="rating-list">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card ecom-product">
-                            <div class="card-body">
-                                <div class="product-imgwrap"><img class="img-fluid"
-                                                                  src="../assets/images/ecom-dashboard/product/3.jpg"
-                                                                  alt="3.jpg"></div>
-                                <div class="detail-wrap"><a href="product-detail.html">
-                                    <h5>Mahindra</h5>
-                                    <p>(Work hard and play hard)</p></a>
-                                    <h6 class="text-light">65,480 Sales</h6>
-                                    <div class="rating-detail">
-                                        <ul class="rating-list">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card ecom-product">
-                            <div class="card-body">
-                                <div class="product-imgwrap"><img class="img-fluid"
-                                                                  src="../assets/images/ecom-dashboard/product/4.jpg"
-                                                                  alt="4.jpg"></div>
-                                <div class="detail-wrap"><a href="product-detail.html">
-                                    <h5>Tesla</h5>
-                                    <p>(Ride Free)</p></a>
-                                    <h6 class="text-light">1479 Sales</h6>
-                                    <div class="rating-detail">
-                                        <ul class="rating-list">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="card ecom-product">
-                            <div class="card-body">
-                                <div class="product-imgwrap"><img class="img-fluid"
-                                                                  src="../assets/images/ecom-dashboard/product/5.jpg"
-                                                                  alt="5.jpg"></div>
-                                <div class="detail-wrap"><a href="product-detail.html">
-                                    <h5>BMW</h5>
-                                    <p>(Ultimate Driving Machine)</p></a>
-                                    <h6 class="text-light">6,742 Sales</h6>
-                                    <div class="rating-detail">
-                                        <ul class="rating-list">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
+
                 </div>
             </div>
             <div class="col-xxl-6 cdx-xxl-100">

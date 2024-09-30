@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Sum, Max, Min
 from django.contrib.auth.models import User
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -6,8 +6,10 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, authenticate, logout
 
-from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages
-from authentic.integrations import client, GetDailyReport, werehouse
+from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages, \
+    OrderProductRows
+from product.models import Product, ProductSeria, ProductBrand
+from authentic.integrations import client, GetDailyReport, werehouse, product_sales
 from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
     GetProductsBlance_sync
 
@@ -27,11 +29,19 @@ class IndexView(LoginRequiredMixin, View):
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
 
 
-class EcommerceView(LoginRequiredMixin, generic.ListView):
-    model = User
-    template_name = 'ecommerce.html'
-    context_object_name = 'users'
+class EcommerceView(LoginRequiredMixin, View):
     login_url = reverse_lazy('dashboard:login')
+
+    def get(self, request):
+        d = {}
+        productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
+        topSellingProducts = productSelling.values('NameProduct', 'CodeProduct', 'Price', 'Amount', 'Total').annotate(
+            Count('CodeProduct'),
+            Sum('Amount'), Sum('Total'))
+        d['topSellingProducts'] = topSellingProducts[:5]
+        print(d['topSellingProducts'])
+        d['productSelling'] = productSelling
+        return render(request, 'ecommerce.html', context=d)
 
 
 class CalendarView(LoginRequiredMixin, generic.ListView):
@@ -139,10 +149,20 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
         return render(request, 'product-list.html', context=d)
 
 
-class ProductView(generic.ListView):
-    model = User
-    template_name = 'product.html'
-    context_object_name = 'users'
+class ProductView(LoginRequiredMixin, View):
+    login_url = reverse_lazy('authentic:login')
+
+    def get(self, request):
+        d = {}
+        products = Product.objects.all()
+        d['products'] = products
+        brands = ProductBrand.objects.all()
+        d['brands'] = brands
+        series = ProductSeria.objects.all()
+        d['series'] = series
+        products = Product.objects.all()
+        d['products'] = products
+        return render(request, 'product.html', context=d)
 
 
 class ErrorPageView(generic.ListView):
