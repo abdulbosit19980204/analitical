@@ -2,7 +2,7 @@ from itertools import product
 
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, OrderProductRows, \
     OrderCreditDetailsList
-from product.models import ProductBrand, ProductSeria
+from product.models import ProductBrand, ProductSeria, ProductRemainder, Product
 from authentic.integrations import client
 from datetime import datetime
 
@@ -137,9 +137,25 @@ def GetProductsBlance_sync(code_project='00000000004', code_sklad='00000000201')
     products = client.service.GetProductBalance(code_project, code_sklad)
     brands = []
     series = []
+    reminders = []
     for i in products:
         for j in i.Rows:
             for k in j.Rows:
+                for r in k.Rows:
+                    for t in r.Rows:
+                        print(t)
+                        d = ProductRemainder(
+                            product=Product.objects.filter(id=1).first(),
+                            warehouse=Warehouse.objects.filter(code=t['CodeSklad']).first(),
+                            CodeProduct=t['CodeProduct'],
+                            NameProduct=t['NameProduct'],
+                            Have=t['Have'],
+                            Reserved=t['Reserved'],
+                            Aviable=t['Aviable'],
+                            CodeProject=t['CodeProject'],
+
+                        )
+                        reminders.append(d)
                 pseries = ProductSeria.objects.filter(name=k.ProductSeries)
                 if pseries.exists():
                     continue
@@ -157,5 +173,5 @@ def GetProductsBlance_sync(code_project='00000000004', code_sklad='00000000201')
             brands.append(brand)
     ProductBrand.objects.bulk_create(brands)
     ProductSeria.objects.bulk_create(series)
-
+    ProductRemainder.objects.bulk_create(reminders)
     return products

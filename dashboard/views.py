@@ -161,7 +161,7 @@ class ProductView(LoginRequiredMixin, View):
         series = ProductSeria.objects.all()
         d['series'] = series
         products = Product.objects.all()
-        d['products'] = products
+        d['products'] = products[:21]
         return render(request, 'product.html', context=d)
 
 
