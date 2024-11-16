@@ -1,853 +1,1017 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <!-- Required meta tags-->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="author" content="">
-      <meta name="keywords" content="admin template,html 5 admin template , dmeki admin , dashboard template, bootstrap 5 admin template, responsive admin template">
-      <title>Dmeki |Product Detail
-      </title>
-      <!-- shortcut icon-->
-      <link rel="icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
-      <link rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
-      <!-- Fonts css-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
-      <!-- Font awesome -->
-      <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet">
-      <!-- themify icon-->
-      <link href="../assets/css/vendor/themify-icons.css" rel="stylesheet">
-      <!-- Slick slider-->
-      <link href="../assets/css/vendor/slider/slick-slider/slick.css" rel="stylesheet">
-      <link href="../assets/css/vendor/slider/slick-slider/slick-theme.css" rel="stylesheet">
-      <!-- Scrollbar-->
-      <link href="../assets/css/vendor/simplebar.css" rel="stylesheet">
-      <!-- Bootstrap css-->
-      <link href="../assets/css/vendor/bootstrap.css" rel="stylesheet">
-      <!-- Custom css-->
-      <link href="../assets/css/style.css" id="customstyle" rel="stylesheet">
-    </head>
-  <body>
-      <!-- Loader Start-->
-        <div class="codex-loader">     
-          <div class="linespinner"></div>
-        </div>
-      <!-- Loader End-->
-      <!-- Header Start-->
-      <header class="codex-header"> 
-        <div class="header-contian d-flex justify-content-between align-items-center">
-          <div class="header-left d-flex align-items-center">
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <meta name="keywords"
+          content="admin template,html 5 admin template , dmeki admin , dashboard template, bootstrap 5 admin template, responsive admin template">
+    <title>Dmeki |Product Detail
+    </title>
+    <!-- shortcut icon-->
+    <link rel="icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/logo/icon-logo.png" type="image/x-icon">
+    <!-- Fonts css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+          rel="stylesheet">
+    <!-- Font awesome -->
+    <link href="../assets/css/vendor/font-awesome.css" rel="stylesheet">
+    <!-- themify icon-->
+    <link href="../assets/css/vendor/themify-icons.css" rel="stylesheet">
+    <!-- Slick slider-->
+    <link href="../assets/css/vendor/slider/slick-slider/slick.css" rel="stylesheet">
+    <link href="../assets/css/vendor/slider/slick-slider/slick-theme.css" rel="stylesheet">
+    <!-- Scrollbar-->
+    <link href="../assets/css/vendor/simplebar.css" rel="stylesheet">
+    <!-- Bootstrap css-->
+    <link href="../assets/css/vendor/bootstrap.css" rel="stylesheet">
+    <!-- Custom css-->
+    <link href="../assets/css/style.css" id="customstyle" rel="stylesheet">
+</head>
+<body>
+<!-- Loader Start-->
+<div class="codex-loader">
+    <div class="linespinner"></div>
+</div>
+<!-- Loader End-->
+<!-- Header Start-->
+<header class="codex-header">
+    <div class="header-contian d-flex justify-content-between align-items-center">
+        <div class="header-left d-flex align-items-center">
             <div class="sidebar-action navicon-wrap"><i data-feather="menu"></i></div>
             <div class="search-bar">
-              <div class="form-group mb-0">
-                <div class="input-group">
-                  <input class="form-control" type="text" value="" placeholder="Search Here....."><span class="input-group-text"><i data-feather="search"></i></span>
+                <div class="form-group mb-0">
+                    <div class="input-group">
+                        <input class="form-control" type="text" value="" placeholder="Search Here....."><span
+                            class="input-group-text"><i data-feather="search"></i></span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="header-right d-flex align-items-center justify-content-end">
-            <ul class="nav-iconlist">  
-              <li>
-                <div class="navicon-wrap action-dark"><i class="fa fa-moon-o icon-dark"></i><i class="fa fa-sun-o icon-light" style="display:none;"></i></div>
-              </li>
-              <li>                              
-                <div class="navicon-wrap"><i data-feather="bell"></i>
-                  <div class="noti-count">04</div>
-                </div>
-                <div class="hover-dropdown navnotification-drop">
-                  <div class="drop-header">
-                    <h5>notification<span>05</span></h5>
-                  </div>
-                  <ul data-simplebar>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-primary"><i class="fa fa-check-square-o"></i></div>
-                          <div class="media-body">
-                            <h6>order Cheked</h6><span class="text-light">1 hour ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-secondary"><i class="fa fa-first-order"></i></div>
-                          <div class="media-body">
-                            <h6>order receved</h6><span class="text-light">1 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
-                          <div class="media-body">
-                            <h6>payment received</h6><span class="text-light">2 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
-                          <div class="media-body">
-                            <h6>order shipped</h6><span class="text-light">2 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
-                          <div class="media-body">
-                            <h6>order receved</h6><span class="text-light">1 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
-                          <div class="media-body">
-                            <h6>payment received</h6><span class="text-light">2 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
-                          <div class="media-body">
-                            <h6>order shipped</h6><span class="text-light">2 day ago</span>
-                          </div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
-                          <div class="media-body">
-                            <h6>order receved</h6><span class="text-light">1 day ago</span>
-                          </div>
-                        </div></a></li>
-                  </ul>
-                  <div class="drop-footer"><a href="email-inbox.html">See All Notification</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="navicon-wrap"><i data-feather="shopping-cart"></i>
-                  <div class="noti-count">07</div>
-                </div>
-                <div class="hover-dropdown navshop-drop">
-                  <div class="drop-header">
-                    <h5>Shopping<span>7</span></h5>
-                  </div>
-                  <ul data-simplebar>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/1.jpg" alt=""></div>
-                          <div class="media-body">
-                            <h6>teddy bear</h6><span class="text-light">$250</span>
-                          </div>
-                          <div class="close-pro"><i class="ti-trash"></i></div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/2.jpg" alt=""></div>
-                          <div class="media-body">
-                            <h6>iphone</h6><span class="text-light">$140</span>
-                          </div>
-                          <div class="close-pro"><i class="ti-trash"></i></div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/3.jpg" alt=""></div>
-                          <div class="media-body">
-                            <h6>Apple Airpod</h6><span class="text-light">$310</span>
-                          </div>
-                          <div class="close-pro"><i class="ti-trash"></i></div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/4.jpg" alt=""></div>
-                          <div class="media-body">
-                            <h6>Motors</h6><span class="text-light">$510</span>
-                          </div>
-                          <div class="close-pro"><i class="ti-trash"></i></div>
-                        </div></a></li>
-                    <li><a href="javascript:void(0);">
-                        <div class="media">
-                          <div class="img-wrap"><img class="img-fluid" src="../assets/images/ecom-dashboard/small-pro/5.jpg" alt=""></div>
-                          <div class="media-body">
-                            <h6>iphone</h6><span class="text-light">$140</span>
-                          </div>
-                          <div class="close-pro"><i class="ti-trash"></i></div>
-                        </div></a></li>
-                  </ul>
-                  <div class="drop-footer"><a href="checkout.html">Checkout All</a></div>
-                </div>
-              </li>
-              <li>
-                <div class="navicon-wrap btn-windowfull"><i data-feather="maximize"></i></div>
-              </li>
-              <li class="nav-profile">
-                <div class="media">
-                  <div class="user-icon"><img class="img-fluid rounded-50" src="../assets/images/avtar/3.jpg" alt="logo"></div>
-                  <div class="media-body">
-                    <h6>Thomas Vactom</h6><span class="text-light">Web designer</span>
-                  </div>
-                </div>
-                <div class="hover-dropdown navprofile-drop">
-                  <ul>
-                    <li><a href="profile.html"><i class="ti-user"></i>profile</a></li>
-                    <li><a href="email-inbox.html"><i class="ti-email"></i>inbox</a></li>
-                    <li><a href="user-edit.html"><i class="ti-settings"></i>setting</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out"></i>log out</a></li>
-                  </ul>
-                </div>
-              </li>
+        </div>
+        <div class="header-right d-flex align-items-center justify-content-end">
+            <ul class="nav-iconlist">
+                <li>
+                    <div class="navicon-wrap action-dark"><i class="fa fa-moon-o icon-dark"></i><i
+                            class="fa fa-sun-o icon-light" style="display:none;"></i></div>
+                </li>
+                <li>
+                    <div class="navicon-wrap"><i data-feather="bell"></i>
+                        <div class="noti-count">04</div>
+                    </div>
+                    <div class="hover-dropdown navnotification-drop">
+                        <div class="drop-header">
+                            <h5>notification<span>05</span></h5>
+                        </div>
+                        <ul data-simplebar>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-primary"><i class="fa fa-check-square-o"></i></div>
+                                    <div class="media-body">
+                                        <h6>order Cheked</h6><span class="text-light">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-secondary"><i class="fa fa-first-order"></i></div>
+                                    <div class="media-body">
+                                        <h6>order receved</h6><span class="text-light">1 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                                    <div class="media-body">
+                                        <h6>payment received</h6><span class="text-light">2 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                                    <div class="media-body">
+                                        <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                                    <div class="media-body">
+                                        <h6>order receved</h6><span class="text-light">1 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-success"><i class="fa fa-money"></i></div>
+                                    <div class="media-body">
+                                        <h6>payment received</h6><span class="text-light">2 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-warning"><i class="fa fa-truck"></i></div>
+                                    <div class="media-body">
+                                        <h6>order shipped</h6><span class="text-light">2 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="icon-nav bg-info"><i class="fa fa-first-order"></i></div>
+                                    <div class="media-body">
+                                        <h6>order receved</h6><span class="text-light">1 day ago</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                        </ul>
+                        <div class="drop-footer"><a href="email-inbox.html">See All Notification</a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="navicon-wrap"><i data-feather="shopping-cart"></i>
+                        <div class="noti-count">07</div>
+                    </div>
+                    <div class="hover-dropdown navshop-drop">
+                        <div class="drop-header">
+                            <h5>Shopping<span>7</span></h5>
+                        </div>
+                        <ul data-simplebar>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="img-wrap"><img class="img-fluid"
+                                                               src="../assets/images/ecom-dashboard/small-pro/1.jpg"
+                                                               alt=""></div>
+                                    <div class="media-body">
+                                        <h6>teddy bear</h6><span class="text-light">$250</span>
+                                    </div>
+                                    <div class="close-pro"><i class="ti-trash"></i></div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="img-wrap"><img class="img-fluid"
+                                                               src="../assets/images/ecom-dashboard/small-pro/2.jpg"
+                                                               alt=""></div>
+                                    <div class="media-body">
+                                        <h6>iphone</h6><span class="text-light">$140</span>
+                                    </div>
+                                    <div class="close-pro"><i class="ti-trash"></i></div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="img-wrap"><img class="img-fluid"
+                                                               src="../assets/images/ecom-dashboard/small-pro/3.jpg"
+                                                               alt=""></div>
+                                    <div class="media-body">
+                                        <h6>Apple Airpod</h6><span class="text-light">$310</span>
+                                    </div>
+                                    <div class="close-pro"><i class="ti-trash"></i></div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="img-wrap"><img class="img-fluid"
+                                                               src="../assets/images/ecom-dashboard/small-pro/4.jpg"
+                                                               alt=""></div>
+                                    <div class="media-body">
+                                        <h6>Motors</h6><span class="text-light">$510</span>
+                                    </div>
+                                    <div class="close-pro"><i class="ti-trash"></i></div>
+                                </div>
+                            </a></li>
+                            <li><a href="javascript:void(0);">
+                                <div class="media">
+                                    <div class="img-wrap"><img class="img-fluid"
+                                                               src="../assets/images/ecom-dashboard/small-pro/5.jpg"
+                                                               alt=""></div>
+                                    <div class="media-body">
+                                        <h6>iphone</h6><span class="text-light">$140</span>
+                                    </div>
+                                    <div class="close-pro"><i class="ti-trash"></i></div>
+                                </div>
+                            </a></li>
+                        </ul>
+                        <div class="drop-footer"><a href="checkout.html">Checkout All</a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="navicon-wrap btn-windowfull"><i data-feather="maximize"></i></div>
+                </li>
+                <li class="nav-profile">
+                    <div class="media">
+                        <div class="user-icon"><img class="img-fluid rounded-50" src="../assets/images/avtar/3.jpg"
+                                                    alt="logo"></div>
+                        <div class="media-body">
+                            <h6>Thomas Vactom</h6><span class="text-light">Web designer</span>
+                        </div>
+                    </div>
+                    <div class="hover-dropdown navprofile-drop">
+                        <ul>
+                            <li><a href="profile.html"><i class="ti-user"></i>profile</a></li>
+                            <li><a href="email-inbox.html"><i class="ti-email"></i>inbox</a></li>
+                            <li><a href="user-edit.html"><i class="ti-settings"></i>setting</a></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out"></i>log out</a></li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
-          </div>
         </div>
-      </header>
-      <!-- Header End-->
-      <!-- sidebar start-->
-      <aside class="codex-sidebar">
-        <div class="logo-gridwrap"><a class="codexbrand-logo" href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png" alt="theeme-logo"></a><a class="codex-darklogo" href="index.html"><img class="img-fluid" src="../assets/images/logo/dark-logo.png" alt="theeme-logo"></a>
-          <div class="sidebar-action"><i data-feather="menu"></i></div>
-        </div>
-        <div class="icon-logo"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/icon-logo.png" alt="theeme-logo"></a></div>
-        <div class="codex-menuwrapper">
-          <ul class="codex-menu custom-scroll" data-simplebar>
+    </div>
+</header>
+<!-- Header End-->
+<!-- sidebar start-->
+<aside class="codex-sidebar">
+    <div class="logo-gridwrap"><a class="codexbrand-logo" href="index.html"><img class="img-fluid"
+                                                                                 src="../assets/images/logo/logo.png"
+                                                                                 alt="theeme-logo"></a><a
+            class="codex-darklogo" href="index.html"><img class="img-fluid" src="../assets/images/logo/dark-logo.png"
+                                                          alt="theeme-logo"></a>
+        <div class="sidebar-action"><i data-feather="menu"></i></div>
+    </div>
+    <div class="icon-logo"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/icon-logo.png"
+                                                     alt="theeme-logo"></a></div>
+    <div class="codex-menuwrapper">
+        <ul class="codex-menu custom-scroll" data-simplebar>
             <li class="cdxmenu-title">
-              <h5>Dashboards</h5>
+                <h5>Dashboards</h5>
             </li>
             <li class="menu-item"><a href="index.html">
-                <div class="icon-item"><i data-feather="home"></i></div><span>default</span></a></li>
+                <div class="icon-item"><i data-feather="home"></i></div>
+                <span>default</span></a></li>
             <li class="menu-item"><a href="ecommerce.html">
-                <div class="icon-item"><i data-feather="airplay"></i></div><span>ecommerce</span></a></li>
+                <div class="icon-item"><i data-feather="airplay"></i></div>
+                <span>ecommerce</span></a></li>
             <li class="cdxmenu-title">
-              <h5>application</h5>
+                <h5>application</h5>
             </li>
             <li class="menu-item"><a href="calendar.html">
-                <div class="icon-item"><i data-feather="calendar"></i></div><span>calendar</span></a></li>
+                <div class="icon-item"><i data-feather="calendar"></i></div>
+                <span>calendar</span></a></li>
             <li class="menu-item"><a href="chat.html">
-                <div class="icon-item"><i data-feather="message-square"></i></div><span>chat</span></a></li>
+                <div class="icon-item"><i data-feather="message-square"></i></div>
+                <span>chat</span></a></li>
             <li class="menu-item"><a href="todo.html">
-                <div class="icon-item"><i data-feather="clock"></i></div><span>todo</span></a></li>
+                <div class="icon-item"><i data-feather="clock"></i></div>
+                <span>todo</span></a></li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="mail"></i></div><span>email</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="email-inbox.html">email inbox</a></li>
-                <li><a href="email-read.html">email read</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="mail"></i></div>
+                <span>email</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="email-inbox.html">email inbox</a></li>
+                    <li><a href="email-read.html">email read</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"> <i data-feather="user"></i></div><span>Users</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="profile.html">profile</a></li>
-                <li><a href="user-list.html">user list</a></li>
-                <li><a href="user-edit.html">user edit</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="user"></i></div>
+                <span>Users</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="profile.html">profile</a></li>
+                    <li><a href="user-list.html">user list</a></li>
+                    <li><a href="user-edit.html">user edit</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="shopping-bag"></i></div><span>ecommerce</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="product.html">product</a></li>
-                <li><a href="product-detail.html">product detail</a></li>
-                <li><a href="add-product.html">add product</a></li>
-                <li><a href="product-list.html">product list</a></li>
-                <li><a href="order-history.html">order history</a></li>
-                <li><a href="cart.html">cart</a></li>
-                <li><a href="wishlist.html">wishlist</a></li>
-                <li><a href="checkout.html">checkout</a></li>
-                <li><a href="pricing.html">pricing</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="shopping-bag"></i></div>
+                <span>ecommerce</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="product.html">product</a></li>
+                    <li><a href="product-detail.html">product detail</a></li>
+                    <li><a href="add-product.html">add product</a></li>
+                    <li><a href="product-list.html">product list</a></li>
+                    <li><a href="order-history.html">order history</a></li>
+                    <li><a href="cart.html">cart</a></li>
+                    <li><a href="wishlist.html">wishlist</a></li>
+                    <li><a href="checkout.html">checkout</a></li>
+                    <li><a href="pricing.html">pricing</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="invoice.html">
-                <div class="icon-item"><i data-feather="file-minus"></i></div><span>invoice</span></a></li>
+                <div class="icon-item"><i data-feather="file-minus"></i></div>
+                <span>invoice</span></a></li>
             <li class="cdxmenu-title">
-              <h5>pages</h5>
+                <h5>pages</h5>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="command"></i></div><span>blog</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="blog.html">blog list</a></li>
-                <li><a href="blog-detail.html">blog-detail</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="command"></i></div>
+                <span>blog</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="blog.html">blog list</a></li>
+                    <li><a href="blog-detail.html">blog-detail</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="key"></i></div><span>Authentication</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="login.html">login         </a></li>
-                <li><a href="register.html">register</a></li>
-                <li><a href="forgot-password.html">forgot password</a></li>
-                <li><a href="new-password.html">reset password</a></li>
-                <li><a href="verify-email.html">verify email</a></li>
-                <li><a href="verify-pin.html">verify pin</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="key"></i></div>
+                <span>Authentication</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="login.html">login </a></li>
+                    <li><a href="register.html">register</a></li>
+                    <li><a href="forgot-password.html">forgot password</a></li>
+                    <li><a href="new-password.html">reset password</a></li>
+                    <li><a href="verify-email.html">verify email</a></li>
+                    <li><a href="verify-pin.html">verify pin</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="error-page.html">
-                <div class="icon-item"><i data-feather="alert-triangle"></i></div><span>error 404</span></a></li>
+                <div class="icon-item"><i data-feather="alert-triangle"></i></div>
+                <span>error 404</span></a></li>
             <li class="menu-item"><a href="coming-soon.html">
-                <div class="icon-item"><i data-feather="watch"></i></div><span>coming soon</span></a></li>
+                <div class="icon-item"><i data-feather="watch"></i></div>
+                <span>coming soon</span></a></li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="pie-chart"></i></div><span>Charts</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="chart-apex.html">apex chart</a></li>
-                <li class="menu-item"><a href="chart-echarts.html">echarts</a></li>
-                <li class="menu-item"><a href="chart-morris.html">morris charts</a></li>
-                <li class="menu-item"><a href="chart-chartsjs.html">charts js</a></li>
-                <li class="menu-item"><a href="chart-sparkline.html">sparkline charts</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="pie-chart"></i></div>
+                <span>Charts</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="chart-apex.html">apex chart</a></li>
+                    <li class="menu-item"><a href="chart-echarts.html">echarts</a></li>
+                    <li class="menu-item"><a href="chart-morris.html">morris charts</a></li>
+                    <li class="menu-item"><a href="chart-chartsjs.html">charts js</a></li>
+                    <li class="menu-item"><a href="chart-sparkline.html">sparkline charts</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="contacts.html">
-                <div class="icon-item"><i data-feather="phone-call"></i></div><span>contacts</span></a></li>
+                <div class="icon-item"><i data-feather="phone-call"></i></div>
+                <span>contacts</span></a></li>
             <li class="menu-item"><a href="gallery.html">
-                <div class="icon-item"><i data-feather="image"></i></div><span>gallery</span></a></li>
+                <div class="icon-item"><i data-feather="image"></i></div>
+                <span>gallery</span></a></li>
             <li class="cdxmenu-title">
-              <h5>Components</h5>
+                <h5>Components</h5>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"> <i data-feather="book"></i></div><span>form</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="element-input.html">form element</a></li>
-                <li><a href="element-checkbox-radio.html">checkbox & radio</a></li>
-                <li><a href="element-datepicker.html">datepicker</a></li>
-                <li><a href="element-uidatepicker.html">ui datepicker</a></li>
-                <li><a href="element-datetimepicker.html">datetimepicker</a></li>
-                <li><a href="form.html">basic form</a></li>
-                <li><a href="form-validation.html">validation</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="book"></i></div>
+                <span>form</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="element-input.html">form element</a></li>
+                    <li><a href="element-checkbox-radio.html">checkbox & radio</a></li>
+                    <li><a href="element-datepicker.html">datepicker</a></li>
+                    <li><a href="element-uidatepicker.html">ui datepicker</a></li>
+                    <li><a href="element-datetimepicker.html">datetimepicker</a></li>
+                    <li><a href="form.html">basic form</a></li>
+                    <li><a href="form-validation.html">validation</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"> <i data-feather="database"></i></div><span>Table</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="data-table.html">Datatable</a></li>
-                <li><a href="data-table-advance.html">Datatable Advance</a></li>
-                <li><a href="data-table-ajax.html">Datatable Ajax</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="database"></i></div>
+                <span>Table</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="data-table.html">Datatable</a></li>
+                    <li><a href="data-table-advance.html">Datatable Advance</a></li>
+                    <li><a href="data-table-ajax.html">Datatable Ajax</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="layout"></i></div><span>Advance element</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="timeline-one.html">timeline one</a></li>
-                <li><a href="timeline-two.html">timeline two</a></li>
-                <li><a href="element-select2.html">select 2</a></li>
-                <li><a href="element-switch.html">switch</a></li>
-                <li><a href="element-dropzone.html">dropzone</a></li>
-                <li><a href="element-rangeslider.html">range slider</a></li>
-                <li><a href="bootstrap-notify.html">bootstrap notify</a></li>
-                <li><a href="element-sweetalert2.html">sweetalert2</a></li>
-                <li><a href="element-scrollbar.html">scrollbar</a></li>
-                <li><a href="element-lightbox.html">light box</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="layout"></i></div>
+                <span>Advance element</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="timeline-one.html">timeline one</a></li>
+                    <li><a href="timeline-two.html">timeline two</a></li>
+                    <li><a href="element-select2.html">select 2</a></li>
+                    <li><a href="element-switch.html">switch</a></li>
+                    <li><a href="element-dropzone.html">dropzone</a></li>
+                    <li><a href="element-rangeslider.html">range slider</a></li>
+                    <li><a href="bootstrap-notify.html">bootstrap notify</a></li>
+                    <li><a href="element-sweetalert2.html">sweetalert2</a></li>
+                    <li><a href="element-scrollbar.html">scrollbar</a></li>
+                    <li><a href="element-lightbox.html">light box</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="layout"></i></div><span>Componet</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="element-typography.html">typography</a></li>
-                <li><a href="element-color.html">color</a></li>
-                <li><a href="element-themeclass.html">helper class</a></li>
-                <li><a href="element-alert.html">Alert</a></li>
-                <li><a href="element-avtar.html">Avtar</a></li>
-                <li><a href="element-button.html">Button</a></li>
-                <li><a href="element-grid.html">grid</a></li>
-                <li><a href="element-dropdown.html">Dropdown</a></li>
-                <li><a href="element-breadcrumb.html">Breadcrumb</a></li>
-                <li><a href="element-collapse.html">Collapse</a></li>
-                <li><a href="element-accordion.html">Accordion</a></li>
-                <li><a href="element-badge.html">badge</a></li>
-                <li><a href="element-modal.html">modal</a></li>
-                <li><a href="element-tab.html">tabs</a></li>
-                <li><a href="element-popover.html">popover</a></li>
-                <li><a href="element-tooltip.html">tooltip</a></li>
-                <li><a href="element-card.html">card</a></li>
-                <li><a href="element-progressbar.html">progress bar</a></li>
-                <li><a href="element-pagination.html">pagination</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="layout"></i></div>
+                <span>Componet</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="element-typography.html">typography</a></li>
+                    <li><a href="element-color.html">color</a></li>
+                    <li><a href="element-themeclass.html">helper class</a></li>
+                    <li><a href="element-alert.html">Alert</a></li>
+                    <li><a href="element-avtar.html">Avtar</a></li>
+                    <li><a href="element-button.html">Button</a></li>
+                    <li><a href="element-grid.html">grid</a></li>
+                    <li><a href="element-dropdown.html">Dropdown</a></li>
+                    <li><a href="element-breadcrumb.html">Breadcrumb</a></li>
+                    <li><a href="element-collapse.html">Collapse</a></li>
+                    <li><a href="element-accordion.html">Accordion</a></li>
+                    <li><a href="element-badge.html">badge</a></li>
+                    <li><a href="element-modal.html">modal</a></li>
+                    <li><a href="element-tab.html">tabs</a></li>
+                    <li><a href="element-popover.html">popover</a></li>
+                    <li><a href="element-tooltip.html">tooltip</a></li>
+                    <li><a href="element-card.html">card</a></li>
+                    <li><a href="element-progressbar.html">progress bar</a></li>
+                    <li><a href="element-pagination.html">pagination</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="javascript:void(0);">
-                <div class="icon-item"><i data-feather="slack"></i></div><span>Icons</span><i class="fa fa-angle-down"></i></a>
-              <ul class="submenu-list">
-                <li><a href="element-fontaw-icon.html">Font Awesome</a></li>
-                <li><a href="element-themify-icon.html">Themify</a></li>
-                <li><a href="element-feather-icon.html">Feather</a></li>
-                <li><a href="element-icoicon.html">icoicon</a></li>
-                <li><a href="element-flag-icon.html">flag</a></li>
-              </ul>
+                <div class="icon-item"><i data-feather="slack"></i></div>
+                <span>Icons</span><i class="fa fa-angle-down"></i></a>
+                <ul class="submenu-list">
+                    <li><a href="element-fontaw-icon.html">Font Awesome</a></li>
+                    <li><a href="element-themify-icon.html">Themify</a></li>
+                    <li><a href="element-feather-icon.html">Feather</a></li>
+                    <li><a href="element-icoicon.html">icoicon</a></li>
+                    <li><a href="element-flag-icon.html">flag</a></li>
+                </ul>
             </li>
             <li class="menu-item"><a href="faq.html">
-                <div class="icon-item"><i data-feather="help-circle"></i></div><span>faq</span></a></li>
-          </ul>
-        </div>
-      </aside>
-      <!-- sidebar end-->
-    <div class="themebody-wrap">
-      <!-- breadcrumb start-->
-        <div class="codex-breadcrumb">  
-          <div class="breadcrumb-contain">
+                <div class="icon-item"><i data-feather="help-circle"></i></div>
+                <span>faq</span></a></li>
+        </ul>
+    </div>
+</aside>
+<!-- sidebar end-->
+<div class="themebody-wrap">
+    <!-- breadcrumb start-->
+    <div class="codex-breadcrumb">
+        <div class="breadcrumb-contain">
             <div class="left-breadcrumb">
-              <ul class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="index.html"> 
-                    <h1>Dashboard</h1></a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">ecommerce</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0);">product</a></li>
-              </ul>
+                <ul class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html">
+                        <h1>Dashboard</h1></a></li>
+                    <li class="breadcrumb-item"><a href="javascript:void(0);">ecommerce</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0);">product</a></li>
+                </ul>
             </div>
             <div class="right-breadcrumb">
-              <ul>
-                <li>
-                  <div class="bread-wrap"><i class="fa fa-clock-o"></i></div><span class="liveTime"></span>
-                </li>
-                <li>
-                  <div class="bread-wrap"><i class="fa fa-calendar"></i></div><span class="getDate"> </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      <!-- breadcrumb end-->
-      <!-- theme body start-->
-      <div class="theme-body product-detail-page">
-        <div class="custom-container">
-          <div class="row">        
-            <div class="col-md-5 cdx-xl-45">
-              <div class="product-card">
-                <div class="product-for">
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/1.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/2.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/3.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/4.jpg" alt="product-detail"></div>
-                  </div>
-                </div>
-                <div class="product-to">
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/1.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/2.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/3.jpg" alt="product-detail"></div>
-                  </div>
-                  <div>
-                    <div class="product-imgwrap"><img class="img-fluid" src="../assets/images/pages/product-detail/4.jpg" alt="product-detail"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-7 cdx-xl-55 cdxpro-detail">
-              <div class="product-card">
-                <div class="detail-group">
-                  <div class="media">
-                    <div>
-                      <h2>Men Pink T-shirtual Jacket</h2>
-                      <h6 class="text-light">Special price</h6>
-                      <ul class="product-rating">
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star-o"></i></li>
-                      </ul>
-                      <ul class="product-price">
-                        <li class="new-price">$70</li>
-                        <li class="old-price text-light fw-400"> 
-                          <del>$80</del>
-                        </li>
-                        <li class="ofr-price"><span class="badge badge-success">32% off</span></li>
-                      </ul>
-                    </div>
-                    <div class="media-body">
-                      <div class="product-share"><span class="proshare-toggle"><i data-feather="share-2">                        </i></span>
-                        <ul class="share-iconlist">
-                          <li class="bg-fb"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                          <li class="bg-twt"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-                          <li class="bg-insta"><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                          <li class="bg-whp"><a href="https://www.whatsapp.com/"><i class="fa fa-whatsapp"></i></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="detail-group">
-                  <h6>product detail</h6>
-                  <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud </p>
-                  <h5 class="mb-5">Hurry! Only 3 left in stock</h5>
-                  <div class="progress progress-danger">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
-                  </div>
-                  <div class="text-danger fs-14 mt-5 mb-10 fw-500">20 sold in last 24 hours</div>
-                  <h6>select size</h6>
-                  <ul class="product-size">
-                    <li><a href="javascript:void(0);">s</a></li>
-                    <li><a href="javascript:void(0);">m</a></li>
-                    <li><a href="javascript:void(0);">l</a></li>
-                    <li><a href="javascript:void(0);">xl    </a></li>
-                  </ul>
-                </div>
-                <div class="detail-group">
-                  <h6>select color</h6>
-                  <ul class="product-color">
-                    <li class="bg-primary">
-                      <div></div>
+                <ul>
+                    <li>
+                        <div class="bread-wrap"><i class="fa fa-clock-o"></i></div>
+                        <span class="liveTime"></span>
                     </li>
-                    <li class="bg-secondary">
-                      <div></div>
+                    <li>
+                        <div class="bread-wrap"><i class="fa fa-calendar"></i></div>
+                        <span class="getDate"> </span>
                     </li>
-                    <li class="bg-success">
-                      <div></div>
-                    </li>
-                    <li class="bg-info">
-                      <div></div>
-                    </li>
-                    <li class="bg-warning">                       
-                      <div></div>
-                    </li>
-                  </ul>
-                  <h6>Quantity</h6>
-                  <div class="mb-15">                
-                      <div class="input-group pro-quantity"><span class="input-group-text count-minus"> <i data-feather="minus"></i></span>
-                        <input class="form-control pro-qty" type="text" name="qty count" value="1"><span class="input-group-text count-plus"> <i data-feather="plus"></i></span>
-                      </div>
-                  </div><a class="btn btn-primary" href="cart.html">add to cart</a><a class="btn btn-primary ml-15" href="wishlist.html">wishlist</a>
-                </div>
-                <div class="detail-group pb-0 mb-0 border-0">
-                  <h6>Delivery</h6>
-                  <div class="input-group product-delivery"><span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                    <input class="form-control" type="text" value="368900" placeholder="Enter your pincod"><span class="input-group-text">check</span>
-                  </div>
-                  <h5 class="fs-14 mt-10 text-light">Usually delivered in 3 days            </h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="product-card product-detail-tab">
-                <ul class="nav nav-tabs">
-                  <li><a class="btn active" data-bs-toggle="tab" href="#tab-1">Description                </a></li>
-                  <li><a class="btn" data-bs-toggle="tab" href="#tab-2">Information               </a></li>
-                  <li><a class="btn" data-bs-toggle="tab" href="#tab-3">Review (03)</a></li>
                 </ul>
-                <div class="tab-content">
-                  <div class="tab-pane fade active show" id="tab-1">
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                  <div class="tab-pane fade" id="tab-2">
-                    <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                  </div>
-                  <div class="tab-pane fade" id="tab-3">
-                    <ul class="review-list">
-                      <li>
-                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/2.jpg" alt="review">
-                          <div class="media-body">                         <a href="profile.html">
-                              <h5>Thomas Vactom</h5></a>
-                            <ul class="rating-list">
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           </p>
-                      </li>
-                      <li>
-                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/3.jpg" alt="review">
-                          <div class="media-body"><a href="profile.html">
-                              <h5>Johan deo</h5></a>
-                            <ul class="rating-list">
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           </p>
-                      </li>
-                      <li>
-                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/4.jpg" alt="review">
-                          <div class="media-body"><a href="profile.html">
-                              <h5>Omeni Rome</h5></a>
-                            <ul class="rating-list">
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                              <li><i class="fa fa-star"></i></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.           </p>
-                      </li>
-                    </ul>
-                    <div class="review-box">
-                      <h4 class="mb-5">Your Rating</h4>
-                      <ul class="rating-list mb-10">
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                        <li><i class="fa fa-star"></i></li>
-                      </ul>
-                      <h4 class="mb-10">Write Review</h4>
-                      <form class="form-theme">
-                        <div class="form-group">
-                          <div class="small-group">
-                            <div>
-                              <input class="form-control" type="text" placeholder="Enter your name">
-                            </div>
-                            <div>
-                              <input class="form-control" type="email" placeholder="Enter your email">
-                            </div>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <textarea class="form-control" placeholder="Your Review"></textarea>
-                        </div>
-                        <div class="form-group mb-0"><a class="btn btn-primary" href="javascript:void(0)">Post review</a></div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
-            <div class="col-12">
-              <div class="related-product mb-20"> 
-                <h3 class="mb-20">Related products</h3>
-                <div class="slide-5 arrow-style1" data-slick="{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 1}">
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/1.jpg" alt="product box"></a><span class="product-sale-label">Hot</span><span class="product-discount-label">-8%</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>Cheks red Shirt</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-11" name="input-1">
-                                <label class="star" for="input-11">   </label>
-                                <input type="radio" id="input-12" name="input-1">
-                                <label class="star" for="input-12">   </label>
-                                <input type="radio" id="input-13" name="input-1">
-                                <label class="star" for="input-13">   </label>
-                                <input type="radio" id="input-14" name="input-1">
-                                <label class="star" for="input-14">   </label>
-                                <input type="radio" id="input-15" name="input-1">
-                                <label class="star" for="input-15">   </label>
-                              </div>
-                            <div class="pro-price">$252<span class="old-price">$238</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/2.jpg" alt="product box"></a><span class="product-sale-label">Hot</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>pink T-shirt</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-21" name="input-2">
-                                <label class="star" for="input-21">   </label>
-                                <input type="radio" id="input-22" name="input-2">
-                                <label class="star" for="input-22">   </label>
-                                <input type="radio" id="input-23" name="input-2">
-                                <label class="star" for="input-23">   </label>
-                                <input type="radio" id="input-24" name="input-2">
-                                <label class="star" for="input-24">   </label>
-                                <input type="radio" id="input-25" name="input-2">
-                                <label class="star" for="input-25">   </label>
-                              </div>
-                            <div class="pro-price">$180<span class="old-price">$180</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/3.jpg" alt="product box"></a><span class="product-discount-label">-18%</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>sky blue shirt</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-31" name="input-3">
-                                <label class="star" for="input-31">   </label>
-                                <input type="radio" id="input-32" name="input-3">
-                                <label class="star" for="input-32">   </label>
-                                <input type="radio" id="input-33" name="input-3">
-                                <label class="star" for="input-33">   </label>
-                                <input type="radio" id="input-34" name="input-3">
-                                <label class="star" for="input-34">   </label>
-                                <input type="radio" id="input-35" name="input-3">
-                                <label class="star" for="input-35">   </label>
-                              </div>
-                            <div class="pro-price">$90<span class="old-price">$110</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/4.jpg" alt="product box"></a><span class="product-sale-label">Hot</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>white T-shirt</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-41" name="input-4">
-                                <label class="star" for="input-41">   </label>
-                                <input type="radio" id="input-42" name="input-4">
-                                <label class="star" for="input-42">   </label>
-                                <input type="radio" id="input-43" name="input-4">
-                                <label class="star" for="input-43">   </label>
-                                <input type="radio" id="input-44" name="input-4">
-                                <label class="star" for="input-44">   </label>
-                                <input type="radio" id="input-45" name="input-4">
-                                <label class="star" for="input-45">   </label>
-                              </div>
-                            <div class="pro-price">$80<span class="old-price">$80</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/5.jpg" alt="product box"></a><span class="product-discount-label">-38%</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>blue jacket</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-51" name="input-5">
-                                <label class="star" for="input-51">   </label>
-                                <input type="radio" id="input-52" name="input-5">
-                                <label class="star" for="input-52">   </label>
-                                <input type="radio" id="input-53" name="input-5">
-                                <label class="star" for="input-53">   </label>
-                                <input type="radio" id="input-54" name="input-5">
-                                <label class="star" for="input-54">   </label>
-                                <input type="radio" id="input-55" name="input-5">
-                                <label class="star" for="input-55">   </label>
-                              </div>
-                            <div class="pro-price">$78<span class="old-price">$110</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/6.jpg" alt="product box"></a><span class="product-sale-label">Hot</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>Black T-shirt</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-61" name="input-6">
-                                <label class="star" for="input-61">   </label>
-                                <input type="radio" id="input-62" name="input-6">
-                                <label class="star" for="input-62">   </label>
-                                <input type="radio" id="input-63" name="input-6">
-                                <label class="star" for="input-63">   </label>
-                                <input type="radio" id="input-64" name="input-6">
-                                <label class="star" for="input-64">   </label>
-                                <input type="radio" id="input-65" name="input-6">
-                                <label class="star" for="input-65">   </label>
-                              </div>
-                            <div class="pro-price">$35<span class="old-price">$35</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                  <div>
-                      <div class="product-boxwrap">
-                        <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid" src="../assets/images/pages/product/7.jpg" alt="product box"></a><span class="product-discount-label">-14%</span>
-                          <ul class="social">
-                            <li><a href="cart.html" data-tip="add to cart"><i class="icofont-shopping-cart"></i></a></li>
-                            <li><a href="product-detail.html" data-tip="Quick View"><i class="icofont-eye-alt"></i></a></li>
-                            <li><a href="wishlist.html" data-tip="Wishlist"><i class="icofont-heart-alt"></i></a></li>
-                          </ul>
-                        </div>
-                        <div class="product-detailwrap">
-                          <div><a href="product-detail.html">
-                              <h5>Leather Jacket</h5></a>
-                              <div class="pro-rating">               
-                                <input type="radio" id="input-71" name="input-7">
-                                <label class="star" for="input-71">   </label>
-                                <input type="radio" id="input-72" name="input-7">
-                                <label class="star" for="input-72">   </label>
-                                <input type="radio" id="input-73" name="input-7">
-                                <label class="star" for="input-73">   </label>
-                                <input type="radio" id="input-74" name="input-7">
-                                <label class="star" for="input-74">   </label>
-                                <input type="radio" id="input-75" name="input-7">
-                                <label class="star" for="input-75">   </label>
-                              </div>
-                            <div class="pro-price">$71<span class="old-price">$89</span></div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-      <!-- theme body end-->
     </div>
-    <!-- footer start-->
-      <footer class="codex-footer">
-        <p>Copyright 2022-23 © dmeki All rights reserved.</p>
-      </footer>
-    <!-- footer end-->
-    <!-- back to top start //-->
-      <div class="scroll-top"><i class="fa fa-angle-double-up"></i></div>
-    <!-- back to top end //-->
-      <!-- main jquery-->
-      <script src="../assets/js/jquery-3.6.0.js"></script>
-      <!-- Theme Customizer-->
-      <script src="../assets/js/layout-storage.js"></script>
-      <script src="../assets/js/customizer.js"></script>
-      <!-- Feather icons js-->
-      <script src="../assets/js/icons/feather-icon/feather.js"></script>
-      <!-- Bootstrap js-->
-      <script src="../assets/js/bootstrap.bundle.min.js"></script>
-      <!-- Scrollbar-->
-      <script src="../assets/js/vendors/simplebar.js"></script>
-      <!-- slick slider-->
-      <script src="../assets/js/vendors/slider/slick-sldier/slick.min.js"></script>
-      <script src="../assets/js/vendors/slider/slick-sldier/slick-custom.js"></script>
-      <!-- Custom script-->
-      <script src="../assets/js/custom-script.js"></script>
-  </body>
+    <!-- breadcrumb end-->
+    <!-- theme body start-->
+    <div class="theme-body product-detail-page">
+        <div class="custom-container">
+            <div class="row">
+                <div class="col-md-5 cdx-xl-45">
+                    <div class="product-card">
+                        <div class="product-for">
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/1.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/2.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/3.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/4.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                        </div>
+                        <div class="product-to">
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/1.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/2.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/3.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                            <div>
+                                <div class="product-imgwrap"><img class="img-fluid"
+                                                                  src="../assets/images/pages/product-detail/4.jpg"
+                                                                  alt="product-detail"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 cdx-xl-55 cdxpro-detail">
+                    <div class="product-card">
+                        <div class="detail-group">
+                            <div class="media">
+                                <div>
+                                    <h2>Men Pink T-shirtual Jacket</h2>
+                                    <h6 class="text-light">Special price</h6>
+                                    <ul class="product-rating">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star-o"></i></li>
+                                    </ul>
+                                    <ul class="product-price">
+                                        <li class="new-price">$70</li>
+                                        <li class="old-price text-light fw-400">
+                                            <del>$80</del>
+                                        </li>
+                                        <li class="ofr-price"><span class="badge badge-success">32% off</span></li>
+                                    </ul>
+                                </div>
+                                <div class="media-body">
+                                    <div class="product-share"><span class="proshare-toggle"><i
+                                            data-feather="share-2">                        </i></span>
+                                        <ul class="share-iconlist">
+                                            <li class="bg-fb"><a href="https://www.facebook.com/"><i
+                                                    class="fa fa-facebook"></i></a></li>
+                                            <li class="bg-twt"><a href="https://twitter.com/"><i
+                                                    class="fa fa-twitter"></i></a></li>
+                                            <li class="bg-insta"><a href="https://www.instagram.com/"><i
+                                                    class="fa fa-instagram"></i></a></li>
+                                            <li class="bg-whp"><a href="https://www.whatsapp.com/"><i
+                                                    class="fa fa-whatsapp"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="detail-group">
+                            <h6>product detail</h6>
+                            <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis
+                                nostrud </p>
+                            <h5 class="mb-5">Hurry! Only 3 left in stock</h5>
+                            <div class="progress progress-danger">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                     aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+                            </div>
+                            <div class="text-danger fs-14 mt-5 mb-10 fw-500">20 sold in last 24 hours</div>
+                            <h6>select size</h6>
+                            <ul class="product-size">
+                                <li><a href="javascript:void(0);">s</a></li>
+                                <li><a href="javascript:void(0);">m</a></li>
+                                <li><a href="javascript:void(0);">l</a></li>
+                                <li><a href="javascript:void(0);">xl </a></li>
+                            </ul>
+                        </div>
+                        <div class="detail-group">
+                            <h6>select color</h6>
+                            <ul class="product-color">
+                                <li class="bg-primary">
+                                    <div></div>
+                                </li>
+                                <li class="bg-secondary">
+                                    <div></div>
+                                </li>
+                                <li class="bg-success">
+                                    <div></div>
+                                </li>
+                                <li class="bg-info">
+                                    <div></div>
+                                </li>
+                                <li class="bg-warning">
+                                    <div></div>
+                                </li>
+                            </ul>
+                            <h6>Quantity</h6>
+                            <div class="mb-15">
+                                <div class="input-group pro-quantity"><span class="input-group-text count-minus"> <i
+                                        data-feather="minus"></i></span>
+                                    <input class="form-control pro-qty" type="text" name="qty count" value="1"><span
+                                            class="input-group-text count-plus"> <i data-feather="plus"></i></span>
+                                </div>
+                            </div>
+                            <a class="btn btn-primary" href="cart.html">add to cart</a><a class="btn btn-primary ml-15"
+                                                                                          href="wishlist.html">wishlist</a>
+                        </div>
+                        <div class="detail-group pb-0 mb-0 border-0">
+                            <h6>Delivery</h6>
+                            <div class="input-group product-delivery"><span class="input-group-text"><i
+                                    class="fa fa-map-marker"></i></span>
+                                <input class="form-control" type="text" value="368900"
+                                       placeholder="Enter your pincod"><span class="input-group-text">check</span>
+                            </div>
+                            <h5 class="fs-14 mt-10 text-light">Usually delivered in 3 days </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="product-card product-detail-tab">
+                        <ul class="nav nav-tabs">
+                            <li><a class="btn active" data-bs-toggle="tab" href="#tab-1">Description </a></li>
+                            <li><a class="btn" data-bs-toggle="tab" href="#tab-2">Information </a></li>
+                            <li><a class="btn" data-bs-toggle="tab" href="#tab-3">Review (03)</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="tab-1">
+                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tab-2">
+                                <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                    qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="tab-pane fade" id="tab-3">
+                                <ul class="review-list">
+                                    <li>
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/2.jpg"
+                                                                alt="review">
+                                            <div class="media-body"><a href="profile.html">
+                                                <h5>Thomas Vactom</h5></a>
+                                                <ul class="rating-list">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                            est laborum. </p>
+                                    </li>
+                                    <li>
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/3.jpg"
+                                                                alt="review">
+                                            <div class="media-body"><a href="profile.html">
+                                                <h5>Johan deo</h5></a>
+                                                <ul class="rating-list">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                            est laborum. </p>
+                                    </li>
+                                    <li>
+                                        <div class="media"><img class="img-fluid" src="../assets/images/avtar/4.jpg"
+                                                                alt="review">
+                                            <div class="media-body"><a href="profile.html">
+                                                <h5>Omeni Rome</h5></a>
+                                                <ul class="rating-list">
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                    <li><i class="fa fa-star"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p class="text-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                            est laborum. </p>
+                                    </li>
+                                </ul>
+                                <div class="review-box">
+                                    <h4 class="mb-5">Your Rating</h4>
+                                    <ul class="rating-list mb-10">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                    <h4 class="mb-10">Write Review</h4>
+                                    <form class="form-theme">
+                                        <div class="form-group">
+                                            <div class="small-group">
+                                                <div>
+                                                    <input class="form-control" type="text"
+                                                           placeholder="Enter your name">
+                                                </div>
+                                                <div>
+                                                    <input class="form-control" type="email"
+                                                           placeholder="Enter your email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" placeholder="Your Review"></textarea>
+                                        </div>
+                                        <div class="form-group mb-0"><a class="btn btn-primary"
+                                                                        href="javascript:void(0)">Post review</a></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="related-product mb-20">
+                        <h3 class="mb-20">Related products</h3>
+                        <div class="slide-5 arrow-style1"
+                             data-slick="{&quot;slidesToShow&quot;: 4, &quot;slidesToScroll&quot;: 1}">
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/1.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-sale-label">Hot</span><span class="product-discount-label">-8%</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>Cheks red Shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-11" name="input-1">
+                                                <label class="star" for="input-11"> </label>
+                                                <input type="radio" id="input-12" name="input-1">
+                                                <label class="star" for="input-12"> </label>
+                                                <input type="radio" id="input-13" name="input-1">
+                                                <label class="star" for="input-13"> </label>
+                                                <input type="radio" id="input-14" name="input-1">
+                                                <label class="star" for="input-14"> </label>
+                                                <input type="radio" id="input-15" name="input-1">
+                                                <label class="star" for="input-15"> </label>
+                                            </div>
+                                            <div class="pro-price">$252<span class="old-price">$238</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/2.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-sale-label">Hot</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>pink T-shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-21" name="input-2">
+                                                <label class="star" for="input-21"> </label>
+                                                <input type="radio" id="input-22" name="input-2">
+                                                <label class="star" for="input-22"> </label>
+                                                <input type="radio" id="input-23" name="input-2">
+                                                <label class="star" for="input-23"> </label>
+                                                <input type="radio" id="input-24" name="input-2">
+                                                <label class="star" for="input-24"> </label>
+                                                <input type="radio" id="input-25" name="input-2">
+                                                <label class="star" for="input-25"> </label>
+                                            </div>
+                                            <div class="pro-price">$180<span class="old-price">$180</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/3.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-discount-label">-18%</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>sky blue shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-31" name="input-3">
+                                                <label class="star" for="input-31"> </label>
+                                                <input type="radio" id="input-32" name="input-3">
+                                                <label class="star" for="input-32"> </label>
+                                                <input type="radio" id="input-33" name="input-3">
+                                                <label class="star" for="input-33"> </label>
+                                                <input type="radio" id="input-34" name="input-3">
+                                                <label class="star" for="input-34"> </label>
+                                                <input type="radio" id="input-35" name="input-3">
+                                                <label class="star" for="input-35"> </label>
+                                            </div>
+                                            <div class="pro-price">$90<span class="old-price">$110</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/4.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-sale-label">Hot</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>white T-shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-41" name="input-4">
+                                                <label class="star" for="input-41"> </label>
+                                                <input type="radio" id="input-42" name="input-4">
+                                                <label class="star" for="input-42"> </label>
+                                                <input type="radio" id="input-43" name="input-4">
+                                                <label class="star" for="input-43"> </label>
+                                                <input type="radio" id="input-44" name="input-4">
+                                                <label class="star" for="input-44"> </label>
+                                                <input type="radio" id="input-45" name="input-4">
+                                                <label class="star" for="input-45"> </label>
+                                            </div>
+                                            <div class="pro-price">$80<span class="old-price">$80</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/5.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-discount-label">-38%</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>blue jacket</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-51" name="input-5">
+                                                <label class="star" for="input-51"> </label>
+                                                <input type="radio" id="input-52" name="input-5">
+                                                <label class="star" for="input-52"> </label>
+                                                <input type="radio" id="input-53" name="input-5">
+                                                <label class="star" for="input-53"> </label>
+                                                <input type="radio" id="input-54" name="input-5">
+                                                <label class="star" for="input-54"> </label>
+                                                <input type="radio" id="input-55" name="input-5">
+                                                <label class="star" for="input-55"> </label>
+                                            </div>
+                                            <div class="pro-price">$78<span class="old-price">$110</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/6.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-sale-label">Hot</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>Black T-shirt</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-61" name="input-6">
+                                                <label class="star" for="input-61"> </label>
+                                                <input type="radio" id="input-62" name="input-6">
+                                                <label class="star" for="input-62"> </label>
+                                                <input type="radio" id="input-63" name="input-6">
+                                                <label class="star" for="input-63"> </label>
+                                                <input type="radio" id="input-64" name="input-6">
+                                                <label class="star" for="input-64"> </label>
+                                                <input type="radio" id="input-65" name="input-6">
+                                                <label class="star" for="input-65"> </label>
+                                            </div>
+                                            <div class="pro-price">$35<span class="old-price">$35</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="product-boxwrap">
+                                    <div class="product-imgwrap"><a href="product-detail.html"><img class="img-fluid"
+                                                                                                    src="../assets/images/pages/product/7.jpg"
+                                                                                                    alt="product box"></a><span
+                                            class="product-discount-label">-14%</span>
+                                        <ul class="social">
+                                            <li><a href="cart.html" data-tip="add to cart"><i
+                                                    class="icofont-shopping-cart"></i></a></li>
+                                            <li><a href="product-detail.html" data-tip="Quick View"><i
+                                                    class="icofont-eye-alt"></i></a></li>
+                                            <li><a href="wishlist.html" data-tip="Wishlist"><i
+                                                    class="icofont-heart-alt"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-detailwrap">
+                                        <div><a href="product-detail.html">
+                                            <h5>Leather Jacket</h5></a>
+                                            <div class="pro-rating">
+                                                <input type="radio" id="input-71" name="input-7">
+                                                <label class="star" for="input-71"> </label>
+                                                <input type="radio" id="input-72" name="input-7">
+                                                <label class="star" for="input-72"> </label>
+                                                <input type="radio" id="input-73" name="input-7">
+                                                <label class="star" for="input-73"> </label>
+                                                <input type="radio" id="input-74" name="input-7">
+                                                <label class="star" for="input-74"> </label>
+                                                <input type="radio" id="input-75" name="input-7">
+                                                <label class="star" for="input-75"> </label>
+                                            </div>
+                                            <div class="pro-price">$71<span class="old-price">$89</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- theme body end-->
+</div>
+<!-- footer start-->
+<footer class="codex-footer">
+    <p>Copyright 2022-23 © dmeki All rights reserved.</p>
+</footer>
+<!-- footer end-->
+<!-- back to top start //-->
+<div class="scroll-top"><i class="fa fa-angle-double-up"></i></div>
+<!-- back to top end //-->
+<!-- main jquery-->
+<script src="../assets/js/jquery-3.6.0.js"></script>
+<!-- Theme Customizer-->
+<script src="../assets/js/layout-storage.js"></script>
+<script src="../assets/js/customizer.js"></script>
+<!-- Feather icons js-->
+<script src="../assets/js/icons/feather-icon/feather.js"></script>
+<!-- Bootstrap js-->
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<!-- Scrollbar-->
+<script src="../assets/js/vendors/simplebar.js"></script>
+<!-- slick slider-->
+<script src="../assets/js/vendors/slider/slick-sldier/slick.min.js"></script>
+<script src="../assets/js/vendors/slider/slick-sldier/slick-custom.js"></script>
+<!-- Custom script-->
+<script src="../assets/js/custom-script.js"></script>
+</body>
 </html>

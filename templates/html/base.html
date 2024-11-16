@@ -34,6 +34,9 @@
     <link href="{% static 'assets/css/vendor/datatable/buttons.dataTables.css' %}" rel="stylesheet">
     <link href="{% static 'assets/css/vendor/datatable/custom-datatable.css' %}" rel="stylesheet">
 
+    <!-- Slick slider-->
+    <link href="{% static 'assets/css/vendor/slider/slick-slider/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/vendor/slider/slick-slider/slick-theme.css' %}" rel="stylesheet">
 </head>
 <body>
 <!-- Loader Start-->
@@ -291,9 +294,9 @@
                 <span>Savdo</span><i class="fa fa-angle-down"></i></a>
                 <ul class="submenu-list">
                     <li><a href="/product">product</a></li>
-                    <li><a href="/product-detail">product detail</a></li>
+                    <!--                    <li><a href="/product-detail">product detail</a></li>-->
                     <li><a href="/add-product">add product</a></li>
-                    <li><a href="/product-list">product list</a></li>
+                    <!--                    <li><a href="/product-list">product list</a></li>-->
                     <li><a href="/order-history">order history</a></li>
                     <li><a href="/cart">cart</a></li>
                     <li><a href="/wishlist">wishlist</a></li>
@@ -426,6 +429,7 @@
 <div class="scroll-top"><i class="fa fa-angle-double-up"></i></div>
 <!-- back to top end //-->
 <!-- main jquery-->
+
 <script src="{% static 'assets/js/jquery-3.6.0.js' %}"></script>
 <!-- Theme Customizer-->
 <script src="{% static 'assets/js/layout-storage.js' %}"></script>
@@ -442,6 +446,9 @@
 <script src="{% static 'assets/js/dashboard/dashboard.js' %}"></script>
 <!-- Custom script-->
 <script src="{% static 'assets/js/custom-script.js' %}"></script>
+<!-- Theme Customizer-->
+<script src="{% static './assets/js/layout-storage.js' %}"></script>
+<script src="{% static './assets/js/customizer.js' %}"></script>
 
 <!-- Scrollbar-->
 <script src="{% static 'assets/js/vendors/slider/slick-sldier/slick.min.js' %}"></script>
@@ -458,7 +465,6 @@
 <script src="{% static 'assets/js/vendors/datatable/vfs_fonts.js' %}"></script>
 <script src="{% static 'assets/js/vendors/datatable/buttons.html5.min.js' %}"></script>
 <script src="{% static 'assets/js/vendors/datatable/custom-datatable.js' %}"></script>
-
 
 </body>
 </html>

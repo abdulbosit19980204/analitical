@@ -165,6 +165,14 @@ class ProductView(LoginRequiredMixin, View):
         return render(request, 'product.html', context=d)
 
 
+class ProductDetailView(LoginRequiredMixin, View):
+    def get(self, request, product_id):
+        d = {}
+        product_data = Product.objects.filter(id=product_id).first
+        d['product'] = product_data
+        return render(request, 'product-detail.html', context=d)
+
+
 class ErrorPageView(generic.ListView):
     model = User
     template_name = 'error-page.html'

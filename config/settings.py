@@ -24,8 +24,12 @@ SECRET_KEY = 'django-insecure-agoj(8__)5c5qlio@ylhse8uf2xt@pojra65$$!y&4_b!3a(z_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '192.168.1.237', '192.168.87.12']
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]', '192.168.1.237', '192.168.0.110']
+INTERNAL_IPS = [
+    # ...
+    "127.0.0.1",
+    # ...
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,7 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'import_export',
-
+    "debug_toolbar",
     # local
     'api',
     'dashboard',
@@ -56,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'config.urls'
