@@ -2,8 +2,11 @@
 {% block content %}
 {% load static %}
 
-<!-- theme body start-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.0.0/apexcharts.min.css"
+      integrity="sha512-e3RSvqXJCnockRd9S0Qe7D2g3Gld0+6Sks/tpU2SGsJrvVHyfTopEf01UHhpGMaoTWqcepzRBKhFqAWJcD8guA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+<!-- theme body start-->
 
 
 <div class="theme-body" data-simplebar>
@@ -14,6 +17,7 @@
                     <div class="card-header">
                         <h4>Total Plan</h4>
                         <div class="setting-card action-menu">
+
                             <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
                             <ul class="action-dropdown">
                                 <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
@@ -31,6 +35,11 @@
                         </div>
                         <h4 class="text-light">this week extra earnings in <span
                                 class="text-primary">$1,827.24                   </span></h4>
+                        Name: {{topSellingProducts.0.NameProduct}} <br>
+                        Count: {{statistics.orders_count}}<br>
+                        Price: {{topSellingProducts.0.Price}}<br>
+                        Amount: {{topSellingProducts.0.Amount}}<br>
+                        Total Sum: {{topSellingProducts.0.Total}}<br>
                     </div>
                 </div>
             </div>
@@ -123,9 +132,84 @@
                     </div>
                     <div class="card-body">
                         <div id="over-revenue">
-                            <div id="apex-mixchart" style="min-height: 365px;">
+                            <div id="sale-category7" style="min-height: 365px;">
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
+                <div class="card sale-categorychart">
+                    <div class="card-header">
+                        <h4>Product Status </h4>
+                        <div class="setting-card action-menu">
+                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
+                            <ul class="action-dropdown">
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="sale-category"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
+                <div class="card sale-categorychart">
+                    <div class="card-header">
+                        <h4>Product Status </h4>
+                        <div class="setting-card action-menu">
+                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
+                            <ul class="action-dropdown">
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="sale-category2"></div>
+                        <div class="category-count">
+                            <h2>55.8 % </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
+                <div class="card sale-categorychart">
+                    <div class="card-header">
+                        <h4>Product Status </h4>
+                        <div class="setting-card action-menu">
+                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
+                            <ul class="action-dropdown">
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="sale-category3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
+                <div class="card sale-categorychart">
+                    <div class="card-header">
+                        <h4>Product Status </h4>
+                        <div class="setting-card action-menu">
+                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
+                            <ul class="action-dropdown">
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="sale-category4"></div>
                     </div>
                 </div>
             </div>
@@ -162,7 +246,7 @@
                                                                        src="{% static 'assets/images/ecom-dashboard/small-pro/1.jpg' %}"
                                                                        alt=""></div>
                                             <div class="media-body">
-                                                <a href="/product-detail">
+                                                <a href="/product/{{i.id}}">
                                                     <h6>{{i.NameProduct}}</h6>
                                                 </a>
                                                 <span>{{i.CodeProduct}}</span>
@@ -182,9 +266,9 @@
                 </div>
             </div>
             <div class="col-xxl-8 cdx-xxl-50">
-                <div class="card recent-ordertbl">
+                <div class="card overall-revenuetbl">
                     <div class="card-header">
-                        <h4>Recent Orders</h4>
+                        <h4>Overall Revenue By Monthly</h4>
                         <div class="setting-card action-menu">
                             <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
                             <ul class="action-dropdown">
@@ -195,121 +279,14 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Customer</th>
-                                    <th>Invoice</th>
-                                    <th>Pusrchase on</th>
-                                    <th>Amout</th>
-                                    <th>Status</th>
-                                    <th>Tracking</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/avtar/1.jpg"
-                                                                       alt="recent-product"></div>
-                                            <div class="media-body">Mark Jecon</div>
-                                        </div>
-                                    </td>
-                                    <td>#4789347</td>
-                                    <td>15 Mar 2022</td>
-                                    <td>$72545</td>
-                                    <td><span class="badge badge-primary">done</span></td>
-                                    <td>GO4YOU</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/avtar/2.jpg"
-                                                                       alt="recent-product"></div>
-                                            <div class="media-body">Wamsi Odem</div>
-                                        </div>
-                                    </td>
-                                    <td>#2387349</td>
-                                    <td>03 Jul 2022</td>
-                                    <td>$38445</td>
-                                    <td><span class="badge badge-secondary">Pending</span></td>
-                                    <td>PU58OU</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/avtar/3.jpg"
-                                                                       alt="recent-product"></div>
-                                            <div class="media-body">Svenja Olank</div>
-                                        </div>
-                                    </td>
-                                    <td>#4385809</td>
-                                    <td>23 Apr 2022</td>
-                                    <td>$29023</td>
-                                    <td><span class="badge badge-danger">cancle</span></td>
-                                    <td>HDRYO5</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/avtar/4.jpg"
-                                                                       alt="recent-product"></div>
-                                            <div class="media-body">Jacob Jones</div>
-                                        </div>
-                                    </td>
-                                    <td>#8934090</td>
-                                    <td>20 Nov 2022</td>
-                                    <td>$20867</td>
-                                    <td><span class="badge badge-primary">done</span></td>
-                                    <td>SOPY8U</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="../assets/images/avtar/5.jpg"
-                                                                       alt="recent-product"></div>
-                                            <div class="media-body">Guy Hawkins</div>
-                                        </div>
-                                    </td>
-                                    <td>#4579034</td>
-                                    <td>19 Jan 2022</td>
-                                    <td>$48187</td>
-                                    <td><span class="badge badge-secondary">Pending</span></td>
-                                    <td>KO8LOP</td>
-                                </tr>
-                                </tbody>
-                            </table>
+
+                        <div id="sale-category5" style="min-height: 365px;">
                         </div>
+
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
-                <div class="card sale-categorychart">
-                    <div class="card-header">
-                        <h4>Product Status </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="sale-category"></div>
-                        <div class="category-count">
-                            <h2>55.8 % </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-12">
                 <div class="ecompro-slide arrow-style1">
                     {% for i in productSelling %}
@@ -319,7 +296,7 @@
                                 <div class="product-imgwrap"><img class="img-fluid"
                                                                   src="{% static 'assets/images/ecom-dashboard/product/1.jpg' %}"
                                                                   alt="1.jpg"></div>
-                                <div class="detail-wrap"><a href="/product-detail">
+                                <div class="detail-wrap"><a href="/product/{{i.id}}">
                                     <h5>{{i}}</h5>
                                     <p>id: {{i.CodeProduct}}</p></a>
                                     <h6 class="text-light">Price: {{i.Price}}</h6>
@@ -354,209 +331,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div id="earning-revenue"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-6 cdx-xxl-100">
-                <div class="card payment-method">
-                    <div class="card-header">
-                        <h4> Payment method </h4>
-                    </div>
-                    <div class="card-body">
-                        <ul class="nav nav-tabs border-0 mb-15">
-                            <li><a class="btn active" data-bs-toggle="tab" href="#tab-1"><i
-                                    class="fa fa-credit-card"> </i>Credit </a></li>
-                            <li><a class="btn" data-bs-toggle="tab" href="#tab-2"><i class="icofont-credit-card"></i>Debit
-                                Card</a></li>
-                            <li><a class="btn" data-bs-toggle="tab" href="#tab-3"> <i
-                                    class="icofont-mastercard-alt"></i>Master card</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade active show" id="tab-1">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="small-group">
-                                            <div>
-                                                <label class="form-label">Card number</label>
-                                                <input class="form-control" type="text"
-                                                       placeholder="1234 5678 9012 3456">
-                                            </div>
-                                            <div>
-                                                <label class="form-label">Card holder</label>
-                                                <input class="form-control" type="text" placeholder="John Doe">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Expiration Date</label>
-                                        <div class="small-group">
-                                            <div>
-                                                <select class="form-control" name="month">
-                                                    <option value="january">January</option>
-                                                    <option value="february">February</option>
-                                                    <option value="march">March</option>
-                                                    <option value="april">April</option>
-                                                    <option value="may">May</option>
-                                                    <option value="june">June</option>
-                                                    <option value="july">July</option>
-                                                    <option value="august">August</option>
-                                                    <option value="september">September</option>
-                                                    <option value="october">October</option>
-                                                    <option value="november">November</option>
-                                                    <option value="december">December</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <select class="form-control" name="Year">
-                                                    <option value="2022">2022</option>
-                                                    <option value="2023">2023</option>
-                                                    <option value="2024">2024</option>
-                                                    <option value="2025">2025</option>
-                                                    <option value="2026">2026</option>
-                                                    <option value="2027">2027</option>
-                                                    <option value="2028">2028</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="cdx-cvc">
-                                            <label class="form-label">CVC</label>
-                                            <div class="cvc-group">
-                                                <input class="form-control" type="text" maxlength="3" size="4"
-                                                       placeholder="123">
-                                                <p>Three or four digits, usually found on the back of the card</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-0"><a class="btn btn-primary" href="javascript:void(0)">Proceed</a>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="tab-2">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="small-group">
-                                            <div>
-                                                <label class="form-label">Card number</label>
-                                                <input class="form-control" type="text"
-                                                       placeholder="1234 5678 9012 3456">
-                                            </div>
-                                            <div>
-                                                <label class="form-label">Card holder</label>
-                                                <input class="form-control" type="text" placeholder="John Doe">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Expiration Date</label>
-                                        <div class="small-group">
-                                            <div>
-                                                <select class="form-control" name="month">
-                                                    <option value="january">January</option>
-                                                    <option value="february">February</option>
-                                                    <option value="march">March</option>
-                                                    <option value="april">April</option>
-                                                    <option value="may">May</option>
-                                                    <option value="june">June</option>
-                                                    <option value="july">July</option>
-                                                    <option value="august">August</option>
-                                                    <option value="september">September</option>
-                                                    <option value="october">October</option>
-                                                    <option value="november">November</option>
-                                                    <option value="december">December</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <select class="form-control" name="Year">
-                                                    <option value="2022">2022</option>
-                                                    <option value="2023">2023</option>
-                                                    <option value="2024">2024</option>
-                                                    <option value="2025">2025</option>
-                                                    <option value="2026">2026</option>
-                                                    <option value="2027">2027</option>
-                                                    <option value="2028">2028</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="cdx-cvc">
-                                            <label class="form-label">CVC</label>
-                                            <div class="cvc-group">
-                                                <input class="form-control" type="text" maxlength="3" size="4"
-                                                       placeholder="123">
-                                                <p>Three or four digits, usually found on the back of the card</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-0"><a class="btn btn-primary" href="javascript:void(0)">Proceed</a>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="tab-3">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="small-group">
-                                            <div>
-                                                <label class="form-label">Card number</label>
-                                                <input class="form-control" type="text"
-                                                       placeholder="1234 5678 9012 3456">
-                                            </div>
-                                            <div>
-                                                <label class="form-label">Card holder</label>
-                                                <input class="form-control" type="text" placeholder="John Doe">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Expiration Date</label>
-                                        <div class="small-group">
-                                            <div>
-                                                <select class="form-control" name="month">
-                                                    <option value="january">January</option>
-                                                    <option value="february">February</option>
-                                                    <option value="march">March</option>
-                                                    <option value="april">April</option>
-                                                    <option value="may">May</option>
-                                                    <option value="june">June</option>
-                                                    <option value="july">July</option>
-                                                    <option value="august">August</option>
-                                                    <option value="september">September</option>
-                                                    <option value="october">October</option>
-                                                    <option value="november">November</option>
-                                                    <option value="december">December</option>
-                                                </select>
-                                            </div>
-                                            <div>
-                                                <select class="form-control" name="Year">
-                                                    <option value="2022">2022</option>
-                                                    <option value="2023">2023</option>
-                                                    <option value="2024">2024</option>
-                                                    <option value="2025">2025</option>
-                                                    <option value="2026">2026</option>
-                                                    <option value="2027">2027</option>
-                                                    <option value="2028">2028</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="cdx-cvc">
-                                            <label class="form-label">CVC</label>
-                                            <div class="cvc-group">
-                                                <input class="form-control" type="text" maxlength="3" size="4"
-                                                       placeholder="123">
-                                                <p>Three or four digits, usually found on the back of the card</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group mb-0"><a class="btn btn-primary" href="javascript:void(0)">Proceed</a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <div id="sale-category6"></div>
                     </div>
                 </div>
             </div>
@@ -571,5 +346,6 @@
 <script src="{% static 'assets/js/vendors/chart/apexcharts.js' %}"></script>
 <!-- custom apex chart-->
 <script src="{% static 'assets/js/vendors/chart/custom-apexchart.js' %}"></script>
+<script src="{% static 'assets/js/dashboard/static.js' %}"></script>
 
 {% endblock %}

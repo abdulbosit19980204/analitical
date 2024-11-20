@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db.models import Count, Sum, Max, Min
 from django.contrib.auth.models import User
 from django.views import generic, View
@@ -12,6 +14,9 @@ from product.models import Product, ProductSeria, ProductBrand
 from authentic.integrations import client, GetDailyReport, werehouse, product_sales
 from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
     GetProductsBlance_sync
+
+from .statistics import daily_order_statistics, most_sold_products_monthly_by_user, product_sales_statistics_by_user, \
+    yearly_sales_statistics_by_user
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -29,18 +34,36 @@ class IndexView(LoginRequiredMixin, View):
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
 
 
+def statistic_data(user, ):
+    d = {}
+    today = datetime.today()
+    month_first_day = datetime.today().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    orders = Order.objects.filter(agent=user, dateOrder__gte=month_first_day, dateOrder__lte=today)
+    daily_orders = orders.filter(dateOrder__lte=today).annotate(total_sum=Sum('total'))
+    d['orders_count'] = len(orders)
+    return d
+
+
 class EcommerceView(LoginRequiredMixin, View):
     login_url = reverse_lazy('dashboard:login')
 
     def get(self, request):
         d = {}
+        print(daily_order_statistics(request.user))
+        print(most_sold_products_monthly_by_user(request.user))
+        print(product_sales_statistics_by_user(request.user))
+        print(yearly_sales_statistics_by_user(request.user))
+
+        d['statistics'] = statistic_data(request.user)
         productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
-        topSellingProducts = productSelling.values('NameProduct', 'CodeProduct', 'Price', 'Amount', 'Total').annotate(
+        topSellingProducts = productSelling.values('id', 'NameProduct', 'CodeProduct', 'Price', 'Amount',
+                                                   'Total').annotate(
             Count('CodeProduct'),
             Sum('Amount'), Sum('Total'))
         d['topSellingProducts'] = topSellingProducts[:5]
-        print(d['topSellingProducts'])
+        # print(d['topSellingProducts'])
         d['productSelling'] = productSelling
+
         return render(request, 'ecommerce.html', context=d)
 
 
