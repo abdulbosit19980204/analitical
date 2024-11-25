@@ -17,19 +17,9 @@ var options1 = {
 }
 
 var chart1 = new ApexCharts(document.querySelector("#sale-category"), options1);
+// var month = ['September', 'October', 'November']
+// var total_sales = [150, 250, 350]
 
-var options2 = {
-    chart: {
-        type: 'line'
-    }, series: [{
-        name: 'sales', data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
-    }], xaxis: {
-        categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-    },
-
-}
-
-var chart2 = new ApexCharts(document.querySelector("#sale-category2"), options2);
 
 var options3 = {
     chart: {
@@ -91,63 +81,6 @@ var options4 = {
 }
 
 var chart4 = new ApexCharts(document.querySelector("#sale-category4"), options4);
-var options5 = {
-    series: [{
-        name: 'TEAM A', type: 'column', data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30]
-    }, {
-        name: 'TEAM B', type: 'area', data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43]
-    }, {
-        name: 'TEAM C', type: 'line', data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39]
-    }],
-    chart: {
-        height: 350, type: 'line', stacked: false,
-    },
-    stroke: {
-        width: [0, 2, 5], curve: 'smooth'
-    },
-    plotOptions: {
-        bar: {
-            columnWidth: '50%'
-        }
-    },
-
-    fill: {
-        opacity: [0.85, 0.25, 1], gradient: {
-            inverseColors: false,
-            shade: 'light',
-            type: "vertical",
-            opacityFrom: 0.85,
-            opacityTo: 0.55,
-            stops: [0, 100, 100, 100]
-        }
-    },
-    labels: ['01/01/2003', '02/01/2003', '03/01/2003', '04/01/2003', '05/01/2003', '06/01/2003', '07/01/2003', '08/01/2003', '09/01/2003', '10/01/2003', '11/01/2003'],
-    markers: {
-        size: 0
-    },
-    xaxis: {
-        type: 'datetime'
-    },
-    yaxis: {
-        title: {
-            text: 'Points',
-        }
-    },
-    tooltip: {
-        shared: true, intersect: false, y: {
-            formatter: function (y) {
-                if (typeof y !== "undefined") {
-                    return y.toFixed(0) + " points";
-                }
-                return y;
-
-            }
-        }
-    }
-
-}
-
-var chart5 = new ApexCharts(document.querySelector("#sale-category5"), options5);
 var options6 = {
     series: [{
         name: 'Marine Sprite', data: [44, 55, 41, 37, 22, 43, 21]
@@ -186,72 +119,210 @@ var options6 = {
 }
 
 var chart6 = new ApexCharts(document.querySelector("#sale-category6"), options6);
-var options7 = {
-    series: [{
-        data: [400, 430, 448, 470, 540, 580, 690, 1100, 1200, 1380]
-    }],
-    chart: {
-        type: 'bar', height: 320
-    },
-    plotOptions: {
-        bar: {
-            barHeight: '100%', distributed: true, horizontal: true, dataLabels: {
-                position: 'bottom'
-            },
-        }
-    },
-    colors: ['#33b2df', '#546E7A', '#d4526e', '#13d8aa', '#A5978B', '#2b908f', '#f9a3a4', '#90ee7e', '#f48024', '#69d2e7'],
-    dataLabels: {
-        enabled: true, textAnchor: 'start', style: {
-            colors: ['#fff']
-        }, formatter: function (val, opt) {
-            return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
-        }, offsetX: 0, dropShadow: {
-            enabled: true
-        }
-    },
-    stroke: {
-        width: 1, colors: ['#fff']
-    },
-    xaxis: {
-        categories: ['South Korea', 'Canada', 'United Kingdom', 'Netherlands', 'Italy', 'France', 'Japan', 'United States', 'China', 'India'],
-    },
-    yaxis: {
-        labels: {
-            show: false
-        }
-    },
-    title: {
-        text: 'Custom DataLabels', align: 'center', floating: true
-    },
-    subtitle: {
-        text: 'Category Names as DataLabels inside bars', align: 'center',
-    },
-    tooltip: {
-        theme: 'dark', x: {
-            show: false
-        }, y: {
-            title: {
-                formatter: function () {
-                    return ''
-                }
-            }
-        }
-    }
-}
-
-var chart7 = new ApexCharts(document.querySelector("#sale-category7"), options7);
 
 
 chart1.render();
-chart2.render();
+
 chart3.render();
 chart4.render();
-chart5.render();
+// chart5.render();
 chart6.render();
-chart7.render();
 
-const getData = () => {
-    console.log("This script is running")
+
+const getMonthly = () => {
+    fetch('api/statistics/').then(res => res.json()).then(result => {
+        const yearly_data = result['yearly_stats']
+        const months = yearly_data.map(item => item.month);
+        const total_sale = yearly_data.map(item => item.total_sales);
+        var options_yearly = {
+            chart: {
+                type: 'line'
+            }, series: [{
+                name: 'sales', data: total_sale
+            }], xaxis: {
+                categories: months
+            },
+
+        }
+        var chart_yearly = new ApexCharts(document.querySelector("#sale-category2"), options_yearly);
+
+        chart_yearly.render(months, total_sale)
+    })
 }
-window.onload(getData())
+
+const getMonthlyTopProducts = () => {
+    fetch('api/statistics/').then(res => res.json()).then(result => {
+        const monthly_top_products_data = result['monthly_top_products']
+        const product = monthly_top_products_data.map(item => item.NameProduct);
+        const total_sold = monthly_top_products_data.map(item => item.total_sold);
+        var options7 = {
+            series: [{
+                data: total_sold
+            }],
+            chart: {
+                type: 'bar', height: 320
+            },
+            plotOptions: {
+                bar: {
+                    barHeight: '100%', distributed: true, horizontal: true, dataLabels: {
+                        position: 'bottom'
+                    },
+                }
+            },
+            colors: ['#33b2df', '#546E7A', '#d4526e', '#13d8aa', '#A5978B', '#2b908f', '#f9a3a4', '#90ee7e', '#f48024', '#69d2e7'],
+            dataLabels: {
+                enabled: true, textAnchor: 'start', style: {
+                    colors: ['#fff']
+                }, formatter: function (val, opt) {
+                    return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+                }, offsetX: 0, dropShadow: {
+                    enabled: true
+                }
+            },
+            stroke: {
+                width: 1, colors: ['#fff']
+            },
+            xaxis: {
+                categories: product,
+            },
+            yaxis: {
+                labels: {
+                    show: false
+                }
+            },
+            title: {
+                text: 'Monthly Top Products', align: 'center', floating: true
+            },
+            subtitle: {
+                text: 'Category Names as DataLabels inside bars', align: 'center',
+            },
+            tooltip: {
+                theme: 'dark', x: {
+                    show: false
+                }, y: {
+                    title: {
+                        formatter: function () {
+                            return ''
+                        }
+                    }
+                }
+            }
+        }
+
+        var chart7 = new ApexCharts(document.querySelector("#sale-category7"), options7);
+        chart7.render(product, total_sold)
+    })
+}
+
+const getClients_monthly_trade_by_user = () => {
+    fetch('api/statistics/').then(res => res.json()).then(result => {
+        const clients_monthly_trade_by_user = result['clients_monthly_trade_by_user']
+        // const month = clients_monthly_trade_by_user.map(item => item.month)
+        const month = [...new Set(clients_monthly_trade_by_user.map(item => item.month))];
+
+        const client = clients_monthly_trade_by_user.map(item => item.client__name)
+        const trade = clients_monthly_trade_by_user.map(item => item.total_trade)
+
+
+        var options5 = {
+            series: [{
+                name: client, type: 'column', data: trade
+            },], chart: {
+                height: 350, type: 'line', stacked: false,
+            }, stroke: {
+                width: [0, 2, 5], curve: 'smooth'
+            }, plotOptions: {
+                bar: {
+                    columnWidth: '50%'
+                }
+            },
+
+            fill: {
+                opacity: [0.85, 0.25, 1], gradient: {
+                    inverseColors: false,
+                    shade: 'light',
+                    type: "vertical",
+                    opacityFrom: 0.85,
+                    opacityTo: 0.55,
+                    stops: [0, 100, 100, 100]
+                }
+            }, labels: month, markers: {
+                size: 0
+            }, xaxis: {
+                type: 'datetime'
+            }, yaxis: {
+                title: {
+                    text: 'Points',
+                }
+            }, tooltip: {
+                shared: true, intersect: false, y: {
+                    formatter: function (y) {
+                        if (typeof y !== "undefined") {
+                            return y.toFixed(0) + " points";
+                        }
+                        return y;
+
+                    }
+                }
+            }
+
+        }
+
+        var chart5 = new ApexCharts(document.querySelector("#sale-category5"), options5);
+        chart5.render()
+    })
+}
+
+const getTest = () => {
+    fetch('api/statistics/')
+        .then(response => response.json())
+        .then(result => {
+            const clients_monthly_trade_by_user = result['clients_monthly_trade_by_user'];
+            // Get unique months for the x-axis categories
+            const months = [...new Set(clients_monthly_trade_by_user.map(item => item.month))];
+
+            // Group data by client
+            const tradeByClient = {};
+            clients_monthly_trade_by_user.forEach(item => {
+                const client = item.client__name;
+                const trade = item.total_trade;
+                const monthIndex = months.indexOf(item.month);
+
+                if (!tradeByClient[client]) {
+                    // Initialize trade array with zeros for all months
+                    tradeByClient[client] = Array(months.length).fill(0);
+                }
+
+                // Set trade value for the correct month
+                tradeByClient[client][monthIndex] = trade;
+            });
+
+            // Prepare series data
+            const series = Object.entries(tradeByClient).map(([client, tradeData]) => ({
+                name: client, type: 'column', data: tradeData
+            }));
+
+            console.log("Series Data:", series); // Debugging
+
+            // Configure the ApexChart
+            const options = {
+                chart: {
+                    type: 'line', // You can mix column and line charts
+                    stacked: false
+                }, series: series, xaxis: {
+                    categories: months
+                }, yaxis: {
+                    title: {
+                        text: "Trade Amount"
+                    }
+                }
+            };
+
+            const chart = new ApexCharts(document.querySelector("#sale-category5"), options);
+            chart.render();
+        })
+        .catch(error => console.error("Error:", error));
+
+}
+
+window.onload(getMonthly(), getMonthlyTopProducts(), getTest())

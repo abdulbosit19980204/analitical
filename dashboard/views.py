@@ -1,5 +1,8 @@
 from datetime import datetime
-
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 from django.db.models import Count, Sum, Max, Min
 from django.contrib.auth.models import User
 from django.views import generic, View
@@ -16,7 +19,8 @@ from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_s
     GetProductsBlance_sync
 
 from .statistics import daily_order_statistics, most_sold_products_monthly_by_user, product_sales_statistics_by_user, \
-    yearly_sales_statistics_by_user
+    yearly_sales_statistics_by_user, most_purchased_product_by_user_clients, clients_monthly_trade_by_user, \
+    popular_categories_monthly_by_user
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -49,10 +53,6 @@ class EcommerceView(LoginRequiredMixin, View):
 
     def get(self, request):
         d = {}
-        print(daily_order_statistics(request.user))
-        print(most_sold_products_monthly_by_user(request.user))
-        print(product_sales_statistics_by_user(request.user))
-        print(yearly_sales_statistics_by_user(request.user))
 
         d['statistics'] = statistic_data(request.user)
         productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
@@ -65,6 +65,25 @@ class EcommerceView(LoginRequiredMixin, View):
         d['productSelling'] = productSelling
 
         return render(request, 'ecommerce.html', context=d)
+
+
+class GetStatistics(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+
+        stats = {
+            "daily_stats": daily_order_statistics(user),
+            "monthly_top_products": most_sold_products_monthly_by_user(user),
+            "product_sales": product_sales_statistics_by_user(user),
+            "yearly_stats": yearly_sales_statistics_by_user(user),
+            "most_purchased_product_by_user_clients": most_purchased_product_by_user_clients(user),
+            "clients_monthly_trade_by_user": clients_monthly_trade_by_user(user),
+            "popular_categories_monthly_by_user": popular_categories_monthly_by_user(user),
+        }
+
+        return Response(stats, status=200)
 
 
 class CalendarView(LoginRequiredMixin, generic.ListView):

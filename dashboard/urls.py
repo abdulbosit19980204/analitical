@@ -4,7 +4,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from .views import IndexView, EcommerceView, CalendarView, ChatView, TodoView, EmailListView, EmailReadView, \
     ProfileView, UserListView, ProductListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
-    OrderDetailView, ProductDetailView
+    OrderDetailView, ProductDetailView, GetStatistics
 
 app_name = 'dashboard'
 urlpatterns = [
@@ -28,5 +28,7 @@ urlpatterns = [
     path('product/<int:product_id>', ProductDetailView.as_view(), name='product-detail'),
     path('error', ErrorPageView.as_view(), name='error'),
     path('invoice', InvoiceView.as_view(), name='invoice'),
+
+    path('api/statistics/', GetStatistics.as_view(), name='get_statistics'),
 
 ]
