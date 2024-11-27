@@ -53,18 +53,26 @@ class EcommerceView(LoginRequiredMixin, View):
 
     def get(self, request):
         d = {}
-
+        code = request.user.code
+        d = {}
+        # print(client.service.GetProductBalance())
+        d['business_reg'] = client.service.GetBusinessRegions(code)
+        d['price_list'] = client.service.GetPriceTypes(code)
+        d['sklad'] = client.service.GetWarehousesUser(code)
+        d['clients'] = client.service.GetClients(code)
         d['statistics'] = statistic_data(request.user)
         productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
         topSellingProducts = productSelling.values('id', 'NameProduct', 'CodeProduct', 'Price', 'Amount',
                                                    'Total').annotate(
             Count('CodeProduct'),
             Sum('Amount'), Sum('Total'))
-        d['topSellingProducts'] = topSellingProducts[:5]
         # print(d['topSellingProducts'])
-        d['productSelling'] = productSelling
+        # d['productSelling'] = productSelling
 
         return render(request, 'ecommerce.html', context=d)
+
+    def post(self, request):
+        print(request)
 
 
 class GetStatistics(APIView):

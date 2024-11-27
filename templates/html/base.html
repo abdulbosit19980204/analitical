@@ -390,14 +390,12 @@
 
 <div class="themebody-wrap">
     <!-- breadcrumb start-->
-    <div class="codex-breadcrumb">
+    <div class="codex-breadcrumb ">
         <div class="breadcrumb-contain">
             <div class="left-breadcrumb">
-                <ul class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/">
-                        <h1>Dashboard</h1></a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0);">Default</a></li>
-                </ul>
+                {% block filter%}
+
+                {% endblock %}
             </div>
             <div class="right-breadcrumb">
                 <ul>

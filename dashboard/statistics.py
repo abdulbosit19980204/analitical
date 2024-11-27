@@ -18,7 +18,7 @@ def daily_order_statistics(user):
 
 def most_sold_products_monthly_by_user(user):
     today = datetime.today()
-    month_start = today.replace(day=1, hour=0, minute=0, second=0, microsecond=0)
+    month_start = today.replace(year=2020, day=1, hour=0, minute=0, second=0, microsecond=0)
 
     # Filter products by user's orders and date within the current month
     products = (
@@ -42,7 +42,7 @@ def product_sales_statistics_by_user(user):
 
 
 def yearly_sales_statistics_by_user(user):
-    year_start = datetime.today().replace(month=1, day=1, hour=0, minute=0, second=0, microsecond=0)
+    year_start = datetime.today().replace(year=2020, month=1, day=1, hour=0, minute=0, second=0, microsecond=0)
 
     # Filter orders by user's data and group by month
     sales = (
@@ -67,7 +67,7 @@ def most_purchased_product_by_user_clients(user):
 
 
 def clients_monthly_trade_by_user(user):
-    year_start = datetime.today().replace(month=1, day=1, hour=0, minute=0, second=0, microsecond=0)
+    year_start = datetime.today().replace(year=2020, month=1, day=1, hour=0, minute=0, second=0, microsecond=0)
 
     # Filter orders by user's data and group by month and client
     trades = (
@@ -88,7 +88,7 @@ def popular_categories_monthly_by_user(user):
         .values('CodeProduct', 'order__dateOrder')  # Group by product codes
         .annotate(total_trade=Sum('Total'))  # Total trade for each product
     )
-
+    print(order_product_rows[:5])
     # Fetch products and their categories using the article field
     product_data = {
         product.article: product.product_category.name if product.product_category else "Unknown"

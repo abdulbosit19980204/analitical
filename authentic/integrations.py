@@ -10,9 +10,9 @@ from zeep.transports import Transport
 settings = Settings(strict=False, xml_huge_tree=True)
 history = HistoryPlugin()
 transport = Transport(timeout=10)
-# reasionReturn = 'http://192.168.1.241:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
+reasionReturn = 'http://192.168.1.241:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
 # reasionReturn = 'http://kit.gloriya.uz:5443/EVYAPTEST/EVYAPTEST.1cws?wsdl'
-reasionReturn = 'http://kit.gloriya.uz:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
+# reasionReturn = 'http://kit.gloriya.uz:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
 # reasionReturn = ''
 client = Client(wsdl=reasionReturn, transport=transport, plugins=[history], settings=settings)
 
@@ -196,6 +196,5 @@ getShippingList('000000184')
 def GetPackage(dateOfPackage, codeUser, codeClient):
     package = client.service.GetPackage(dateOfPackage, codeUser, codeClient)
     print(package)
-
 
 # GetPackage('20240922000000', '000000327', '')

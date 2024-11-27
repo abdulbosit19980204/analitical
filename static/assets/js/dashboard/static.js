@@ -21,37 +21,6 @@ var chart1 = new ApexCharts(document.querySelector("#sale-category"), options1);
 // var total_sales = [150, 250, 350]
 
 
-var options3 = {
-    chart: {
-        type: 'bar'
-
-    }, plotOptions: {
-        bar: {
-            horizontal: true
-        }
-    }, series: [{
-        data: [{
-            x: 'category A', y: 10, goals: [{
-                name: 'Expected', value: 22, strokeColor: '#775DD0'
-            }, {
-                name: 'Plan', value: 13, strokeColor: '#FF5AA0'
-            },]
-        }, {
-            x: 'category B', y: 18, goals: [{
-                name: 'Expected', value: 30, strokeColor: '#775DD0'
-            }, {
-                name: 'Plan', value: 25, strokeColor: '#FF5AA0'
-            },]
-        }, {
-            x: 'category C', y: 13
-        }]
-    }]
-
-
-}
-
-var chart3 = new ApexCharts(document.querySelector("#sale-category3"), options3);
-
 var options4 = {
     series: [{
         data: [44, 55, 41, 64,]
@@ -123,9 +92,9 @@ var chart6 = new ApexCharts(document.querySelector("#sale-category6"), options6)
 
 chart1.render();
 
-chart3.render();
+// chart3.render();
 chart4.render();
-// chart5.render();
+
 chart6.render();
 
 
@@ -140,7 +109,11 @@ const getMonthly = () => {
             }, series: [{
                 name: 'sales', data: total_sale
             }], xaxis: {
-                categories: months
+                categories: months, type: 'datetime'
+            }, yaxis: {
+                title: {
+                    text: 'Sum',
+                }
             },
 
         }
@@ -214,66 +187,8 @@ const getMonthlyTopProducts = () => {
     })
 }
 
+
 const getClients_monthly_trade_by_user = () => {
-    fetch('api/statistics/').then(res => res.json()).then(result => {
-        const clients_monthly_trade_by_user = result['clients_monthly_trade_by_user']
-        // const month = clients_monthly_trade_by_user.map(item => item.month)
-        const month = [...new Set(clients_monthly_trade_by_user.map(item => item.month))];
-
-        const client = clients_monthly_trade_by_user.map(item => item.client__name)
-        const trade = clients_monthly_trade_by_user.map(item => item.total_trade)
-
-
-        var options5 = {
-            series: [{
-                name: client, type: 'column', data: trade
-            },], chart: {
-                height: 350, type: 'line', stacked: false,
-            }, stroke: {
-                width: [0, 2, 5], curve: 'smooth'
-            }, plotOptions: {
-                bar: {
-                    columnWidth: '50%'
-                }
-            },
-
-            fill: {
-                opacity: [0.85, 0.25, 1], gradient: {
-                    inverseColors: false,
-                    shade: 'light',
-                    type: "vertical",
-                    opacityFrom: 0.85,
-                    opacityTo: 0.55,
-                    stops: [0, 100, 100, 100]
-                }
-            }, labels: month, markers: {
-                size: 0
-            }, xaxis: {
-                type: 'datetime'
-            }, yaxis: {
-                title: {
-                    text: 'Points',
-                }
-            }, tooltip: {
-                shared: true, intersect: false, y: {
-                    formatter: function (y) {
-                        if (typeof y !== "undefined") {
-                            return y.toFixed(0) + " points";
-                        }
-                        return y;
-
-                    }
-                }
-            }
-
-        }
-
-        var chart5 = new ApexCharts(document.querySelector("#sale-category5"), options5);
-        chart5.render()
-    })
-}
-
-const getTest = () => {
     fetch('api/statistics/')
         .then(response => response.json())
         .then(result => {
@@ -302,18 +217,44 @@ const getTest = () => {
                 name: client, type: 'column', data: tradeData
             }));
 
-            console.log("Series Data:", series); // Debugging
-
             // Configure the ApexChart
             const options = {
-                chart: {
-                    type: 'line', // You can mix column and line charts
-                    stacked: false
-                }, series: series, xaxis: {
-                    categories: months
+                series: series, chart: {
+                    height: 350, type: 'line', stacked: false,
+                }, stroke: {
+                    width: [0, 2, 5], curve: 'smooth'
+                }, plotOptions: {
+                    bar: {
+                        columnWidth: '50%'
+                    }
+                },
+
+                fill: {
+                    opacity: [0.85, 0.25, 1], gradient: {
+                        inverseColors: false,
+                        shade: 'light',
+                        type: "vertical",
+                        opacityFrom: 0.85,
+                        opacityTo: 0.55,
+                        stops: [0, 100, 100, 100]
+                    }
+                }, labels: months, markers: {
+                    size: 0
+                }, xaxis: {
+                    type: 'datetime'
                 }, yaxis: {
                     title: {
-                        text: "Trade Amount"
+                        text: 'Sum',
+                    }
+                }, tooltip: {
+                    shared: true, intersect: false, y: {
+                        formatter: function (y) {
+                            if (typeof y !== "undefined") {
+                                return y.toFixed(0) + " Sum";
+                            }
+                            return y;
+
+                        }
                     }
                 }
             };
@@ -325,4 +266,47 @@ const getTest = () => {
 
 }
 
-window.onload(getMonthly(), getMonthlyTopProducts(), getTest())
+const getPopularCategory = () => {
+    fetch('api/statistics/')
+        .then(response => response.json())
+        .then(result => {
+            const popular_categories = result['popular_categories_monthly_by_user'];
+            const monthly_trade = popular_categories['monthly_trade']
+            console.log(popular_categories[0]['category'])
+            var options3 = {
+                chart: {
+                    type: 'bar'
+
+                }, plotOptions: {
+                    bar: {
+                        horizontal: true
+                    }
+                }, series: [{
+                    data: [{
+                        x: 'category A', y: 10, goals: [{
+                            name: 'Expected', value: 22, strokeColor: '#775DD0'
+                        }, {
+                            name: 'Plan', value: 13, strokeColor: '#FF5AA0'
+                        },]
+                    }, {
+                        x: 'category B', y: 18, goals: [{
+                            name: 'Expected', value: 30, strokeColor: '#775DD0'
+                        }, {
+                            name: 'Plan', value: 25, strokeColor: '#FF5AA0'
+                        },]
+                    }, {
+                        x: 'category C', y: 13
+                    }]
+                }]
+
+
+            }
+
+            var chart3 = new ApexCharts(document.querySelector("#sale-category3"), options3);
+            chart3.render()
+        })
+        .catch(error => console.error("Error:", error));
+
+}
+
+window.onload(getMonthly(), getMonthlyTopProducts(), getClients_monthly_trade_by_user(), getPopularCategory())
