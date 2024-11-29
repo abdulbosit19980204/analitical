@@ -15,7 +15,6 @@ var options1 = {
         }]
     }]
 }
-
 var chart1 = new ApexCharts(document.querySelector("#sale-category"), options1);
 // var month = ['September', 'October', 'November']
 // var total_sales = [150, 250, 350]
@@ -48,8 +47,8 @@ var options4 = {
 
 
 }
-
 var chart4 = new ApexCharts(document.querySelector("#sale-category4"), options4);
+
 var options6 = {
     series: [{
         name: 'Marine Sprite', data: [44, 55, 41, 37, 22, 43, 21]
@@ -86,7 +85,6 @@ var options6 = {
         position: 'top', horizontalAlign: 'left', offsetX: 40
     }
 }
-
 var chart6 = new ApexCharts(document.querySelector("#sale-category6"), options6);
 
 
@@ -97,8 +95,76 @@ chart4.render();
 
 chart6.render();
 
+const getDaily = () => {
+    fetch('api/statistics/')
+        .then(res => res.json())
+        .then(result => {
+            const daily_data = result['daily_order_statistics_for_month'];
 
+            // Extract data for the chart
+            const labels = daily_data.map(item => item.date); // Dates
+            const daily_orders_count = daily_data.map(item => item.daily_orders_count); // Orders count
+            const daily_total_sales = daily_data.map(item => item.daily_total_sales); // Total sales
+
+            // Configure the ApexChart options
+            var option_daily = {
+                series: [{
+                    name: 'Daily Orders (dona)', type: 'column', data: daily_orders_count, // Data for orders count
+                }, {
+                    name: 'Total Sales (Sum)', type: 'line', data: daily_total_sales, // Data for total sales
+                },], chart: {
+                    height: 350, type: 'line',
+                }, stroke: {
+                    width: [0, 4], // Width of column and line strokes
+                }, title: {
+                    text: 'Daily Order Statistics',
+                }, dataLabels: {
+                    enabled: true, enabledOnSeries: [1], // Enable data labels only on the line chart
+                }, labels: labels, // Dates as labels
+                yaxis: [{
+                    title: {
+                        text: 'Daily Orders',
+                    },
+                }, {
+                    opposite: true, title: {
+                        text: 'Total Sales',
+                    },
+                },],
+            };
+
+            // Render the chart
+            var chart = new ApexCharts(document.querySelector("#daily-trade"), option_daily);
+            chart.render();
+        })
+        .catch(error => console.error('Error fetching daily statistics:', error));
+
+}
 const getMonthly = () => {
+    fetch('api/statistics/')
+        .then(res => res.json())
+        .then(result => {
+            const data = result['monthly_trade_for_year'];
+            const months = data.map(item => item.month);
+            const trades = data.map(item => item.total_trade);
+
+            // Set up your chart
+            var options = {
+                series: [{
+                    name: 'Monthly Trade', data: trades,
+                }], chart: {
+                    type: 'line', height: 350,
+                }, xaxis: {
+                    categories: months,  // Months as categories
+                },
+            };
+
+            var chart = new ApexCharts(document.querySelector("#monthly-trade"), options);
+            chart.render();
+        });
+
+}
+
+const getMonthly1 = () => {
     fetch('api/statistics/').then(res => res.json()).then(result => {
         const yearly_data = result['yearly_stats']
         const months = yearly_data.map(item => item.month);
@@ -309,4 +375,4 @@ const getPopularCategory = () => {
 
 }
 
-window.onload(getMonthly(), getMonthlyTopProducts(), getClients_monthly_trade_by_user(), getPopularCategory())
+window.onload(getMonthly1(), getMonthlyTopProducts(), getClients_monthly_trade_by_user(), getPopularCategory(), getDaily(), getMonthly())

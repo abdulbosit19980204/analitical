@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.db.models import Sum, Count
 from api.models import Order, OrderProductRows
 from product.models import Product
@@ -14,6 +14,69 @@ def daily_order_statistics(user):
         "daily_orders_count": orders.count(),
         "daily_total_sales": total_sales,
     }
+
+
+def daily_order_statistics_for_month(user, year, month):
+    # Calculate the start and end dates of the given month
+    start_of_month = datetime(year, month, 1)
+    next_month = (start_of_month + timedelta(days=31)).replace(day=1)
+    end_of_month = next_month - timedelta(seconds=1)
+
+    # Initialize the results list
+    daily_statistics = []
+
+    # Iterate through each day of the month
+    current_day = start_of_month
+    while current_day <= end_of_month:
+        start_of_day = current_day.replace(hour=0, minute=0, second=0, microsecond=0)
+        end_of_day = current_day.replace(hour=23, minute=59, second=59, microsecond=999999)
+
+        # Filter orders for the current day
+        orders = Order.objects.filter(agent=user, dateOrder__gte=start_of_day, dateOrder__lte=end_of_day)
+        total_sales = orders.aggregate(total_sum=Sum('total'))['total_sum'] or 0
+
+        # Append the statistics for the day
+        daily_statistics.append({
+            "date": start_of_day.strftime("%Y-%m-%d"),
+            "daily_orders_count": orders.count(),
+            "daily_total_sales": total_sales,
+        })
+
+        # Move to the next day
+        current_day += timedelta(days=1)
+
+    return daily_statistics
+
+
+def monthly_trade_for_year(user, year):
+    """
+    Get the monthly trade for each month of the given year for the user.
+    :param user: The user whose data is being queried.
+    :param year: The year for which the data is being calculated.
+    :return: A list of dictionaries containing the month and total trade.
+    """
+
+    # Filter orders for the given user and year
+    orders = Order.objects.filter(agent=user, dateOrder__year=year)
+
+    # Aggregate total trade by month
+    monthly_trade = (
+        orders.annotate(month=TruncMonth('dateOrder'))  # Group by month
+        .values('month')  # Select the month
+        .annotate(total_trade=Sum('total'))  # Sum the total trade for the month
+        .order_by('month')  # Sort by month
+    )
+
+    # Format the result
+    result = [
+        {
+            "month": item["month"].strftime("%B"),  # Convert to month name
+            "total_trade": item["total_trade"] or 0  # Handle null values
+        }
+        for item in monthly_trade
+    ]
+
+    return result
 
 
 def most_sold_products_monthly_by_user(user):

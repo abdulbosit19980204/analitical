@@ -45,7 +45,7 @@ class WarehouseAdmin(admin.ModelAdmin):
 
 
 class CustomUserAdmin(UserTypeAdmin):
-    list_display = ('id', 'username', 'email', 'first_name', 'last_name', 'phone_number', 'tg_username')
+    list_display = ('id', 'username', 'email', 'first_name', 'last_name', 'code', 'phone_number', 'tg_username')
     list_display_links = ('id', 'username')
 
 

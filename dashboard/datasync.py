@@ -59,8 +59,8 @@ def Clients_sync(code):
 
 
 def Orders_sync(code):
-    c_orders = client.service.GetOrderList(code, '20200101000000', '20241231000000')
-    print(c_orders)
+    # c_orders = client.service.GetOrderList(code, '20200101000000', '20241231000000')
+    c_orders = client.service.GetOrderList(code)
     order_list = []
     if c_orders:
         for i in c_orders:
