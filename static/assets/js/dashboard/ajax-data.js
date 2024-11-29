@@ -14,7 +14,7 @@ function sendFilter() {
         console.log(d);
     }
 
-    xhttp.open("POST", "/ecommerce/", true);
+    xhttp.open("POST", "/ecommerce", true);
     xhttp.send();
 }
 

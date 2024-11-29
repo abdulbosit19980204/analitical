@@ -10,7 +10,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, authenticate, logout
-
+from django.views.decorators.csrf import csrf_exempt
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages, \
     OrderProductRows
 from product.models import Product, ProductSeria, ProductBrand
@@ -70,7 +70,6 @@ class EcommerceView(LoginRequiredMixin, View):
         # d['productSelling'] = productSelling
 
         return render(request, 'ecommerce.html', context=d)
-
     def post(self, request):
         print(request)
 

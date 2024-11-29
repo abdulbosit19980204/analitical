@@ -13,45 +13,6 @@
         <input class="form-control" type="datetime-local" id="end-date" value="2024-12-31 00:00:00" name="end-date"
                onchange="sendFilter()">
     </div>
-    <!--    <div class="form-group p-3">-->
-    <!--        <label class="form-label" for="regions">Region</label>-->
-    <!--        <select class="form-control" id="regions" required="">-->
-    <!--            <option selected="" disabled="" value="">Choose...</option>-->
-    <!--            {% for i in business_reg %}-->
-    <!--            <option value="{{ i.Code }}">{{ i.Name }}</option>-->
-    <!--            {% endfor %}-->
-    <!--        </select>-->
-    <!--        <div class="invalid-tooltip">Please select a valid state.</div>-->
-    <!--    </div>-->
-    <!--    <div class="form-group p-3">-->
-    <!--        <label class="form-label" for="clients">Client</label>-->
-    <!--        <select class="form-control" id="clients" required="">-->
-    <!--            <option selected="" disabled="" value="">Choose...</option>-->
-    <!--            {% for i in clients%}-->
-    <!--            <option value="{{ i.Code }}">{{ i.Name }}</option>-->
-    <!--            {% endfor %}-->
-    <!--        </select>-->
-    <!--        <div class="invalid-tooltip">Please select a valid state.</div>-->
-    <!--    </div>-->
-    <!--    <div class="form-group p-3">-->
-    <!--        <label class="form-label" for="categories">Category</label>-->
-    <!--        <select class="form-control" id="categories" required="">-->
-    <!--            <option selected="" disabled="" value="">Choose...</option>-->
-    <!--            {% for i in categories %}-->
-    <!--            <option value="{{ i.Code }}">{{ i.Name }}</option>-->
-    <!--            {% endfor %}-->
-    <!--        </select>-->
-    <!--        <div class="invalid-tooltip">Please select a valid state.</div>-->
-    <!--    </div>-->
-    <!--    <div class="form-group p-3">-->
-    <!--        <label class="form-label">week</label>-->
-    <!--        <input class="form-control" type="week" id='week' value="2023-W08" onchange="sendFilter()">-->
-    <!--    </div>-->
-    <!--    <div class="form-group p-3">-->
-    <!--        <label class="form-label">Month</label>-->
-    <!--        <input class="form-control" type="month" id="month" value="2023-05" onchange="sendFilter()">-->
-    <!--    </div>-->
-
 </form>
 {% endblock %}
 
@@ -67,6 +28,23 @@
 <div class="theme-body" data-simplebar>
     <div class="custom-container common-dash">
         <div class="row">
+            <script>
+                $(document).ready(function () {
+                    setInterval(function () {
+                        $.ajax({
+                            type: 'GET',
+                            url: "http://192.168.0.110:8000/api/statistics/",
+                            success: function (response) {
+                                console.log(response)
+                            },
+                            error: function (response) {
+                                alert(response.message);
+                            }
+                        });
+                    }, 100);
+                });
+            </script>
+
             <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
                 <div class="card sale-revenue">
                     <div class="card-header">
