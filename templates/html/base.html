@@ -46,6 +46,7 @@
 </div>
 <!-- Loader End-->
 <!-- Header Start-->
+{% if request.user.c1_connected %}
 <header class="codex-header">
     <div class="header-contian d-flex justify-content-between align-items-center">
         <div class="header-left d-flex align-items-center">
@@ -255,6 +256,15 @@
         </div>
     </div>
 </header>
+{% else %}
+<header class="codex-header">
+    <div class="header-contian d-flex justify-content-between align-items-center">
+        <div class="header-left d-flex align-items-center">
+            <div class="sidebar-action navicon-wrap"><i data-feather="menu"></i></div>
+        </div>
+    </div>
+</header>
+{% endif %}
 <!-- Header End-->
 <!-- sidebar start-->
 <aside class="codex-sidebar">

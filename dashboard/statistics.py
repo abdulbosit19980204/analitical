@@ -159,13 +159,15 @@ def six_month_product_sales_statistics(user):
     return formatted_result
 
 
-def six_month_product_sales_statistics2(user, year, month):
+def six_month_product_sales_statistics2(user, year, month, page=1, page_size=120):
     """
     Get the 6 months of product sales data grouped by product starting from the specified year and month.
     :param user: The user whose orders are being queried.
     :param year: The starting year.
     :param month: The starting month.
-    :return: A dictionary containing 6-month-wise product sales data.
+    :param page: The page number to display.
+    :param page_size: The number of items per page.
+    :return: A paginated dictionary containing 6-month-wise product sales data.
     """
 
     # Validate the provided month and calculate the start date
@@ -185,6 +187,7 @@ def six_month_product_sales_statistics2(user, year, month):
     end_month = (month - 1 + 6) % 12 + 1
     end_year = year + ((month - 1 + 6) // 12)
     end_date = datetime(end_year, end_month, 1)
+
     # Filter OrderProductRows for the 6-month range
     product_sales = (
         OrderProductRows.objects.filter(
@@ -210,19 +213,33 @@ def six_month_product_sales_statistics2(user, year, month):
             result[product] = {}
 
         result[product][sale_month] = sale['count'] or 0
-    # Format results
-    formatted_result = {
-        "months": months,
-        "data": [
-            {
-                "product": product,
-                "counts": [result[product].get(month, 0) for month in months]
-            }
-            for product in result.keys()
-        ]
-    }
 
-    return formatted_result
+    # Format results
+    all_data = [
+        {
+            "product": product,
+            "counts": [result[product].get(month, 0) for month in months]
+        }
+        for product in result.keys()
+    ]
+
+    # Pagination logic
+    total_items = len(all_data)
+    total_pages = (total_items + page_size - 1) // page_size
+    start_index = (page - 1) * page_size
+    end_index = start_index + page_size
+    paginated_data = all_data[start_index:end_index]
+
+    return {
+        "months": months,
+        "data": paginated_data,
+        "pagination": {
+            "current_page": page,
+            "page_size": page_size,
+            "total_pages": total_pages,
+            "total_items": total_items,
+        }
+    }
 
 
 # #########################################

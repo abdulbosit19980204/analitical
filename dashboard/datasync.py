@@ -59,7 +59,7 @@ def Clients_sync(code):
 
 
 def Orders_sync(code):
-    # c_orders = client.service.GetOrderList(code, '20200101000000', '20241231000000')
+    # c_orders = client.service.GetOrderList(code, '20100101000000', '20241231000000')
     c_orders = client.service.GetOrderList(code)
     order_list = []
     if c_orders:
@@ -127,7 +127,6 @@ def OrderDetails_sync(code):
                             DateOfPayment=date_of_payment,
                         )
                         credit_details_list.append(credit_detail)
-                    print(credit_details_list)
         OrderDetail.objects.bulk_create(order_detail_list)
         OrderProductRows.objects.bulk_create(order_product_rows_list)
         OrderCreditDetailsList.objects.bulk_create(credit_details_list)

@@ -82,8 +82,8 @@ class GetStatistics(APIView):
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        year = 2023
-        month = 7
+        year = 2024
+        month = 11
         stats = {
             "six_month_product_sales_statistics2": six_month_product_sales_statistics2(user, year, month),
             "six_month_product_sales_statistics": six_month_product_sales_statistics(user),

@@ -10,9 +10,9 @@ from zeep.transports import Transport
 settings = Settings(strict=False, xml_huge_tree=True)
 history = HistoryPlugin()
 transport = Transport(timeout=10)
-reasionReturn = 'http://192.168.1.241:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
+# reasionReturn = 'http://192.168.1.241:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
 # reasionReturn = 'http://kit.gloriya.uz:5443/EVYAPTEST/EVYAPTEST.1cws?wsdl'
-# reasionReturn = 'http://kit.gloriya.uz:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
+reasionReturn = 'http://kit.gloriya.uz:5443/EVYAP_UT/EVYAP_UT.1cws?wsdl'
 # reasionReturn = ''
 client = Client(wsdl=reasionReturn, transport=transport, plugins=[history], settings=settings)
 

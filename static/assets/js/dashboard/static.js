@@ -226,7 +226,7 @@ const get6MonthProductSales = () => {
     fetch('api/statistics/')
         .then(res => res.json())
         .then(result => {
-            const data = result['six_month_product_sales_statistics2'];
+            const data = result['six_month_product_sales_statistics'];
             const months = data.months; // List of last 6 months
             const productData = data.data; // Product data
 
@@ -248,7 +248,7 @@ const get6MonthProductSales = () => {
                     },
                 }, plotOptions: {
                     bar: {
-                        horizontal: false, columnWidth: '100%', endingShape: 'rounded',
+                        horizontal: false, columnWidth: '75%', endingShape: 'rounded',
                     },
                 }, xaxis: {
                     categories: productNames, // Products on x-axis
