@@ -3,6 +3,7 @@ from django.db.models import Sum, Count
 from api.models import Order, OrderProductRows
 from product.models import Product
 from django.db.models.functions import TruncMonth
+import calendar
 
 
 def daily_order_statistics_for_month(user, year, month):
@@ -83,7 +84,7 @@ def monthly_product_sales_statistics(user, year):
         .values('month', 'NameProduct')  # Group by month and product
         .annotate(
             count=Sum('Amount'),  # Sum the amount sold
-            total=Sum('Total')    # Sum the total revenue
+            total=Sum('Total')  # Sum the total revenue
         )
         .order_by('month', '-count')  # Sort by month and descending count
     )
@@ -105,6 +106,124 @@ def monthly_product_sales_statistics(user, year):
     # Limit to the top 10 products for each month
     formatted_result = [{"month": month, "data": data[:10]} for month, data in result.items()]
     return formatted_result
+
+
+def six_month_product_sales_statistics(user):
+    """
+    Get the last 6 months of product sales data grouped by product.
+    :param user: The user whose orders are being queried.
+    :return: A list of dictionaries containing 6-month-wise product sales data.
+    """
+
+    # Get the date range for the last six months
+    today = datetime.today()
+    six_months_ago = today - timedelta(days=180)
+
+    # Filter OrderProductRows by user's orders for the last six months
+    product_sales = (
+        OrderProductRows.objects.filter(
+            order__agent=user,
+            order__dateOrder__gte=six_months_ago
+        )
+        .annotate(month=TruncMonth('order__dateOrder'))  # Group by month
+        .values('month', 'NameProduct')  # Group by month and product
+        .annotate(
+            count=Sum('Amount'),  # Sum the amount sold
+        )
+        .order_by('NameProduct', 'month')  # Sort by product and month
+    )
+
+    # Organize data
+    result = {}
+    for sale in product_sales:
+        product = sale['NameProduct']
+        month = sale['month'].strftime('%B')
+
+        if product not in result:
+            result[product] = {}
+
+        result[product][month] = sale['count'] or 0
+
+    # Format results
+    months = [(today - timedelta(days=30 * i)).strftime('%B') for i in range(6)][::-1]
+    formatted_result = {
+        "months": months,
+        "data": [
+            {
+                "product": product,
+                "counts": [result[product].get(month, 0) for month in months]
+            }
+            for product in result.keys()
+        ]
+    }
+    return formatted_result
+
+
+def six_month_product_sales_statistics2(user, year, month):
+    """
+    Get the 6 months of product sales data grouped by product starting from the specified year and month.
+    :param user: The user whose orders are being queried.
+    :param year: The starting year.
+    :param month: The starting month.
+    :return: A dictionary containing 6-month-wise product sales data.
+    """
+
+    # Validate the provided month and calculate the start date
+    try:
+        start_date = datetime(year, month, 1)
+    except ValueError:
+        return {"error": "Invalid year or month provided."}
+
+    # Calculate the 6 months dynamically
+    months = []
+    for i in range(6):
+        current_month = (month - 1 + i) % 12 + 1
+        current_year = year + ((month - 1 + i) // 12)
+        months.append(datetime(current_year, current_month, 1).strftime('%B'))
+
+    # Calculate the start and end dates for filtering
+    end_month = (month - 1 + 6) % 12 + 1
+    end_year = year + ((month - 1 + 6) // 12)
+    end_date = datetime(end_year, end_month, 1)
+    # Filter OrderProductRows for the 6-month range
+    product_sales = (
+        OrderProductRows.objects.filter(
+            order__agent=user,
+            order__dateOrder__gte=start_date,
+            order__dateOrder__lt=end_date
+        )
+        .annotate(month=TruncMonth('order__dateOrder'))  # Group by month
+        .values('month', 'NameProduct')  # Group by month and product
+        .annotate(
+            count=Sum('Amount'),  # Sum the amount sold
+        )
+        .order_by('NameProduct', 'month')  # Sort by product and month
+    )
+
+    # Organize data
+    result = {}
+    for sale in product_sales:
+        product = sale['NameProduct']
+        sale_month = sale['month'].strftime('%B')
+
+        if product not in result:
+            result[product] = {}
+
+        result[product][sale_month] = sale['count'] or 0
+    # Format results
+    formatted_result = {
+        "months": months,
+        "data": [
+            {
+                "product": product,
+                "counts": [result[product].get(month, 0) for month in months]
+            }
+            for product in result.keys()
+        ]
+    }
+
+    return formatted_result
+
 
 # #########################################
 def daily_order_statistics(user):
@@ -190,7 +309,6 @@ def popular_categories_monthly_by_user(user):
         .values('CodeProduct', 'order__dateOrder')  # Group by product codes
         .annotate(total_trade=Sum('Total'))  # Total trade for each product
     )
-    print(order_product_rows[:5])
     # Fetch products and their categories using the article field
     product_data = {
         product.article: product.product_category.name if product.product_category else "Unknown"

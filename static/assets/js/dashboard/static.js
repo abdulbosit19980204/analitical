@@ -222,7 +222,80 @@ const getMonthlyProductSales = () => {
         });
 
 }
+const get6MonthProductSales = () => {
+    fetch('api/statistics/')
+        .then(res => res.json())
+        .then(result => {
+            const data = result['six_month_product_sales_statistics2'];
+            const months = data.months; // List of last 6 months
+            const productData = data.data; // Product data
 
+            // Extract product names for x-axis
+            const productNames = productData.map(item => item.product);
+
+            // Prepare series for chart (one series per month)
+            const series = months.map((month, index) => ({
+                name: month, data: productData.map(item => item.counts[index] || 0),
+            }));
+
+            // Chart options
+            var options = {
+                series: series, chart: {
+                    type: 'bar', height: 550, stacked: true, toolbar: {
+                        show: true,
+                    }, zoom: {
+                        enabled: true,
+                    },
+                }, plotOptions: {
+                    bar: {
+                        horizontal: false, columnWidth: '100%', endingShape: 'rounded',
+                    },
+                }, xaxis: {
+                    categories: productNames, // Products on x-axis
+                    title: {
+                        text: 'Products',
+                    }, labels: {
+                        style: {
+                            fontSize: '12px',
+                            fontWeight: 'Bold'
+                        },
+                    }, // Enable scrolling for x-axis
+                    tickPlacement: 'on', axisBorder: {
+                        show: true,
+                    },
+                }, yaxis: {
+                    title: {
+                        text: 'Product Count',
+                    }, labels: {
+                        style: {
+                            fontSize: '12px',
+                            fontWeight:'Bold'
+                        },
+                    },
+                }, dataLabels: {
+                    enabled: false,
+                }, legend: {
+                    position: 'top', horizontalAlign: 'center',
+                }, title: {
+                    text: 'Product Sales (Last 6 Months)', align: 'center',
+                }, tooltip: {
+                    shared: true, intersect: false,
+                }, grid: {
+                    padding: {
+                        bottom: 10,
+                    },
+                }, scrollable: {
+                    x: true,
+                },
+            };
+
+            // Render chart
+            var chart = new ApexCharts(document.querySelector("#month6-trade-each-product"), options);
+            chart.render();
+        });
+
+
+}
 // const getMonthlyTopProducts = () => {
 //     fetch('api/statistics/').then(res => res.json()).then(result => {
 //         const monthly_top_products_data = result['monthly_top_products']
@@ -409,4 +482,4 @@ const getMonthlyProductSales = () => {
 //
 // }
 
-window.onload(getDaily(), getMonthly(), getMonthlyProductSales())
+window.onload(getDaily(), getMonthly(), getMonthlyProductSales(), get6MonthProductSales())
