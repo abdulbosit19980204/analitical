@@ -21,7 +21,8 @@ from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_s
 
 from .statistics import daily_order_statistics, most_sold_products_monthly_by_user, product_sales_statistics_by_user, \
     yearly_sales_statistics_by_user, most_purchased_product_by_user_clients, clients_monthly_trade_by_user, \
-    popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year
+    popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year, \
+    monthly_product_sales_statistics
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -81,11 +82,15 @@ class GetStatistics(APIView):
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        year = 2022
+        year = 2023
         month = 11
         stats = {
+            "monthly_product_sales_statistics":monthly_product_sales_statistics(user, year),
             "monthly_trade_for_year": monthly_trade_for_year(user, year),
             "daily_order_statistics_for_month": daily_order_statistics_for_month(user, year, month),
+
+
+
             "daily_stats": daily_order_statistics(user),
             "monthly_top_products": most_sold_products_monthly_by_user(user),
             "product_sales": product_sales_statistics_by_user(user),

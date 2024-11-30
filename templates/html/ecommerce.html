@@ -28,23 +28,6 @@
 <div class="theme-body" data-simplebar>
     <div class="custom-container common-dash">
         <div class="row">
-            <script>
-                $(document).ready(function () {
-                    setInterval(function () {
-                        $.ajax({
-                            type: 'GET',
-                            url: "http://192.168.0.110:8000/api/statistics/",
-                            success: function (response) {
-                                console.log(response)
-                            },
-                            error: function (response) {
-                                alert(response.message);
-                            }
-                        });
-                    }, 100);
-                });
-            </script>
-
             <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
                 <div class="card sale-revenue">
                     <div class="card-header">
@@ -182,6 +165,24 @@
                     </div>
                 </div>
             </div>
+            <div class="col-xxl-12 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
+                <div class="card sale-categorychart">
+                    <div class="card-header">
+                        <h4>Monthly Trade </h4>
+                        <div class="setting-card action-menu">
+                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
+                            <ul class="action-dropdown">
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
+                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="monthly-product-trade"></div>
+                    </div>
+                </div>
+            </div>
             <div class="col-xxl-8 cdx-xxl-50 cdxorder-xl-1">
                 <div class="card overall-revenuetbl">
                     <div class="card-header">
@@ -203,115 +204,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
-                <div class="card sale-categorychart">
-                    <div class="card-header">
-                        <h4>Monthly Trade </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="sale-category2"></div>
-                        <div class="category-count">
-                            <!--                            <h2>55.8 % </h2>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
-                <div class="card sale-categorychart">
-                    <div class="card-header">
-                        <h4>Product Status </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="sale-category3"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
-                <div class="card sale-categorychart">
-                    <div class="card-header">
-                        <h4>Product Status </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="sale-category4"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
-                <div class="card top-sellintbl">
-                    <div class="card-header">
-                        <h4>Top Selling Products</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Stock</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for i in topSellingProducts %}
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="img-wrap"><img class="img-fluid"
-                                                                       src="{% static 'assets/images/ecom-dashboard/small-pro/1.jpg' %}"
-                                                                       alt=""></div>
-                                            <div class="media-body">
-                                                <a href="/product/{{i.id}}">
-                                                    <h6>{{i.NameProduct}}</h6>
-                                                </a>
-                                                <span>{{i.CodeProduct}}</span>
 
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-light">{{i.Price}}</td>
-                                    <td class="text-light">{{i.Amount}} sold</td>
-                                    <td class="text-light">{{i.Total__sum}} sum</td>
-                                </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-xxl-8 cdx-xxl-50">
                 <div class="card overall-revenuetbl">
                     <div class="card-header">
@@ -334,7 +227,7 @@
                 </div>
             </div>
 
-            <div class="col-12">
+            <div class="col-xxl-12 col-xl-6 cdx-xxl-50 cdxorder-xl-1">
                 <div class="ecompro-slide arrow-style1">
                     {% for i in productSelling %}
                     <div>
@@ -362,24 +255,6 @@
                     </div>
                     {% endfor %}
 
-                </div>
-            </div>
-            <div class="col-xxl-6 cdx-xxl-100">
-                <div class="card earning-revenue">
-                    <div class="card-header">
-                        <h4>selling growth</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="sale-category6"></div>
-                    </div>
                 </div>
             </div>
         </div>

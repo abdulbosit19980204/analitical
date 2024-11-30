@@ -5,17 +5,6 @@ from product.models import Product
 from django.db.models.functions import TruncMonth
 
 
-def daily_order_statistics(user):
-    today = datetime.today()
-    start_of_day = today.replace(hour=0, minute=0, second=0, microsecond=0)
-    orders = Order.objects.filter(agent=user, dateOrder__gte=start_of_day, dateOrder__lte=today)
-    total_sales = orders.aggregate(total_sum=Sum('total'))['total_sum'] or 0
-    return {
-        "daily_orders_count": orders.count(),
-        "daily_total_sales": total_sales,
-    }
-
-
 def daily_order_statistics_for_month(user, year, month):
     # Calculate the start and end dates of the given month
     start_of_month = datetime(year, month, 1)
@@ -77,6 +66,56 @@ def monthly_trade_for_year(user, year):
     ]
 
     return result
+
+
+def monthly_product_sales_statistics(user, year):
+    """
+    Get the monthly product sales data for the top 10 most sold products by the given user for a specified year.
+    :param user: The user whose orders are being queried.
+    :param year: The year for which data is being calculated.
+    :return: A list of dictionaries containing month-wise product sales data for the top 10 products.
+    """
+
+    # Filter OrderProductRows by user's orders for the given year
+    product_sales = (
+        OrderProductRows.objects.filter(order__agent=user, order__dateOrder__year=year)
+        .annotate(month=TruncMonth('order__dateOrder'))  # Group by month
+        .values('month', 'NameProduct')  # Group by month and product
+        .annotate(
+            count=Sum('Amount'),  # Sum the amount sold
+            total=Sum('Total')    # Sum the total revenue
+        )
+        .order_by('month', '-count')  # Sort by month and descending count
+    )
+
+    # Organize data in the required format
+    result = {}
+    for sale in product_sales:
+        month = sale['month'].strftime('%B')
+        if month not in result:
+            result[month] = []
+
+        # Append the product sales for this month
+        result[month].append({
+            "product": sale['NameProduct'],
+            "count": sale['count'] or 0,
+            "total": f"{sale['total'] or 0}$"
+        })
+
+    # Limit to the top 10 products for each month
+    formatted_result = [{"month": month, "data": data[:10]} for month, data in result.items()]
+    return formatted_result
+
+# #########################################
+def daily_order_statistics(user):
+    today = datetime.today()
+    start_of_day = today.replace(hour=0, minute=0, second=0, microsecond=0)
+    orders = Order.objects.filter(agent=user, dateOrder__gte=start_of_day, dateOrder__lte=today)
+    total_sales = orders.aggregate(total_sum=Sum('total'))['total_sum'] or 0
+    return {
+        "daily_orders_count": orders.count(),
+        "daily_total_sales": total_sales,
+    }
 
 
 def most_sold_products_monthly_by_user(user):
