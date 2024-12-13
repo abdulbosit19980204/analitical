@@ -12,6 +12,9 @@ from django.urls import reverse_lazy
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth import login, authenticate, logout
 from django.views.decorators.csrf import csrf_exempt
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
+from rest_framework.viewsets import ModelViewSet
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages, \
     OrderProductRows
 from product.models import Product, ProductSeria, ProductBrand
@@ -23,6 +26,7 @@ from .statistics import daily_order_statistics, most_sold_products_monthly_by_us
     yearly_sales_statistics_by_user, most_purchased_product_by_user_clients, clients_monthly_trade_by_user, \
     popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year, \
     monthly_product_sales_statistics, six_month_product_sales_statistics, six_month_product_sales_statistics2
+from product.serializers import ProductSerializer
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -194,17 +198,37 @@ class ProductListView(LoginRequiredMixin, generic.ListView):
     login_url = reverse_lazy('dashboard:login')
 
     def get(self, request):
+        # Initialize context
         d = {}
+
+        # Get user's project and sklad codes
         codeSklad = request.user.codeSklad.code
         codeProject = request.user.codeProject.code
+
+        # Get the list of products
         products = GetProductsBlance_sync(code_project=codeProject, code_sklad=codeSklad)
+
+        # Apply search and filter logic
+        search_query = request.GET.get('search', '')
+        if search_query:
+            # Filter products by search query
+            products = [
+                product for product in products
+                if search_query.lower() in product['name'].lower()
+            ]
+
+        # Add filtered products to context
         d['products'] = products
         return render(request, 'product-list.html', context=d)
 
     def post(self, request):
+        # Initialize context
         d = {}
+
+        # Get user's sklad code and update products
         code_sklad = request.user.code_sklad
         GetProductsBlance_sync(code_sklad=code_sklad)
+
         return render(request, 'product-list.html', context=d)
 
 
@@ -285,3 +309,11 @@ class RefreshView(LoginRequiredMixin, View):
         Orders_sync(request.user.code)
         OrderDetails_sync(request.user.code)
         return redirect('dashboard:index')
+
+
+class SearchFilterViewSet(ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = (DjangoFilterBackend, SearchFilter)
+    filter_fields = ('code_sklad',)
+    search_fields = ('name',)

@@ -5,6 +5,11 @@ from django.contrib.auth import views as auth_views
 from .views import IndexView, EcommerceView, CalendarView, ChatView, TodoView, EmailListView, EmailReadView, \
     ProfileView, UserListView, ProductListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
     OrderDetailView, ProductDetailView, GetStatistics
+from rest_framework.routers import DefaultRouter
+from dashboard.views import SearchFilterViewSet
+
+router = DefaultRouter()
+router.register('search', SearchFilterViewSet)
 
 app_name = 'dashboard'
 urlpatterns = [

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'import_export',
     "debug_toolbar",
+    "django_filters",
     # local
     'api',
     'dashboard',
