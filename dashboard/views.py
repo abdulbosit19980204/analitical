@@ -21,12 +21,13 @@ from product.models import Product, ProductSeria, ProductBrand
 from authentic.integrations import client, GetDailyReport, werehouse, product_sales
 from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
     GetProductsBlance_sync
-
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .statistics import daily_order_statistics, most_sold_products_monthly_by_user, product_sales_statistics_by_user, \
     yearly_sales_statistics_by_user, most_purchased_product_by_user_clients, clients_monthly_trade_by_user, \
     popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year, \
     monthly_product_sales_statistics, six_month_product_sales_statistics, six_month_product_sales_statistics2
 from product.serializers import ProductSerializer
+from django.db.models import Sum, Count, Max, Min, Q
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -244,7 +245,29 @@ class ProductView(LoginRequiredMixin, View):
         series = ProductSeria.objects.all()
         d['series'] = series
         products = Product.objects.all()
-        d['products'] = products[:21]
+
+        search_query = request.GET.get('search', '').strip()
+        if search_query:
+            # Filter products where the name, description, or other fields match the query
+            products = products.filter(
+                Q(article__icontains=search_query) |
+                Q(name_manufacturer__icontains=search_query) |
+                Q(working_title__icontains=search_query) |
+                Q(brand__name__icontains=search_query)
+            )
+
+        # d['products'] = products
+        page_number = request.GET.get('page', 1)
+        per_page = request.GET.get('per_page', 20)
+        paginator = Paginator(products, per_page)
+        try:
+            page_obj = paginator.get_page(page_number)  # Get the current page
+        except Exception as e:
+            page_obj = paginator.get_page(1)  # If an invalid page is requested, fallback to the first page
+
+            # Add paginated products to the context
+        d['products'] = page_obj
+        d['search_query'] = search_query
         return render(request, 'product.html', context=d)
 
 

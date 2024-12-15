@@ -53,10 +53,20 @@
             <div class="sidebar-action navicon-wrap"><i data-feather="menu"></i></div>
             <div class="search-bar">
                 <div class="form-group mb-0">
-                    <div class="input-group">
-                        <input class="form-control" type="text" value="" placeholder="Search Here....."><span
-                            class="input-group-text"><i data-feather="search"></i></span>
-                    </div>
+                    <form method="GET" action="{% url 'dashboard:product' %}">
+                        <div class="input-group">
+                            <!-- Input field for search -->
+                            <input
+                                    class="form-control"
+                                    type="text"
+                                    name="search"
+                                    value="{{ search_query }}"
+                                    placeholder="Search Here....."
+                            >
+                            <!-- Submit button -->
+                            <button type="submit" class="input-group-text"><i data-feather="search"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
