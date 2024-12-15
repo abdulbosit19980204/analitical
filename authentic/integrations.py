@@ -135,7 +135,7 @@ def getOrderDetail_view(NumberOrder, OrderDate1, OrderDate2):
 
 def orderListWithSklad(UserCode):
     for order in getOrderList(UserCode):
-        orderDetail = getOrderDetail_view(order.NumOrder, 20240613000000, '20241013000000')
+        orderDetail = getOrderDetail_view(order.NumOrder, 20240613000000, '20241213000000')
         for sklad in GetWarehouses():
             if orderDetail.CodeSklad == sklad.Code:
                 orderDetail.Sklad = sklad.Name
@@ -148,7 +148,7 @@ product_sales_sum = defaultdict(int)
 
 def productSoldCount(UserCode):
     for order in getOrderList(UserCode):
-        orderDetail = getOrderDetail_view(order.NumOrder, 20240613000000, '20241013000000')
+        orderDetail = getOrderDetail_view(order.NumOrder, 20240613000000, '20241213000000')
         # Loop through each order
         for product_row in orderDetail["ProductRows"]:
             for row in product_row["Rows"]:

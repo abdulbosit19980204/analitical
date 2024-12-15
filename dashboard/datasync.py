@@ -54,6 +54,7 @@ def Clients_sync(code):
                                   creditLimit=i['CreditLimit'],
                                   accumulatedCredit=i['AccumulatedCredit'], codeRegion=i['CodeRegion'],
                                   director=i['Director'], mfo=i['MFO'], bankAccount=i['BankAccount'])
+                print(client_list)
                 client_list.append(i_client)
         Client.objects.bulk_create(client_list)
 
@@ -72,6 +73,7 @@ def Orders_sync(code):
                                 client=Client.objects.filter(code=i['ClientCode']).first(),
                                 agent=CustomUser.objects.filter(code=code).first(),
                                 )
+                print(i_order)
                 order_list.append(i_order)
         Order.objects.bulk_create(order_list)
 

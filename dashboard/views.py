@@ -86,8 +86,8 @@ class GetStatistics(APIView):
 
     def get(self, request, *args, **kwargs):
         user = request.user
-        year = 2024
-        month = 11
+        year = datetime.today().year
+        month = datetime.today().month
         stats = {
             "six_month_product_sales_statistics2": six_month_product_sales_statistics2(user, year, month),
             "six_month_product_sales_statistics": six_month_product_sales_statistics(user),
@@ -305,9 +305,10 @@ class RefreshView(LoginRequiredMixin, View):
         # Werehouse_sync()
         # Organizations_sync()
         # print(client.service.GetProductBalance('00000000004', '00000000201'))
-        Clients_sync(request.user.code)
-        Orders_sync(request.user.code)
-        OrderDetails_sync(request.user.code)
+        c = Clients_sync(request.user.code)
+        o1 = Orders_sync(request.user.code)
+        od = OrderDetails_sync(request.user.code)
+        print(c, o1, od)
         return redirect('dashboard:index')
 
 

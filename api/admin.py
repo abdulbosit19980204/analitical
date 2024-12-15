@@ -58,7 +58,7 @@ class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class OrderDetailAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ('id', 'order', 'numOrder', 'CodeSklad', 'ShippingDate')
     list_display_links = ('order', 'id',)
-    list_filter = ('order', 'CodeSklad', 'ShippingDate', 'numOrder')
+    list_filter = ('CodeSklad', 'ShippingDate', 'created_at', 'updated_at')
 
 
 class ClientAdmin(ImportExportModelAdmin, admin.ModelAdmin):
