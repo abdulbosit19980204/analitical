@@ -245,38 +245,72 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card">
-                                    <div class="card-header"><h3>Visited</h3></div>
+                                    <div class="card-header"><h3>Visited</h3>
+                                        <!-- Pagination Navigation -->
+                                        <span class="step-links">
+                                                    {% if gps.has_previous %}
+                                                        <a href="?page=1&per_page={{per_page}}">First</a>
+                                                        <a href="?page={{ gps.previous_page_number }}&per_page={{per_page}}">Previous</a>
+                                                    {% endif %}
+
+                                                    <span class="current">
+                                                        Page {{ gps.number }} of {{ gps.paginator.num_pages }}
+                                                    </span>
+
+                                                    {% if gps.has_next %}
+                                                        <a href="?page={{ gps.next_page_number }}&per_page={{per_page}}">Next</a>
+                                                        <a href="?page={{ gps.paginator.num_pages }}&per_page={{per_page}}">Last</a>
+                                                    {% endif %}
+                                                </span>
+                                        <span>
+                                            <div class="btn-group">
+                <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">{{per_page}}
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="?per_page=4">4</a></li>
+                    <li><a class="dropdown-item" href="?per_page=6">6</a></li>
+                    <li><a class="dropdown-item" href="?per_page=8">8</a></li>
+                </ul>
+            </div>
+                                        </span>
+                                    </div>
                                     <div class="card-body">
                                         <div class="timeline timeline-left">
                                             {% for i in gps %}
                                             <div class="timeline-grid">
-                                                <div class="icon-wrap"><img class="img-fluid"
-                                                                            src="{{ request.user.picture.url }}"
-                                                                            alt=""></div>
+                                                <!-- User Image -->
+                                                <div class="icon-wrap">
+                                                    <img class="img-fluid" src="{{ request.user.picture.url }}" alt="">
+                                                </div>
+
+                                                <!-- Client Information -->
                                                 <div class="timeline-content">
-                                                    <h3>{{i.NameClient}}</h3>
-                                                    <div class="timeline-date"><i class="fa fa-calendar"></i>{{i.FixingDate}}
+                                                    <h3>{{ i.NameClient }}</h3>
+                                                    <div class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> {{ i.FixingDate }}
                                                     </div>
                                                     <div>
-                                                        <span class="text-muted">Longitude: </span> <span>{{i.Longitude}}</span>
-                                                        <span class="text-muted">Latitude: </span>
-                                                        <span>{{i.Latitude}}</span>
-                                                    </div>
-                                                    <div>
-
-                                                    </div>
-                                                    <div class="embed-responsive ">
-                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24296.09405535166!2d${{i.Longitude}}!3d${{i.Latitude}}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8a4ea6b86e67%3A0x91ed3e9e44b3b0ab!2z0J3QvtCy0LfQsA!5e1!3m2!1sen!2s!4v1726959915070!5m2!1sen!2s"
-                                                                height="150" style="border:0;"
-                                                                width="200"
-                                                                allowfullscreen="" loading="lazy"
-                                                                referrerpolicy="no-referrer-when-downgrade"
-                                                                id="gmap"></iframe>
+                                                        <span class="text-muted">Longitude: </span> <span>{{ i.Longitude }}</span>
+                                                        <span class="text-muted">Latitude: </span> <span>{{ i.Latitude }}</span>
                                                     </div>
 
+                                                    <!-- Google Maps Iframe -->
+                                                    <div class="embed-responsive">
+                                                        <iframe
+                                                                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4&center={{ i.Latitude }},{{ i.Longitude }}&zoom=15"
+                                                                height="150"
+                                                                style="border:0;"
+                                                                width="100%"
+                                                                allowfullscreen=""
+                                                                loading="lazy"
+                                                                referrerpolicy="no-referrer-when-downgrade">
+                                                        </iframe>
+                                                    </div>
                                                 </div>
                                             </div>
                                             {% endfor %}
+
                                         </div>
                                     </div>
                                 </div>

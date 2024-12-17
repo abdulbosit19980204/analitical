@@ -159,7 +159,13 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d['business_reg'] = client.service.GetBusinessRegions(code)
         d['price_list'] = client.service.GetPriceTypes(code)
         d['sklad'] = client.service.GetWarehousesUser(code)
-        d['gps'] = client.service.GetGPS(code, '20240921110122')[:6]
+        gps = client.service.GetGPS(code, '20240921110122')
+        page_number = request.GET.get('page', 1)
+        per_page = request.GET.get('per_page', 6)
+        pagination = Paginator(gps, per_page)
+        page_obj = pagination.get_page(page_number)
+        d['gps'] = page_obj
+        d['per_page'] = per_page
         recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[:5]
         active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
                                                                                                     'clientName').annotate(
