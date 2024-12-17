@@ -271,6 +271,7 @@ class ProductView(LoginRequiredMixin, View):
         # d['products'] = products
         page_number = request.GET.get('page', 1)
         per_page = request.GET.get('per_page', 20)
+        d['per_page'] = per_page
         paginator = Paginator(products, per_page)
         try:
             page_obj = paginator.get_page(page_number)  # Get the current page
