@@ -181,7 +181,13 @@ class UserListView(LoginRequiredMixin, View):
     def get(self, request):
         d = {}
         clientlist = client.service.GetClients(request.user.code)
-        d['clients'] = clientlist
+        per_page = request.GET.get('per_page', 10)
+        paginator = Paginator(clientlist, per_page)
+        page_number = request.GET.get('page', 1)
+        page_obj = paginator.get_page(page_number)
+        d['per_page'] = per_page
+        d['clients'] = page_obj
+
         return render(request, 'user-list.html', context=d)
 
 
