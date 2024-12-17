@@ -188,7 +188,7 @@ class UserListView(LoginRequiredMixin, View):
         d = {}
         # Cilentlar ro'yxatini olish
         clientlist = client.service.GetClients(request.user.code)
-
+        print(clientlist[0])
         # Qidiruv so'rovi
         search_query = request.GET.get('search', '').strip()
 
@@ -196,7 +196,15 @@ class UserListView(LoginRequiredMixin, View):
         if search_query:
             clientlist = [
                 client for client in clientlist
-                if search_query.lower() in client['Name'].lower()  # Name maydonida qidirish
+                if (search_query.lower() in client['Name'].lower()
+                    or search_query.lower() in str(client['Code']).lower()
+                    or search_query.lower() in str(client['INN']).lower()
+                    or search_query.lower() in str(client['Signboard']).lower()
+                    or search_query.lower() in str(client['AdressDelivery']).lower()
+                    or search_query.lower() in str(client['CodeRegion']).lower()
+                    or search_query.lower() in str(client['ContactPersonPhone']).lower()
+                    or search_query.lower() in str(client['ContactPerson']).lower()
+                    or search_query.lower() in str(client['ResponsiblePersonPhone']).lower())
             ]
 
         # Pagination sozlamalari
