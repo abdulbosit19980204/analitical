@@ -186,13 +186,29 @@ class UserListView(LoginRequiredMixin, View):
 
     def get(self, request):
         d = {}
+        # Cilentlar ro'yxatini olish
         clientlist = client.service.GetClients(request.user.code)
-        per_page = request.GET.get('per_page', 10)
+
+        # Qidiruv so'rovi
+        search_query = request.GET.get('search', '').strip()
+
+        # Qidiruv logikasi
+        if search_query:
+            clientlist = [
+                client for client in clientlist
+                if search_query.lower() in client['Name'].lower()  # Name maydonida qidirish
+            ]
+
+        # Pagination sozlamalari
+        per_page = int(request.GET.get('per_page', 10))
         paginator = Paginator(clientlist, per_page)
         page_number = request.GET.get('page', 1)
         page_obj = paginator.get_page(page_number)
+
+        # Kontekst ma'lumotlarini qo'shish
         d['per_page'] = per_page
         d['clients'] = page_obj
+        d['search_query'] = search_query  # Qidiruv so'rovini shablonda ko'rsatish
 
         return render(request, 'user-list.html', context=d)
 

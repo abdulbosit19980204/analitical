@@ -3,31 +3,32 @@
 
 {% block filter %}
 <!-- Pagination Navigation -->
-<div>
-    <ul class="pagination justify-content-center">
-        <li class="page-item">
-            <div class="pagination pagination-centered">
-            <span class="step-links page-item">
-                {% if clients.has_previous %}
-                    <a class="step-links page-item" href="?page=1&per_page={{per_page}}">First</a>
-                    <a class="step-links page-item"
-                       href="?page={{ clients.previous_page_number }}&per_page={{per_page}}">Previous</a>
-                {% endif %}
+<div class="grid-wrap-header">
+    <ul class="gridfilter-list">
+        <li class="listview-toggle">
+            <div class="pagination pagination-success">
+                                                      <span class="step-links page-item">
+                                                        {% if clients.has_previous %}
+                                                          <a href="?page=1&per_page={{per_page}}">&laquo;</a>
+                                                          <a href="?page={{ clients.previous_page_number }}&per_page={{per_page}}"><</a>
+                                                        {% endif %}
 
-                <span class="current">
-                    Page {{ clients.number }} of {{ clients.paginator.num_pages }}
-                </span>
+                                                        <span class="current">
+                                                          Page {{ clients.number }} of {{ clients.paginator.num_pages }}.
+                                                        </span>
 
-                {% if clients.has_next %}
-                    <a href="?page={{ clients.next_page_number }}&per_page={{per_page}}">Next</a>
-                    <a href="?page={{ clients.paginator.num_pages }}&per_page={{per_page}}">Last</a>
-                {% endif %}
-            </span>
+                                                        {% if clients.has_next %}
+                                                          <a href="?page={{ clients.next_page_number }}&per_page={{per_page}}"> > </a>
+                                                          <a href="?page={{ clients.paginator.num_pages }}&per_page={{per_page}}"> &raquo;</a>
+                                                        {% endif %}
+                                                      </span>
             </div>
         </li>
-        <li class="page-item">
+        <li class="listview-toggle">
             <div class="btn-group">
-                <button class="btn btn-outline-success dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-outline-success dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
                         aria-expanded="false">{{per_page}}
                 </button>
                 <ul class="dropdown-menu">
@@ -38,10 +39,30 @@
                     <li><a class="dropdown-item" href="?per_page=200">200</a></li>
                 </ul>
             </div>
-
+        </li>
+        <li class="listview-toggle">
+            <div class="search-bar">
+                <div class="form-group mb-0">
+                    <form method="GET" action="{% url 'dashboard:user-list' %}">
+                        <div class="input-group">
+                            <!-- Input field for search -->
+                            <input
+                                    class="form-control"
+                                    type="text"
+                                    name="search"
+                                    value="{{ search_query }}"
+                                    placeholder="Search Here....."
+                            >
+                            <!-- Submit button -->
+                            <button type="submit" class="input-group-text"><i data-feather="search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </li>
     </ul>
 </div>
+
 {% endblock %}
 
 {% block content %}

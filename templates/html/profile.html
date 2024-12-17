@@ -292,7 +292,8 @@
                                             <div class="timeline-grid">
                                                 <!-- User Image -->
                                                 <div class="icon-wrap">
-                                                    <img class="img-fluid" src="{{ request.user.picture.url }}" alt="">
+                                                    <img class="img-fluid" src="{{ request.user.picture.url }}"
+                                                         alt="User Picture">
                                                 </div>
 
                                                 <!-- Client Information -->
@@ -306,13 +307,15 @@
                                                         <span class="text-muted">Latitude: </span> <span>{{ i.Latitude }}</span>
                                                     </div>
 
-                                                    <!-- Google Maps Iframe -->
+                                                    <!-- Google Maps with Marker -->
                                                     <div class="embed-responsive">
                                                         <iframe
-                                                                src="https://www.google.com/maps/embed/v1/view?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4&center={{ i.Latitude }},{{ i.Longitude }}&zoom=15"
-                                                                height="150"
-                                                                style="border:0;"
-                                                                width="100%"
+                                                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4
+                         &q={{ i.Latitude }},{{ i.Longitude }}
+                         &zoom=15
+                         &maptype=roadmap"
+                                                                height="200"
+                                                                style="border:0; width:100%;"
                                                                 allowfullscreen=""
                                                                 loading="lazy"
                                                                 referrerpolicy="no-referrer-when-downgrade">
@@ -321,6 +324,7 @@
                                                 </div>
                                             </div>
                                             {% endfor %}
+
 
                                         </div>
                                     </div>
