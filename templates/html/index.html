@@ -22,6 +22,7 @@
 <div class="theme-body common-dash" data-simplebar>
     <div class="custom-container">
         <div class="row">
+
             <div class="col-xl-4 cdx-xl-50">
                 <div class="card welcome-card overflow-hidden">
                     <div class="card-header">
@@ -48,28 +49,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 cdx-xl-50">
-                <div class="card earning-chart">
-                    <div class="card-header">
-                        <h4>Daily Orders</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="site-impres">
-                            <h2><span class="counter">{{report.Sum}}</span> sum</h2>
-                            <p class="text-light">5.5% change from yesterday</p>
-                        </div>
-                        <div id="earning-chart"></div>
-                    </div>
-                </div>
-            </div>
+
+
             <div class="col-xl-4 cdx-xl-50 cdxorder-xl-1">
                 <div class="card countri-tbl">
                     <div class="card-header">
@@ -141,43 +122,20 @@
                                 <tr>
                                     <td>
                                         <div class="media">
-                                            <div class="flag-wrap"><i class="flag-icon flag-icon-ind"></i></div>
-                                            <div class="media-body">India</div>
+                                            <div class="flag-wrap">
+                                                <!--                                                <i class="flag-icon flag-icon-egy"></i>-->
+                                                <img src="{% static 'assets/images/ecom-dashboard/product/arkodez.jpg' %}"
+                                                     class="img-circle img-wrap">
+                                            </div>
+                                            <div class="media-body">Arko Blade</div>
                                         </div>
                                     </td>
-                                    <td class="text-success">35.00%<i class="fa fa-angle-up ml-5"></i></td>
-                                    <td>Sep/17</td>
+                                    <td class="text-danger">25.7%<i class="fa fa-angle-down ml-5"></i></td>
+                                    <td>Jun/16</td>
                                     <td>
-                                        <h6>320k</h6>
+                                        <h6>598k</h6>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap"><i class="flag-icon flag-icon-mkd"></i></div>
-                                            <div class="media-body">Makedonia</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-success">48.00%<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td>Octo/20</td>
-                                    <td>
-                                        <h6>748k</h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap"><i class="flag-icon flag-icon-niu"></i></div>
-                                            <div class="media-body">Niue</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-danger">28.07%<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td>Sep/18</td>
-                                    <td>
-                                        <h6>580k</h6>
-                                    </td>
-                                </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -263,105 +221,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 cdx-xl-50">
-                <div class="card project-summarytbl">
-                    <div class="card-header">
-                        <h4>Daily report | AKB By Cotegories</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Code</th>
-                                    <th>Name</th>
-                                    <th>AKB</th>
-                                    <th>Payment</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for repo in report.AKBByCotegoriesRow %}
-                                <tr>
-                                    <td>{{ repo.Code }}</td>
 
-                                    <td>{{repo.Name}}</td>
-                                    <td>{{repo.AKB}}</td>
-                                    <td><span class="badge badge-success">Done</span></td>
-                                </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-xl-6 cdx-xl-50 cdxorder-xl-1">
-                <div class="card visitor-performance">
-                    <div class="card-header">
-                        <h4>Orders By Regions</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div id="visitor-chart"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 cdx-xl-50">
-                <div class="card project-summarytbl">
-                    <div class="card-header">
-                        <h4>Daily report | Business Region Report</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th>Code</th>
-                                    <th>Name</th>
-                                    <th>AKB</th>
-                                    <th>Payment</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for repo in report.BusinessRegionReportRow %}
-                                <tr>
-                                    <td>{{ repo.Code }}</td>
-
-                                    <td>{{repo.Name}}</td>
-                                    <td>{{repo.AKB}}</td>
-                                    <td><span class="badge badge-primary">Done</span></td>
-                                </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-xl-4 cdx-xl-50">
                 <div class="card visitor-ratetbl">
                     <div class="card-header">

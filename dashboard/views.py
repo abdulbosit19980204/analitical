@@ -62,19 +62,24 @@ class EcommerceView(LoginRequiredMixin, View):
         d = {}
         code = request.user.code
         d = {}
-        # print(client.service.GetProductBalance())
-        d['business_reg'] = client.service.GetBusinessRegions(code)
-        d['price_list'] = client.service.GetPriceTypes(code)
-        d['sklad'] = client.service.GetWarehousesUser(code)
-        d['clients'] = client.service.GetClients(code)
-        d['statistics'] = statistic_data(request.user)
-        productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
-        topSellingProducts = productSelling.values('id', 'NameProduct', 'CodeProduct', 'Price', 'Amount',
-                                                   'Total').annotate(
-            Count('CodeProduct'),
-            Sum('Amount'), Sum('Total'))
-        # print(d['topSellingProducts'])
-        # d['productSelling'] = productSelling
+        if code:
+            # print(client.service.GetProductBalance())
+            d['business_reg'] = client.service.GetBusinessRegions(code)
+            d['price_list'] = client.service.GetPriceTypes(code)
+            d['sklad'] = client.service.GetWarehousesUser(code)
+            d['clients'] = client.service.GetClients(code)
+            d['statistics'] = statistic_data(request.user)
+            kpi = client.service.GetKPI(code)
+            report = client.service.GetDailyReport(code)
+            d['kpi'] = kpi
+            d['report'] = report
+            productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
+            topSellingProducts = productSelling.values('id', 'NameProduct', 'CodeProduct', 'Price', 'Amount',
+                                                       'Total').annotate(
+                Count('CodeProduct'),
+                Sum('Amount'), Sum('Total'))
+            # print(d['topSellingProducts'])
+            # d['productSelling'] = productSelling
 
         return render(request, 'ecommerce.html', context=d)
 
@@ -188,7 +193,6 @@ class UserListView(LoginRequiredMixin, View):
         d = {}
         # Cilentlar ro'yxatini olish
         clientlist = client.service.GetClients(request.user.code)
-        print(clientlist[0])
         # Qidiruv so'rovi
         search_query = request.GET.get('search', '').strip()
 
