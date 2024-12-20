@@ -1,22 +1,17 @@
-from calendar import month
 from datetime import datetime
 from rest_framework.views import APIView
-from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.db.models import Count, Sum, Max, Min
 from django.contrib.auth.models import User
 from django.views import generic, View
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404, redirect, render
-from django.contrib.auth import login, authenticate, logout
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect, render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages, \
-    OrderProductRows
+    OrderProductRows, Aksiya
 from product.models import Product, ProductSeria, ProductBrand
 from authentic.integrations import client, GetDailyReport, werehouse, product_sales
 from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
@@ -27,13 +22,15 @@ from .statistics import daily_order_statistics, most_sold_products_monthly_by_us
     popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year, \
     monthly_product_sales_statistics, six_month_product_sales_statistics, six_month_product_sales_statistics2
 from product.serializers import ProductSerializer
-from django.db.models import Sum, Count, Max, Min, Q
+from django.db.models import Sum, Count, Max, Min, Q, Avg
 
 
 class IndexView(LoginRequiredMixin, View):
     login_url = reverse_lazy('authentic:login')
 
     def get(self, request):
+        today = datetime.today()
+        month_first_day = datetime.today().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
         code = request.user.code
         d = {}
         if code:
@@ -41,6 +38,7 @@ class IndexView(LoginRequiredMixin, View):
             report = client.service.GetDailyReport(code)
             d['kpi'] = kpi
             d['report'] = report
+            d['aksiya'] = Aksiya.objects.filter(end_date__gte=today)
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
 
@@ -83,16 +81,36 @@ class EcommerceView(LoginRequiredMixin, View):
             # d['productSelling'] = productSelling
             recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[
                                :5]
-            active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-                                                                                                        'clientName').annotate(
-                Count("clientCode")).order_by('-clientCode__count')
-            passive_clients = list(
-                Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-                                                                                           'clientName').annotate(
-                    Count("clientCode")).order_by('clientCode__count'))
-            d['recently_clients'] = recently_clients
+            # active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+            #                                                                                             'clientName').annotate(
+            #     Count("clientCode")).order_by('-clientCode__count')
+            # passive_clients = list(
+            #     Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+            #                                                                                'clientName').annotate(
+            #         Count("clientCode")).order_by('clientCode__count'))
+            #
+            # d['active_clients'] = len(active_clients)
+            # d['passive_clients'] = len(passive_clients)
+            # O'rtacha buyurtmalar sonini hisoblash
+            # Har bir mijoz uchun buyurtmalarni hisoblash
+            client_order_counts = Order.objects.filter(agent=request.user).values('clientCode').annotate(
+                order_count=Count('id')
+            )
+
+            # O'rtacha buyurtmalar sonini hisoblash
+            average_orders = client_order_counts.aggregate(avg_orders=Avg('order_count'))['avg_orders']
+
+            if average_orders is None:
+                average_orders = 0  # Agar buyurtmalar bo'lmasa, 0 ga o'rnatamiz
+
+            # Active va passive mijozlarni ajratish
+            active_clients = client_order_counts.filter(order_count__gt=average_orders)
+            passive_clients = client_order_counts.filter(order_count__lte=average_orders)
+
+            # Natijalarni hisoblash
             d['active_clients'] = len(active_clients)
             d['passive_clients'] = len(passive_clients)
+            d['recently_clients'] = recently_clients
 
         return render(request, 'ecommerce.html', context=d)
 
@@ -185,17 +203,41 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d['gps'] = page_obj
         d['per_page'] = per_page
         recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[:5]
-        active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-                                                                                                    'clientName').annotate(
-            Count("clientCode")).order_by('-clientCode__count')
-        passive_clients = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-                                                                                                          'clientName').annotate(
-            Count("clientCode")).order_by('clientCode__count'))
+        # active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+        #                                                                                             'clientName').annotate(
+        #     Count("clientCode")).order_by('-clientCode__count')
+        # passive_clients = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+        #                                                                                                   'clientName').annotate(
+        #     Count("clientCode")).order_by('clientCode__count'))
+        # d['active_clients'] = active_clients[:5]
+        # d['passive_clients'] = passive_clients[:5]
+        # Har bir mijoz uchun buyurtmalarni hisoblash
+        today = datetime.today()
+        first_day_of_month = today.replace(day=1)
+        client_order_counts = Order.objects.filter(agent=request.user, dateOrder__gte=first_day_of_month,
+                                                   dateOrder__lte=today).values('clientCode',
+                                                                                'clientName').annotate(
+            order_count=Count('id')
+        )
+        client_order_sum = Order.objects.filter(agent=request.user).values('clientCode', 'clientName').annotate(
+            order_sum=Sum('total')).order_by('-order_sum')
+        print(client_order_sum)
+        average_sum = client_order_sum.aggregate(avg_sum=Avg('order_sum'))['avg_sum']
+        print(average_sum)
+        # O'rtacha buyurtmalar sonini hisoblash
+        average_orders = client_order_counts.aggregate(avg_orders=Avg('order_count'))['avg_orders']
+        if average_orders is None:
+            average_orders = 0  # Agar buyurtmalar bo'lmasa, 0 ga o'rnatamiz
+
+        # Active va passive mijozlarni ajratish
+        active_clients = client_order_counts.filter(order_count__gt=average_orders)
+        passive_clients = client_order_counts.filter(order_count__lte=average_orders)
+        max_order_count = client_order_counts.aggregate(Max('order_count'))['order_count__max']
+        # Natijalarni hisoblash
+        d['active_clients'] = active_clients.order_by('-order_count')[:5]
+        d['passive_clients'] = passive_clients.order_by('order_count')[:5]
         d['recently_clients'] = recently_clients
-        d['active_clients'] = active_clients[:5]
-        d['passive_clients'] = passive_clients[:5]
         d['gallery_images'] = VisitingImages.objects.filter(author=request.user)[:5]
-        print(d['passive_clients'])
         return render(request, 'profile.html', context=d)
 
 

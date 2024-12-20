@@ -23,130 +23,57 @@
     <div class="custom-container">
         <div class="row">
 
-            <div class="col-xl-4 cdx-xl-50">
+            <div class="col-xl-3 cdx-xl-50">
                 <div class="card welcome-card overflow-hidden">
-                    <div class="card-header">
-                        <div>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star text-warning"></i>
-                            <i class="fa fa-star-half-empty text-warning"></i>
-                        </div>
+                    <!--                    <div class="card-header">-->
+                    <!--                        <div>-->
+                    <!--                            <i class="fa fa-star text-warning"></i>-->
+                    <!--                            <i class="fa fa-star text-warning"></i>-->
+                    <!--                            <i class="fa fa-star text-warning"></i>-->
+                    <!--                            <i class="fa fa-star text-warning"></i>-->
+                    <!--                            <i class="fa fa-star-half-empty text-warning"></i>-->
+                    <!--                        </div>-->
 
-                    </div>
-                    <div class="card-body">
+                    <!--                    </div>-->
+                    <div class="card-body mt-50">
                         <div class="img-wrap"><img class="img-fluid" src="{{ request.user.picture.url }}"
                                                    alt="image">
+
                         </div>
-                        <h3>{{ request.user.first_name }} {{ request.user.last_name }}</h3>
-                        <div class="site-impres">
-                            <h3>Today: <span class="counter text-danger mark">{{report.Sum}}</span> sum</h3>
-                            <p class="text-light">5.5% change from yesterday</p>
-                        </div>
-                        <p class="mb-10">
-                        </p>
+                        <h4><i class="fa fa-user"></i> {{ request.user.first_name }}
+                            {{ request.user.last_name }}
+                        </h4>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-xl-4 cdx-xl-50 cdxorder-xl-1">
-                <div class="card countri-tbl">
-                    <div class="card-header">
-                        <h4>x% off Products</h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table tblbody-p0">
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap">
-                                                <!--                                                <i class="flag-icon flag-icon-tur"></i>-->
-                                                <img src="{% static 'assets/images/ecom-dashboard/product/akrem.jpeg' %}"
-                                                     class="img-circle img-wrap">
-                                            </div>
-                                            <div class="media-body">Arko Cream</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-success">48.00%<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td> Nove/22</td>
-                                    <td>
-                                        <h6>905k</h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap">
-                                                <!--                                                <i class="flag-icon flag-icon-tur"></i>-->
-                                                <img src="{% static 'assets/images/ecom-dashboard/product/faxsoap.jpg' %}"
-                                                     class="img-circle img-wrap">
-                                            </div>
-                                            <div class="media-body">Fax Soap</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-success">30.7%<i class="fa fa-angle-up ml-5"></i></td>
-                                    <td> Sep/15</td>
-                                    <td>
-                                        <h6>750k</h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap">
-                                                <!--                                                <i class="flag-icon flag-icon-egy"></i>-->
-                                                <img src="{% static 'assets/images/ecom-dashboard/product/arkodez.jpg' %}"
-                                                     class="img-circle img-wrap">
-                                            </div>
-                                            <div class="media-body">Arko Blade</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-danger">25.7%<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td>Jun/16</td>
-                                    <td>
-                                        <h6>598k</h6>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="media">
-                                            <div class="flag-wrap">
-                                                <!--                                                <i class="flag-icon flag-icon-egy"></i>-->
-                                                <img src="{% static 'assets/images/ecom-dashboard/product/arkodez.jpg' %}"
-                                                     class="img-circle img-wrap">
-                                            </div>
-                                            <div class="media-body">Arko Blade</div>
-                                        </div>
-                                    </td>
-                                    <td class="text-danger">25.7%<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td>Jun/16</td>
-                                    <td>
-                                        <h6>598k</h6>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 cdx-xl-100">
+            <div class="col-xl-9 cdx-xl-100">
                 <div class="row">
                     <div class="col-xxl-12">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
+                                <div class="card project-status">
+                                    <div class="card-header">
+                                        <h4><i class="fa fa-calendar"></i> Today
+                                        </h4>
+
+                                    </div>
+                                    <div class="card-body progressCounter">
+                                        <div class="media">
+                                            <div>
+                                                <h3><span class="counter text-danger mark">{{report.Sum}}</span> Sum
+                                                </h3>
+                                            </div>
+
+                                        </div>
+                                        <div class="progress progress-secondary">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{kpi.AKBPercent}}"
+                                                 aria-valuemin="0" aria-valuemax="{{kpi.AKBPlan}}"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
                                 <div class="card project-status">
                                     <div class="card-header">
                                         <h4><i class="fa fa-users"></i> OKB: <span
@@ -181,7 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <div class="card project-status">
                                     <div class="card-header">
                                         <h4><i class="fa fa-users"></i> AKB Plan: <span class="text-secondary">{{kpi.AKBPlan}}</span>
@@ -222,11 +149,10 @@
                 </div>
             </div>
 
-
-            <div class="col-xl-4 cdx-xl-50">
-                <div class="card visitor-ratetbl">
+            <div class="col-xl-8 cdx-xl-50 cdxorder-xl-1">
+                <div class="card countri-tbl">
                     <div class="card-header">
-                        <h4>Visitors Statistics</h4>
+                        <h4>x% off Products and Actions</h4>
                         <div class="setting-card action-menu">
                             <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
                             <ul class="action-dropdown">
@@ -236,8 +162,49 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="card-body p-0">
-                        <div id="visitor-rank"></div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table tblbody-p0">
+                                <thead>
+                                <tr>
+                                    <td>
+                                        <div class="media">
+                                            <div class="flag-wrap fw-bold">
+                                                Image
+                                            </div>
+                                            <div class="media-body fw-bold">Name</div>
+                                        </div>
+                                    </td>
+                                    <td class="text-success fw-bold">Description</td>
+                                    <td class="fw-bold"> Start date</td>
+                                    <td>
+                                        <h6 class="fw-bold">End date</h6>
+                                    </td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for i in aksiya %}
+                                <tr>
+                                    <td>
+                                        <div class="media">
+                                            <div class="flag-wrap">
+                                                <!--                                                <i class="flag-icon flag-icon-tur"></i>-->
+                                                <img src="{% static 'assets/images/ecom-dashboard/product/akrem.jpeg' %}"
+                                                     class="img-circle img-wrap">
+                                            </div>
+                                            <div class="media-body">{{i.name}}</div>
+                                        </div>
+                                    </td>
+                                    <td class="text-success">{{i.description}}<i class="fa fa-angle-down ml-5"></i></td>
+                                    <td> {{i.start_date}}</td>
+                                    <td>
+                                        <h6>{{i.end_date}}</h6>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

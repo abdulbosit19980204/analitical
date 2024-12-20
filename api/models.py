@@ -204,3 +204,14 @@ class Country(BaseField, models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Aksiya(BaseField, models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    code = models.CharField(max_length=100, unique=True)
+    start_date = models.DateTimeField(blank=True, null=True)
+    end_date = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
