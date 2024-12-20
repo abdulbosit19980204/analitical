@@ -68,6 +68,7 @@ class EcommerceView(LoginRequiredMixin, View):
             d['price_list'] = client.service.GetPriceTypes(code)
             d['sklad'] = client.service.GetWarehousesUser(code)
             d['clients'] = client.service.GetClients(code)
+            d['clients_count'] = len(client.service.GetClients(code))
             d['statistics'] = statistic_data(request.user)
             kpi = client.service.GetKPI(code)
             report = client.service.GetDailyReport(code)
@@ -80,6 +81,18 @@ class EcommerceView(LoginRequiredMixin, View):
                 Sum('Amount'), Sum('Total'))
             # print(d['topSellingProducts'])
             # d['productSelling'] = productSelling
+            recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[
+                               :5]
+            active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+                                                                                                        'clientName').annotate(
+                Count("clientCode")).order_by('-clientCode__count')
+            passive_clients = list(
+                Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
+                                                                                           'clientName').annotate(
+                    Count("clientCode")).order_by('clientCode__count'))
+            d['recently_clients'] = recently_clients
+            d['active_clients'] = len(active_clients)
+            d['passive_clients'] = len(passive_clients)
 
         return render(request, 'ecommerce.html', context=d)
 

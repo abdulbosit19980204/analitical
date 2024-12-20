@@ -109,54 +109,83 @@
                     </div>
                 </div>
             </div>
-
-
-            <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-                <div class="card sale-revenue">
-                    <div class="card-header">
-                        <h4>Active clients </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
+            <div class="col-xl-6 cdx-xl-100">
+                <div class="row">
+                    <div class="col-xxl-12">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="card project-status">
+                                    <div class="card-header">
+                                        <h4><i class="fa fa-users"></i> Clients: <span
+                                                class="count text-primary">{{clients_count}}</span>
+                                        </h4>
+                                        <div class="setting-card action-menu"><a class="action-toggle"
+                                                                                 href="javascript:void(0)"><i
+                                                class="codeCopy" data-feather="more-horizontal"></i></a>
+                                            <ul class="action-dropdown">
+                                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a>
+                                                </li>
+                                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a>
+                                                </li>
+                                                <li><a href="javascript:void(0);"><i
+                                                        class="fa fa-calendar"></i>yearly</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body progressCounter">
+                                        <div class="media">
+                                            <div>
+                                                <h2>ACTIVE: <span class="count text-primary">{{active_clients}}</span>
+                                                </h2>
+                                            </div>
+                                            <div class="media-body"><span class="badge badge-success">{{kpi.OKB|calc_protsent:kpi.AKBPlan|floatformat:2 }}%<i
+                                                    class="fa fa-angle-up"></i></span></div>
+                                        </div>
+                                        <div class="progress progress-primary">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{kpi.OKB|calc_protsent:kpi.AKBPlan|floatformat:2 }}"
+                                                 aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card project-status">
+                                    <div class="card-header">
+                                        <h4><i class="fa fa-users"></i> Clients: <span class="text-secondary">{{clients_count}}</span>
+                                        </h4>
+                                        <div class="setting-card action-menu"><a class="action-toggle"
+                                                                                 href="javascript:void(0)"><i
+                                                class="codeCopy" data-feather="more-horizontal"></i></a>
+                                            <ul class="action-dropdown">
+                                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a>
+                                                </li>
+                                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a>
+                                                </li>
+                                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body progressCounter">
+                                        <div class="media">
+                                            <div>
+                                                <h2><span class="">PASSIVE: </span><span
+                                                        class="count text-secondary">{{ passive_clients }}</span>
+                                                </h2>
+                                            </div>
+                                            <div class="media-body"><span class="badge badge-secondary">{{kpi.AKBPercent|floatformat:2}}%<i
+                                                    class="fa fa-angle-down"></i></span></div>
+                                        </div>
+                                        <div class="progress progress-secondary">
+                                            <div class="progress-bar" role="progressbar"
+                                                 aria-valuenow="{{kpi.AKBPercent}}"
+                                                 aria-valuemin="0" aria-valuemax="{{kpi.AKBPlan}}"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-body progressCounter">
-                        <h2>$<span class="count">255719</span><span class="badge badge-success">20.5%<i
-                                class="fa fa-angle-up"> </i></span></h2>
-                        <div class="progress progress-success">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <h4 class="text-light">this week extra profit in <span
-                                class="text-success">$1,7.24                  </span></h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xxl-3 col-sm-6 cdx-xxl-50">
-                <div class="card sale-revenue">
-                    <div class="card-header">
-                        <h4>Passive clients </h4>
-                        <div class="setting-card action-menu">
-                            <div class="action-toggle"><i class="codeCopy" data-feather="more-horizontal"></i></div>
-                            <ul class="action-dropdown">
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-o"></i>weekly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i>monthly</a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-calendar"></i>yearly </a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-body progressCounter">
-                        <h2>$<span class="count">1082</span><span class="badge badge-info">30.00%<i
-                                class="fa fa-angle-up"> </i></span></h2>
-                        <div class="progress progress-info">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0"
-                                 aria-valuemax="100"></div>
-                        </div>
-                        <h4 class="text-light">this week extra order in <span class="text-info">$1,20.24 </span></h4>
                     </div>
                 </div>
             </div>
@@ -325,7 +354,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-xl-6 cdx-xl-50">
                 <div class="card project-summarytbl">
                     <div class="card-header">
