@@ -149,7 +149,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-8 cdx-xl-50 cdxorder-xl-1">
+            <div class="col-xl-12 cdx-xl-50 cdxorder-xl-1">
                 <div class="card countri-tbl">
                     <div class="card-header">
                         <h4>x% off Products and Actions</h4>
@@ -188,20 +188,37 @@
                                     <td>
                                         <div class="media">
                                             <div class="flag-wrap">
-                                                <!--                                                <i class="flag-icon flag-icon-tur"></i>-->
                                                 <img src="{% static 'assets/images/ecom-dashboard/product/akrem.jpeg' %}"
                                                      class="img-circle img-wrap">
                                             </div>
-                                            <div class="media-body">{{i.name}}</div>
+                                            <div class="media-body">{{ i.name }}</div>
                                         </div>
                                     </td>
-                                    <td class="text-success">{{i.description}}<i class="fa fa-angle-down ml-5"></i></td>
-                                    <td> {{i.start_date}}</td>
+                                    <td class="text-success">
+                                        {{ i.description }}
+                                        <i class="fa fa-angle-down ml-5"></i>
+                                        <div class="setting-card action-menu">
+                                            <div class="action-toggle">
+                                                <i class="codeCopy" data-feather="more-horizontal"></i>
+                                            </div>
+                                            <ul class="action-dropdown">
+                                                {% for product in i.products %}
+                                                <li>
+                                                    <a href="javascript:void(0);">
+                                                        <i class="fa fa-product"></i> {{ product.name }}
+                                                    </a>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </td>
+                                    <td>{{ i.start_date }}</td>
                                     <td>
-                                        <h6>{{i.end_date}}</h6>
+                                        <h6>{{ i.end_date }}</h6>
                                     </td>
                                 </tr>
                                 {% endfor %}
+
                                 </tbody>
                             </table>
                         </div>
