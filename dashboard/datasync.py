@@ -59,12 +59,21 @@ def Clients_sync(code):
 
     c_regions = client.service.GetBusinessRegions(code)
     region_list = []
+    agent_region_list = []
     if c_regions:
         for i in c_regions:
             if not BussinesRegion.objects.filter(code=i['Code']).exists():
                 i_region = BussinesRegion(code=i['Code'], name=i['Name'])
                 region_list.append(i_region)
         BussinesRegion.objects.bulk_create(region_list)
+
+        for j in c_regions:
+            if not AgentBussinesRegion.objects.filter(region__code=j['Code']).exists():
+                i_region = AgentBussinesRegion(region=BussinesRegion.objects.filter(code=j['Code']).first(),
+                                               agent=CustomUser.objects.filter(code=code).first())
+                agent_region_list.append(i_region)
+
+        AgentBussinesRegion.objects.bulk_create(agent_region_list)
 
 
 def Orders_sync(code):
