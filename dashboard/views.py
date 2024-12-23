@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -23,6 +23,8 @@ from .statistics import daily_order_statistics, most_sold_products_monthly_by_us
     monthly_product_sales_statistics, six_month_product_sales_statistics, six_month_product_sales_statistics2
 from product.serializers import ProductSerializer
 from django.db.models import Sum, Count, Max, Min, Q, Avg
+
+from .utils import get_business_regions, calculate_active_clients, calculate_passive_clients, group_clients_by_orders
 
 
 class IndexView(LoginRequiredMixin, View):
@@ -57,60 +59,52 @@ class EcommerceView(LoginRequiredMixin, View):
     login_url = reverse_lazy('dashboard:login')
 
     def get(self, request):
-        d = {}
         code = request.user.code
-        d = {}
-        if code:
-            # print(client.service.GetProductBalance())
-            d['business_reg'] = client.service.GetBusinessRegions(code)
-            d['price_list'] = client.service.GetPriceTypes(code)
-            d['sklad'] = client.service.GetWarehousesUser(code)
-            d['clients'] = client.service.GetClients(code)
-            d['clients_count'] = len(client.service.GetClients(code))
-            d['statistics'] = statistic_data(request.user)
-            kpi = client.service.GetKPI(code)
-            report = client.service.GetDailyReport(code)
-            d['kpi'] = kpi
-            d['report'] = report
-            productSelling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
-            topSellingProducts = productSelling.values('id', 'NameProduct', 'CodeProduct', 'Price', 'Amount',
-                                                       'Total').annotate(
-                Count('CodeProduct'),
-                Sum('Amount'), Sum('Total'))
-            # print(d['topSellingProducts'])
-            # d['productSelling'] = productSelling
-            recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[
-                               :5]
-            # active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-            #                                                                                             'clientName').annotate(
-            #     Count("clientCode")).order_by('-clientCode__count')
-            # passive_clients = list(
-            #     Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-            #                                                                                'clientName').annotate(
-            #         Count("clientCode")).order_by('clientCode__count'))
-            #
-            # d['active_clients'] = len(active_clients)
-            # d['passive_clients'] = len(passive_clients)
-            # O'rtacha buyurtmalar sonini hisoblash
-            # Har bir mijoz uchun buyurtmalarni hisoblash
-            client_order_counts = Order.objects.filter(agent=request.user).values('clientCode').annotate(
-                order_count=Count('id')
-            )
+        if not code:  # Agar agent "code"ga ega bo'lmasa
+            return render(request, 'ecommerce.html', context={'message': 'Sizning profilingizda "code" mavjud emas'})
 
-            # O'rtacha buyurtmalar sonini hisoblash
-            average_orders = client_order_counts.aggregate(avg_orders=Avg('order_count'))['avg_orders']
+        # Ma'lumotlarni yig'ish
+        today = datetime.today()
+        d = {
+            'business_reg': get_business_regions(code),
+            'price_list': client.service.GetPriceTypes(code),
+            'sklad': client.service.GetWarehousesUser(code),
+            'clients': client.service.GetClients(code),
+            'clients_count': len(client.service.GetClients(code)),
+            'statistics': statistic_data(request.user),
+            'kpi': client.service.GetKPI(code),
+            'report': client.service.GetDailyReport(code),
+        }
 
-            if average_orders is None:
-                average_orders = 0  # Agar buyurtmalar bo'lmasa, 0 ga o'rnatamiz
+        # Top sotilgan mahsulotlar
+        product_selling = OrderProductRows.objects.filter(order__agent=request.user).order_by('-order')[:10]
+        d['top_selling_products'] = product_selling.values(
+            'id', 'NameProduct', 'CodeProduct', 'Price', 'Amount', 'Total'
+        ).annotate(Count('CodeProduct'), Sum('Amount'), Sum('Total'))
 
-            # Active va passive mijozlarni ajratish
-            active_clients = client_order_counts.filter(order_count__gt=average_orders)
-            passive_clients = client_order_counts.filter(order_count__lte=average_orders)
+        # So'nggi mijozlar
+        business_regions = d['business_reg']
+        region_codes = [region['Code'] for region in business_regions]
+        if business_regions:
+            d['recently_clients'] = Client.objects.filter(
+                codeRegion=business_regions[0]['Code']
+            ).order_by('-created_at')[:5]
 
-            # Natijalarni hisoblash
-            d['active_clients'] = len(active_clients)
-            d['passive_clients'] = len(passive_clients)
-            d['recently_clients'] = recently_clients
+        # Faol/passiv mijozlarni aniqlash
+        one_month_ago = today - timedelta(days=30)
+        one_year_ago = today - timedelta(days=365)
+        active_clients = calculate_active_clients(request.user, one_year_ago)
+        passive_clients = calculate_passive_clients(request.user, one_month_ago, active_clients, region_codes)
+        # O'rtacha va yuqori mijozlar statistikasi
+        client_order_counts = group_clients_by_orders(request.user)
+        average_orders = client_order_counts.get('average_orders', 0)
+
+        d.update({
+            'active_clients': len(active_clients),
+            'passive_clients': len(passive_clients),
+            'top_clients': client_order_counts.get('top_clients', []),
+            'few_clients': client_order_counts.get('few_clients', []),
+        })
 
         return render(request, 'ecommerce.html', context=d)
 
@@ -193,6 +187,7 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d = {}
         # print(client.service.GetProductBalance())
         d['business_reg'] = client.service.GetBusinessRegions(code)
+        print(d['business_reg'][0])
         d['price_list'] = client.service.GetPriceTypes(code)
         d['sklad'] = client.service.GetWarehousesUser(code)
         gps = client.service.GetGPS(code, '20240921110122')
