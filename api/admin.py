@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization, Client, Order, \
-    OrderDetail, Todo, VisitingImages, OrderCreditDetailsList, OrderProductRows, Country, Aksiya
+    OrderDetail, Todo, VisitingImages, OrderCreditDetailsList, OrderProductRows, Country, Aksiya, BussinesRegion, \
+    AgentBussinesRegion
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
 
@@ -83,5 +84,7 @@ admin.site.register(OrderCreditDetailsList)
 admin.site.register(OrderProductRows)
 admin.site.register(Country)
 admin.site.register(Aksiya)
+admin.site.register(AgentBussinesRegion)
+admin.site.register(BussinesRegion)
 # ********************** unregistred*************
 admin.site.unregister(Group)

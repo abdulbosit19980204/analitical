@@ -7,11 +7,30 @@ from api.models import Client, Order
 
 # 1. Business regionlarni olish
 def get_business_regions(code):
+    """
+    Retrieve business regions associated with a given code.
+
+    Args:
+        code (str): The unique code representing a business entity or region.
+
+    Returns:
+        list: A list of business regions retrieved from the client service.
+    """
     return client.service.GetBusinessRegions(code)
 
 
 # 2. Faol mijozlarni aniqlash
 def calculate_active_clients(user, date_limit):
+    """
+    Identify active clients who placed orders in the last three months.
+
+    Args:
+        user (User): The agent whose clients are being considered.
+        date_limit (datetime): The date from which to start calculating activity.
+
+    Returns:
+        QuerySet: A queryset of clients who were active (placed orders) in each of the last three months.
+    """
     today = datetime.today()
 
     # Oxirgi 3 oyda har bir oy faol bo'lgan mijozlar
@@ -30,6 +49,19 @@ def calculate_active_clients(user, date_limit):
 # 3. Passiv mijozlarni aniqlash
 def calculate_passive_clients(user, one_month_ago, active_clients, region_codes):
     """
+    Identify passive clients who were inactive for the last month but belong to specified regions.
+
+    Args:
+        user (User): The agent analyzing clients.
+        one_month_ago (datetime): Cutoff date for identifying passive clients.
+        active_clients (QuerySet): The list of active clients to exclude.
+        region_codes (list): List of region codes to filter clients.
+
+    Returns:
+        QuerySet: A queryset of clients who were either inactive for the last month or placed no orders,
+                  and who belong to the specified regions, excluding active clients.
+    """
+    """
     Passiv mijozlarni aniqlash:
     Oxirgi 1 oy davomida faol bo'lmagan yoki buyurtma qilmagan, lekin mas'ul regionga tegishli mijozlar.
     """
@@ -46,6 +78,18 @@ def calculate_passive_clients(user, one_month_ago, active_clients, region_codes)
 
 # 4. Mijozlarni buyurtmalar bo'yicha guruhlash
 def group_clients_by_orders(user):
+    """
+    Group clients based on their number of orders compared to the average number of orders.
+
+    Args:
+        user (User): The agent examining client orders.
+
+    Returns:
+        dict: A dictionary containing:
+              - `average_orders` (float): The average number of orders per client.
+              - `top_clients` (list): Clients whose order count is above average.
+              - `few_clients` (list): Clients whose order count is at or below average.
+    """
     client_order_counts = Order.objects.filter(agent=user).values('clientCode').annotate(
         order_count=Count('id')
     )

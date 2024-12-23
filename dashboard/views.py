@@ -35,10 +35,10 @@ class IndexView(LoginRequiredMixin, View):
     Methods:
         get(request): Handles GET requests and renders the index page.
     """
-# Specifies the login page URL if the user is not logged in
+    # Specifies the login page URL if the user is not logged in
     login_url = reverse_lazy('authentic:login')
 
-# Handles GET request for the index page
+    # Handles GET request for the index page
     def get(self, request):
         """
         Handles GET request for the index page.
@@ -92,10 +92,10 @@ class EcommerceView(LoginRequiredMixin, View):
         get(request): Renders the e-commerce page with statistics.
         post(request): Handles POST requests for e-commerce actions.
     """
-# Specifies the login page URL if the user is not logged in
+    # Specifies the login page URL if the user is not logged in
     login_url = reverse_lazy('dashboard:login')
 
-# Handles GET request to render the ecommerce page with statistics
+    # Handles GET request to render the ecommerce page with statistics
     def get(self, request):
         """
         Handles GET request to render the e-commerce page with statistics.
@@ -155,7 +155,7 @@ class EcommerceView(LoginRequiredMixin, View):
 
         return render(request, 'ecommerce.html', context=d)
 
-# Handles POST request for ecommerce actions
+    # Handles POST request for ecommerce actions
     def post(self, request):
         """
         Handles POST request for e-commerce actions.
@@ -177,10 +177,10 @@ class GetStatistics(APIView):
     Methods:
         get(request, *args, **kwargs): Fetches statistics data for the user.
     """
-# Ensures only authenticated users can access this view
+    # Ensures only authenticated users can access this view
     permission_classes = [IsAuthenticated]
 
-# Handles GET request to provide statistics data
+    # Handles GET request to provide statistics data
     def get(self, request, *args, **kwargs):
         """
         Fetches statistics for the authenticated user.
@@ -225,7 +225,7 @@ class CalendarView(LoginRequiredMixin, generic.ListView):
         template_name (str): Path to the calendar template.
         login_url (str): URL to redirect to if the user is not logged in.
     """
-# Specifies the User model for context
+    # Specifies the User model for context
     model = User
     template_name = 'calendar.html'
     login_url = reverse_lazy('dashboard:login')
@@ -241,7 +241,7 @@ class ChatView(LoginRequiredMixin, generic.ListView):
         template_name (str): Path to the chat template.
         login_url (str): URL to redirect to if the user is not logged in.
     """
-# Specifies the User model for the chat user context
+    # Specifies the User model for the chat user context
     model = User
     template_name = 'chat.html'
     context_object_name = 'users'
@@ -256,10 +256,10 @@ class TodoView(LoginRequiredMixin, View):
     Methods:
         get(request): Displays all to-do items for the user.
     """
-# Specifies the login page URL if the user is not logged in
+    # Specifies the login page URL if the user is not logged in
     login_url = reverse_lazy('dashboard:login')
 
-# Handles GET request to display all to-do items for the user
+    # Handles GET request to display all to-do items for the user
     def get(self, request):
         """
         Handles GET request to display all to-do items for the user.
@@ -287,7 +287,7 @@ class EmailListView(LoginRequiredMixin, generic.ListView):
         template_name (str): Path to the email inbox template.
         login_url (str): URL to redirect to if the user is not logged in.
     """
-# Specifies the User model for context
+    # Specifies the User model for context
     model = User
     template_name = 'email-inbox.html'
     context_object_name = 'users'
@@ -304,7 +304,7 @@ class EmailReadView(LoginRequiredMixin, generic.ListView):
         template_name (str): Path to the email read template.
         login_url (str): URL to redirect to if the user is not logged in.
     """
-# Specifies the User model for context
+    # Specifies the User model for context
     model = User
     template_name = 'email-read.html'
     context_object_name = 'users'
@@ -319,13 +319,13 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
     Methods:
         get(request): Retrieves and displays the user's profile data.
     """
-# Specifies the User model for context
+    # Specifies the User model for context
     model = User
     template_name = 'profile.html'
     context_object_name = 'users'
     login_url = reverse_lazy('dashboard:login')
 
-# Handles GET request to retrieve and display user's profile data
+    # Handles GET request to retrieve and display user's profile data
     def get(self, request):
         code = request.user.code
         d = {}
@@ -382,10 +382,10 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
 
 # UserListView retrieves and displays the list of clients for the user
 class UserListView(LoginRequiredMixin, View):
-# Specifies the login page URL if the user is not logged in
+    # Specifies the login page URL if the user is not logged in
     login_url = reverse_lazy('dashboard:login')
 
-# Handles GET request to fetch and render the client list
+    # Handles GET request to fetch and render the client list
     def get(self, request):
         d = {}
         # Cilentlar ro'yxatini olish
@@ -424,7 +424,7 @@ class UserListView(LoginRequiredMixin, View):
 
 # ClientProfileView displays the profile of a specific client
 class ClientProfileView(LoginRequiredMixin, View):
-# Specifies the login page URL if the user is not logged in
+    # Specifies the login page URL if the user is not logged in
     login_url = reverse_lazy('dashboard:login')
 
     def get(self, request, pk):
@@ -433,13 +433,13 @@ class ClientProfileView(LoginRequiredMixin, View):
 
 # ProductListView displays a list of products and handles search functionality
 class ProductListView(LoginRequiredMixin, generic.ListView):
-# Specifies the User model for context
+    # Specifies the User model for context
     model = User
     template_name = 'product-list.html'
     context_object_name = 'users'
     login_url = reverse_lazy('dashboard:login')
 
-# Handles GET request to retrieve and display product list with filters
+    # Handles GET request to retrieve and display product list with filters
     def get(self, request):
         # Initialize context
         d = {}

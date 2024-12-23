@@ -1,7 +1,7 @@
 from itertools import product
 
 from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, OrderProductRows, \
-    OrderCreditDetailsList
+    OrderCreditDetailsList, BussinesRegion, AgentBussinesRegion
 from product.models import ProductBrand, ProductSeria, ProductRemainder, Product
 from authentic.integrations import client
 from datetime import datetime
@@ -54,9 +54,17 @@ def Clients_sync(code):
                                   creditLimit=i['CreditLimit'],
                                   accumulatedCredit=i['AccumulatedCredit'], codeRegion=i['CodeRegion'],
                                   director=i['Director'], mfo=i['MFO'], bankAccount=i['BankAccount'])
-                print(client_list)
                 client_list.append(i_client)
         Client.objects.bulk_create(client_list)
+
+    c_regions = client.service.GetBusinessRegions(code)
+    region_list = []
+    if c_regions:
+        for i in c_regions:
+            if not BussinesRegion.objects.filter(code=i['Code']).exists():
+                i_region = BussinesRegion(code=i['Code'], name=i['Name'])
+                region_list.append(i_region)
+        BussinesRegion.objects.bulk_create(region_list)
 
 
 def Orders_sync(code):
