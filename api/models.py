@@ -37,6 +37,9 @@ class Warehouse(BaseField, models.Model):
     organization = models.ForeignKey(Organization, on_delete=models.SET_NULL, null=True)
     description = models.TextField(blank=True, null=True)
 
+    class Meta:
+        ordering = ['created_at']
+
     def __str__(self):
         return self.name
 
