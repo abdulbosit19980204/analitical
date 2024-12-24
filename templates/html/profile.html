@@ -289,6 +289,7 @@
                                     <div class="card-body">
                                         <div class="timeline timeline-left">
                                             {% for i in gps %}
+                                            {% if i.NameClient %}
                                             <div class="timeline-grid">
                                                 <!-- User Image -->
                                                 <div class="icon-wrap">
@@ -311,9 +312,9 @@
                                                     <div class="embed-responsive">
                                                         <iframe
                                                                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4
-                         &q={{ i.Latitude }},{{ i.Longitude }}
-                         &zoom=15
-                         &maptype=roadmap"
+                                                                 &q={{ i.Latitude }},{{ i.Longitude }}
+                                                                 &zoom=15
+                                                                 &maptype=roadmap"
                                                                 height="200"
                                                                 style="border:0; width:100%;"
                                                                 allowfullscreen=""
@@ -323,6 +324,42 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {% else %}
+                                            <div class="timeline-grid">
+                                                <!-- User Image -->
+                                                <div class="icon-wrap">
+                                                    <img class="img-fluid" src="{{ request.user.picture.url }}"
+                                                         alt="User Picture">
+                                                </div>
+
+                                                <!-- Client Information -->
+                                                <div class="timeline-content">
+                                                    <!--                                                    <h3>{{ i.NameClient }}</h3>-->
+                                                    <div class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> {{ i.FixingDate }}
+                                                    </div>
+                                                    <div>
+                                                        <span class="text-muted">Longitude: </span> <span>{{ i.Longitude }}</span>
+                                                        <span class="text-muted">Latitude: </span> <span>{{ i.Latitude }}</span>
+                                                    </div>
+
+                                                    <!-- Google Maps with Marker -->
+                                                    <div class="embed-responsive">
+                                                        <iframe
+                                                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4
+                                                                 &q={{ i.Latitude }},{{ i.Longitude }}
+                                                                 &zoom=15
+                                                                 &maptype=roadmap"
+                                                                height="200"
+                                                                style="border:0; width:100%;"
+                                                                allowfullscreen=""
+                                                                loading="lazy"
+                                                                referrerpolicy="no-referrer-when-downgrade">
+                                                        </iframe>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endif %}
                                             {% endfor %}
 
 

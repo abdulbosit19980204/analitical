@@ -330,11 +330,14 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         code = request.user.code
         d = {}
         # print(client.service.GetProductBalance())
+        today = datetime.today()
+        gps_date = today.strftime('%Y%m%d%H%M%S')
+        print(gps_date)
         d['business_reg'] = client.service.GetBusinessRegions(code)
         print(d['business_reg'][0])
         d['price_list'] = client.service.GetPriceTypes(code)
         d['sklad'] = client.service.GetWarehousesUser(code)
-        gps = client.service.GetGPS(code, '20240921110122')
+        gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
         page_number = request.GET.get('page', 1)
         per_page = request.GET.get('per_page', 6)
         pagination = Paginator(gps, per_page)
@@ -342,14 +345,6 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         d['gps'] = page_obj
         d['per_page'] = per_page
         recently_clients = Client.objects.filter(codeRegion=d['business_reg'][0]['Code']).order_by('-created_at')[:5]
-        # active_clients = Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-        #                                                                                             'clientName').annotate(
-        #     Count("clientCode")).order_by('-clientCode__count')
-        # passive_clients = list(Order.objects.filter(agent=request.user).select_related('client', ).values('clientCode',
-        #                                                                                                   'clientName').annotate(
-        #     Count("clientCode")).order_by('clientCode__count'))
-        # d['active_clients'] = active_clients[:5]
-        # d['passive_clients'] = passive_clients[:5]
         # Har bir mijoz uchun buyurtmalarni hisoblash
         today = datetime.today()
         first_day_of_month = today.replace(day=1)
