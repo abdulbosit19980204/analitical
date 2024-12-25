@@ -1,4 +1,6 @@
 from datetime import datetime, timedelta
+from urllib import request
+
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -63,11 +65,19 @@ class IndexView(LoginRequiredMixin, View):
             d['aksiya'] = Aksiya.objects.filter(end_date__gte=today)
             gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
             if not gps:
-                d['gps'] = []
+                d['gps_data'] = []
             else:
-                d['gps'] = gps[:1]
+                d['gps_data'] = gps
+                print(d['gps_data'])
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
+
+
+class GPS_dataView(LoginRequiredMixin, APIView):
+    login_url = reverse_lazy('dashboard:login')
+
+    def get(self):
+        user = request.user
 
 
 # statistic_data collects statistics related to user orders
@@ -342,7 +352,7 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
         if not gps:
             gps = []
-        
+
         d['business_reg'] = client.service.GetBusinessRegions(code)
         print(d['business_reg'][0])
         d['price_list'] = client.service.GetPriceTypes(code)
