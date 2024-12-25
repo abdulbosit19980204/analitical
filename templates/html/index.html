@@ -465,15 +465,14 @@
 
                     </div>
                 </div>
-                <script src="{% static './assets/js/dashboard/maps.js' %}"></script>
                 <div class="card">
                     <div class="card-header"><h3>Map</h3></div>
                     <div class="card-body">
-                        {{gps_dataf|safe}}
+                        {{gps_data|safe}}
                         <div id="map" style="height: 600px; width: 100%;">map</div>
                     </div>
                 </div>
-
+                <script src="{% static './assets/js/dashboard/maps.js' %}"></script>
             </div>
         </div>
     </div>

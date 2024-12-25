@@ -269,7 +269,7 @@ const get6MonthProductSales = () => {
                     }, labels: {
                         style: {
                             fontSize: '12px',
-                            fontWeight:'Bold'
+                            fontWeight: 'Bold'
                         },
                     },
                 }, dataLabels: {

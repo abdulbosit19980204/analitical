@@ -4,7 +4,7 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from .views import IndexView, EcommerceView, CalendarView, ChatView, TodoView, EmailListView, EmailReadView, \
     ProfileView, UserListView, ProductListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
-    OrderDetailView, ProductDetailView, GetStatistics
+    OrderDetailView, ProductDetailView, GetStatistics, GPS_dataView
 from rest_framework.routers import DefaultRouter
 from dashboard.views import SearchFilterViewSet
 
@@ -35,5 +35,6 @@ urlpatterns = [
     path('invoice', InvoiceView.as_view(), name='invoice'),
 
     path('api/statistics/', GetStatistics.as_view(), name='get_statistics'),
+    path('api/gps/', GPS_dataView.as_view(), name='gps'),
 
 ]

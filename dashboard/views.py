@@ -76,8 +76,29 @@ class IndexView(LoginRequiredMixin, View):
 class GPS_dataView(LoginRequiredMixin, APIView):
     login_url = reverse_lazy('dashboard:login')
 
-    def get(self):
+    def get(self, request):
         user = request.user
+        gps_date = datetime.today().strftime('%Y%m%d%H%M%S')
+        d = {}
+
+        # Fetch GPS data (this returns non-serializable objects)
+        gps = client.service.GetGPS(user.code, gps_date)  # Example from your code
+
+        # Convert GPSRow-like objects to dictionaries
+        if gps:
+            gps_data = []
+            for row in gps:
+                # Assuming GPSRow has attributes like 'latitude', 'longitude', and 'name'
+                gps_data.append({
+                    'latitude': row.Latitude,
+                    'longitude': row.Longitude,
+                    'name': row.NameClient,  # Adjust based on the actual attributes of GPSRow
+                })
+        else:
+            gps_data = []
+
+        d['gps_data'] = gps_data  # Assign serialized data to the dictionary
+        return Response(data=d)
 
 
 # statistic_data collects statistics related to user orders
