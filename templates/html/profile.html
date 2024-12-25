@@ -288,6 +288,11 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="timeline timeline-left">
+                                            {% if not gps %}
+                                            <div class="timeline-grid">
+                                                <h3>Siz bugun xech qayerga tashrif buyurmadingiz</h3>
+                                            </div>
+                                            {% else %}
                                             {% for i in gps %}
                                             {% if i.NameClient %}
                                             <div class="timeline-grid">
@@ -361,6 +366,7 @@
                                             </div>
                                             {% endif %}
                                             {% endfor %}
+                                            {% endif %}
 
 
                                         </div>

@@ -4,6 +4,9 @@
 <!-- theme body start-->
 
 {% block content %}
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4&callback=initMap">
+</script>
 {% if message %}
 <div class="card m-5">
     <div class="card-header">
@@ -423,6 +426,53 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-xl-12 cdx-xl-50 cdxorder-xl-1">
+                <div class="card-body">
+                    <div class="timeline timeline-left">
+                        {% for i in gps %}
+                        <div class="timeline-grid">
+                            <!-- Client Information -->
+                            <div class="timeline-content">
+                                <h3>{{ i.FixingDate }}</h3>
+                                <div class="timeline-date">
+                                    <i class="fa fa-calendar"></i> {{ i.FixingDate }}
+                                </div>
+                                <div>
+                                    <span class="text-muted">Longitude: </span>
+                                    <span>{{ i.Longitude }}</span>
+                                    <span class="text-muted">Latitude: </span> <span>{{ i.Latitude }}</span>
+                                </div>
+
+                                <!-- Google Maps with Marker -->
+                                <div class="embed-responsive">
+                                    <iframe
+                                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAA8daFWf57U5maec335y8lp-NTr_rJ2m4
+                                                                 &q={{ i.Latitude }},{{ i.Longitude }}
+                                                                 &zoom=15
+                                                                 &maptype=roadmap"
+                                            height="600"
+                                            style="border:0; width:100%;"
+                                            allowfullscreen=""
+                                            loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+                <script src="{% static './assets/js/dashboard/maps.js' %}"></script>
+                <div class="card">
+                    <div class="card-header"><h3>Map</h3></div>
+                    <div class="card-body">
+                        <div id="map" style="height: 600px; width: 100%;">map</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

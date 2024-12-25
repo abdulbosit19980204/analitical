@@ -50,6 +50,8 @@ class IndexView(LoginRequiredMixin, View):
             HttpResponse: Rendered HTML page with context data.
         """
         today = datetime.today()
+        gps_date = today.strftime('%Y%m%d%H%M%S')
+
         month_first_day = datetime.today().replace(day=1, hour=0, minute=0, second=0, microsecond=0)
         code = request.user.code
         d = {}
@@ -59,6 +61,11 @@ class IndexView(LoginRequiredMixin, View):
             d['kpi'] = kpi
             d['report'] = report
             d['aksiya'] = Aksiya.objects.filter(end_date__gte=today)
+            gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
+            if not gps:
+                d['gps'] = []
+            else:
+                d['gps'] = gps[:1]
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
 
@@ -332,12 +339,15 @@ class ProfileView(LoginRequiredMixin, generic.ListView):
         # print(client.service.GetProductBalance())
         today = datetime.today()
         gps_date = today.strftime('%Y%m%d%H%M%S')
-        print(gps_date)
+        gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
+        if not gps:
+            gps = []
+        
         d['business_reg'] = client.service.GetBusinessRegions(code)
         print(d['business_reg'][0])
         d['price_list'] = client.service.GetPriceTypes(code)
         d['sklad'] = client.service.GetWarehousesUser(code)
-        gps = client.service.GetGPS(code, gps_date)  # '20240921110122'
+
         page_number = request.GET.get('page', 1)
         per_page = request.GET.get('per_page', 6)
         pagination = Paginator(gps, per_page)
