@@ -1,19 +1,20 @@
 from import_export.admin import ImportExportModelAdmin
+from django.contrib.admin import ModelAdmin
 from django.contrib import admin
 from .models import Product, ProductBrand, ProductSeria, ProductCategory, CategoryMobile, Manufacturer, \
     TypeOfNomenclature, ListGroup, ProductImages, ProductRemainder
 
 
-class ProductAdmin(admin.ModelAdmin, ):
-    list_display = ('id', 'print_title', 'name_manufacturer', 'list_group', 'product_category', 'brand', 'article')
+class ProductAdmin(ImportExportModelAdmin, ModelAdmin):
+    list_display = ('id', 'print_title', 'list_group', 'product_category', 'brand', 'article')
     list_display_links = (
-        'id', 'print_title', 'name_manufacturer', 'list_group', 'product_category', 'brand', 'article')
-    list_filter = ('product_category', 'name_manufacturer')
+        'id', 'print_title', 'list_group', 'product_category', 'brand', 'article')
+    list_filter = ('product_category', 'brand', 'list_group')
     search_fields = ('title', 'description')
 
 
 # Product's models
-admin.site.register(Product, ImportExportModelAdmin)
+admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductBrand)
 admin.site.register(ProductCategory)
 admin.site.register(ProductSeria)

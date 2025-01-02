@@ -1,10 +1,11 @@
 from audioop import reverse
+from rest_framework.routers import SimpleRouter
 
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from .views import IndexView, EcommerceView, CalendarView, ChatView, TodoView, EmailListView, EmailReadView, \
-    ProfileView, UserListView, ProductListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
-    OrderDetailView, ProductDetailView, GetStatistics, GPS_dataView
+    ProfileView, UserListView, ErrorPageView, InvoiceView, ProductView, RefreshView, OrderHistoryView, \
+    OrderDetailView, ProductDetailView, GetStatistics, GPS_dataView, ProductViewSet
 from rest_framework.routers import DefaultRouter
 from dashboard.views import SearchFilterViewSet
 
@@ -26,7 +27,6 @@ urlpatterns = [
 
     path('user-list', UserListView.as_view(), name='user-list'),
 
-    path('product-list', ProductListView.as_view(), name='product-list'),
     path('order-history/', OrderHistoryView.as_view(), name='order-history'),
     path('order-detail/<str:order_id>/', OrderDetailView.as_view(), name='order-detail'),
     path('product/', ProductView.as_view(), name='product'),
@@ -38,3 +38,7 @@ urlpatterns = [
     path('api/gps/', GPS_dataView.as_view(), name='gps'),
 
 ]
+
+router = SimpleRouter()
+router.register('products', ProductViewSet, 'products')
+urlpatterns += router.urls

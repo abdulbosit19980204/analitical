@@ -1,30 +1,35 @@
 from datetime import datetime, timedelta
-from urllib import request
+from pickle import EMPTY_LIST
 
-from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from django.contrib.auth.models import User
 from django.views import generic, View
+
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import redirect, render
 from django_filters.rest_framework import DjangoFilterBackend
+from django.core.paginator import Paginator
+from django.db.models import Sum, Count, Max, Min, Q, Avg
+
+from rest_framework.views import APIView
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
-from api.models import Warehouse, Organization, Client, Order, CustomUser, OrderDetail, Todo, VisitingImages, \
-    OrderProductRows, Aksiya
+from rest_framework.filters import OrderingFilter, SearchFilter
+from rest_framework.pagination import PageNumberPagination
+
+from api.models import Warehouse, Client, Order, Todo, VisitingImages, OrderProductRows, Aksiya
 from product.models import Product, ProductSeria, ProductBrand
-from authentic.integrations import client, GetDailyReport, werehouse, product_sales
-from .datasync import Orders_sync, Clients_sync, Organizations_sync, Werehouse_sync, OrderDetails_sync, \
-    GetProductsBlance_sync
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from authentic.integrations import client
+from .datasync import Orders_sync, Clients_sync, OrderDetails_sync, GetProductsBlance_sync
+
 from .statistics import daily_order_statistics, most_sold_products_monthly_by_user, product_sales_statistics_by_user, \
     yearly_sales_statistics_by_user, most_purchased_product_by_user_clients, clients_monthly_trade_by_user, \
     popular_categories_monthly_by_user, daily_order_statistics_for_month, monthly_trade_for_year, \
     monthly_product_sales_statistics, six_month_product_sales_statistics, six_month_product_sales_statistics2
 from product.serializers import ProductSerializer
-from django.db.models import Sum, Count, Max, Min, Q, Avg
 
 from .utils import get_business_regions, calculate_active_clients, calculate_passive_clients, group_clients_by_orders
 
@@ -60,6 +65,7 @@ class IndexView(LoginRequiredMixin, View):
         if code:
             kpi = client.service.GetKPI(code)
             report = client.service.GetDailyReport(code)
+            print(report)
             d['kpi'] = kpi
             d['report'] = report
             d['aksiya'] = Aksiya.objects.filter(end_date__gte=today)
@@ -68,9 +74,25 @@ class IndexView(LoginRequiredMixin, View):
                 d['gps_data'] = []
             else:
                 d['gps_data'] = gps
-                print(d['gps_data'])
             return render(request, 'index.html', context=d)
         return render(request, 'index.html', {'message': 'Please connect your 1C account'})
+
+    def post(self, request):
+        d = {}
+
+        data = request.POST
+        today = data['visited-day']
+        data = {'visited-day': today}  # sizning kiritishingiz
+        visited_day_str = data['visited-day']
+
+        # String ni datetime obyektiga aylantirish
+        visited_day_datetime = datetime.strptime(visited_day_str, '%Y-%m-%dT%H:%M')
+
+        # Formatlash
+        formatted_date = visited_day_datetime.strftime('%Y%m%d%H%M%S')
+        d['gps_data'] = client.service.GetGPS(request.user.code, formatted_date)
+        print(d)
+        return redirect('/', d)
 
 
 class GPS_dataView(LoginRequiredMixin, APIView):
@@ -467,56 +489,15 @@ class ClientProfileView(LoginRequiredMixin, View):
         pass
 
 
-# ProductListView displays a list of products and handles search functionality
-class ProductListView(LoginRequiredMixin, generic.ListView):
-    # Specifies the User model for context
-    model = User
-    template_name = 'product-list.html'
-    context_object_name = 'users'
-    login_url = reverse_lazy('dashboard:login')
-
-    # Handles GET request to retrieve and display product list with filters
-    def get(self, request):
-        # Initialize context
-        d = {}
-
-        # Get user's project and sklad codes
-        codeSklad = request.user.codeSklad.code
-        codeProject = request.user.codeProject.code
-
-        # Get the list of products
-        products = GetProductsBlance_sync(code_project=codeProject, code_sklad=codeSklad)
-
-        # Apply search and filter logic
-        search_query = request.GET.get('search', '')
-        if search_query:
-            # Filter products by search query
-            products = [
-                product for product in products
-                if search_query.lower() in product['name'].lower()
-            ]
-
-        # Add filtered products to context
-        d['products'] = products
-        return render(request, 'product-list.html', context=d)
-
-    def post(self, request):
-        # Initialize context
-        d = {}
-
-        # Get user's sklad code and update products
-        code_sklad = request.user.code_sklad
-        GetProductsBlance_sync(code_sklad=code_sklad)
-
-        return render(request, 'product-list.html', context=d)
-
-
 class ProductView(LoginRequiredMixin, View):
     login_url = reverse_lazy('authentic:login')
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['product_category', 'brand', 'list_group']
+    search_fields = ['article', 'name_manufacturer', 'working_title', 'brand__name', 'list_group__name']
 
     def get(self, request):
         d = {}
-        products = Product.objects.all()
+        products = Product.objects.all().order_by('id')
         d['products'] = products
         brands = ProductBrand.objects.all()
         d['brands'] = brands
@@ -525,15 +506,32 @@ class ProductView(LoginRequiredMixin, View):
         products = Product.objects.all()
 
         search_query = request.GET.get('search', '').strip()
+        filters = request.GET.getlist('brand[]')
+        print(filters)
+        print(request.GET)
+
+        if filters:
+            d['filters'] = filters
+            if filters[0] == 'all':
+                products = Product.objects.all()
+                if len(filters) > 1:
+                    products = products.filter(brand__name__in=filters[1:])
+            else:
+                products = products.filter(brand__name__in=filters)
+        else:
+            # Default to 'all' if no filters are provided
+            d['filters'] = ['all']
+            products = Product.objects.all()
+
         if search_query:
             # Filter products where the name, description, or other fields match the query
             products = products.filter(
                 Q(article__icontains=search_query) |
                 Q(name_manufacturer__icontains=search_query) |
                 Q(working_title__icontains=search_query) |
+                Q(brand__name__icontains=search_query) |
                 Q(brand__name__icontains=search_query)
-            )
-
+            ).order_by('id')
         # d['products'] = products
         page_number = request.GET.get('page', 1)
         per_page = request.GET.get('per_page', 20)
@@ -547,7 +545,17 @@ class ProductView(LoginRequiredMixin, View):
             # Add paginated products to the context
         d['products'] = page_obj
         d['search_query'] = search_query
+
         return render(request, 'product.html', context=d)
+
+
+class ProductViewSet(LoginRequiredMixin, ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['product_category', 'brand', 'list_group']
+    search_fields = ['article', 'name_manufacturer', 'working_title', 'brand__name', 'list_group__name']
 
 
 class ProductDetailView(LoginRequiredMixin, View):
