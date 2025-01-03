@@ -17,7 +17,7 @@
                                         <li>
                                             <div class="chek-group mb-8">
                 <span class="custom-check-input custom-chek">
-                   {% if 'all' in filters %}
+                   {% if 'all' in filters_brand %}
                      <input class="form-check-input" type="checkbox" id="checkAllBrand" name="brand[]" value="all"
                             checked="">
                     {% else %}
@@ -32,7 +32,7 @@
                                         <li>
                                             <div class="chek-group mb-8">
                 <span class="custom-check-input custom-chek">
-                    {% if brand.name in filters %}
+                    {% if brand.name in filters_brand %}
 <input class="form-check-input" type="checkbox" id="{{brand.name}}" name="brand[]"
        value="{{brand.name}}" checked>
 {% else %}
@@ -59,16 +59,17 @@
                                             <div class="chek-group mb-8">                 <span
                                                     class="custom-check-input custom-chek">
                                 <input class="form-check-input" type="checkbox" id="checkAllSeries"
-                                       name="all" checked=""></span>
+                                       name="all" checked="" name="series[]"></span>
                                                 <label class="fs-16 ml-5" for="checkAllSeries">All</label>
                                             </div>
                                         </li>
                                         {% for seria in series %}
                                         <li>
                                             <div class="chek-group mb-8"><span class="custom-check-input custom-chek">
-                                <input class="form-check-input" type="checkbox" id="{{seria.id}}" name="category"
+                                <input class="form-check-input" type="checkbox" id="{{seria.id}}" name="series[]"
+                                       value="{{seria.name}}"
                                 ></span>
-                                                <label class="fs-16 ml-5" for="{{seria.id}}">{{seria.name}}</label>
+                                                <label class=" fs-16 ml-5" for="{{seria.id}}">{{seria.name}}</label>
                                             </div>
                                         </li>
                                         {% endfor %}

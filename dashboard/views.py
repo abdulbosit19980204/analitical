@@ -506,21 +506,32 @@ class ProductView(LoginRequiredMixin, View):
         products = Product.objects.all()
 
         search_query = request.GET.get('search', '').strip()
-        filters = request.GET.getlist('brand[]')
-        print(filters)
-        print(request.GET)
+        filters_brand = request.GET.getlist('brand[]')
+        filters_series = request.GET.getlist('series[]')
 
-        if filters:
-            d['filters'] = filters
-            if filters[0] == 'all':
+        if filters_brand:
+            d['filters_brand'] = filters_brand
+            if filters_brand[0] == 'all':
                 products = Product.objects.all()
-                if len(filters) > 1:
-                    products = products.filter(brand__name__in=filters[1:])
+                if len(filters_brand) > 1:
+                    products = products.filter(brand__name__in=filters_brand[1:])
             else:
-                products = products.filter(brand__name__in=filters)
+                products = products.filter(brand__name__in=filters_brand)
         else:
             # Default to 'all' if no filters are provided
-            d['filters'] = ['all']
+            d['filters_brand'] = ['all']
+            products = Product.objects.all()
+        if filters_series:
+            d['filters_series'] = filters_series
+            if filters_series[0] == 'all':
+                products = Product.objects.all()
+                if len(filters_series) > 1:
+                    products = products.filter(series__name__in=filters_series[1:])
+            else:
+                products = products.filter(series__name__in=filters_series)
+        else:
+            # Default to 'all' if no filters are provided
+            d['filters_series'] = ['all']
             products = Product.objects.all()
 
         if search_query:

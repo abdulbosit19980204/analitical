@@ -243,7 +243,7 @@ JAZZMIN_SETTINGS = {
         {"name": "Users", "url": "/admin/api/customuser/"},
 
         # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "books"},
+        # {"app": "books"},
     ],
 
     #############
