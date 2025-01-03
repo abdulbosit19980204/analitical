@@ -4,10 +4,15 @@ from .models import UserType, CustomUser, KPI, Project, Warehouse, Organization,
     AgentBussinesRegion
 from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
+from django.contrib.auth.admin import UserAdmin
 
 
 class UserTypeInline(admin.TabularInline):
     model = UserType
+
+
+class UserImportAdmin(ImportExportModelAdmin, UserAdmin):
+    pass
 
 
 class UserTypeAdmin(ImportExportModelAdmin, admin.ModelAdmin):
@@ -45,9 +50,14 @@ class WarehouseAdmin(admin.ModelAdmin):
     list_filter = ('organization',)
 
 
-class CustomUserAdmin(UserTypeAdmin):
+class CustomUserAdmin(UserTypeAdmin, UserAdmin):
     list_display = ('id', 'username', 'email', 'first_name', 'last_name', 'code', 'phone_number', 'tg_username')
     list_display_links = ('id', 'username')
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        ('Personal info', {'fields': ('first_name', 'last_name', 'email', 'code', 'phone_number', 'tg_username')}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),)
 
 
 class OrderAdmin(ImportExportModelAdmin, admin.ModelAdmin):
