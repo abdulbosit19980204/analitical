@@ -77,6 +77,14 @@ class ClientAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display_links = ('id', 'name', 'code')
     list_filter = ('codeRegion',)
     search_fields = ('name', 'inn', 'contactPersonPhone', 'codeRegion')
+    fieldsets = (
+        (None, {'fields': ('name', 'code', 'inn', 'mfo', 'codeRegion','director', 'bankAccount')}),
+        (
+            'Contact info',
+            {'fields': ('contactPerson', 'contactPersonPhone', 'responsiblePerson', 'responsiblePersonPhone',)}),
+        ('Address info', {'fields': ('adressDelivery', 'referencePoint', 'longitude', 'latitude')}),
+        ('Additional info', {'fields': ('signboard','tradePointType','theNumberOfOrders','creditLimit','accumulatedCredit',)}),
+    )
 
 
 admin.site.register(UserType, UserTypeAdmin)
